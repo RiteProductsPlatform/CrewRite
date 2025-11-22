@@ -1,0 +1,466 @@
+<!-- <div class="oj-flex"> -->
+<!-- <oj-vb-fragment id="page-header" bridge="[[vbBridge]]" name="page-header">
+    <oj-vb-fragment-param name="title" value="CrewTime Settings"></oj-vb-fragment-param>
+  </oj-vb-fragment> -->
+
+<oj-sp-welcome-page id="oj-sp-wp1" illustration-background="[[ require.toUrl($page.variables.illustrationBackground) ]]"
+  illustration-foreground="[[ require.toUrl($page.variables.illustrationForeground) ]]"
+  display-options.image-stretch="[[ $page.variables.imageStretch ]]"
+  display-options.mobile-image="[[ $page.variables.mobileImage ]]" display-options.responsive-padding="on"
+  page-title="Configuration Settings" background-color="dark-pebble">
+
+
+
+
+
+  <!-- <div class="oj-flex oj-panel oj-panel-shadow-md" style="margin-top:-48px;"> -->
+    <div class="oj-panel" style="margin-top:-48px;">
+      <div class="oj-flex" style="width:100%">
+        <oj-conveyor-belt id="conveyorBelt" data-oj-binding-provider="none">
+          <oj-tab-bar id="oj-tab-bar-689897544-1" data="[[ $variables.settingsAdp ]]"
+            selection="{{ $variables.selectedTabvalue }}" edge="top">
+            <template slot="itemTemplate">
+              <a>
+                <oj-bind-text value="[[ $current.data.name ]]"></oj-bind-text>
+              </a>
+            </template>
+          </oj-tab-bar>
+        </oj-conveyor-belt>
+      </div>
+
+<oj-bind-if test='[[ $variables.selectedTabvalue==="import-data" ]]'>
+      <!-- <div class="oj-flex-item oj-flex oj-sm-margin-2x-top  oj-sm-margin-3x-start" style="width:100%">
+        <span class="subheadings">Import Data</span>
+      </div> -->
+      <br>
+      <div class="oj-flex-item oj-flex oj-sm-justify-content-center oj-sm-margin-3x-top">
+        <oj-form-layout label-edge="top" columns="5" style="width:100%" max-columns="5">
+          <!-- <oj-input-text label-hint="Customer Name" value="{{ $variables.syncData.party_id }}" required="true">
+            </oj-input-text> -->
+          <oj-select-single label-hint="Customer Name"
+            :title='[[ $application.variables.HelpEnabled ? "Select Customer Name" : "" ]]'
+            value="{{ $variables.syncData.party_id }}" required="true"
+            data="[[$variables.getCrewRiteCustomerDetailsListSDP]]" item-text="customer_name"
+            on-value-item-changed="[[$listeners.selectValueItem2]]"
+            >
+          </oj-select-single>
+          <!-- <oj-input-text label-hint="Contract Number" value="{{ $variables.syncData.contract_num }}">
+            </oj-input-text> 
+            <oj-input-text label-hint="Project Number" value="{{ $variables.syncData.project_num }}">
+            </oj-input-text> -->
+          <oj-select-single label-hint="Contract Number" value="{{ $variables.syncData.contract_num }}"
+            :title='[[ $application.variables.HelpEnabled ? "Select Contract" : "" ]]' item-text="contract_number"
+            data="[[$variables.getCrewRiteContractDetailsListSDP]]"
+            on-value-item-changed="[[$listeners.selectValueItem3]]"></oj-select-single>
+
+          <oj-select-single label-hint="Project Name" value="{{ $variables.syncData.project_num }}"
+            :title='[[ $application.variables.HelpEnabled ? "Select Project Name" : "" ]]' item-text="value"
+            data="[[ $variables.projectsADP ]]"></oj-select-single>
+            
+          <oj-switch value="{{ $variables.syncEmployee }}" label-hint="Sync All Employees"
+            :title='[[ $application.variables.HelpEnabled ? "Check Sync Employee" : "" ]]'
+            on-value-changed="[[$listeners.switchValue2]]"></oj-switch>
+        </oj-form-layout>
+        <div class="oj-flex-item oj-flex" style="width:100%;margin-left:45px;">
+          <div class="oj-flex-item oj-sm-margin-2x-end oj-sm-flex-initial">
+            <oj-button chroming="callToAction" label="Sync" id="sync" on-oj-action="[[$listeners.syncAction2]]"
+              disabled="[[ $variables.isBtnEnable ]]" class="oj-button-sm"></oj-button>
+          </div>
+          <div class="oj-flex-item oj-sm-margin-2x-end oj-sm-flex-initial">
+            <oj-button chroming="callToAction" label="Download" id="download"
+              disabled="[[ $variables.isBtnEnable ]]" on-oj-action="[[$listeners.downloadAction]]"
+              class="oj-button-sm">
+            </oj-button>
+          </div>
+          <div class="oj-flex-item oj-sm-margin-2x-end oj-sm-flex-initial">
+            <oj-button chroming="callToAction" label="Reset" on-oj-action="[[$listeners.buttonAction]]"
+              class="oj-button-sm"></oj-button>
+          </div>
+        </div>
+      </div>
+</oj-bind-if>
+      <!-- <div class="oj-flex-item oj-flex oj-sm-12 oj-sm-margin-3x-top"> -->
+        <!-- <div class="oj-flex oj-sm-12"> -->
+          <oj-bind-if test='[[ $variables.selectedTabvalue==="crew-import" ]]'>
+            <br>
+          <div class="oj-flex-item">
+          <!-- <oj-accordion class="oj-flex-item oj-sm-12 oj-md-12"> -->
+          <!-- <oj-collapsible id="oj-collapsible--1239369820-3" style="width:100%"> -->
+            <!-- <h6 class="oj-header" slot="header">Crew Import</h6> -->
+            <!-- <span class="subheadings" slot="header">Crew Import</span> -->
+            <oj-form-layout max-columns="5" columns="5" label-edge="top">
+              <oj-c-select-multiple id="syncfields" item-text="label" class="formclass" label-hint="Objects"
+                data="[[ $variables.SyncFieldsADP ]]" value="{{ $variables.selectedSyncFields }}">
+              </oj-c-select-multiple>
+              <div class="oj-flex-item oj-sm-margin-5x-top" style="margin-top:10px;">
+                <oj-button label="Sync" chroming="callToAction" class="" on-oj-action="[[$listeners.buttonAction11]]">
+                </oj-button>
+              </div>
+            </oj-form-layout>
+          
+          
+          
+          <!-- </oj-collapsible> -->
+          <!-- </oj-accordion> -->
+        </div>
+          </oj-bind-if>
+          <oj-bind-if test='[[ $variables.selectedTabvalue==="crew-application-controll" ]]'>
+            <br>
+        <div class="oj-flex-item">
+          <!-- <oj-accordion> -->
+          <!-- <oj-collapsible id="oj-collapsible--1239369820-1" style="width:100%"> -->
+            <!-- <h6 class="oj-header" slot="header">Crew Application Control</h6> -->
+            <!-- <span class="subheadings" slot="header">Crew Application Control</span> -->
+            <oj-form-layout label-edge="top" columns="5" style="width:100%" max-columns="5" class="" label-width="100%"
+              direction="row">
+              <oj-select-single label-hint="Maintain Perdiem Rate Source" 
+                item-text="lookup_code"
+                value="{{ $variables.crewApplicationControlObj.p_maintain_perdeim_rate_source }}"
+                data="[[$variables.getCrewRiteCrewDefinitionLookupsListSDP]]">
+              </oj-select-single>
+
+              <oj-bind-if
+                test='[[ $variables.crewApplicationControlObj.p_maintain_perdeim_rate_source === "Crew Time Application" ]]'>
+                <oj-input-number label-hint="Perdiem Rate"
+                  value="{{ $variables.crewApplicationControlObj.p_per_dm_rate }}"></oj-input-number>
+                <oj-input-number label-hint="Perdiem Hours"
+                  value="{{ $variables.crewApplicationControlObj.p_per_dm_hour }}"></oj-input-number>
+                <oj-input-number label-hint="Perdiem Amount"
+                  value="{{ $variables.crewApplicationControlObj.p_per_dm_amount }}" disabled="true">
+                </oj-input-number>
+              </oj-bind-if>
+
+              <oj-select-single label-hint="Perdiem Element Map" item-text="ElementName"
+                data="[[$variables.perDiemElementADP]]"
+                value="{{ $variables.crewApplicationControlObj.p_per_dm_element_map }}"
+                on-value-item-changed="[[$listeners.selectValueItem]]">
+              </oj-select-single>
+
+
+              <oj-select-single label-hint="Maintain Bonus Rate Source" data="[[$variables.getCrewRiteCrewDefinitionLookupsListSDP]]"
+                item-text="lookup_code" value="{{ $variables.crewApplicationControlObj.p_maintain_bonus_rate_source }}">
+              </oj-select-single>
+
+
+
+
+              <oj-bind-if
+                test='[[ $variables.crewApplicationControlObj.p_maintain_bonus_rate_source === "Crew Time Application" ]]'>
+                <oj-input-number label-hint="Bonus Map Rate"
+                  value="{{ $variables.crewApplicationControlObj.p_bonus_map_rate }}"></oj-input-number>
+              </oj-bind-if>
+              <oj-bind-if
+                test='[[ $variables.crewApplicationControlObj.p_maintain_bonus_rate_source === "Crew Time Application" ]]'>
+                <oj-input-number label-hint="Bonus Map Hours"
+                  value="{{ $variables.crewApplicationControlObj.p_bonus_dm_hour }}"></oj-input-number>
+              </oj-bind-if>
+              <oj-bind-if
+                test='[[ $variables.crewApplicationControlObj.p_maintain_bonus_rate_source === "Crew Time Application" ]]'>
+                <oj-input-number label-hint="Bonus Map Amount"
+                  value="{{ $variables.crewApplicationControlObj.p_bonus_map_amount }}" disabled="true">
+                </oj-input-number>
+              </oj-bind-if>
+              <oj-combobox-one label-hint="Bonus Element Map"
+                value="{{ $variables.crewApplicationControlObj.p_bonus_element_map }}" options-keys.value="ElementName"
+                options-keys.label="ElementName" maximum-result-count="500" options="{{ $variables.BonusEleArray }}">
+              </oj-combobox-one>
+              <oj-select-single label-hint="OTL TimeType Overtime" item-text="time_type_name"
+                value="{{ $variables.crewApplicationControlObj.p_otl_timetype_overtime }}"
+                data="[[$variables.getOTLTimeTypesListSDP2]]">
+              </oj-select-single>
+              <oj-select-single label-hint="Timesheet Entry Method" 
+                item-text="lookup_code"
+                value="{{ $variables.crewApplicationControlObj.p_timesheet_entry_method }}"
+                data="[[$variables.getCrewRiteCrewDefinitionLookupsListSDP2]]">
+              </oj-select-single>
+
+              <oj-select-single label-hint="Currency" data="[[$variables.get1113185CurrenciesLOVListSDP]]"
+                item-text="CurrencyCode" value="{{ $variables.crewApplicationControlObj.p_currency }}">
+              </oj-select-single>
+
+              <oj-switch label-hint="Timesheet Balancing Require"
+                value="{{ $variables.crewApplicationControlObj.p_timesheet_balancing_require }}"
+                on-value-changed="[[$listeners.switchValue3]]"></oj-switch>
+              <oj-switch label-hint="Payroll Lockdown"
+                value="{{ $variables.crewApplicationControlObj.p_payroll_lockdown }}"
+                on-value-changed="[[$listeners.switchValue]]"></oj-switch>
+            </oj-form-layout>
+            <div class="oj-flex-item oj-flex" style="width:100%;margin-left:50px;">
+              <oj-toolbar chroming="solid" class="oj-flex-item oj-sm-flex-initial">
+               <!-- <oj-button label="Create" class="oj-button-sm"></oj-button>-->
+                <!-- on-oj-action="[[$listeners.buttonAction10]]" -->
+                <oj-button label="Update" class="oj-button-sm" chroming="callToAction"
+                  on-oj-action="[[$listeners.buttonAction12]]"></oj-button>
+                <!-- <oj-button label="Cancel" class="oj-button-sm"></oj-button> -->
+              </oj-toolbar>
+            </div>
+          <!-- </oj-collapsible> -->
+          <!-- </oj-accordion> -->
+        </div>
+        </oj-bind-if>
+        <oj-bind-if test='[[ $variables.selectedTabvalue==="crew-application-maintenance" ]]'>
+          <br>
+        <div class="oj-flex-item">
+          <!-- <oj-accordion class="oj-flex-item oj-sm-12 oj-md-12"> -->
+          <!-- <oj-collapsible id="oj-collapsible--1239369820-2" style="width:100%"> -->
+            <!-- <h6 class="oj-header" slot="header">Crew Application Maintenance</h6> -->
+            <!-- <span class="subheadings" slot="header">Crew Application Maintenance</span> -->
+            <oj-form-layout columns="5" max-columns="5" label-edge="top">
+              <!-- <oj-select-single label-hint="Crew Maintenance Objects" item-text="droptype"
+                value="{{ $variables.ctype }}" data="[[$variables.crewInputListSDP2]]"></oj-select-single> -->
+
+                 <oj-select-single label-hint="Crew Maintenance Objects" item-text="lookup_code"
+                   value="{{ $variables.ctype }}" data="[[$variables.getCrewRiteCrewDefinitionLookupsListSDP4]]"
+                   ></oj-select-single>
+              <div style="padding-top:20px;width:100%">
+                <oj-button label="Search" chroming="callToAction" on-oj-action="[[$listeners.buttonAction5]]"
+                  class="oj-button-sm">
+                </oj-button>
+                 <oj-button label="Add" chroming="callToAction" on-oj-action="[[$listeners.buttonAction6]]"
+                  class="oj-button-sm">
+                </oj-button> 
+                <oj-button label="Save" chroming="callToAction" class="oj-bg-success-20 oj-button-sm"
+                  on-oj-action="[[$listeners.buttonAction14]]" 
+                 ></oj-button>
+              </div>
+            </oj-form-layout>
+
+            <div>
+                <oj-table scroll-policy="loadMoreOnScroll" edit-mode="rowEdit" style="margin-left:45px;width:88vw;"
+                  data="[[ $variables.controlsADP ]]"
+                  columns='[{"headerText":"SNo","field":"id"},
+                  {"headerText":"Look Up","field":"lookup_code","template":"lookup"},
+                    {"headerText":"Meaning","field":"code_meaning","template":"mean"},
+                  {"headerText":"Description","field":"code_description","template":"descr"},                
+                  {"headerText":"Enabled","field":"enabled","template":"flag"}]'
+                  on-oj-before-row-edit="[[$listeners.tableBeforeRowEdit]]"
+                  on-oj-before-row-edit-end="[[$listeners.tableBeforeRowEditEnd]]">
+                  
+
+                <template slot="lookup" data-oj-as="cell">
+                  <oj-bind-if test='[[cell.mode=="navigation"]]'>
+                    <oj-bind-text value="[[cell.data]]"></oj-bind-text>
+                  </oj-bind-if>
+                
+                  <oj-bind-if test='[[cell.mode=="edit"]]'>
+                    <oj-input-text value="{{$variables.controlsVariable.lookup_code}}" class="editable"></oj-input-text>
+                  </oj-bind-if>
+                </template>
+                  <template slot="descr" data-oj-as="cell">
+                  <oj-bind-if test='[[cell.mode=="navigation"]]'>
+                    <oj-bind-text value="[[cell.data]]"></oj-bind-text>
+                  </oj-bind-if>
+                
+                  <oj-bind-if test='[[cell.mode=="edit"]]'>
+                    <oj-input-text value="{{$variables.controlsVariable.code_description}}" class="editable"></oj-input-text>
+                  </oj-bind-if>
+                </template>
+                 <template slot="mean" data-oj-as="cell">
+                  <oj-bind-if test='[[cell.mode=="navigation"]]'>
+                    <oj-bind-text value="[[cell.data]]"></oj-bind-text>
+                  </oj-bind-if>
+                
+                  <oj-bind-if test='[[cell.mode=="edit"]]'>
+                    <oj-input-text value="{{$variables.controlsVariable.code_meaning}}" class="editable"></oj-input-text>
+                  </oj-bind-if>
+                </template>
+                 <template slot="flag" data-oj-as="cell">
+                  <oj-bind-if test='[[cell.mode=="navigation"]]'>
+                    <oj-bind-text value="[[cell.data]]"></oj-bind-text>
+                  </oj-bind-if>
+                
+                  <oj-bind-if test='[[cell.mode=="edit"]]'>
+                      <oj-select-single value="{{$variables.controlsVariable.enabled}}"
+                        data="[[ $variables.enableADP ]]"></oj-select-single>
+                   
+                  </oj-bind-if>
+                </template>
+
+                <!-- <template slot="actions" data-oj-as="cell">
+                  <span class="oj-ux-ico-add-child" style="font-size:20px" on-click="[[$listeners.iconClick]]"></span>
+                </template> -->
+                  
+                  
+                  </oj-table>
+              
+            </div>
+
+
+
+
+            
+            <!-- <oj-form-layout columns="5" label-edge="top" max-columns="5">
+           
+              <oj-bind-if test="[[$variables.showFields &&  $variables.ctype==='Crew Type']]">
+                <oj-input-text label-hint="Crew Scope" value="{{ $variables.PostCrewType.crewType }}"></oj-input-text>
+                <oj-input-text label-hint="Crew Type" value="{{ $variables.PostCrewType.crewScope }}"></oj-input-text>
+                <oj-input-text label-hint="Time Entry Method" value="{{ $variables.PostCrewType.timeEntryMethod }}">
+                </oj-input-text>
+              </oj-bind-if>
+              <oj-bind-if test="[[ $variables.showFields && $variables.ctype==='Hours Type']]">
+                <oj-input-text label-hint="Value" value="{{ $variables.PostHoursType.value }}"></oj-input-text>
+              </oj-bind-if>
+              <!-- <oj-bind-if test="[[$variables.showFields &&  $variables.ctype==='EnableOt']]">
+                <oj-input-text label-hint="otLabel" value="{{ $variables.PostEnableOt.otLabel }}"></oj-input-text>
+                <oj-input-text label-hint="otValue" value="{{ $variables.PostEnableOt.otValue }}"></oj-input-text>
+              </oj-bind-if> 
+              <oj-bind-if test="[[ $variables.showFields && $variables.ctype==='Master Data']]">
+                <oj-input-text label-hint="Contract" value="{{ $variables.PostMasterData.contract }}"></oj-input-text>
+                <oj-input-text label-hint="Customer" value="{{ $variables.PostMasterData.customer }}"></oj-input-text>
+                <oj-input-text label-hint="Project" value="{{ $variables.PostMasterData.project }}"></oj-input-text>
+              </oj-bind-if>
+              <oj-bind-if test="[[$variables.showFields && $variables.ctype==='Rates Source']]">
+                <oj-input-text label-hint="Value" value="{{ $variables.PostRatesSource.value }}">
+                </oj-input-text>
+              </oj-bind-if>
+              <oj-bind-if test="[[$variables.showFields && $variables.ctype==='Resource Role Names']]">
+                <oj-input-text label-hint="RoleName" value="{{ $variables.PostResourceRoleNames.roleName }}">
+                </oj-input-text>
+              </oj-bind-if>
+               Tables Opening Starts From Here  
+              <oj-bind-if test="[[$variables.showTable && $variables.ctype==='Crew Type']]">
+                <!-- <oj-table scroll-policy="loadMoreOnScroll" data="[[$variables.crewTypeListSDP]]"
+                  columns='[{"headerText":"Crew Scope","field":"crewScope"},{"headerText":"Crew Type","field":"crewType"},{"headerText":"Time Entry Method","field":"timeEntryMethod"}]'>
+                </oj-table> -- Business Object -->
+
+                  <!-- <oj-table scroll-policy="loadMoreOnScroll" 
+                  columns='[{"headerText":"Crew Type","field":"lookup_code"}]'
+                   data="[[$variables.getCrewRiteLookupDetailsListSDP4]]">
+                </oj-table>
+              </oj-bind-if>
+              <oj-bind-if test="[[$variables.showTable && $variables.ctype==='Hours Type']]">-->
+                
+                <!-- <oj-table scroll-policy="loadMoreOnScroll" data="[[$variables.hoursTypeListSDP]]"
+                  columns='[{"headerText":"Value","field":"value"}]'></oj-table> Business Object-->
+                  <!--   <oj-table scroll-policy="loadMoreOnScroll" 
+                  columns='[{"headerText":"Value","field":"lookup_code"}]'
+                       data="[[$variables.getCrewRiteLookupDetailsListSDP]]"></oj-table>
+              </oj-bind-if>-->
+              <!-- <oj-bind-if test="[[$variables.showTable &&  $variables.ctype==='EnableOt']]">
+                <oj-table scroll-policy="loadMoreOnScroll" data="[[$variables.enableOtListSDP]]"
+                  columns='[{"headerText":"otLabel","field":"otLabel"},{"headerText":"otValue","field":"otValue"}]'>
+                </oj-table>
+              </oj-bind-if> -->
+              <!-- <oj-bind-if test="[[$variables.showTable && $variables.ctype==='Master Data']]">
+                <oj-table scroll-policy="loadMoreOnScroll" data="[[$variables.masterDataListSDP]]"
+                  columns='[{"headerText":"Customer","field":"customer"},{"headerText":"Contract","field":"contract"},{"headerText":"Project","field":"project"}]'>
+                </oj-table>
+              </oj-bind-if>-->
+             <!-- <oj-bind-if test="[[$variables.showTable && $variables.ctype==='Rates Source']]">
+                 <oj-table scroll-policy="loadMoreOnScroll" data="[[$variables.rateSourceADP]]"
+                  columns='[{"headerText":"Source","field":"value"}]'></oj-table>--Business Object -->
+
+                 <!--  <oj-table scroll-policy="loadMoreOnScroll" 
+                  columns='[{"headerText":"Source","field":"lookup_code"}]'
+                     data="[[$variables.getCrewRiteLookupDetailsListSDP3]]"></oj-table>
+              </oj-bind-if>
+              <oj-bind-if test="[[$variables.showTable && $variables.ctype==='Resource Role Names']]">-->
+                <!-- <oj-table scroll-policy="loadMoreOnScroll" data="[[$variables.resourceRoleNamesListSDP]]"
+                  columns='[{"headerText":"Role Name","field":"roleName"}]'></oj-table> Business Object-->
+
+                  <!--  <oj-table scroll-policy="loadMoreOnScroll" 
+                  columns='[{"headerText":"Role Name","field":"lookup_code"}]'
+                     data="[[$variables.getCrewRiteLookupDetailsListSDP2]]"></oj-table>
+              </oj-bind-if>
+            </oj-form-layout> -->
+         
+         
+          <!-- </oj-collapsible> -->
+          <!-- </oj-accordion> -->
+ 
+
+      </div>
+    
+    <!-- <div class="oj-flex-item oj-flex oj-sm-margin-2x-top " style="width:100%">
+    <span class="subheadings">Cloud App</span>
+  </div>
+  <div class="oj-flex-item oj-flex oj-sm-justify-content-center oj-sm-margin-3x-top">
+    <oj-form-layout label-edge="top" columns="5" style="width:100%" max-columns="5">
+      <oj-input-text label-hint="App URL" :title='[[ $application.variables.HelpEnabled ? "Enter App URl" : "" ]]'>
+      </oj-input-text>
+      <oj-input-text label-hint="User Name" :title='[[ $application.variables.HelpEnabled ? "Enter user Name" : "" ]]'>
+      </oj-input-text>
+      <oj-input-password label-hint="Password" :title='[[ $application.variables.HelpEnabled ? "Enter password" : "" ]]'></oj-input-password>
+    </oj-form-layout>
+  </div>
+  <div class="oj-flex-item oj-flex oj-sm-margin-2x-top " style="width:100%">
+    <span class="subheadings">SFTP</span>
+  </div>
+  <div class="oj-flex-item oj-flex oj-sm-justify-content-center oj-sm-margin-3x-top">
+    <oj-form-layout label-edge="top" columns="5" style="width:100%" max-columns="5">
+      <oj-input-text label-hint="Host" :title='[[ $application.variables.HelpEnabled ? "Enter Host" : "" ]]'>
+      </oj-input-text>
+      <oj-input-text label-hint="Port" :title='[[ $application.variables.HelpEnabled ? "Enter Port" : "" ]]'>
+      </oj-input-text>
+      <oj-input-text label-hint="User Name":title='[[ $application.variables.HelpEnabled ? "Enter User Name" : "" ]]'>
+      </oj-input-text>
+      <oj-input-password label-hint="Password" :title='[[ $application.variables.HelpEnabled ? "Enter Password" : "" ]]'></oj-input-password>
+    </oj-form-layout>
+  </div>-->
+    <!-- </div> -->
+  <!-- </div> -->
+</oj-sp-welcome-page>
+<oj-dialog id="custom-dialog" dialog-title="Choose Dates">
+
+  <div slot="body">
+
+    <oj-form-layout columns="2" label-edge="top" style="">
+
+      <oj-input-date label-hint="From date"
+        value="{{ $variables.crewApplicationControlObj.p_payroll_lockdown_fromdate }}"></oj-input-date>
+
+      <oj-input-date label-hint="To Date" value="{{ $variables.crewApplicationControlObj.p_payroll_lockdown_todate }}">
+      </oj-input-date>
+
+
+
+    </oj-form-layout>
+
+  </div>
+
+  <div slot="footer">
+
+    <oj-button label="Save" on-oj-action="[[$listeners.buttonAction8]]"></oj-button>
+
+    <oj-button label="Close" on-oj-action="[[$listeners.buttonAction9]]"></oj-button>
+
+  </div>
+
+</oj-dialog>
+
+
+<oj-dialog dialog-title="Loading....." id="syncDialog" class="" style="width: 300px; height: 80px;"
+  cancel-behavior="icon">
+  <div slot="body">
+    <div class="oj-flex-item oj-sm-margin-5x-top">
+      <oj-bind-if test="[[ $variables.disableSync ]]">
+        <span style="font-size:18px;color:#006AA2;font-weight:600">Syncing in Progress .....</span>
+      </oj-bind-if>
+      <oj-bind-if test="[[ $variables.disableDownload ]]">
+        <span style="font-size:18px;color:#006AA2;font-weight:600">Download in Progress .....</span>
+      </oj-bind-if>
+      <br/>
+      <oj-progress-bar value="-1" class="oj-sm-margin-3x-top"></oj-progress-bar>
+    </div>
+  </div>
+</oj-dialog>
+<oj-dialog dialog-title="Timesheet Balancing Require" id="timeSheetBalDailog">
+  <div slot="body">
+    <div style="margin:15px 15px 15px 0;font-weight:600">Timesheet Balancing Require</div>
+    <div class="oj-flex">
+      <div class="oj-flex-item oj-sm-12 oj-md-12">
+        <oj-form-layout columns="2" label-edge="top">
+          <oj-select-single label-hint="Source" data="[[$variables.getCrewRiteCrewDefinitionLookupsListSDP3]]"
+            item-text="lookup_code" value="{{ $variables.crewApplicationControlObj.p_balancing_source }}"></oj-select-single>
+          <oj-input-text label-hint="Path" value="{{ $variables.crewApplicationControlObj.p_directory_path }}"></oj-input-text>
+          <oj-input-text label-hint="Username" value="{{ $variables.crewApplicationControlObj.p_ftp_user_name }}"></oj-input-text>
+          <oj-input-password label-hint="Password" value="{{ $variables.crewApplicationControlObj.p_ftp_password }}"></oj-input-password>
+        </oj-form-layout>
+      </div>
+    </div>
+  </div>
+  <div slot="footer">   
+    <oj-button chroming="callToAction" on-oj-action="[[$listeners.buttonAction13]]">Close</oj-button>
+  </div>
+</oj-dialog>
+
