@@ -1,0 +1,188 @@
+{
+    "backends": {
+        "ics": {
+            "serviceType": "ics",
+            "description": "casey.brown",
+            "servers": [
+                {
+                    "url": "vb-catalog://backends.tenant/ics",
+                    "description": "Overridden Integration Server",
+                    "x-vb": {
+                        "authentication": {
+                            "authenticated": {
+                                "type": "basic",
+                                "credentials": "vb_b89c612d-7dcb-469f-aade-3e99379ee285"
+                            }
+                        },
+                        "forceProxy": "cors",
+                        "anonymousAccess": false
+                    }
+                }
+            ]
+        },
+        "TimeRite_Ords": {
+            "servers": [
+                {
+                    "url": "http://129.158.228.138:8080/ords/timerite/timerite",
+                    "description": "Ords Timerite",
+                    "x-vb": {
+                        "forceProxy": "cors",
+                        "anonymousAccess": true
+                    }
+                }
+            ]
+        },
+        "vbprocess": {
+            "serviceType": "vbprocess",
+            "servers": [
+                {
+                    "url": "vb-catalog://backends.tenant/vbprocess",
+                    "description": "Player Target Server",
+                    "x-vb": {
+                        "headers": {
+                            "pcs_mode": "dev"
+                        }
+                    }
+                },
+                {
+                    "url": "vb-catalog://backends.tenant/vbprocess",
+                    "description": "Default Target Server",
+                    "x-vb": {}
+                }
+            ]
+        },
+        "hcmRestApi": {
+            "serviceType": "adf-describe",
+            "serviceTypeProperties": {
+                "faCatalogAppId": "REST-hcmRestApp"
+            },
+            "description": "Human Capital Management",
+            "headers": {
+                "REST-Framework-Version": "4"
+            },
+            "transforms": {
+                "path": "vb/BusinessObjectsTransforms"
+            },
+            "servers": [
+                {
+                    "url": "vb-catalog://backends.tenant/hcmRestApi",
+                    "description": "Overridden Default Server",
+                    "x-vb": {
+                        "authentication": {
+                            "authenticated": {
+                                "type": "basic",
+                                "credentials": "vb_0855f7a0-08cf-42f0-b2aa-3fded1b46df3"
+                            },
+                            "anonymous": {
+                                "type": "as_authenticated_user"
+                            }
+                        },
+                        "anonymousAccess": true
+                    }
+                }
+            ]
+        },
+        "fscmRestApi": {
+            "serviceType": "adf-describe",
+            "serviceTypeProperties": {
+                "faCatalogAppId": "REST-fscmRestApp"
+            },
+            "description": "Enterprise Resource Planning and Supply Chain",
+            "headers": {
+            },
+            "transforms": {
+                "path": "vb/BusinessObjectsTransforms"
+            },
+            "servers": [
+                {
+                    "url": "vb-catalog://backends.tenant/fscmRestApi",
+                    "description": "Overridden Default Server",
+                    "x-vb": {
+                        "authentication": {
+                            "authenticated": {
+                                "type": "basic",
+                                "credentials": "vb_1f353930-8854-42ec-a0ca-b040152ab775"
+                            },
+                            "anonymous": {
+                                "type": "basic",
+                                "credentials": "vb_ac7884bf-209d-476f-8c3f-834946aff285"
+                            }
+                        },
+                        "anonymousAccess": true
+                    }
+                }
+            ]
+        },
+        "MobileORDS": {
+            "servers": [
+                {
+                    "url": "http://129.158.228.138:8080/ords/timerite/mobileapp",
+                    "description": "Ords Timerite",
+                    "x-vb": {
+                        "forceProxy": "cors"
+                    }
+                }
+            ]
+        },
+        "IcsProject": {
+            "description": "IcsProject",
+            "servers": [
+                {
+                    "url": "https://riteoicdev-idjm2yj32zav-ia.integration.us-ashburn-1.ocp.oraclecloud.com/ic/api/integration/v2/flows/rest",
+                    "description": "Ic Api",
+                    "x-vb": {
+                        "authentication": {
+                            "authenticated": {
+                                "type": "basic",
+                                "credentials": "vb_06d1e63d-e66a-4662-bdce-4d0fef0e4dd5"
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "CrewRite_ORDS": {
+            "servers": [
+                {
+                    "url": "http://129.158.228:8080/ords/timerite/CrewRite",
+                    "description": "CrewRite ORDS",
+                    "x-vb": {
+                        "anonymousAccess": true
+                    }
+                }
+            ]
+        },
+        "CrewRite": {
+            "servers": [
+                {
+                    "url": "http://129.158.228.138:8080/ords/timerite/CrewRite",
+                    "description": "129.158.228.138",
+                    "x-vb": {
+                        "anonymousAccess": true
+                    }
+                }
+            ]
+        },
+        "CrewRite_OIC": {
+            "servers": [
+                {
+                    "url": "https://riteoicdev-idjm2yj32zav-ia.integration.us-ashburn-1.ocp.oraclecloud.com/ic/api/integration/v2/flows/rest/project",
+                    "description": "Riteoicdev Idjm2yj32zav Ia Integration Us Ashburn 1 Ocp Oraclecloud Com",
+                    "x-vb": {
+                        "authentication": {
+                            "authenticated": {
+                                "type": "basic",
+                                "credentials": "vb_b94422ab-3cb2-4eb0-9205-16c9728ffdb0"
+                            },
+                            "anonymous": {
+                                "type": "basic",
+                                "credentials": "vb_bba55a29-edf9-474f-9ff1-51845afaa9f8"
+                            }
+                        },
+                        "anonymousAccess": true
+                    }
+                }
+            ]
+        }
+      }
+}
