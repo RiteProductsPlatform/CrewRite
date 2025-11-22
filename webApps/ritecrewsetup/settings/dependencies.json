@@ -1,0 +1,20 @@
+{
+  "component-dependencies": {
+    "oj-sp": {
+      "version": "2410.0.3",
+      "components": {
+        "messages-banner": "2410.0.3",
+        "messages-toast": "2410.0.3",
+        "welcome-page": "2410.0.3",
+        "collection-container": "2410.0.3",
+        "collection-toolbar": "2410.0.3"
+      }
+    },
+    "oj-dynamic": {
+      "version": "16.1.6",
+      "components": {
+        "table": "16.1.6"
+      }
+    }
+  }
+ }
