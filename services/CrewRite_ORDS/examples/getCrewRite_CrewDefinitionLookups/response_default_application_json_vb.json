@@ -1,0 +1,131 @@
+{
+    "items": [
+        {
+            "lookup_code": "Crew Type",
+            "code_meaning": "Crew Type",
+            "code_description": "Crew Type",
+            "enabled": "Y",
+            "lookup_type_id": 21
+        },
+        {
+            "lookup_code": "Week Details",
+            "code_meaning": "Week Details",
+            "code_description": "Week Details",
+            "enabled": "Y",
+            "lookup_type_id": 21
+        },
+        {
+            "lookup_code": "Balancing Source",
+            "code_meaning": "Balancing Source",
+            "code_description": "Balancing Source",
+            "enabled": "Y",
+            "lookup_type_id": 21
+        },
+        {
+            "lookup_code": "OT Type",
+            "code_meaning": "OT Type",
+            "code_description": "OT Type",
+            "enabled": "Y",
+            "lookup_type_id": 21
+        },
+        {
+            "lookup_code": "Crew Scope",
+            "code_meaning": "Crew Scope",
+            "code_description": "Crew Scope",
+            "enabled": "Y",
+            "lookup_type_id": 21
+        },
+        {
+            "lookup_code": "Frequency",
+            "code_meaning": "Frequency",
+            "code_description": "Frequency",
+            "enabled": "Y",
+            "lookup_type_id": 21
+        },
+        {
+            "lookup_code": "Entry Method",
+            "code_meaning": "Entry Method",
+            "code_description": "Entry Method",
+            "enabled": "Y",
+            "lookup_type_id": 21
+        },
+        {
+            "lookup_code": "Yes_No",
+            "code_meaning": "Yes_No",
+            "code_description": "Yes_No",
+            "enabled": "Y",
+            "lookup_type_id": 21
+        },
+        {
+            "lookup_code": "Hours Type",
+            "code_meaning": "Hours Type",
+            "code_description": "Hours Type",
+            "enabled": "Y",
+            "lookup_type_id": 21
+        },
+        {
+            "lookup_code": "Time Entry Method",
+            "code_meaning": "Time Entry Method",
+            "code_description": "Time Entry Method",
+            "enabled": "Y",
+            "lookup_type_id": 21
+        },
+        {
+            "lookup_code": "Client ERP System",
+            "code_meaning": "Client ERP System",
+            "code_description": "Client ERP System",
+            "enabled": "Y",
+            "lookup_type_id": 21
+        },
+        {
+            "lookup_code": "Rate Source",
+            "code_meaning": "Rate Source",
+            "code_description": "Rate Source",
+            "enabled": "Y",
+            "lookup_type_id": 21
+        },
+        {
+            "lookup_code": "Layout Type",
+            "code_meaning": "Layout Type",
+            "code_description": "Layout Type",
+            "enabled": "Y",
+            "lookup_type_id": 21
+        },
+        {
+            "lookup_code": "Crew Measure",
+            "code_meaning": "Crew Measure",
+            "code_description": "Crew Measure",
+            "enabled": "Y",
+            "lookup_type_id": 21
+        },
+        {
+            "lookup_code": "Time Card Balancing",
+            "code_meaning": "Time Card Balancing",
+            "code_description": "Time Card Balancing",
+            "enabled": "Y",
+            "lookup_type_id": 21
+        }
+    ],
+    "hasMore": false,
+    "limit": 25,
+    "offset": 0,
+    "count": 15,
+    "links": [
+        {
+            "rel": "self",
+            "href": "http://129.158.228.138:8080/ords/timerite/CrewRite/CrewRite_CrewDefinitionLookups?p_lookup_type=CREW_MAINTENANCE_OBJECTS"
+        },
+        {
+            "rel": "edit",
+            "href": "http://129.158.228.138:8080/ords/timerite/CrewRite/CrewRite_CrewDefinitionLookups?p_lookup_type=CREW_MAINTENANCE_OBJECTS"
+        },
+        {
+            "rel": "describedby",
+            "href": "http://129.158.228.138:8080/ords/timerite/metadata-catalog/CrewRite/item"
+        },
+        {
+            "rel": "first",
+            "href": "http://129.158.228.138:8080/ords/timerite/CrewRite/CrewRite_CrewDefinitionLookups?p_lookup_type=CREW_MAINTENANCE_OBJECTS"
+        }
+    ]
+}

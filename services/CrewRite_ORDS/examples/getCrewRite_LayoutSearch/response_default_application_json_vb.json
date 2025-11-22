@@ -1,0 +1,37 @@
+{
+    "items": [
+        {
+            "layout_name": "Cianbro Hourly Layout"
+        },
+        {
+            "layout_name": "Test5"
+        },
+        {
+            "layout_name": "Test6"
+        },
+        {
+            "layout_name": "Test7"
+        },
+        {
+            "layout_name": "Test8"
+        }
+    ],
+    "hasMore": false,
+    "limit": 25,
+    "offset": 0,
+    "count": 5,
+    "links": [
+        {
+            "rel": "self",
+            "href": "http://129.158.228.138:8080/ords/timerite/CrewRite/CrewRite_LayoutSearch"
+        },
+        {
+            "rel": "describedby",
+            "href": "http://129.158.228.138:8080/ords/timerite/metadata-catalog/CrewRite/item"
+        },
+        {
+            "rel": "first",
+            "href": "http://129.158.228.138:8080/ords/timerite/CrewRite/CrewRite_LayoutSearch"
+        }
+    ]
+}

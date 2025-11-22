@@ -1,0 +1,13 @@
+{
+"p_combination_id" : 1,
+"p_combination_name" : "Test",
+"p_project" : "Proj1",
+"p_task_date" : "31/12/2025",
+"p_shift" : "Day",
+"p_location_tax_jurisdiction" : "Local 1",
+"p_work_package" : "work1",
+"p_department" : "Dept1",
+"p_cost_category" : "cost1",
+"p_time_type" : "Weekly",
+"p_hours" : "8"
+}

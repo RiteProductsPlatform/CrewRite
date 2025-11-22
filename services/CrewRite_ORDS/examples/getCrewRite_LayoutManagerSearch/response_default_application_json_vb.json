@@ -1,0 +1,40 @@
+{
+    "items": [
+        {
+            "layout_name": "Cianbro Hourly Layout",
+            "layout_id": 1,
+            "start_date": "2025-01-01T00:00:00Z",
+            "end_date": "2025-12-31T00:00:00Z",
+            "field_label": "Location",
+            "field_type": "Character",
+            "is_required": "Y"
+        },
+        {
+            "layout_name": "Cianbro Hourly Layout",
+            "layout_id": 1,
+            "start_date": "2025-01-01T00:00:00Z",
+            "end_date": "2025-12-31T00:00:00Z",
+            "field_label": "Shift",
+            "field_type": "Character",
+            "is_required": "Y"
+        }
+    ],
+    "hasMore": false,
+    "limit": 25,
+    "offset": 0,
+    "count": 2,
+    "links": [
+        {
+            "rel": "self",
+            "href": "http://129.158.228.138:8080/ords/timerite/CrewRite/CrewRite_LayoutManagerSearch?p_layout_name=Cianbro+Hourly+Layout"
+        },
+        {
+            "rel": "describedby",
+            "href": "http://129.158.228.138:8080/ords/timerite/metadata-catalog/CrewRite/item"
+        },
+        {
+            "rel": "first",
+            "href": "http://129.158.228.138:8080/ords/timerite/CrewRite/CrewRite_LayoutManagerSearch?p_layout_name=Cianbro+Hourly+Layout"
+        }
+    ]
+}

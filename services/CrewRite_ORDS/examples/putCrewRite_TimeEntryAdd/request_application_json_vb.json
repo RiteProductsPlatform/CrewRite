@@ -1,0 +1,27 @@
+{
+"sun_in_time  ":"" ,
+"sun_out_time ":"",
+"mon_in_time  ":"",
+"mon_out_time ":"",
+"tue_in_time  ":"",
+"tue_out_time ":"",
+"wed_in_time  ":"",
+"wed_out_time ":"",
+"thu_in_time  ":"",
+"thu_out_time ":"",
+"fri_in_time  ":"",
+"fri_out_time ":"",
+"sat_in_time  ":"",
+"sat_out_time ":"",
+"last_updated_by":"" ,
+"last_updated_date":"",
+"crewsetup_line_id":"",
+"installed_qty":""
+"sun_total_hours":"",
+"mon_total_hours":"",
+"tue_total_hours":"",
+"wed_total_hours":"",
+"thu_total_hours":"",
+"fri_total_hours":"",
+"sat_total_hours":""
+}

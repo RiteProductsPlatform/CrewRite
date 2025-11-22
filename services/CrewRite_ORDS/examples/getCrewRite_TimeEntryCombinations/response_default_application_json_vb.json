@@ -1,0 +1,96 @@
+{
+    "items": [
+        {
+            "combination_name": "Combination Rite",
+            "project": "2045-Centerpoint - Houston Metro Power Restoration",
+            "task_date": null,
+            "shift": null,
+            "location_tax_jurisdiction": "Location 1",
+            "work_package": "W1",
+            "department": null,
+            "cost_category": null,
+            "time_type": null,
+            "hours": "4",
+            "actions": null,
+            "attribute1": null,
+            "attribute2": null,
+            "attribute3": null,
+            "attribute4": null,
+            "attribute5": null,
+            "attribute6": null,
+            "attribute7": null,
+            "attribute8": null,
+            "attribute9": null,
+            "attribute10": null,
+            "created_by": "Dinesh Neredu",
+            "creation_date": "18-NOV-25",
+            "last_updated_by": "Dinesh Neredu",
+            "last_update_date": "18-NOV-25",
+            "combination_id": 46,
+            "crewsetup_id": 992,
+            "crew_name": "Dinesh 1",
+            "project_id": 300001756680804,
+            "project_number": "2045",
+            "task_id": 100003060645693,
+            "task_number": "WP2.1",
+            "task_name": "5"
+        },
+        {
+            "combination_name": "Combination Rite 2",
+            "project": "Pinnacle Park Project-Pinnacle Park Project",
+            "task_date": null,
+            "shift": null,
+            "location_tax_jurisdiction": "Location 2",
+            "work_package": "W2",
+            "department": null,
+            "cost_category": null,
+            "time_type": null,
+            "hours": "6",
+            "actions": null,
+            "attribute1": null,
+            "attribute2": null,
+            "attribute3": null,
+            "attribute4": null,
+            "attribute5": null,
+            "attribute6": null,
+            "attribute7": null,
+            "attribute8": null,
+            "attribute9": null,
+            "attribute10": null,
+            "created_by": "Dinesh Neredu",
+            "creation_date": "18-NOV-25",
+            "last_updated_by": "Dinesh Neredu",
+            "last_update_date": "18-NOV-25",
+            "combination_id": 47,
+            "crewsetup_id": 992,
+            "crew_name": "Dinesh 1",
+            "project_id": 300001700251956,
+            "project_number": "Pinnacle Park Project",
+            "task_id": 100002950551966,
+            "task_number": "1",
+            "task_name": "Site Analysis"
+        }
+    ],
+    "hasMore": false,
+    "limit": 25,
+    "offset": 0,
+    "count": 2,
+    "links": [
+        {
+            "rel": "self",
+            "href": "http://129.158.228.138:8080/ords/timerite/CrewRite/CrewRite_TimeEntryCombinations?p_crewsetup_id=992"
+        },
+        {
+            "rel": "edit",
+            "href": "http://129.158.228.138:8080/ords/timerite/CrewRite/CrewRite_TimeEntryCombinations?p_crewsetup_id=992"
+        },
+        {
+            "rel": "describedby",
+            "href": "http://129.158.228.138:8080/ords/timerite/metadata-catalog/CrewRite/item"
+        },
+        {
+            "rel": "first",
+            "href": "http://129.158.228.138:8080/ords/timerite/CrewRite/CrewRite_TimeEntryCombinations?p_crewsetup_id=992"
+        }
+    ]
+}

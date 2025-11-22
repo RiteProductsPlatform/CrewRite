@@ -1,0 +1,151 @@
+{
+    "items": [
+        {
+            "person_name": "Doyle, Kristine",
+            "person_number": "675",
+            "person_id": 300000049307089
+        },
+        {
+            "person_name": "Shoudy, Elaine",
+            "person_number": "658",
+            "person_id": 300000049264961
+        },
+        {
+            "person_name": "DuPont, Antoine",
+            "person_number": "795",
+            "person_id": 300000050450814
+        },
+        {
+            "person_name": "Chen, Xi",
+            "person_number": "764",
+            "person_id": 300000049903576
+        },
+        {
+            "person_name": "Shiffer, Sally",
+            "person_number": "1997",
+            "person_id": 300000095985916
+        },
+        {
+            "person_name": "Vos, Wim",
+            "person_number": "333",
+            "person_id": 300000048939690
+        },
+        {
+            "person_name": "Simon, Cheryl",
+            "person_number": "306",
+            "person_id": 300000048645267
+        },
+        {
+            "person_name": "Rodriguez Salgado, Carlos",
+            "person_number": "321",
+            "person_id": 300000048933127
+        },
+        {
+            "person_name": "Melati, Angelo",
+            "person_number": "610",
+            "person_id": 300000049144269
+        },
+        {
+            "person_name": "Dunn, Elaine",
+            "person_number": "860",
+            "person_id": 300000050605042
+        },
+        {
+            "person_name": "Roberts, Gia",
+            "person_number": "1185",
+            "person_id": 300000076219031
+        },
+        {
+            "person_name": "Powell, Bruce",
+            "person_number": "1202",
+            "person_id": 300000076219378
+        },
+        {
+            "person_name": "Munoz, Oscar",
+            "person_number": "1541",
+            "person_id": 300000085352481
+        },
+        {
+            "person_name": "Ellis, Margaret",
+            "person_number": "1825",
+            "person_id": 300000087956713
+        },
+        {
+            "person_name": "McKendrick, Heather",
+            "person_number": "1753",
+            "person_id": 300000087918537
+        },
+        {
+            "person_name": "Ross, Steve",
+            "person_number": "2242",
+            "person_id": 300000106410541
+        },
+        {
+            "person_name": "Ayukhanova, Aigul",
+            "person_number": "2360",
+            "person_id": 300000107728579
+        },
+        {
+            "person_name": "Park, Sinhye",
+            "person_number": "2467",
+            "person_id": 300000107928726
+        },
+        {
+            "person_name": "Shin, DongYeop",
+            "person_number": "2472",
+            "person_id": 300000107928874
+        },
+        {
+            "person_name": "Zharkynbekova, Zhibek",
+            "person_number": "2362",
+            "person_id": 300000107728657
+        },
+        {
+            "person_name": "Yoon, Jongsin",
+            "person_number": "2455",
+            "person_id": 300000107928311
+        },
+        {
+            "person_name": "Chou, Kai Ling",
+            "person_number": "224",
+            "person_id": 300000048109972
+        },
+        {
+            "person_name": "Kalil, Manesh",
+            "person_number": "198",
+            "person_id": 300000048083868
+        },
+        {
+            "person_name": "Mitra, Gopi",
+            "person_number": "5573",
+            "person_id": 100000599299094
+        },
+        {
+            "person_name": "Uesugi, Riko",
+            "person_number": "126",
+            "person_id": 300000048025918
+        }
+    ],
+    "hasMore": true,
+    "limit": 25,
+    "offset": 0,
+    "count": 25,
+    "links": [
+        {
+            "rel": "self",
+            "href": "http://129.158.228.138:8080/ords/timerite/CrewRite/CrewRite_ResourceDetails"
+        },
+        {
+            "rel": "describedby",
+            "href": "http://129.158.228.138:8080/ords/timerite/metadata-catalog/CrewRite/item"
+        },
+        {
+            "rel": "first",
+            "href": "http://129.158.228.138:8080/ords/timerite/CrewRite/CrewRite_ResourceDetails"
+        },
+        {
+            "rel": "next",
+            "href": "http://129.158.228.138:8080/ords/timerite/CrewRite/CrewRite_ResourceDetails?offset=25"
+        }
+    ]
+}

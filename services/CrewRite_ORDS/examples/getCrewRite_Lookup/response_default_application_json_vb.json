@@ -1,0 +1,40 @@
+{
+    "items": [
+        {
+            "lookup_type_id": 29,
+            "lookup_type": "CREW_RITE_LAYOUT_TYPE",
+            "type_meaning": null,
+            "type_description": null,
+            "module": null,
+            "lookup_config_level": null,
+            "lookup_code": "TIME_ENTRY",
+            "code_meaning": "Time Entry",
+            "code_description": "Time Entry",
+            "enabled": "Y",
+            "start_date": "01-Jan-1951",
+            "end_date": null,
+            "created_by": null,
+            "creation_date": "04-NOV-2025",
+            "last_updated_by": null,
+            "last_update_date": "04-NOV-2025"
+        }
+    ],
+    "hasMore": false,
+    "limit": 25,
+    "offset": 0,
+    "count": 1,
+    "links": [
+        {
+            "rel": "self",
+            "href": "http://129.158.228.138:8080/ords/timerite/CrewRite/CrewRite_Lookup"
+        },
+        {
+            "rel": "describedby",
+            "href": "http://129.158.228.138:8080/ords/timerite/metadata-catalog/CrewRite/item"
+        },
+        {
+            "rel": "first",
+            "href": "http://129.158.228.138:8080/ords/timerite/CrewRite/CrewRite_Lookup"
+        }
+    ]
+}

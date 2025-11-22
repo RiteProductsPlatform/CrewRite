@@ -1,0 +1,66 @@
+{
+    "items": [
+        {
+            "lookup_type_id": 2,
+            "lookup_type": "CrewRite_hoursTypeList",
+            "type_meaning": null,
+            "type_description": null,
+            "type_enabled": null,
+            "type_disabled": null,
+            "type_created_by": null,
+            "type_creation_date": "2025-11-05",
+            "type_last_updated_by": null,
+            "type_last_update_date": "2025-11-05",
+            "lookup_code_id": 4,
+            "lookup_code": "Billable",
+            "code_meaning": null,
+            "code_description": null,
+            "code_enabled": null,
+            "code_disabled": null,
+            "code_created_by": null,
+            "code_creation_date": "2025-11-05",
+            "code_last_updated_by": null,
+            "code_last_update_date": "2025-11-05"
+        },
+        {
+            "lookup_type_id": 2,
+            "lookup_type": "CrewRite_hoursTypeList",
+            "type_meaning": null,
+            "type_description": null,
+            "type_enabled": null,
+            "type_disabled": null,
+            "type_created_by": null,
+            "type_creation_date": "2025-11-05",
+            "type_last_updated_by": null,
+            "type_last_update_date": "2025-11-05",
+            "lookup_code_id": 5,
+            "lookup_code": "Non-Billable",
+            "code_meaning": null,
+            "code_description": null,
+            "code_enabled": null,
+            "code_disabled": null,
+            "code_created_by": null,
+            "code_creation_date": "2025-11-05",
+            "code_last_updated_by": null,
+            "code_last_update_date": "2025-11-05"
+        }
+    ],
+    "hasMore": false,
+    "limit": 25,
+    "offset": 0,
+    "count": 2,
+    "links": [
+        {
+            "rel": "self",
+            "href": "http://129.158.228.138:8080/ords/timerite/CrewRite/CrewRite_LookupDetails?p_lookup_type=CrewRite_hoursTypeList"
+        },
+        {
+            "rel": "describedby",
+            "href": "http://129.158.228.138:8080/ords/timerite/metadata-catalog/CrewRite/item"
+        },
+        {
+            "rel": "first",
+            "href": "http://129.158.228.138:8080/ords/timerite/CrewRite/CrewRite_LookupDetails?p_lookup_type=CrewRite_hoursTypeList"
+        }
+    ]
+}

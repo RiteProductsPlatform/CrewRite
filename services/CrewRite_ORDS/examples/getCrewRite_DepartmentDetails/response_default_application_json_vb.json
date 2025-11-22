@@ -1,0 +1,101 @@
+{
+    "items": [
+        {
+            "department": "Recruitment AU"
+        },
+        {
+            "department": "HCM DE"
+        },
+        {
+            "department": "Database Administration Prg US"
+        },
+        {
+            "department": "Human Resource"
+        },
+        {
+            "department": "Nursing HC US"
+        },
+        {
+            "department": "Human Resources LU"
+        },
+        {
+            "department": "Human Resources IL"
+        },
+        {
+            "department": "Finance US"
+        },
+        {
+            "department": "Receivables CH (Supremo)"
+        },
+        {
+            "department": "Consulting East US"
+        },
+        {
+            "department": "Water Utility Prg US"
+        },
+        {
+            "department": "Human Resources US Fed"
+        },
+        {
+            "department": "Procurement FR"
+        },
+        {
+            "department": "Remuneration JP"
+        },
+        {
+            "department": "Support Prg UK"
+        },
+        {
+            "department": "Talent Management NZ"
+        },
+        {
+            "department": "Procurement US Fed"
+        },
+        {
+            "department": "Pro_man_d"
+        },
+        {
+            "department": "Sales East US"
+        },
+        {
+            "department": "Legal UK"
+        },
+        {
+            "department": "Receivables PL"
+        },
+        {
+            "department": "Labor Unit"
+        },
+        {
+            "department": "Finance & Administration"
+        },
+        {
+            "department": "Faculty of Arts & Education"
+        },
+        {
+            "department": "Museum US Fed"
+        }
+    ],
+    "hasMore": true,
+    "limit": 25,
+    "offset": 0,
+    "count": 25,
+    "links": [
+        {
+            "rel": "self",
+            "href": "http://129.158.228.138:8080/ords/timerite/CrewRite/CrewRite_DepartmentDetails"
+        },
+        {
+            "rel": "describedby",
+            "href": "http://129.158.228.138:8080/ords/timerite/metadata-catalog/CrewRite/item"
+        },
+        {
+            "rel": "first",
+            "href": "http://129.158.228.138:8080/ords/timerite/CrewRite/CrewRite_DepartmentDetails"
+        },
+        {
+            "rel": "next",
+            "href": "http://129.158.228.138:8080/ords/timerite/CrewRite/CrewRite_DepartmentDetails?offset=25"
+        }
+    ]
+}
