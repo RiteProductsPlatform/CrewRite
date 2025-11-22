@@ -1,0 +1,2030 @@
+<div class="oj-flex oj-sm-12 oj-md-12">
+  <oj-sp-welcome-page id="oj-sp-wp1"
+    illustration-background="[[ require.toUrl($page.variables.illustrationBackground) ]]"
+    illustration-foreground="[[ require.toUrl($page.variables.illustrationForeground) ]]"
+    display-options.image-stretch="[[ $page.variables.imageStretch ]]"
+    display-options.mobile-image="[[ $page.variables.mobileImage ]]" display-options.responsive-padding="on"
+    page-title="Crew Definition" background-color="dark-pebble">
+    <div class="oj-flex oj-panel oj-panel-shadow-md" style="margin-top:-48px">
+      <oj-dialog dialog-title="" id="loadingDialog" class="myloader" style="width: 350px">
+        <div slot="body">
+          <div class="oj-flex-item">
+            <span style="font-size:20px;color:#006AA2;font-weight:600;margin-top:-2vh">Loading .....</span>
+            <br />
+            <oj-progress-bar value="-1" class="oj-sm-margin-3x-top"></oj-progress-bar>
+          </div>
+        </div>
+      </oj-dialog>
+      
+      <oj-popup id="action">
+        <oj-form-layout columns="1" max-columns="1" label-edge="top">
+          <oj-button label="Edit Combination" chroming="callToAction" class="oj-button-sm"
+            on-oj-action="[[$listeners.buttonAction33]]">
+            <span class="oj-ux-ico-edit" slot="startIcon"></span>
+          </oj-button>
+          <oj-button chroming="danger" class="oj-button-sm" label="Delete Combination"
+            on-oj-action="[[$listeners.buttonAction34]]">
+            <span class="oj-ux-ico-trash" slot="startIcon"></span>
+          </oj-button>
+        </oj-form-layout>
+      </oj-popup>
+
+      <oj-dialog id="combinationForm" style="width:80%">
+
+        <div slot="body">
+          <br>
+          <oj-form-layout columns="4" max-columns="4" label-edge="top">
+            <oj-input-text label-hint="Combination Name" value="{{ $variables.combinationObj.combination_name }}"
+              required="true">
+            </oj-input-text>
+            <oj-select-single label-hint="Project" data="[[$variables.getCREWRITECRPROJECTSLOV1GetProjectsListSDP4]]"
+              item-text="name" value="{{ $variables.combinationObj.project }}"
+              on-value-item-changed="[[$listeners.selectValueItem19]]" required="true">
+            </oj-select-single>
+            <oj-select-single label-hint="Task" data="[[$variables.getProjectIdChildTasksListSDP3]]"
+              item-text="TaskName" value="{{ $variables.combinationObj.task_name }}"
+              on-value-item-changed="[[$listeners.selectValueItem18]]">
+            </oj-select-single>
+            <oj-select-single label-hint="Shift" value="{{ $variables.combinationObj.shift }}">
+            </oj-select-single>
+            <oj-input-text label-hint="Local Tax Jursidiction"
+              value="{{ $variables.combinationObj.location_tax_jurisdiction }}">
+            </oj-input-text>
+            <oj-input-text label-hint="Work Package" value="{{ $variables.combinationObj.work_package }}">
+            </oj-input-text>
+            <oj-select-single label-hint="Department" value="{{ $variables.combinationObj.department }}"
+              data="[[$variables.getCrewRiteDepartmentDetailsListSDP]]" item-text="department">
+            </oj-select-single>
+            <oj-input-text label-hint="Cost Category" value="{{ $variables.combinationObj.cost_category }}">
+            </oj-input-text>
+            <oj-select-single label-hint="Time Type" value="{{ $variables.combinationObj.time_type }}"
+              data="[[$variables.getCrewRiteTimeTypesListSDP]]" item-text="time_type_name">
+            </oj-select-single>
+                <oj-input-text label-hint="Hours" value="{{ $variables.combinationObj.hours }}">
+            </oj-input-text>
+          </oj-form-layout>
+        </div>
+
+        <div slot="footer">
+          <oj-bind-if test="[[ $variables.edit ]]">
+          <oj-button label="Create & New" chroming="callToAction" class="oj-button-sm"
+            on-oj-action="[[$listeners.buttonAction32]]">
+            <span class="oj-ux-ico-coins-new" slot="startIcon"></span>
+          </oj-button>
+          <oj-button label="Create" chroming="callToAction" class="oj-button-sm"
+            on-oj-action="[[$listeners.buttonAction31]]">
+            <span class="oj-ux-ico-save" slot="startIcon"></span>
+          </oj-button>
+          </oj-bind-if>
+          <oj-bind-if test="[[ !$variables.edit ]]">
+            <oj-button label="Update" chroming="callToAction" class="oj-button-sm"
+              on-oj-action="[[$listeners.buttonAction35]]">
+            <span class="oj-ux-ico-save" slot="startIcon"></span>
+            </oj-button>
+          </oj-bind-if>
+          <oj-button chroming="callToAction" class="oj-button-sm" label="Close"
+            on-oj-action="[[$listeners.buttonAction30]]">
+            <span class="oj-ux-ico-logout" slot="startIcon"></span>
+          </oj-button>
+        </div>
+        
+      </oj-dialog>
+
+      <oj-dialog dialog-title="" id="EquipmentDialog" class="" style="width: 70vw; max-height:60vh;"
+        cancel-behavior="icon">
+        <div slot="body">
+          <div class="oj-flex-item oj-sm-margin-5x-top">
+            <span style="font-size:18px;font-weight:600">Assign Equipment</span>
+          </div>
+
+          <oj-validation-group id="AssignEquipGroup" class="oj-sm-margin-3x-top">
+            <oj-form-layout class="oj-formlayout-full-width" max-columns="6" label-edge="top" columns="6">
+              <oj-bind-if
+                test="[[ $variables.crewSetupHeaderObj.crew_specific === 'NO' && !$variables.AssignEnabled ]]">
+                <oj-select-single label-hint="Project Name" value="{{ $variables.addEquipObj.project_name }}"
+                  class="oj-sm-margin-3x-bottom"
+                  :title='[[ $application.variables.HelpEnabled ? "Select Project" : "" ]]' item-text="project_name"
+                  data="[[$variables.ProjectDeatilsLOVSDP]]" on-value-item-changed="[[$listeners.selectValueItem11]]"
+                  required="true">
+                </oj-select-single>
+              </oj-bind-if>
+              <oj-bind-if test="[[ $variables.crewSetupHeaderObj.crew_specific === 'NO' && $variables.AssignEnabled ]]">
+                <oj-input-text label-hint="Project Name" readonly="true"
+                  value="{{ $variables.addEquipObj.project_name }}" class="oj-sm-margin-3x-bottom"
+                  :title='[[ $application.variables.HelpEnabled ? "Select Project" : "" ]]' required="true">
+                </oj-input-text>
+              </oj-bind-if>
+              <oj-bind-if
+                test="[[ $variables.crewSetupHeaderObj.crew_specific === 'YES'  && (!$variables.AssignEnabled || $variables.AssignEnabled ) ]]">
+                <oj-input-text label-hint="Project Name" readonly="true"
+                  value="{{ $variables.addEquipObj.project_name }}" class="oj-sm-margin-3x-bottom"
+                  :title='[[ $application.variables.HelpEnabled ? "Select Project" : "" ]]' required="true">
+                </oj-input-text>
+              </oj-bind-if>
+              <oj-select-single label-hint="Task Name" value="{{ $variables.addEquipObj.task_name}}"
+                :title='[[ $application.variables.HelpEnabled ? "Select Task name" : "" ]]'
+                class="oj-sm-margin-3x-bottom" data="[[$variables.getTasksListSDP]]" item-text="task_name"
+                on-value-item-changed="[[$listeners.selectValueItem6]]" required="true">
+              </oj-select-single>
+              <oj-select-single label-hint="Equipment Class" item-text="equipment_class"
+                value="{{ $variables.addEquipObj.EquipmentClass }}" data="[[$variables.getGetEquipmentClassLOVListSDP]]"
+                required="true">
+              </oj-select-single>
+              <oj-select-single label-hint="Equipment Name" item-text="lkpvalue" class="oj-sm-margin-3x-bottom"
+                data="[[$variables.getGetEquipmentLOVListSDP]]" value="{{ $variables.addEquipObj.equipment_Id }}"
+                on-value-item-changed="[[$listeners.selectValueItem10]]">
+              </oj-select-single>
+              <oj-input-text label-hint="Equipment Location" readonly="true" class="oj-sm-margin-3x-bottom"
+                value="{{ $variables.addEquipObj.resource_location }}">
+              </oj-input-text>
+              <oj-input-text label-hint="Equipment Number" value="{{ $variables.addEquipObj.resource_number }}"
+                class="oj-sm-margin-3x-bottom"
+                :title='[[ $application.variables.HelpEnabled ? "Select Resource name" : "" ]]' readonly="true">
+              </oj-input-text>
+
+              <oj-select-single label-hint="Non Labour Resource" data="[[$variables.getNonLaborResourceListSDP]]"
+                item-text="equipment_name" value="{{ $variables.addEquipObj.non_labour_resource }}">
+              </oj-select-single>
+
+              <oj-select-single label-hint="Expenditure Types"
+                value="{{ $variables.addEquipObj.expenditure_type_name }}" data="[[$variables.expenditureTypesListSDP]]"
+                item-text="ExpenditureTypeName" on-value-item-changed="[[$listeners.selectValueItem12]]">
+              </oj-select-single>
+              <oj-input-text label-hint="Bill Rate" value="{{ $variables.addEquipObj.bill_rate }}"
+                :title='[[ $application.variables.HelpEnabled ? "Enter Bill Rate" : "" ]]' required="true">
+              </oj-input-text>
+              <oj-input-text label-hint="Cost Rate" value="{{ $variables.addEquipObj.pay_rate }}"
+                :title='[[ $application.variables.HelpEnabled ? "Enter pay Rate" : "" ]]' required="true">
+              </oj-input-text>
+
+
+              <!-- <oj-input-date label-hint="Effective Start Date"
+                value="{{$variables.addEquipObj.effective_start_date_copy }}"
+                :title='[[ $application.variables.HelpEnabled ? "Select Effective Start Date" : "" ]]'
+                converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'
+                max="[[ $variables.crewSetupHeaderObj.end_date ]]" min="[[ $variables.minEffeDate ]]"
+                on-value-changed="[[$listeners.inputDateValue]]" readonly="[[ $variables.AssignEnabled ]]">
+              </oj-input-date> -->
+              <oj-input-date label-hint="Effective Start Date"
+                value="{{$variables.addEquipObj.effective_start_date_copy }}"
+                :title='[[ $application.variables.HelpEnabled ? "Select Effective Start Date" : "" ]]'
+                converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'
+                max="[[ $variables.crewSetupHeaderObj.end_date ]]" min="[[ $variables.minEffeDate ]]"
+                readonly="[[ $variables.AssignEnabled ]]">
+              </oj-input-date>
+              <!-- max="[[ $variables.crewSetupHeaderObj.end_date ]]" min="[[ $variables.minEffeDate ]]" -->
+              <!-- <oj-input-date label-hint="Effective End Date" min="[[  $variables.minEffeDate ]]"
+                :title='[[ $application.variables.HelpEnabled ? "Select Effective End Date" : "" ]]'
+                converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'
+                max="[[ $variables.crewSetupHeaderObj.end_date ]]"
+                value="{{ $variables.addEquipObj.effective_end_date_copy }}"
+                on-value-changed="[[$listeners.inputDateValue]]"
+                readonly="[[ !$variables.addEquipObj.effective_start_date_copy || $variables.AssignEnabled ]]">
+              </oj-input-date> -->
+
+              <oj-input-date label-hint="Effective End Date" min="[[  $variables.minEffeDate ]]"
+                :title='[[ $application.variables.HelpEnabled ? "Select Effective End Date" : "" ]]'
+                converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'
+                max="[[ $variables.crewSetupHeaderObj.end_date ]]"
+                value="{{ $variables.addEquipObj.effective_end_date_copy }}"                
+                readonly="[[ !$variables.addEquipObj.effective_start_date_copy || $variables.AssignEnabled ]]">
+              </oj-input-date>
+              <!-- max="[[ $variables.crewSetupHeaderObj.end_date ]]" -->
+            </oj-form-layout>
+
+            <oj-form-layout columns="8" max-columns="8" class="oj-sm-margin-5x-top">
+              <div class="oj-flex-item oj-sm-margin-2x-bottom">
+                <span></span>
+              </div>
+              <div class="oj-flex-item oj-sm-margin-2x-bottom">
+                <span>Monday</span>
+              </div>
+              <div class="oj-flex-item oj-sm-margin-2x-bottom">
+                <span>Tuesday</span>
+              </div>
+              <div class="oj-flex-item oj-sm-margin-2x-bottom">
+                <span>Wednesday</span>
+              </div>
+              <div class="oj-flex-item oj-sm-margin-2x-bottom">
+                <span>Thursday</span>
+              </div>
+              <div class="oj-flex-item oj-sm-margin-2x-bottom">
+                <span>Friday</span>
+              </div>
+              <div class="oj-flex-item oj-sm-margin-2x-bottom">
+                <span>Saturday</span>
+              </div>
+              <div class="oj-flex-item oj-sm-margin-2x-bottom">
+                <span>Sunday</span>
+              </div>
+              <div class="oj-flex-item">
+                <span>Time In</span>
+              </div>
+
+              <oj-input-text class="formclass" aria-label="monin"
+                validators="{{ $application.functions.validateText() }}" required="true"
+                value="{{ $variables.addEquipObj.mon_in_time }}" readonly="[[ !$variables.linesweekObj.Monday ]]">
+              </oj-input-text>
+
+              <oj-input-text class="formclass" aria-label="tuein" value="{{ $variables.addEquipObj.tue_in_time }}"
+                validators="{{ $application.functions.validateText() }}"
+                readonly="[[ !$variables.linesweekObj.Tuesday ]]" required="true">
+              </oj-input-text>
+
+              <oj-input-text class="formclass" aria-label="wedin" value="{{ $variables.addEquipObj.wed_in_time }}"
+                validators="{{ $application.functions.validateText() }}"
+                readonly="[[ !$variables.linesweekObj.Wednesday ]]" required="true">
+              </oj-input-text>
+
+              <oj-input-text class="formclass" aria-label="thuin" value="{{ $variables.addEquipObj.thu_in_time }}"
+                validators="{{ $application.functions.validateText() }}"
+                readonly="[[ !$variables.linesweekObj.Thursday ]]" required="true">
+              </oj-input-text>
+
+              <oj-input-text class="formclass" aria-label="friin" value="{{ $variables.addEquipObj.fri_in_time }}"
+                validators="{{ $application.functions.validateText() }}"
+                readonly="[[ !$variables.linesweekObj.Friday ]]" required="true">
+              </oj-input-text>
+
+              <oj-input-text class="formclass" aria-label="satin" value="{{ $variables.addEquipObj.sat_in_time }}"
+                validators="{{ $application.functions.validateText() }}"
+                readonly="[[ !$variables.linesweekObj.Saturday ]]" required="true">
+              </oj-input-text>
+
+              <oj-input-text class="formclass" aria-label="sunin" value="{{ $variables.addEquipObj.sun_in_time }}"
+                validators="{{ $application.functions.validateText() }}"
+                readonly="[[ !$variables.linesweekObj.Sunday ]]" required="true">
+              </oj-input-text>
+            </oj-form-layout>
+
+            <oj-bind-if test="[[ $variables.crewSetupHeaderObj.crew_measure === 'TIME IN OUT' ]]">
+              <oj-form-layout columns="8" max-columns="8" class="oj-sm-margin-3x-top">
+                <div class="oj-flex-item">
+                  <span>Time Out</span>
+                </div>
+
+                <oj-input-text class="formclass" aria-label="monout" value="{{ $variables.addEquipObj.mon_out_time }}"
+                  validators="{{ $application.functions.validateText() }}" required="true"
+                  readonly="[[ !$variables.linesweekObj.Monday ]]">
+                </oj-input-text>
+
+                <oj-input-text class="formclass" aria-label="tueout" value="{{ $variables.addEquipObj.tue_out_time }}"
+                  validators="{{ $application.functions.validateText() }}"
+                  readonly="[[ !$variables.linesweekObj.Tuesday ]]" required="true">
+                </oj-input-text>
+
+                <oj-input-text class="formclass" aria-label="wedout" value="{{ $variables.addEquipObj.wed_out_time }}"
+                  validators="{{ $application.functions.validateText() }}"
+                  readonly="[[ !$variables.linesweekObj.Wednesday ]]" required="true">
+                </oj-input-text>
+
+                <oj-input-text class="formclass" aria-label="thuout" value="{{ $variables.addEquipObj.thu_out_time }}"
+                  validators="{{ $application.functions.validateText() }}"
+                  readonly="[[ !$variables.linesweekObj.Thursday ]]" required="true">
+                </oj-input-text>
+
+                <oj-input-text class="formclass" aria-label="friout" value="{{ $variables.addEquipObj.fri_out_time }}"
+                  validators="{{ $application.functions.validateText() }}"
+                  readonly="[[ !$variables.linesweekObj.Friday ]]" required="true">
+                </oj-input-text>
+
+                <oj-input-text class="formclass" aria-label="satout" value="{{ $variables.addEquipObj.sat_out_time }}"
+                  validators="{{ $application.functions.validateText() }}"
+                  readonly="[[ !$variables.linesweekObj.Saturday ]]" required="true">
+                </oj-input-text>
+
+                <oj-input-text class="formclass" aria-label="sunout" value="{{ $variables.addEquipObj.sun_out_time }}"
+                  validators="{{ $application.functions.validateText() }}"
+                  readonly="[[ !$variables.linesweekObj.Sunday ]]" required="true">
+                </oj-input-text>
+              </oj-form-layout>
+            </oj-bind-if>
+
+            <oj-bind-if test="[[ $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY' ]]">
+              <oj-form-layout columns="8" max-columns="8" class="oj-sm-margin-3x-top">
+                <div class="oj-flex-item">
+                  <span>Quantity</span>
+                </div>
+
+                <oj-input-text class="formclass" aria-label="monout" value="{{ $variables.addEquipObj.mon_quantity }}"
+                  required="[[  $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY']]">
+                </oj-input-text>
+
+                <oj-input-text class="formclass" aria-label="tueout" value="{{ $variables.addEquipObj.tue_quantity }}"
+                  required="[[  $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY']]">
+                </oj-input-text>
+
+                <oj-input-text class="formclass" aria-label="wedout" value="{{ $variables.addEquipObj.wed_quantity }}"
+                  required="[[  $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY']]">
+                </oj-input-text>
+
+                <oj-input-text class="formclass" aria-label="thuout" value="{{ $variables.addEquipObj.thu_quantity }}"
+                  required="[[  $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY']]">
+                </oj-input-text>
+
+                <oj-input-text class="formclass" aria-label="friout" value="{{ $variables.addEquipObj.fri_quantity }}"
+                  required="[[  $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY']]">
+                </oj-input-text>
+
+                <oj-input-text class="formclass" aria-label="satout" value="{{ $variables.addEquipObj.sat_quantity }}"
+                  required="[[  $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY']]">
+                </oj-input-text>
+
+                <oj-input-text class="formclass" aria-label="sunout" value="{{ $variables.addEquipObj.sun_quantity }}"
+                  required="[[  $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY']]">
+                </oj-input-text>
+              </oj-form-layout>
+            </oj-bind-if>
+
+          </oj-validation-group>
+
+
+          <div class="oj-flex-item" class="oj-sm-margin-3x-top">
+            <oj-toolbar chroming="borderless">
+              <oj-button label="Save" chroming="callToAction" class="oj-button-sm"
+                on-oj-action="[[$listeners.buttonAction19]]"></oj-button>
+              <oj-button label="Cancel" chroming="callToAction" class="oj-button-sm"
+                on-oj-action="[[$listeners.buttonAction18]]"></oj-button>
+            </oj-toolbar>
+          </div>
+        </div>
+      </oj-dialog>
+      <oj-dialog dialog-title="Dialog" id="combination" style="width:95vw;height:70vh">
+        <!-- <div class="oj-panel">
+          <oj-sp-welcome-page id="oj-sp-wp1"
+            illustration-background="[[ require.toUrl($page.variables.illustrationBackground) ]]"
+            illustration-foreground="[[ require.toUrl($page.variables.illustrationForeground) ]]"
+            display-options.image-stretch="[[ $page.variables.imageStretch ]]"
+            display-options.mobile-image="[[ $page.variables.mobileImage ]]" display-options.responsive-padding="on"
+            page-title="Crew Definition" background-color="dark-pebble">
+         
+          </div> -->
+        <br>
+        <div slot="body">
+
+          <b>
+            
+          </b>
+          <div class="oj-helper-text-align-end">
+            <oj-button label="Add" chroming="callToAction" class="oj-button-sm"
+              on-oj-action="[[$listeners.buttonAction25]]">
+              <span class="oj-ux-ico-plus" slot="startIcon"></span>
+            </oj-button>
+          </div>
+          <oj-table data="[[ $variables.combinationAdp ]]" style="width:100%;height:95%"
+            columns-default.resizable="enabled"
+            columns='[{"headerText":"Action","field":"","template":"action"},{"headerText":"Combination Name","field":"combination_name","template":"combination","width":180},{"headerText":"Project","field":"project","template":"project","width":200},{"headerText":"Task","field":"task_name","template":"task","width":180},{"headerText":"Shift","field":"shift","template":"shift","width":150},{"headerText":"Location Tax Jurisdiction","field":"location_tax_jurisdiction","template":"localTax","width":150},{"headerText":"Work Package","field":"work_package","template":"work"},{"headerText":"Department","field":"department","template":"dept","width":150},{"headerText":"Cost Category","field":"cost_category","template":"costcategory","width":160},{"headerText":"Time Type","field":"time_type","template":"timeType"},{"headerText":"Hours","field":"hours","template":"hours","width":150}]'
+            edit-mode="rowEdit" display="grid" on-oj-before-row-edit="[[$listeners.tableBeforeRowEdit2]]"
+            on-oj-before-row-edit-end="[[$listeners.tableBeforeRowEditEnd3]]">
+
+            <template slot="combination">
+              <oj-bind-if test='[[$current.mode=="navigation"]]'>
+                <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+              </oj-bind-if>
+              <oj-bind-if test='[[$current.mode=="edit"]]'>
+                <oj-input-text value="{{ $variables.combinationObj.combination_name }}">
+                </oj-input-text>
+              </oj-bind-if>
+            </template>
+
+            <template slot="hours">
+              <oj-bind-if test='[[$current.mode=="navigation"]]'>
+                <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+              </oj-bind-if>
+              <oj-bind-if test='[[$current.mode=="edit"]]'>
+                <oj-input-text value="{{ $variables.combinationObj.hours }}">
+                </oj-input-text>
+              </oj-bind-if>
+            </template>
+
+            <template slot="costcategory">
+              <oj-bind-if test='[[$current.mode=="navigation"]]'>
+                <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+              </oj-bind-if>
+              <oj-bind-if test='[[$current.mode=="edit"]]'>
+                <oj-input-text value="{{ $variables.combinationObj.cost_category }}">
+                </oj-input-text>
+              </oj-bind-if>
+            </template>
+
+            <template slot="localTax">
+              <oj-bind-if test='[[$current.mode=="navigation"]]'>
+                <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+              </oj-bind-if>
+              <oj-bind-if test='[[$current.mode=="edit"]]'>
+                <oj-input-text value="{{ $variables.combinationObj.location_tax_jurisdiction }}">
+                </oj-input-text>
+              </oj-bind-if>
+            </template>
+
+            <template slot="work">
+              <oj-bind-if test='[[$current.mode=="navigation"]]'>
+                <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+              </oj-bind-if>
+              <oj-bind-if test='[[$current.mode=="edit"]]'>
+                <oj-input-text value="{{ $variables.combinationObj.work_package }}">
+                </oj-input-text>
+              </oj-bind-if>
+            </template>
+
+
+
+            <template slot="task">
+              <oj-bind-if test='[[$current.mode=="navigation"]]'>
+                <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+              </oj-bind-if>
+              <oj-bind-if test='[[$current.mode=="edit"]]'>
+                <oj-select-single data="[[$variables.getProjectIdChildTasksListSDP]]" item-text="TaskName"
+                  value="{{ $variables.combinationObj.task_name }}"
+                  on-value-item-changed="[[$listeners.selectValueItem16]]">
+                </oj-select-single>
+              </oj-bind-if>
+            </template>
+
+            <template slot="shift">
+              <oj-bind-if test='[[$current.mode=="navigation"]]'>
+                <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+              </oj-bind-if>
+              <oj-bind-if test='[[$current.mode=="edit"]]'>
+                <oj-select-single value="{{ $variables.combinationObj.shift }}">
+                </oj-select-single>
+              </oj-bind-if>
+            </template>
+
+
+            <template slot="dept">
+              <oj-bind-if test='[[$current.mode=="navigation"]]'>
+                <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+              </oj-bind-if>
+              <oj-bind-if test='[[$current.mode=="edit"]]'>
+                <oj-select-single value="{{ $variables.combinationObj.department }}">
+                </oj-select-single>
+              </oj-bind-if>
+            </template>
+
+
+            <template slot="timeType">
+              <oj-bind-if test='[[$current.mode=="navigation"]]'>
+                <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+              </oj-bind-if>
+              <oj-bind-if test='[[$current.mode=="edit"]]'>
+                <oj-select-single value="{{ $variables.combinationObj.time_type }}">
+                </oj-select-single>
+              </oj-bind-if>
+            </template>
+
+            <template slot="project">
+              <oj-bind-if test='[[$current.mode=="navigation"]]'>
+                <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+              </oj-bind-if>
+              <oj-bind-if test='[[$current.mode=="edit"]]'>
+                <oj-select-single data="[[$variables.getCREWRITECRPROJECTSLOV1GetProjectsListSDP]]" item-text="name"
+                  on-value-item-changed="[[$listeners.selectValueItem15]]"
+                  value="{{ $variables.combinationObj.project }}">
+                </oj-select-single>
+              </oj-bind-if>
+            </template>
+
+            <template slot="action">
+              <oj-button display="icons" chroming="borderless" class=""
+                on-oj-action="[[$listeners.buttonAction29]]">
+                <span class="oj-ux-ico-action" slot="startIcon" ></span>
+              </oj-button>
+            </template>
+
+          </oj-table>
+        </div>
+        <div slot="footer">
+          <!-- <oj-button label="Save" chroming="callToAction" class="oj-button-sm"
+            on-oj-action="[[$listeners.buttonAction27]]">
+            <span class="oj-ux-ico-save" slot="startIcon"></span>
+          </oj-button> -->
+          <oj-button chroming="callToAction" class="oj-button-sm" on-oj-action="[[$listeners.buttonAction24]]">Close
+            <span class="oj-ux-ico-logout" slot="endIcon"></span>
+          </oj-button>
+        </div>
+        <!-- </oj-sp-welcome-page> -->
+      </oj-dialog>
+      <oj-dialog id="resourceDialog" style="width: 70vw; max-height:75vh;">
+        <div slot="body">
+          <div class="oj-flex-item oj-sm-margin-5x-top">
+            <span style="font-size:18px;font-weight:600"><oj-bind-text value="[[ $variables.dialogueLabel ]]"></oj-bind-text> Resource</span>
+          </div>
+
+          <oj-validation-group id="linesvalGroup">
+
+            <oj-form-layout class="oj-formlayout-full-width" max-columns="6" label-edge="top" columns="6">
+              <oj-bind-if
+                test="[[ $variables.crewSetupHeaderObj.crew_specific === 'NO' && !$variables.AssignEnabled ]]">
+                <!-- <oj-select-single label-hint="Project Name" value="{{ $variables.linesObj.project_name }}"
+                  class="oj-sm-margin-3x-bottom"
+                  :title='[[ $application.variables.HelpEnabled ? "Select Project" : "" ]]' item-text="projectName"
+                  on-value-item-changed="[[$listeners.selectValueItem2]]" required="true"
+                  data="[[$variables.getCREWRITECRPROJECTSLOV1GetProjectsListSDP3]]">
+                </oj-select-single> -->
+                 <oj-select-single label-hint="Project Name" value="{{ $variables.linesObj.project_name }}"
+                  class="oj-sm-margin-3x-bottom"
+                  :title='[[ $application.variables.HelpEnabled ? "Select Project" : "" ]]' item-text="name"
+                  on-value-item-changed="[[$listeners.selectValueItem2]]" required="true"
+                  data="[[$variables.getCREWRITECRPROJECTSLOV1GetProjectsListSDP]]">
+                </oj-select-single> 
+
+                 <!-- <oj-select-single label-hint="Project Name" value="{{ $variables.linesObj.project_name }}"
+                   class="oj-sm-margin-3x-bottom"
+                   :title='[[ $application.variables.HelpEnabled ? "Select Project" : "" ]]' item-text="name"
+                   on-value-item-changed="[[$listeners.selectValueItem2]]" required="true"
+                   data="[[$variables.getCrewRiteOracleProjectsListSDP2]]"
+                   >
+                </oj-select-single> -->
+                
+                
+
+
+              </oj-bind-if>
+              <oj-bind-if test="[[ $variables.crewSetupHeaderObj.crew_specific === 'NO' && $variables.AssignEnabled ]]">
+                <oj-input-text label-hint="Project Name" readonly="true" value="{{ $variables.linesObj.project_name }}"
+                  class="oj-sm-margin-3x-bottom"
+                  :title='[[ $application.variables.HelpEnabled ? "Select Project" : "" ]]' required="true">
+                </oj-input-text>
+              </oj-bind-if>
+              <oj-bind-if
+                test="[[ $variables.crewSetupHeaderObj.crew_specific === 'YES'  && (!$variables.AssignEnabled || $variables.AssignEnabled ) ]]">
+                <oj-input-text label-hint="Project Name" readonly="true" value="{{ $variables.linesObj.project_name }}"
+                  class="oj-sm-margin-3x-bottom"
+                  :title='[[ $application.variables.HelpEnabled ? "Select Project" : "" ]]' required="true">
+                </oj-input-text>
+              </oj-bind-if>
+              <oj-select-single label-hint="Task Name" value="{{ $variables.linesObj.task_name}}"
+                class="oj-sm-margin-3x-bottom"
+                :title='[[ $application.variables.HelpEnabled ? "Select Task name" : "" ]]' item-text="TaskName"
+                readonly='[[ $variables.dialogueLabel === "View" ]]'
+                on-value-item-changed="[[$listeners.selectValueItem6]]" required="true"
+                data="[[$variables.getProjectIdChildTasksListSDP2]]">
+              </oj-select-single>
+
+         
+         
+          <!-- <oj-combobox-one label-hint="Resource Name" value="{{ $variables.linesObj.resource_name }}"
+            :title='[[ $application.variables.HelpEnabled ? "Select Resource name" : "" ]]'
+            class="oj-sm-margin-3x-bottom" readonly='[[ $variables.dialogueLabel === "View" ]]'
+            options-keys.value="resource_name" options-keys.label="resource_name"
+             
+            messages-custom="{{ $variables.resourceMessage }}" maximum-result-count="1000"
+            options="[[$variables.getCrewRiteProjectResourceValidationListSDP]]"
+            on-value-changed="[[$listeners.comboValue2]]"></oj-combobox-one> -->
+
+             <oj-select-single label-hint="Resource Name" value="{{ $variables.linesObj.resource_name }}"
+               :title='[[ $application.variables.HelpEnabled ? "Select Resource name" : "" ]]'
+               class="oj-sm-margin-3x-bottom" readonly='[[ $variables.dialogueLabel === "View" ]]'
+                 item-text="resource_name" required="true" on-value-item-changed="[[$page.listeners.comboValue2]]"
+               data="[[$variables.resourceADP]]">
+              </oj-select-single>
+              
+
+              <!-- <oj-select-single label-hint="Resource Name" value="{{ $variables.linesObj.resource_name }}"
+                :title='[[ $application.variables.HelpEnabled ? "Select Resource name" : "" ]]'
+                class="oj-sm-margin-3x-bottom" readonly='[[ $variables.dialogueLabel === "View" ]]'
+                data="[[$variables.getCrewRiteEmployeeDetailsListSDP]]" item-text="emp_full_name" required="true"
+                on-value-item-changed="[[$listeners.comboValue]]">
+              </oj-select-single> -->
+
+              <!-- <oj-select-single label-hint="Resource Name" class="oj-sm-margin-3x-bottom"
+                data="[[$variables.getCrewRiteEmployeeDetailsListSDP]]" item-text="emp_full_name" required="true"
+                value="{{ $variables.linesObj.resource_name }}"
+                on-value-item-changed="[[$listeners.comboValue]]">
+        </oj-select-single> -->
+
+              <oj-input-text label-hint="Resource Location" readonly="true"
+                value="{{ $variables.linesObj.resource_location }}">
+              </oj-input-text>
+              <oj-input-text label-hint="Resource Number" value="{{ $variables.linesObj.resource_number }}"
+                class="oj-sm-margin-3x-bottom"
+                :title='[[ $application.variables.HelpEnabled ? "Select Resource name" : "" ]]' readonly="true">
+              </oj-input-text>
+              <oj-input-text label-hint="Resource Role" readonly="true" value="{{ $variables.linesObj.resource_role }}"
+                class="oj-sm-margin-3x-bottom"
+                :title='[[ $application.variables.HelpEnabled ? "Select Resource Role" : "" ]]'>
+              </oj-input-text>
+
+              <oj-input-text label-hint="Job Override" value="{{ $variables.linesObj.craft_override }}" class="oj-sm-margin-3x-bottom">
+              </oj-input-text>
+
+
+              <oj-bind-if test="[[ $variables.crewSetupHeaderObj.crew_specific === 'YES' ]]">
+                <oj-select-single label-hint="Expenditure Type" value="{{ $variables.linesObj.expenditure_type_name}}"
+                  :title='[[ $application.variables.HelpEnabled ? "Select Expenditure Type" : "" ]]'
+                  class="oj-sm-margin-3x-bottom" readonly='[[ $variables.dialogueLabel === "View" ]]'
+                  data="[[$variables.getExpenditureTypeListSDP]]" item-text="expenditure_type_name"
+                  on-value-item-changed="[[$listeners.selectValueItem7]]">
+                </oj-select-single>
+              </oj-bind-if>
+
+              <oj-select-single label-hint="Equipment Class" item-text="equipment_class"
+                value="{{ $variables.linesObj.EquipmentClass }}" data="[[$variables.crewResourceEquipmentListSDP]]"
+                on-value-item-changed="[[$listeners.selectValueItem13]]">
+                <template slot="itemTemplate" data-oj-as="item">
+                  <oj-highlight-text text='[[item.data.equipment_class + " -  " + item.data.equipment_name]]'>
+                  </oj-highlight-text>
+                </template>
+              </oj-select-single>
+
+
+              <!-- <oj-input-date label-hint="Effective Start Date"
+                value="{{$variables.linesObj.effective_start_date_copy }}"
+                :title='[[ $application.variables.HelpEnabled ? "Select Effective Start Date" : "" ]]'
+                converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'
+                  max="[[ $variables.crewSetupHeaderObj.end_date ]]"
+                 on-value-changed="[[$listeners.inputDateValue]]"
+                readonly="[[ $variables.AssignEnabled || $variables.dialogueLabel==='View' ]]">
+              </oj-input-date> -->
+
+                <oj-input-date label-hint="Effective Start Date"
+                value="{{$variables.linesObj.effective_start_date_copy }}"
+                :title='[[ $application.variables.HelpEnabled ? "Select Effective Start Date" : "" ]]'
+                converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'
+                  max="[[ $variables.crewSetupHeaderObj.end_date ]]"                
+                readonly="[[ $variables.AssignEnabled || $variables.dialogueLabel==='View' ]]">
+              </oj-input-date>
+
+              <!-- <oj-input-date label-hint="Effective End Date"
+                :title='[[ $application.variables.HelpEnabled ? "Select Effective End Date" : "" ]]'
+                converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'
+                max="[[ $variables.crewSetupHeaderObj.end_date ]]"
+                value="{{ $variables.linesObj.effective_end_date_copy }}"
+                on-value-changed="[[$listeners.inputDateValue]]"
+                readonly="[[ !$variables.linesObj.effective_start_date_copy || $variables.AssignEnabled || $variables.dialogueLabel==='View' ]]">
+              </oj-input-date> -->
+               <oj-input-date label-hint="Effective End Date"
+                :title='[[ $application.variables.HelpEnabled ? "Select Effective End Date" : "" ]]'
+                converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'
+                max="[[ $variables.crewSetupHeaderObj.end_date ]]"
+                value="{{ $variables.linesObj.effective_end_date_copy }}"               
+                readonly="[[ !$variables.linesObj.effective_start_date_copy || $variables.AssignEnabled || $variables.dialogueLabel==='View' ]]">
+              </oj-input-date>
+              <oj-switch label-hint="Perdiem" value="{{ $variables.linesObj.perdiem_flag }}"
+                on-value-changed="[[$listeners.switchValue]]"></oj-switch>
+
+              <oj-bind-if test='[[ $variables.linesObj.perdiem_flag === true ]]'>
+                <oj-input-number id="perdiemhours" label-hint="Perdiem hours"
+                  value="{{ $variables.linesObj.perdiem_quantity }}"
+                  readonly='[[ $variables.dialogueLabel === "View"]]'>
+                </oj-input-number>
+              </oj-bind-if>
+              <oj-bind-if test='[[ $variables.linesObj.perdiem_flag === true ]]'>
+                <oj-input-text id="perdielmrate" label-hint="Perdiem Rate"
+                  value="{{ $variables.linesObj.per_diem_rate }}" readonly='[[ $variables.dialogueLabel === "View"]]'
+                  :title='[[ $application.variables.HelpEnabled ? "Enter Perdiem Rate" : "" ]]'></oj-input-text>
+              </oj-bind-if>
+              <oj-bind-if test='[[ $variables.linesObj.perdiem_flag === true ]]'>
+                <oj-input-number id="perdiemamount" label-hint="Perdiem Amount"
+                  value="{{ $variables.linesObj.per_diem_amount }}" readonly="true"
+                  :title='[[ $application.variables.HelpEnabled ? "Enter Perdiem Amount" : "" ]]'></oj-input-number>
+              </oj-bind-if>
+              <oj-switch label-hint="Bonus" value="{{ $variables.linesObj.bonus_flag }}"
+                on-value-changed="[[$listeners.switchValue2]]"></oj-switch>
+
+              <oj-bind-if test='[[ $variables.linesObj.bonus_flag === true ]]'>
+                <oj-input-number label-hint="Bonus hours" value="{{ $variables.linesObj.bonus_quantity }}"
+                  readonly='[[ $variables.dialogueLabel === "View" ]]'>
+                </oj-input-number>
+              </oj-bind-if>
+              <oj-bind-if test='[[ $variables.linesObj.bonus_flag === true ]]'>
+                <oj-input-number label-hint="Bonus Rate" value="{{ $variables.linesObj.bonus_rate }}"
+                  readonly='[[ $variables.dialogueLabel === "View" ]]'
+                  :title='[[ $application.variables.HelpEnabled ? "Enter Bonus Rate" : "" ]]'></oj-input-number>
+              </oj-bind-if>
+              <oj-bind-if test='[[ $variables.linesObj.bonus_flag === true ]]'>
+                <oj-input-number label-hint="Bonus Amount" value="{{ $variables.linesObj.bonus_amount }}"
+                  readonly="true" :title='[[ $application.variables.HelpEnabled ? "Enter Bonus Amount" : "" ]]'>
+                </oj-input-number>
+              </oj-bind-if>
+              <oj-input-text label-hint="OT Threshold Limit" value="{{ $variables.linesObj.ot_threshold_limit }}"
+                :title='[[ $application.variables.HelpEnabled ? "Enter Ot threshold limit" : "" ]]' required="true">
+              </oj-input-text>
+
+            </oj-form-layout>
+
+
+            <div class="oj-flex-item oj-sm-margin-3x-top">
+              <oj-bind-if
+                test="[[ $variables.crewSetupHeaderObj.crew_measure === 'TIME IN OUT' || $variables.crewSetupHeaderObj.crew_measure === 'TIME QUANTITY' ]]">
+                <oj-form-layout class="oj-formlayout-full-width oj-sm-margin-3x-top" columns="8" max-columns="8">
+                  <div class="oj-flex-item oj-sm-margin-2x-bottom">
+                    <span></span>
+                  </div>
+                  <div class="oj-flex-item oj-sm-margin-2x-bottom">
+                    <span>Monday</span>
+                  </div>
+                  <div class="oj-flex-item oj-sm-margin-2x-bottom">
+                    <span>Tuesday</span>
+                  </div>
+                  <div class="oj-flex-item oj-sm-margin-2x-bottom">
+                    <span>Wednesday</span>
+                  </div>
+                  <div class="oj-flex-item oj-sm-margin-2x-bottom">
+                    <span>Thursday</span>
+                  </div>
+                  <div class="oj-flex-item oj-sm-margin-2x-bottom">
+                    <span>Friday</span>
+                  </div>
+                  <div class="oj-flex-item oj-sm-margin-2x-bottom">
+                    <span>Saturday</span>
+                  </div>
+                  <div class="oj-flex-item oj-sm-margin-2x-bottom">
+                    <span>Sunday</span>
+                  </div>
+
+                  <div class="oj-flex-item oj-sm-margin-2x-bottom">
+                    <span>Time In</span>
+                  </div>
+
+                  <oj-input-text class="formclass" aria-label="monin"
+                    validators="{{ $application.functions.validateText() }}" required="true"
+                    value="{{ $variables.linesObj.mon_in_time }}"></oj-input-text>
+
+                  <oj-input-text class="formclass" aria-label="tuein" value="{{ $variables.linesObj.tue_in_time }}"
+                    validators="{{ $application.functions.validateText() }}" required="true">
+                  </oj-input-text>
+                  <!-- readonly="[[ !$variables.linesweekObj.Tuesday || $variables.dialogueLabel==='View' ]]" -->
+
+                  <oj-input-text class="formclass" aria-label="wedin" value="{{ $variables.linesObj.wed_in_time }}"
+                    validators="{{ $application.functions.validateText() }}" required="true">
+                    <!-- readonly="[[ !$variables.linesweekObj.Wednesday || $variables.dialogueLabel==='View' ]]" -->
+                  </oj-input-text>
+
+                  <oj-input-text class="formclass" aria-label="thuin" value="{{ $variables.linesObj.thu_in_time }}"
+                    validators="{{ $application.functions.validateText() }}" required="true">
+                    <!-- readonly="[[ !$variables.linesweekObj.Thursday || $variables.dialogueLabel==='View' ]]" -->
+                  </oj-input-text>
+
+                  <oj-input-text class="formclass" aria-label="friin" value="{{ $variables.linesObj.fri_in_time }}"
+                    validators="{{ $application.functions.validateText() }}" required="true">
+                  </oj-input-text>
+
+                  <oj-input-text class="formclass" aria-label="satin" value="{{ $variables.linesObj.sat_in_time }}"
+                    validators="{{ $application.functions.validateText() }}" required="true">
+                  </oj-input-text>
+
+                  <oj-input-text class="formclass" aria-label="sunin" value="{{ $variables.linesObj.sun_in_time }}"
+                    validators="{{ $application.functions.validateText() }}" required="true">
+                  </oj-input-text>
+                </oj-form-layout>
+
+
+                <oj-form-layout class="oj-formlayout-full-width oj-sm-margin-3x-top" columns="8" max-columns="8">
+                  <div class="oj-flex-item oj-sm-margin-2x-bottom">
+                    <span>Time Out</span>
+                  </div>
+                  <oj-input-text class="formclass" aria-label="monout" value="{{ $variables.linesObj.mon_out_time }}"
+                    validators="{{ $application.functions.validateText() }}" required="true">
+                  </oj-input-text>
+
+                  <oj-input-text class="formclass" aria-label="tueout" value="{{ $variables.linesObj.tue_out_time }}"
+                    validators="{{ $application.functions.validateText() }}" required="true">
+                  </oj-input-text>
+
+                  <oj-input-text class="formclass" aria-label="wedout" value="{{ $variables.linesObj.wed_out_time }}"
+                    validators="{{ $application.functions.validateText() }}" required="true">
+                  </oj-input-text>
+
+                  <oj-input-text class="formclass" aria-label="thuout" value="{{ $variables.linesObj.thu_out_time }}"
+                    validators="{{ $application.functions.validateText() }}" required="true">
+                  </oj-input-text>
+
+                  <oj-input-text class="formclass" aria-label="friout" value="{{ $variables.linesObj.fri_out_time }}"
+                    validators="{{ $application.functions.validateText() }}" required="true">
+                  </oj-input-text>
+
+                  <oj-input-text class="formclass" aria-label="satout" value="{{ $variables.linesObj.sat_out_time }}"
+                    validators="{{ $application.functions.validateText() }}" required="true">
+                  </oj-input-text>
+
+                  <oj-input-text class="formclass" aria-label="sunout" value="{{ $variables.linesObj.sun_out_time }}"
+                    validators="{{ $application.functions.validateText() }}" required="true">
+                  </oj-input-text>
+                </oj-form-layout>
+              </oj-bind-if>
+
+              <oj-bind-if
+                test="[[ $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY' || $variables.crewSetupHeaderObj.crew_measure === 'TIME QUANTITY']]">
+                <oj-form-layout class="oj-formlayout-full-width oj-sm-margin-3x-top" columns="8" max-columns="8">
+                  <div class="oj-flex-item">
+                    <span>Quantity</span>
+                  </div>
+
+                  <oj-input-text class="formclass" aria-label="monout" value="{{ $variables.linesObj.mon_quantity }}"
+                    required="[[  $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY']]">
+                  </oj-input-text>
+
+                  <oj-input-text class="formclass" aria-label="tueout" value="{{ $variables.linesObj.tue_quantity }}"
+                    required="[[  $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY']]">
+                  </oj-input-text>
+
+                  <oj-input-text class="formclass" aria-label="wedout" value="{{ $variables.linesObj.wed_quantity }}"
+                    required="[[  $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY']]">
+                  </oj-input-text>
+
+                  <oj-input-text class="formclass" aria-label="thuout" value="{{ $variables.linesObj.thu_quantity }}"
+                    required="[[  $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY']]">
+                  </oj-input-text>
+
+                  <oj-input-text class="formclass" aria-label="friout" value="{{ $variables.linesObj.fri_quantity }}"
+                    required="[[  $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY']]">
+                  </oj-input-text>
+
+                  <oj-input-text class="formclass" aria-label="satout" value="{{ $variables.linesObj.sat_quantity }}"
+                    required="[[  $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY']]">
+                  </oj-input-text>
+
+                  <oj-input-text class="formclass" aria-label="sunout" value="{{ $variables.linesObj.sun_quantity }}"
+                    required="[[  $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY']]">
+                  </oj-input-text>
+                </oj-form-layout>
+              </oj-bind-if>
+
+            </div>
+          </oj-validation-group>
+
+
+          <div class="oj-flex-item oj-sm-margin-2x-top">
+            <oj-toolbar chroming="borderless">
+              <oj-bind-if test="[[ $variables.dialogueLabel === 'Assign' || $variables.dialogueLabel === 'Edit' ]]">
+                <oj-button label="Save" chroming="callToAction" class="oj-button-sm"
+                  on-oj-action="[[$listeners.buttonAction7]]"></oj-button>
+              </oj-bind-if>
+              <oj-button label="[[ $variables.dialogueLabel === 'View' ? 'Close':'Cancel' ]]" chroming="callToAction"
+                class="oj-button-sm" on-oj-action="[[$listeners.buttonAction23]]"></oj-button>
+            </oj-toolbar>
+          </div>
+        </div>
+      </oj-dialog>
+      <div class="oj-flex-item oj-md-2 oj-sm-margin-2x-start">
+        <oj-label for="crew-new">Crew Name</oj-label>
+        <oj-select-single class="oj-flex-item oj-sm-margin-1x-top" data="[[$variables.getGetCrewNameLOVListSDP]]"
+          item-text="crew_name" value="{{ $variables.searchCrew }}"
+          on-value-item-changed="[[$listeners.selectValueItem9]]" id="crew-new">
+        </oj-select-single>
+      </div>
+
+      <div class="oj-flex-item oj-sm-margin-1x-top oj-sm-margin-4x-top oj-sm-margin-2x-start ">
+        <oj-toolbar>
+          <oj-button chroming="callToAction" label="Search" id="searchbtn" disabled="[[ !$variables.searchCrew ]]"
+            class="oj-button-sm" on-oj-action="[[$listeners.searchbtnAction]]"></oj-button>
+          <oj-button label="Add" chroming="callToAction" class="oj-button-sm"
+            on-oj-action="[[$listeners.buttonAction]]">
+          </oj-button>
+          <oj-button chroming="callToAction" label="Disband" id="disbandbtn"
+            disabled="[[ !$variables.crewSetupHeaderObj.crew_disband || $variables.crewSetupHeaderObj.crew_disband === 'YES' || !$variables.crewSetupHeaderObj.crew_name]]"
+            class="oj-button-sm" on-oj-action="[[$listeners.searchbtnAction3]]"></oj-button>
+          <!-- <div class="oj-flex-item oj-flex oj-sm-flex-items-initial oj-sm-align-items-center" style="margin-top:-2vh">
+            <label style="margin-top:7px;margin-right:3px;font-weight:500;font-size:12px">Union Crew ?</label>
+            <oj-switch style="margin-top:8px"></oj-switch>
+          </div> -->
+        </oj-toolbar>
+
+      </div>
+      <div class="oj-flex-item oj-flex oj-sm-justify-content-flex-end">
+        <div class="oj-flex-item oj-sm-flex-items-initial oj-sm-flex-initial">
+          <!-- <oj-label for="template">Template</oj-label>
+          <oj-select-single item-text="template_name" value="{{ $variables.searchTemplate }}"
+            class="oj-sm-margin-1x-top oj-form-control-max-width-md oj-sm-flex-initial"
+            data="[[$variables.getGetTemplateNameListSDP]]" id="template" style="width:18vw"
+            on-value-item-changed="[[$listeners.templateValueItem2]]" disabled="[[ !$variables.IsSearch ]]">
+          </oj-select-single> -->
+        </div>
+
+        <!-- <oj-button chroming="callToAction" label="Copy" id="copybtn"
+          class="oj-button-sm oj-sm-align-self-center oj-sm-margin-2x-start oj-sm-margin-2x-top"
+          on-oj-action="[[$listeners.copybtnAction]]" disabled="[[ !$variables.searchTemplateId ]]"></oj-button> -->
+      </div>
+      <div class="oj-flex-item oj-flex oj-sm-margin-2x-top" style="width:100%">
+        <div class="oj-flex-item oj-sm-flex-initial oj-sm-align-self-center">
+          <span class="subheadings">Crew Definition</span>
+        </div>
+        <div class="oj-flex-item oj-flex oj-sm-justify-content-flex-end oj-sm-flex-items-initial">
+          <div class="oj-flex-item oj-sm-margin-2x-end oj-sm-flex-initial">
+            <oj-button label="Create" chroming="callToAction" class="oj-button-sm" disabled="[[ $variables.IsSearch ]]"
+              on-oj-action="[[$listeners.buttonAction4]]"></oj-button>
+          </div>
+          <div class="oj-flex-item oj-sm-margin-2x-end oj-sm-flex-initial">
+            <oj-button label="Edit" chroming="callToAction" class="oj-button-sm"
+              disabled="[[ !$variables.crewSetupHeaderObj.crewsetup_id ]]" on-oj-action="[[$listeners.buttonAction8]]">
+            </oj-button>
+          </div>
+          <oj-bind-if test="[[ $variables.IsEdit ]]">
+            <div class="oj-flex-item oj-sm-margin-2x-end oj-sm-flex-initial">
+              <oj-button label="Save" chroming="callToAction" class="oj-button-sm"
+                on-oj-action="[[$listeners.buttonAction9]]">
+              </oj-button>
+            </div>
+            <div class="oj-flex-item oj-sm-margin-2x-end oj-sm-flex-initial">
+              <oj-button label="Cancel" chroming="callToAction" class="oj-button-sm"
+                on-oj-action="[[$listeners.buttonAction10]]">
+              </oj-button>
+            </div>
+          </oj-bind-if>
+        </div>
+      </div>
+
+      <div class="oj-flex-item oj-sm-margin-2x-top" style="width:100%">
+        <oj-validation-group id="createformvalidation">
+          <oj-form-layout class="oj-formlayout-full-width" max-columns="7" label-edge="top" columns="7"
+            style="margin-left:-2vw">
+            <oj-input-text label-hint="Crew Name" value="{{ $variables.crewSetupHeaderObj.crew_name }}"
+              readonly="[[ $variables.IsSearch ]]"
+              :title='[[ $application.variables.HelpEnabled ? "Enter a Valid Crew Name" : "" ]]'></oj-input-text>
+
+            <oj-select-single label-hint="Crew Type" item-text="lookup_code"
+              :title='[[ $application.variables.HelpEnabled ? "Select a Crew type" : "" ]]'
+              value="{{ $variables.crewSetupHeaderObj.crew_type }}"
+              readonly="[[ $variables.IsSearch && !$variables.IsEdit ]]"
+              data="[[$variables.getCrewRiteCrewDefinitionLookupsListSDP]]">
+            </oj-select-single>
+
+            <oj-select-single label-hint="Crewtime Scope" readonly="[[ $variables.IsSearch && !$variables.IsEdit ]]"
+              :title='[[ $application.variables.HelpEnabled ? "Select Crew Scope" : "" ]]' item-text="lookup_code"
+              value="{{ $variables.crewSetupHeaderObj.crew_scope }}"
+              data="[[$variables.getCrewRiteCrewDefinitionLookupsListSDP2]]">
+            </oj-select-single>
+
+            <oj-select-single label-hint="Time Entry Method" readonly="[[ $variables.IsSearch && !$variables.IsEdit ]]"
+              :title='[[ $application.variables.HelpEnabled ? "Select Time Entry Method" : "" ]]'
+              value="{{ $variables.crewSetupHeaderObj.time_entry_method }}" item-text="lookup_code"
+              data="[[$variables.getCrewRiteCrewDefinitionLookupsListSDP3]]">
+            </oj-select-single>
+
+            <oj-select-single label-hint="Customer Name" readonly="[[ $variables.IsSearch && !$variables.IsEdit ]]"
+              :title='[[ $application.variables.HelpEnabled ? "Select Customer" : "" ]]'
+              value="{{ $variables.crewSetupHeaderObj.customer_name }}" required="[[ $variables.requiredObj.customer ]]"
+              data="[[$variables.CustomerDetailsLOVSDP]]" item-text="customer_name"
+              on-value-item-changed="[[$listeners.selectValueItem3]]">
+            </oj-select-single>
+
+
+            <oj-select-single label-hint="Contract Number" readonly="[[ $variables.IsSearch && !$variables.IsEdit ]]"
+              :title='[[ $application.variables.HelpEnabled ? "Select Contract" : "" ]]'
+              value="{{ $variables.crewSetupHeaderObj.contract_number }}"
+              required="[[ $variables.requiredObj.contract ]]" item-text="contract_number"
+              on-value-item-changed="[[$listeners.selectValueItem5]]"
+              data="[[$variables.getCrewRiteContractDetailsListSDP]]">
+            </oj-select-single>
+
+            <oj-select-single label-hint="Project Specific" readonly="[[ $variables.IsSearch && !$variables.IsEdit ]]"
+              item-text="value" :title='[[ $application.variables.HelpEnabled ? "Select Project Specific" : "" ]]'
+              data="[[ $variables.CrewSpecificADP ]]" value="{{ $variables.crewSetupHeaderObj.crew_specific }}"
+              on-value-item-changed="[[$listeners.selectValueItem8]]" required="true">
+            </oj-select-single>
+
+            <oj-select-single label-hint="Project Number" readonly="[[ $variables.IsSearch && !$variables.IsEdit ]]"
+              :title='[[ $application.variables.HelpEnabled ? "Select Project" : "" ]]'
+              value="{{ $variables.crewSetupHeaderObj.project_number }}" required="[[ $variables.requiredObj.project ]]"
+              item-text="projec_number" data="[[$variables.ProjectDeatilsLOVSDP]]"
+              on-value-item-changed="[[$listeners.selectValueItem4]]">
+            </oj-select-single>
+
+            <oj-select-single label-hint="Primary TimeKeeper" readonly="[[ $variables.IsSearch && !$variables.IsEdit ]]"
+              :title='[[ $application.variables.HelpEnabled ? "Select Primary Time keeper" : "" ]]'
+              value="{{ $variables.primary_timekeeper_name }}" item-text="person_name"
+              on-value-item-changed="[[$listeners.selectValueItem23]]"
+              data="[[$variables.getCrewRiteResourceDetailsListSDP3]]"
+             >
+            </oj-select-single>
+            <oj-select-single label-hint="Secondary TimeKeeper"
+              readonly="[[ $variables.IsSearch && !$variables.IsEdit ]]"
+              :title='[[ $application.variables.HelpEnabled ? "Select Secondary time keeper" : "" ]]'
+              value="{{ $variables.secondery_timekeeper_name }}"
+              data="[[$variables.getCrewRiteResourceDetailsListSDP3]]" item-text="person_name"
+              on-value-item-changed="[[$listeners.selectValueItem24]]"
+             >
+            </oj-select-single>
+            <oj-select-single label-hint="Supervisor" readonly="[[ $variables.IsSearch && !$variables.IsEdit ]]"
+              :title='[[ $application.variables.HelpEnabled ? "Select Supervisor" : "" ]]'
+              value="{{ $variables.supervisor_name }}"
+              data="[[$variables.getCrewRiteResourceDetailsListSDP3]]" item-text="person_name"
+              on-value-item-changed="[[$listeners.selectValueItem25]]">
+            </oj-select-single>
+            <!-- <oj-input-text label-hint="Supervisor" readonly="[[ $variables.IsSearch ]]"
+            value="{{ $variables.crewSetupHeaderObj.supervisor }}"></oj-input-text> -->
+
+            <oj-input-date label-hint="Start Date" readonly="[[ $variables.IsSearch && !$variables.IsEdit ]]"
+              :title='[[ $application.variables.HelpEnabled ? "Select Start Date" : "" ]]'
+              value="{{ $variables.crewSetupHeaderObj.start_date }}"
+              converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'
+              max="[[ $variables.crewSetupHeaderObj.end_date ]]">
+            </oj-input-date>
+
+            <oj-input-date label-hint="End Date" readonly="[[ $variables.IsSearch && !$variables.IsEdit ]]"
+              :title='[[ $application.variables.HelpEnabled ? "Select End Date" : "" ]]'
+              value="{{ $variables.crewSetupHeaderObj.end_date }}" min="[[ $variables.crewSetupHeaderObj.start_date ]]"
+              converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'></oj-input-date>
+
+            <oj-select-single label-hint="Crew Start Day" readonly="[[ $variables.IsSearch && !$variables.IsEdit ]]"
+              :title='[[ $application.variables.HelpEnabled ? "Select Crew Start Day" : "" ]]'
+              value="{{ $variables.crewSetupHeaderObj.crew_start_week }}" data="[[ $variables.WeekDaysADP ]]"
+              item-text="day">
+            </oj-select-single>
+            <oj-select-single label-hint="Crew End Day" readonly="[[ $variables.IsSearch && !$variables.IsEdit ]]"
+              :title='[[ $application.variables.HelpEnabled ? "Select Crew End Day" : "" ]]'
+              data="[[ $variables.WeekDaysADP ]]" value="{{ $variables.crewSetupHeaderObj.crew_end_week }}"
+              item-text="day">
+            </oj-select-single>
+
+            <oj-select-single label-hint="Crew Measure" readonly="[[ $variables.IsSearch ]]" item-text="lookup_code"
+              :title='[[ $application.variables.HelpEnabled ? "Select Crew measure" : "" ]]'
+              value="{{ $variables.crewSetupHeaderObj.crew_measure }}" required="true"
+              data="[[$variables.getCrewRiteCrewDefinitionLookupsListSDP4]]">
+            </oj-select-single>
+
+
+            <oj-select-single label-hint="Disbanded" readonly="true" item-text="value"
+              :title='[[ $application.variables.HelpEnabled ? "Crew Disbanded" : "" ]]'
+              data="[[ $variables.CrewSpecificADP ]]" value="{{ $variables.crewSetupHeaderObj.crew_disband }}"
+              required="true">
+            </oj-select-single>
+            <!-- <oj-select-single label-hint="Hours Type" readonly="[[ $variables.IsSearch && !$variables.IsEdit ]]"
+              :title='[[ $application.variables.HelpEnabled ? "Hours Type" : "" ]]'
+              value="{{ $variables.crewSetupHeaderObj.hours_type }}" data="[[$variables.HoursTypeSDP]]"
+              item-text="value"> from business object 
+            </oj-select-single> -->
+            <!-- <oj-select-single label-hint="Hours Type" readonly="[[ $variables.IsSearch && !$variables.IsEdit ]]"
+              :title='[[ $application.variables.HelpEnabled ? "Hours Type" : "" ]]'
+              value="{{ $variables.crewSetupHeaderObj.hours_type }}" item-text="lookup_code"
+              data="[[$variables.getCrewRiteCrewDefinitionLookupsListSDP5]]">
+            </oj-select-single> -->
+
+            <!-- <oj-select-single label-hint="Time Card Balancing"
+              readonly="[[ $variables.IsSearch && !$variables.IsEdit ]]"
+              :title='[[ $application.variables.HelpEnabled ? "Select Time Card Balancing" : "" ]]'
+              value="{{ $variables.crewSetupHeaderObj.timecard_balancing }}" item-text="lookup_code"
+              data="[[$variables.getCrewRiteCrewDefinitionLookupsListSDP6]]">
+            </oj-select-single> -->
+
+            <!-- <oj-select-single label-hint="Layout" readonly="[[ $variables.IsSearch && !$variables.IsEdit ]]"
+              :title='[[ $application.variables.HelpEnabled ? "Layout" : "" ]]'
+              value="{{ $variables.crewSetupHeaderObj.layout_name }}" item-text="layout_name"
+              data="[[$variables.getCrewRiteLayoutSearchListSDP]]">
+            </oj-select-single> -->
+
+            <!-- <oj-switch class="" value="{{ $variables.crewSetupHeaderObj.combination }}" label-hint="Combination"
+              on-value-changed="[[$listeners.switchValue4]]"
+              disabled="[[ !$variables.crewSetupHeaderObj.crewsetup_id ]]">
+            </oj-switch> -->
+
+            <oj-bind-if test="[[ $variables.crewSetupHeaderObj.hours_type === 'Non-Billable']]">
+              <oj-input-text label-hint="Unbilled Hours" value="{{ $variables.crewSetupHeaderObj.unbilled_hours }}"
+                readonly="[[ $variables.IsSearch && !$variables.IsEdit ]]"
+                :title='[[ $application.variables.HelpEnabled ? "Hours Type" : "" ]]'></oj-input-text>
+            </oj-bind-if>
+
+          </oj-form-layout>
+
+          <!-- <oj-form-layout columns="8" max-columns="8" style="margin-left:-2vw">
+            <div class="oj-flex-item oj-sm-margin-2x-bottom">
+              <span></span>
+            </div>
+            <div class="oj-flex-item oj-sm-margin-2x-bottom">
+              <span>Monday</span>
+            </div>
+            <div class="oj-flex-item oj-sm-margin-2x-bottom">
+              <span>Tuesday</span>
+            </div>
+            <div class="oj-flex-item oj-sm-margin-2x-bottom">
+              <span>Wednesday</span>
+            </div>
+            <div class="oj-flex-item oj-sm-margin-2x-bottom">
+              <span>Thursday</span>
+            </div>
+            <div class="oj-flex-item oj-sm-margin-2x-bottom">
+              <span>Friday</span>
+            </div>
+            <div class="oj-flex-item oj-sm-margin-2x-bottom">
+              <span>Saturday</span>
+            </div>
+            <div class="oj-flex-item oj-sm-margin-2x-bottom">
+              <span>Sunday</span>
+            </div>
+            <div class="oj-flex-item">
+              <span>Time In</span>
+            </div>
+            <div class="oj-flex-item">
+              <oj-input-text class="formclass" readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Monday ]]"
+                aria-label="monin" validators="{{ $application.functions.validateText() }}" required="true"
+                value="{{ $variables.crewSetupHeaderObj.mon_in_time }}">
+              </oj-input-text>
+            </div>
+            <div class="oj-flex-item">
+              <oj-input-text class="formclass" readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Tuesday ]]"
+                aria-label="tuein" value="{{ $variables.crewSetupHeaderObj.tue_in_time }}"
+                validators="{{ $application.functions.validateText() }}" required="true">
+              </oj-input-text>
+            </div>
+            <div class="oj-flex-item">
+              <oj-input-text class="formclass"
+                readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Wednesday ]]"
+                value="{{ $variables.crewSetupHeaderObj.wed_in_time }}" aria-label="wedin"
+                validators="{{ $application.functions.validateText() }}" required="true">
+              </oj-input-text>
+            </div>
+            <div class="oj-flex-item">
+              <oj-input-text class="formclass"
+                readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Thursday ]]"
+                value="{{ $variables.crewSetupHeaderObj.thu_in_time }}" aria-label="thuin"
+                validators="{{ $application.functions.validateText() }}" required="true">
+              </oj-input-text>
+            </div>
+            <div class="oj-flex-item">
+              <oj-input-text class="formclass" readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Friday ]]"
+                value="{{ $variables.crewSetupHeaderObj.fri_in_time }}" aria-label="friin"
+                validators="{{ $application.functions.validateText() }}" required="true">
+              </oj-input-text>
+            </div>
+            <div class="oj-flex-item">
+              <oj-input-text class="formclass"
+                readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Saturday ]]"
+                value="{{ $variables.crewSetupHeaderObj.sat_in_time }}" aria-label="satin"
+                validators="{{ $application.functions.validateText() }}" required="true">
+              </oj-input-text>
+            </div>
+            <div class="oj-flex-item">
+              <oj-input-text class="formclass" readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Sunday ]]"
+                aria-label="sunin" value="{{ $variables.crewSetupHeaderObj.sun_in_time }}"
+                validators="{{ $application.functions.validateText() }}" required="true">
+              </oj-input-text>
+            </div>
+            <oj-bind-if
+              test="[[ $variables.crewSetupHeaderObj.crew_measure === 'TIME IN OUT' || !$variables.crewSetupHeaderObj.crew_measure ]]">
+              <div class="oj-flex-item">
+                <span>Time Out</span>
+              </div>
+              <div class="oj-flex-item">
+                <oj-input-text class="formclass"
+                  readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Monday ]]" aria-label="monout"
+                  value="{{ $variables.crewSetupHeaderObj.mon_out_time }}"
+                  validators="{{ $application.functions.validateText() }}"
+                  required="[[  $variables.crewSetupHeaderObj.crew_measure === 'TIME IN OUT' ? true : false]]">
+                </oj-input-text>
+              </div>
+              <div class="oj-flex-item">
+                <oj-input-text class="formclass"
+                  readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Tuesday ]]" aria-label="tueout"
+                  value="{{ $variables.crewSetupHeaderObj.tue_out_time }}"
+                  required="[[   $variables.crewSetupHeaderObj.crew_measure === 'TIME IN OUT' ? true : false]]"
+                  validators="{{ $application.functions.validateText() }}">
+                </oj-input-text>
+              </div>
+              <div class="oj-flex-item">
+                <oj-input-text class="formclass"
+                  readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Wednesday ]]" aria-label="wedout"
+                  value="{{ $variables.crewSetupHeaderObj.wed_out_time }}"
+                  required="[[   $variables.crewSetupHeaderObj.crew_measure === 'TIME IN OUT' ? true : false]]"
+                  validators="{{ $application.functions.validateText() }}">
+                </oj-input-text>
+              </div>
+              <div class="oj-flex-item">
+                <oj-input-text class="formclass"
+                  readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Thursday ]]" aria-label="thuout"
+                  value="{{ $variables.crewSetupHeaderObj.thu_out_time }}"
+                  required="[[  $variables.crewSetupHeaderObj.crew_measure === 'TIME IN OUT' ? true : false]]"
+                  validators="{{ $application.functions.validateText() }}">
+                </oj-input-text>
+              </div>
+              <div class="oj-flex-item">
+                <oj-input-text class="formclass"
+                  readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Friday ]]" aria-label="friout"
+                  value="{{ $variables.crewSetupHeaderObj.fri_out_time }}"
+                  required="[[  $variables.crewSetupHeaderObj.crew_measure === 'TIME IN OUT' ? true : false]]"
+                  validators="{{ $application.functions.validateText() }}">
+                </oj-input-text>
+              </div>
+              <div class="oj-flex-item">
+                <oj-input-text class="formclass"
+                  readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Saturday ]]" aria-label="satout"
+                  value="{{ $variables.crewSetupHeaderObj.sat_out_time }}"
+                  required="[[  $variables.crewSetupHeaderObj.crew_measure === 'TIME IN OUT' ? true : false]]"
+                  validators="{{ $application.functions.validateText() }}">
+                </oj-input-text>
+              </div>
+              <div class="oj-flex-item">
+                <oj-input-text class="formclass"
+                  readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Sunday ]]" aria-label="sunout"
+                  value="{{ $variables.crewSetupHeaderObj.sun_out_time }}"
+                  required="[[   $variables.crewSetupHeaderObj.crew_measure === 'TIME IN OUT' ? true : false]]"
+                  validators="{{ $application.functions.validateText() }}">
+                </oj-input-text>
+              </div>
+            </oj-bind-if>
+            <oj-bind-if test="[[ $variables.crewSetupHeaderObj.crew_measure === 'TIME QUANTITY' ||  $variables.crewSetupHeaderObj.crew_measure === 'TIME QUANTITY'  ]]">
+              <div class="oj-flex-item">
+                <span>Quantity</span>
+              </div>
+              <div class="oj-flex-item">
+                <oj-input-text class="formclass"
+                  readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Monday ]]" aria-label="monout"
+                  value="{{ $variables.crewSetupHeaderObj.mon_quantity }}"
+                  required="[[  $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY']]">
+                </oj-input-text>
+              </div>
+              <div class="oj-flex-item">
+                <oj-input-text class="formclass"
+                  readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Tuesday ]]" aria-label="tueout"
+                  value="{{ $variables.crewSetupHeaderObj.tue_quantity }}"
+                  required="[[  $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY']]">
+                </oj-input-text>
+              </div>
+              <div class="oj-flex-item">
+                <oj-input-text class="formclass"
+                  readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Wednesday ]]" aria-label="wedout"
+                  value="{{ $variables.crewSetupHeaderObj.wed_quantity }}"
+                  required="[[  $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY']]">
+                </oj-input-text>
+              </div>
+              <div class="oj-flex-item">
+                <oj-input-text class="formclass"
+                  readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Thursday ]]" aria-label="thuout"
+                  value="{{ $variables.crewSetupHeaderObj.thu_quantity }}"
+                  required="[[  $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY']]">
+                </oj-input-text>
+              </div>
+              <div class="oj-flex-item">
+                <oj-input-text class="formclass"
+                  readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Friday ]]" aria-label="friout"
+                  value="{{ $variables.crewSetupHeaderObj.fri_quantity }}"
+                  required="[[  $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY']]">
+                </oj-input-text>
+              </div>
+              <div class="oj-flex-item">
+                <oj-input-text class="formclass"
+                  readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Saturday ]]" aria-label="satout"
+                  value="{{ $variables.crewSetupHeaderObj.sat_quantity }}"
+                  required="[[  $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY']]">
+                </oj-input-text>
+              </div>
+              <div class="oj-flex-item">
+                <oj-input-text class="formclass"
+                  readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Sunday ]]" aria-label="sunout"
+                  value="{{ $variables.crewSetupHeaderObj.sun_quantity }}"
+                  required="[[  $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY']]">
+                </oj-input-text>
+              </div>
+            </oj-bind-if>
+          </oj-form-layout> -->
+          <oj-form-layout columns="8" max-columns="8" style="margin-left:-2vw">
+
+            <!-- Header Row -->
+            <div class="oj-flex-item oj-sm-margin-2x-bottom"><span></span></div>
+            <div class="oj-flex-item oj-sm-margin-2x-bottom"><span>Monday</span></div>
+            <div class="oj-flex-item oj-sm-margin-2x-bottom"><span>Tuesday</span></div>
+            <div class="oj-flex-item oj-sm-margin-2x-bottom"><span>Wednesday</span></div>
+            <div class="oj-flex-item oj-sm-margin-2x-bottom"><span>Thursday</span></div>
+            <div class="oj-flex-item oj-sm-margin-2x-bottom"><span>Friday</span></div>
+            <div class="oj-flex-item oj-sm-margin-2x-bottom"><span>Saturday</span></div>
+            <div class="oj-flex-item oj-sm-margin-2x-bottom"><span>Sunday</span></div>
+
+            <!-- ====================================================== -->
+            <!-- TIME IN: Shown for TIME IN OUT and TIME QUANTITY modes -->
+            <!-- ====================================================== -->
+            <oj-bind-if test="[[ $variables.crewSetupHeaderObj.crew_measure !== 'QUANTITY' ]]">
+              <div class="oj-flex-item"><span>Time In</span></div>
+
+              <div class="oj-flex-item">
+                <oj-input-text class="formclass"
+                  readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Monday ]]"
+                  value="{{ $variables.crewSetupHeaderObj.mon_in_time }}" aria-label="monin"
+                  validators="{{ $application.functions.validateText() }}" required="true">
+                </oj-input-text>
+              </div>
+
+              <div class="oj-flex-item">
+                <oj-input-text class="formclass"
+                  readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Tuesday ]]"
+                  value="{{ $variables.crewSetupHeaderObj.tue_in_time }}" aria-label="tuein"
+                  validators="{{ $application.functions.validateText() }}" required="true">
+                </oj-input-text>
+              </div>
+
+              <div class="oj-flex-item">
+                <oj-input-text class="formclass"
+                  readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Wednesday ]]"
+                  value="{{ $variables.crewSetupHeaderObj.wed_in_time }}" aria-label="wedin"
+                  validators="{{ $application.functions.validateText() }}" required="true">
+                </oj-input-text>
+              </div>
+
+              <div class="oj-flex-item">
+                <oj-input-text class="formclass"
+                  readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Thursday ]]"
+                  value="{{ $variables.crewSetupHeaderObj.thu_in_time }}" aria-label="thuin"
+                  validators="{{ $application.functions.validateText() }}" required="true">
+                </oj-input-text>
+              </div>
+
+              <div class="oj-flex-item">
+                <oj-input-text class="formclass"
+                  readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Friday ]]"
+                  value="{{ $variables.crewSetupHeaderObj.fri_in_time }}" aria-label="friin"
+                  validators="{{ $application.functions.validateText() }}" required="true">
+                </oj-input-text>
+              </div>
+
+              <div class="oj-flex-item">
+                <oj-input-text class="formclass"
+                  readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Saturday ]]"
+                  value="{{ $variables.crewSetupHeaderObj.sat_in_time }}" aria-label="satin"
+                  validators="{{ $application.functions.validateText() }}" required="true">
+                </oj-input-text>
+              </div>
+
+              <div class="oj-flex-item">
+                <oj-input-text class="formclass"
+                  readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Sunday ]]"
+                  value="{{ $variables.crewSetupHeaderObj.sun_in_time }}" aria-label="sunin"
+                  validators="{{ $application.functions.validateText() }}" required="true">
+                </oj-input-text>
+              </div>
+            </oj-bind-if>
+
+            <!-- ====================================================== -->
+            <!-- TIME OUT: Shown only for TIME IN OUT mode -->
+            <!-- ====================================================== -->
+            <oj-bind-if test="[[ $variables.crewSetupHeaderObj.crew_measure === 'TIME IN OUT' ]]">
+              <div class="oj-flex-item"><span>Time Out</span></div>
+
+              <div class="oj-flex-item">
+                <oj-input-text class="formclass"
+                  readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Monday ]]"
+                  value="{{ $variables.crewSetupHeaderObj.mon_out_time }}" aria-label="monout"
+                  validators="{{ $application.functions.validateText() }}" required="true">
+                </oj-input-text>
+              </div>
+
+              <div class="oj-flex-item">
+                <oj-input-text class="formclass"
+                  readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Tuesday ]]"
+                  value="{{ $variables.crewSetupHeaderObj.tue_out_time }}" aria-label="tueout"
+                  validators="{{ $application.functions.validateText() }}" required="true">
+                </oj-input-text>
+              </div>
+
+              <div class="oj-flex-item">
+                <oj-input-text class="formclass"
+                  readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Wednesday ]]"
+                  value="{{ $variables.crewSetupHeaderObj.wed_out_time }}" aria-label="wedout"
+                  validators="{{ $application.functions.validateText() }}" required="true">
+                </oj-input-text>
+              </div>
+
+              <div class="oj-flex-item">
+                <oj-input-text class="formclass"
+                  readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Thursday ]]"
+                  value="{{ $variables.crewSetupHeaderObj.thu_out_time }}" aria-label="thuout"
+                  validators="{{ $application.functions.validateText() }}" required="true">
+                </oj-input-text>
+              </div>
+
+              <div class="oj-flex-item">
+                <oj-input-text class="formclass"
+                  readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Friday ]]"
+                  value="{{ $variables.crewSetupHeaderObj.fri_out_time }}" aria-label="friout"
+                  validators="{{ $application.functions.validateText() }}" required="true">
+                </oj-input-text>
+              </div>
+
+              <div class="oj-flex-item">
+                <oj-input-text class="formclass"
+                  readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Saturday ]]"
+                  value="{{ $variables.crewSetupHeaderObj.sat_out_time }}" aria-label="satout"
+                  validators="{{ $application.functions.validateText() }}" required="true">
+                </oj-input-text>
+              </div>
+
+              <div class="oj-flex-item">
+                <oj-input-text class="formclass"
+                  readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Sunday ]]"
+                  value="{{ $variables.crewSetupHeaderObj.sun_out_time }}" aria-label="sunout"
+                  validators="{{ $application.functions.validateText() }}" required="true">
+                </oj-input-text>
+              </div>
+            </oj-bind-if>
+
+            <!-- ====================================================== -->
+            <!-- QUANTITY: Shown for TIME QUANTITY and QUANTITY modes -->
+            <!-- ====================================================== -->
+            <oj-bind-if
+              test="[[ $variables.crewSetupHeaderObj.crew_measure === 'TIME QUANTITY' || $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY' ]]">
+              <div class="oj-flex-item"><span>Quantity</span></div>
+
+              <div class="oj-flex-item">
+                <oj-input-text class="formclass"
+                  readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Monday ]]"
+                  value="{{ $variables.crewSetupHeaderObj.mon_quantity }}" aria-label="monqty"
+                  required="[[ $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY' ]]">
+                </oj-input-text>
+              </div>
+
+              <div class="oj-flex-item">
+                <oj-input-text class="formclass"
+                  readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Tuesday ]]"
+                  value="{{ $variables.crewSetupHeaderObj.tue_quantity }}" aria-label="tueqty"
+                  required="[[ $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY' ]]">
+                </oj-input-text>
+              </div>
+
+              <div class="oj-flex-item">
+                <oj-input-text class="formclass"
+                  readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Wednesday ]]"
+                  value="{{ $variables.crewSetupHeaderObj.wed_quantity }}" aria-label="wedqty"
+                  required="[[ $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY' ]]">
+                </oj-input-text>
+              </div>
+
+              <div class="oj-flex-item">
+                <oj-input-text class="formclass"
+                  readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Thursday ]]"
+                  value="{{ $variables.crewSetupHeaderObj.thu_quantity }}" aria-label="thuqty"
+                  required="[[ $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY' ]]">
+                </oj-input-text>
+              </div>
+
+              <div class="oj-flex-item">
+                <oj-input-text class="formclass"
+                  readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Friday ]]"
+                  value="{{ $variables.crewSetupHeaderObj.fri_quantity }}" aria-label="friqty"
+                  required="[[ $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY' ]]">
+                </oj-input-text>
+              </div>
+
+              <div class="oj-flex-item">
+                <oj-input-text class="formclass"
+                  readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Saturday ]]"
+                  value="{{ $variables.crewSetupHeaderObj.sat_quantity }}" aria-label="satqty"
+                  required="[[ $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY' ]]">
+                </oj-input-text>
+              </div>
+
+              <div class="oj-flex-item">
+                <oj-input-text class="formclass"
+                  readonly="[[ $variables.IsSearch || !$variables.headerweekObj.Sunday ]]"
+                  value="{{ $variables.crewSetupHeaderObj.sun_quantity }}" aria-label="sunqty"
+                  required="[[ $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY' ]]">
+                </oj-input-text>
+              </div>
+            </oj-bind-if>
+
+          </oj-form-layout>
+
+        </oj-validation-group>
+      </div>
+
+      <div class="oj-flex-item oj-flex" style="width:100%">
+        <div class="oj-flex-item oj-sm-flex-initial oj-sm-align-self-center">
+          <span class="subheadings">Assignments</span>
+        </div>
+        <div class="oj-flex-item oj-flex oj-sm-justify-content-flex-end">
+          <div class="oj-flex-item oj-sm-flex-initial oj-sm-margin-2x-end">
+            <oj-button label="Combination" chroming="callToAction" class="oj-button-sm"
+              disabled="[[ !$variables.crewSetupHeaderObj.crewsetup_id ]]" on-oj-action="[[$listeners.buttonAction28]]">
+            </oj-button>
+          </div>
+          <div class="oj-flex-item oj-sm-flex-initial oj-sm-margin-2x-end">
+            <oj-button label="Add Resource" chroming="callToAction" class="oj-button-sm"
+              disabled="[[ !$variables.crewSetupHeaderObj.crewsetup_id || $variables.crewSetupHeaderObj.crew_disband === 'YES' ]]"
+              on-oj-action="[[$listeners.buttonAction5]]">
+            </oj-button>
+          </div>
+          <oj-bind-if test='[[ $variables.crewSetupHeaderObj.crew_type !== "Person" ]]'>
+            <div class="oj-flex-item oj-sm-flex-initial oj-sm-margin-2x-end">
+              <oj-button label="Add Equipment" chroming="callToAction" class="oj-button-sm"
+                disabled="[[ !$variables.crewSetupHeaderObj.crewsetup_id || $variables.crewSetupHeaderObj.crew_disband === 'YES' ]]"
+                on-oj-action="[[$listeners.buttonAction17]]">
+              </oj-button>
+            </div>
+          </oj-bind-if>
+          <div class="oj-flex-item oj-sm-flex-initial oj-sm-margin-2x-end">
+            <!-- <oj-button label="Request Resource" chroming="callToAction" class="oj-button-sm"
+              on-oj-action="[[$listeners.buttonAction20]]" disabled="[[ !$variables.copyEnable ]]">
+            </oj-button> -->
+          </div>
+        </div>
+        <div class=" oj-flex-item oj-sm-margin-2x-top">
+          <oj-table scroll-policy="loadMoreOnScroll" display="grid" data="[[ $variables.crewSetupLinesADP ]]"
+            style="width:93vw;max-height:40vh" columns='[{"headerText":"","field":"","template":"viewIcon","sortable":"disabled","minWidth":"5rem"},
+          {"headerText":"Type","field":"resource_type"},
+          {"headerText":"Name","field":"resource_name"},
+          {"headerText":"Role/Class","field":"resource_role"},
+          {"headerText":"Project Number","field":"project_number"},
+          {"headerText":"Task Name","field":"task_name"},
+          {"headerText":"Perdiem Amount","field":"per_diem_amount","className": "oj-helper-text-align-end"},
+          {"headerText":"Bonus Amount","field":"bonus_amount","className": "oj-helper-text-align-end"},
+          {"headerText":"Location","field":"resource_location"},
+          {"headerText":"Active","field":"active_flag","template":"switchallowed"},
+          {"headerText":"Effective Start Date","field":"effective_start_date","template":"dateformattor"},
+          {"headerText":"Effective End Date","field":"effective_end_date","template":"dateformattor"}]'>
+            <template slot="dateformattor">
+              <oj-input-date value='[[typeof $current.data === "string" ? $current.data : null]]' readonly="true"
+                converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'></oj-input-date>
+            </template>
+
+            <template slot="viewIcon">
+               <oj-menu-button id="menuActionButton" chroming="borderless" display="icons">
+                <span slot="startIcon"   class="oj-ux-ico-action"></span>
+                <oj-menu id="myMenu" slot="menu">              
+                  <oj-option id="edit">
+                    <oj-button chroming="callToAction" class="oj-button-sm" label="Edit" on-oj-action="[[$listeners.iconClick2]]">
+                      <span class="oj-ux-ico-edit" slot="startIcon"></span>
+                    </oj-button>
+                  </oj-option>              
+                  <oj-option id="view">
+                    <oj-button chroming="callToAction" class="oj-button-sm" label="View" on-oj-action="[[$listeners.iconClick]]">
+                      <span class="oj-ux-ico-log" slot="startIcon"></span>
+                    </oj-button>
+                  </oj-option>                           
+                  <oj-option id="delete">
+                    <oj-button chroming="callToAction" class="oj-button-sm" label="Delete" on-oj-action="[[$listeners.iconClick3]]">
+                      <span class="oj-ux-ico-trash" slot="startIcon"></span>
+                    </oj-button>
+                  </oj-option>
+                </oj-menu>
+              </oj-menu-button>
+              <!-- <div class="oj-flex">
+                <div class="oj-flex-item oj-sm-flex-initial oj-sm-margin-1x-end">
+                  <span class="oj-ux-ico-view" style="color:black;font-size:20px;font-weight:bold;cursor:pointer"
+               on-click="[[$listeners.iconClick]]"></span>
+                </div>
+                <div class="oj-flex-item oj-sm-flex-initial">
+                  <span class="oj-ux-ico-edit" style="color:black;font-size:20px;font-weight:bold;cursor:pointer"
+                 on-click="[[$listeners.iconClick2]]"></span>
+                </div>
+                 <div class="oj-flex-item oj-sm-flex-initial">
+                  <span class="oj-ux-ico-trash" style="color:black;font-size:20px;font-weight:bold;cursor:pointer"
+                    on-click="[[$listeners.iconClick3]]">
+                </span>
+                </div>
+              </div> -->
+            </template>
+        </div>
+      </div>
+
+
+      <oj-dialog dialog-title="" class="" id="resourceDialog1" style="width: 70vw; max-height:65vh;"
+        cancel-behavior="icon">
+        <div slot="body">
+          <div class="oj-flex-item oj-sm-margin-5x-top">
+            <span style="font-size:18px;font-weight:600"><oj-bind-text value="[[ $variables.dialogueLabel ]]"></oj-bind-text> Resource</span>
+          </div>
+
+          <oj-validation-group id="linesvalGroup">
+
+            <oj-form-layout class="oj-formlayout-full-width" max-columns="6" label-edge="top" columns="6">
+              <oj-bind-if
+                test="[[ $variables.crewSetupHeaderObj.crew_specific === 'NO' && !$variables.AssignEnabled ]]">
+                <oj-select-single label-hint="Project Name" value="{{ $variables.linesObj.project_name }}"
+                  class="oj-sm-margin-3x-bottom"
+                  :title='[[ $application.variables.HelpEnabled ? "Select Project" : "" ]]' item-text="project_name"
+                  data="[[$variables.ProjectDeatilsLOVSDP]]" on-value-item-changed="[[$listeners.selectValueItem2]]"
+                  required="true">
+                </oj-select-single>
+              </oj-bind-if>
+              <oj-bind-if test="[[ $variables.crewSetupHeaderObj.crew_specific === 'NO' && $variables.AssignEnabled ]]">
+                <oj-input-text label-hint="Project Name" readonly="true" value="{{ $variables.linesObj.project_name }}"
+                  class="oj-sm-margin-3x-bottom"
+                  :title='[[ $application.variables.HelpEnabled ? "Select Project" : "" ]]' required="true">
+                </oj-input-text>
+              </oj-bind-if>
+              <oj-bind-if
+                test="[[ $variables.crewSetupHeaderObj.crew_specific === 'YES'  && (!$variables.AssignEnabled || $variables.AssignEnabled ) ]]">
+                <oj-input-text label-hint="Project Name" readonly="true" value="{{ $variables.linesObj.project_name }}"
+                  class="oj-sm-margin-3x-bottom"
+                  :title='[[ $application.variables.HelpEnabled ? "Select Project" : "" ]]' required="true">
+                </oj-input-text>
+              </oj-bind-if>
+              <oj-select-single label-hint="Task Name" value="{{ $variables.linesObj.task_name}}"
+                class="oj-sm-margin-3x-bottom"
+                :title='[[ $application.variables.HelpEnabled ? "Select Task name" : "" ]]'
+                data="[[$variables.AddResourcegetTasksListSDP]]" item-text="task_name"
+                readonly='[[ $variables.dialogueLabel === "View" ]]'
+                on-value-item-changed="[[$listeners.selectValueItem6]]" required="true">
+              </oj-select-single>
+
+              <!-- <oj-combobox-one label-hint="Resource Name" value="{{ $variables.linesObj.resource_name }}"
+                :title='[[ $application.variables.HelpEnabled ? "Select Resource name" : "" ]]'
+                class="oj-sm-margin-3x-bottom" readonly='[[ $variables.dialogueLabel === "View" ]]'
+                options="[[ $variables.ResourcesArray ]]" options-keys.value="resource_name"
+                options-keys.label="resource_name_label" on-value-changed="[[$listeners.comboValue]]"
+                messages-custom="{{ $variables.resourceMessage }}">
+              </oj-combobox-one> -->
+
+<oj-select-single label-hint="Resource Name" value="{{ $variables.linesObj.resource_name }}"
+  :title='[[ $application.variables.HelpEnabled ? "Select Resource name" : "" ]]'
+  messages-custom="[[$variables.resourceMessage ]]" class="oj-sm-margin-3x-bottom"
+  readonly='[[ $variables.dialogueLabel === "View" ]]' item-text="resource_name" required="true"
+  on-value-item-changed="[[$listeners.selectValueItem14]]" data="[[$variables.resourceADP]]">
+</oj-select-single>
+
+
+              <!-- <oj-select-single label-hint="Resource Name" value="{{ $variables.linesObj.resource_name }}"
+                :title='[[ $application.variables.HelpEnabled ? "Select Resource name" : "" ]]'
+                messages-custom="[[$variables.resourceMessage ]]" class="oj-sm-margin-3x-bottom"
+                readonly='[[ $variables.dialogueLabel === "View" ]]' data="[[$variables.ResourceADP]]"
+                item-text="resource_name" required="true" on-value-item-changed="[[$listeners.selectValueItem14]]">
+              </oj-select-single> -->
+              <oj-input-text label-hint="Resource Location" readonly="true"
+                value="{{ $variables.linesObj.resource_location }}">
+              </oj-input-text>
+              <oj-input-text label-hint="Resource Number" value="{{ $variables.linesObj.resource_number }}"
+                class="oj-sm-margin-3x-bottom"
+                :title='[[ $application.variables.HelpEnabled ? "Select Resource name" : "" ]]' readonly="true">
+              </oj-input-text>
+              <oj-input-text label-hint="Resource Role" readonly="true" value="{{ $variables.linesObj.resource_role }}"
+                class="oj-sm-margin-3x-bottom"
+                :title='[[ $application.variables.HelpEnabled ? "Select Resource Role" : "" ]]'>
+              </oj-input-text>
+
+
+              <oj-bind-if test="[[ $variables.crewSetupHeaderObj.crew_specific === 'YES' ]]">
+                <oj-select-single label-hint="Expenditure Type" value="{{ $variables.linesObj.expenditure_type_name}}"
+                  :title='[[ $application.variables.HelpEnabled ? "Select Expenditure Type" : "" ]]'
+                  class="oj-sm-margin-3x-bottom" readonly='[[ $variables.dialogueLabel === "View" ]]'
+                  data="[[$variables.getExpenditureTypeListSDP]]" item-text="expenditure_type_name"
+                  on-value-item-changed="[[$listeners.selectValueItem7]]">
+                </oj-select-single>
+              </oj-bind-if>
+
+              <oj-select-single label-hint="Equipment Class" item-text="equipment_class"
+                value="{{ $variables.linesObj.EquipmentClass }}" data="[[$variables.crewResourceEquipmentListSDP]]"
+                on-value-item-changed="[[$listeners.selectValueItem13]]">
+                <template slot="itemTemplate" data-oj-as="item">
+                  <oj-highlight-text text='[[item.data.equipment_class + " -  " + item.data.equipment_name]]'>
+                  </oj-highlight-text>
+                </template>
+              </oj-select-single>
+
+
+              <!-- <oj-input-date label-hint="Effective Start Date"
+                value="{{$variables.linesObj.effective_start_date_copy }}"
+                :title='[[ $application.variables.HelpEnabled ? "Select Effective Start Date" : "" ]]'
+                converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'
+                max="[[ $variables.crewSetupHeaderObj.end_date ]]" on-value-changed="[[$listeners.inputDateValue]]"
+                readonly="[[ $variables.AssignEnabled || $variables.dialogueLabel==='View' ]]">
+              </oj-input-date> -->
+
+               <oj-input-date label-hint="Effective Start Date"
+                value="{{$variables.linesObj.effective_start_date_copy }}"
+                :title='[[ $application.variables.HelpEnabled ? "Select Effective Start Date" : "" ]]'
+                converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'
+                max="[[ $variables.crewSetupHeaderObj.end_date ]]" 
+                readonly="[[ $variables.AssignEnabled || $variables.dialogueLabel==='View' ]]">
+              </oj-input-date>
+
+              <!-- <oj-input-date label-hint="Effective End Date"
+                :title='[[ $application.variables.HelpEnabled ? "Select Effective End Date" : "" ]]'
+                converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'
+                max="[[ $variables.crewSetupHeaderObj.end_date ]]"
+                value="{{ $variables.linesObj.effective_end_date_copy }}"
+                on-value-changed="[[$listeners.inputDateValue]]"
+                readonly="[[ !$variables.linesObj.effective_start_date_copy || $variables.AssignEnabled || $variables.dialogueLabel==='View' ]]">
+              </oj-input-date> -->
+
+
+              <oj-input-date label-hint="Effective End Date"
+                :title='[[ $application.variables.HelpEnabled ? "Select Effective End Date" : "" ]]'
+                converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'
+                max="[[ $variables.crewSetupHeaderObj.end_date ]]"
+                value="{{ $variables.linesObj.effective_end_date_copy }}"
+                readonly="[[ !$variables.linesObj.effective_start_date_copy || $variables.AssignEnabled || $variables.dialogueLabel==='View' ]]">
+              </oj-input-date>
+
+
+              <oj-switch label-hint="Perdiem" value="{{ $variables.linesObj.perdiem_flag }}"
+                on-value-changed="[[$listeners.switchValue]]"></oj-switch>
+
+              <oj-bind-if test='[[ $variables.linesObj.perdiem_flag === true ]]'>
+                <oj-input-number id="perdielhours" label-hint="Perdiem hours"
+                  value="{{ $variables.linesObj.perdiem_quantity }}"
+                  readonly='[[ $variables.dialogueLabel === "View"]]'>
+                </oj-input-number>
+              </oj-bind-if>
+              <oj-bind-if test='[[ $variables.linesObj.perdiem_flag === true ]]'>
+                <oj-input-text id="perdielrate" label-hint="Perdiem Rate"
+                  value="{{ $variables.linesObj.per_diem_rate }}" readonly='[[ $variables.dialogueLabel === "View"]]'
+                  :title='[[ $application.variables.HelpEnabled ? "Enter Perdiem Rate" : "" ]]'></oj-input-text>
+              </oj-bind-if>
+              <oj-bind-if test='[[ $variables.linesObj.perdiem_flag === true ]]'>
+                <oj-input-number id="perdieamount" label-hint="Perdiem Amount"
+                  value="{{ $variables.linesObj.per_diem_amount }}" readonly="true"
+                  :title='[[ $application.variables.HelpEnabled ? "Enter Perdiem Amount" : "" ]]'></oj-input-number>
+              </oj-bind-if>
+              <oj-switch label-hint="Bonus" value="{{ $variables.linesObj.bonus_flag }}"
+                on-value-changed="[[$listeners.switchValue2]]"></oj-switch>
+
+              <oj-bind-if test='[[ $variables.linesObj.bonus_flag === true ]]'>
+                <oj-input-number label-hint="Bonus hours" value="{{ $variables.linesObj.bonus_quantity }}"
+                  readonly='[[ $variables.dialogueLabel === "View" ]]'>
+                </oj-input-number>
+              </oj-bind-if>
+              <oj-bind-if test='[[ $variables.linesObj.bonus_flag === true ]]'>
+                <oj-input-number label-hint="Bonus Rate" value="{{ $variables.linesObj.bonus_rate }}"
+                  readonly='[[ $variables.dialogueLabel === "View" ]]'
+                  :title='[[ $application.variables.HelpEnabled ? "Enter Bonus Rate" : "" ]]'></oj-input-number>
+              </oj-bind-if>
+              <oj-bind-if test='[[ $variables.linesObj.bonus_flag === true ]]'>
+                <oj-input-number label-hint="Bonus Amount" value="{{ $variables.linesObj.bonus_amount }}"
+                  readonly="true" :title='[[ $application.variables.HelpEnabled ? "Enter Bonus Amount" : "" ]]'>
+                </oj-input-number>
+              </oj-bind-if>
+              <oj-input-text label-hint="OT Threshold Limit" value="{{ $variables.linesObj.ot_threshold_limit }}"
+                :title='[[ $application.variables.HelpEnabled ? "Enter Ot threshold limit" : "" ]]' required="true">
+              </oj-input-text>
+
+
+
+
+            </oj-form-layout>
+
+            <div class="oj-flex-item oj-sm-margin-3x-top">
+              <oj-form-layout class="oj-formlayout-full-width oj-sm-margin-3x-top" columns="8" max-columns="8">
+                <div class="oj-flex-item oj-sm-margin-2x-bottom">
+                  <span></span>
+                </div>
+                <div class="oj-flex-item oj-sm-margin-2x-bottom">
+                  <span>Monday</span>
+                </div>
+                <div class="oj-flex-item oj-sm-margin-2x-bottom">
+                  <span>Tuesday</span>
+                </div>
+                <div class="oj-flex-item oj-sm-margin-2x-bottom">
+                  <span>Wednesday</span>
+                </div>
+                <div class="oj-flex-item oj-sm-margin-2x-bottom">
+                  <span>Thursday</span>
+                </div>
+                <div class="oj-flex-item oj-sm-margin-2x-bottom">
+                  <span>Friday</span>
+                </div>
+                <div class="oj-flex-item oj-sm-margin-2x-bottom">
+                  <span>Saturday</span>
+                </div>
+                <div class="oj-flex-item oj-sm-margin-2x-bottom">
+                  <span>Sunday</span>
+                </div>
+
+                <div class="oj-flex-item oj-sm-margin-2x-bottom">
+                  <span>Time In</span>
+                </div>
+
+                <oj-input-text class="formclass" aria-label="monin"
+                  validators="{{ $application.functions.validateText() }}" required="true"
+                  value="{{ $variables.linesObj.mon_in_time }}"></oj-input-text>
+
+                <oj-input-text class="formclass" aria-label="tuein" value="{{ $variables.linesObj.tue_in_time }}"
+                  validators="{{ $application.functions.validateText() }}" required="true">
+                </oj-input-text>
+                <!-- readonly="[[ !$variables.linesweekObj.Tuesday || $variables.dialogueLabel==='View' ]]" -->
+
+                <oj-input-text class="formclass" aria-label="wedin" value="{{ $variables.linesObj.wed_in_time }}"
+                  validators="{{ $application.functions.validateText() }}" required="true">
+                  <!-- readonly="[[ !$variables.linesweekObj.Wednesday || $variables.dialogueLabel==='View' ]]" -->
+                </oj-input-text>
+
+                <oj-input-text class="formclass" aria-label="thuin" value="{{ $variables.linesObj.thu_in_time }}"
+                  validators="{{ $application.functions.validateText() }}" required="true">
+                  <!-- readonly="[[ !$variables.linesweekObj.Thursday || $variables.dialogueLabel==='View' ]]" -->
+                </oj-input-text>
+
+                <oj-input-text class="formclass" aria-label="friin" value="{{ $variables.linesObj.fri_in_time }}"
+                  validators="{{ $application.functions.validateText() }}" required="true">
+                </oj-input-text>
+
+                <oj-input-text class="formclass" aria-label="satin" value="{{ $variables.linesObj.sat_in_time }}"
+                  validators="{{ $application.functions.validateText() }}" required="true">
+                </oj-input-text>
+
+                <oj-input-text class="formclass" aria-label="sunin" value="{{ $variables.linesObj.sun_in_time }}"
+                  validators="{{ $application.functions.validateText() }}" required="true">
+                </oj-input-text>
+              </oj-form-layout>
+
+              <oj-bind-if test="[[ $variables.crewSetupHeaderObj.crew_measure === 'TIME IN OUT' ]]">
+                <oj-form-layout class="oj-formlayout-full-width oj-sm-margin-3x-top" columns="8" max-columns="8">
+                  <div class="oj-flex-item oj-sm-margin-2x-bottom">
+                    <span>Time Out</span>
+                  </div>
+                  <oj-input-text class="formclass" aria-label="monout" value="{{ $variables.linesObj.mon_out_time }}"
+                    validators="{{ $application.functions.validateText() }}" required="true">
+                  </oj-input-text>
+
+                  <oj-input-text class="formclass" aria-label="tueout" value="{{ $variables.linesObj.tue_out_time }}"
+                    validators="{{ $application.functions.validateText() }}" required="true">
+                  </oj-input-text>
+
+                  <oj-input-text class="formclass" aria-label="wedout" value="{{ $variables.linesObj.wed_out_time }}"
+                    validators="{{ $application.functions.validateText() }}" required="true">
+                  </oj-input-text>
+
+                  <oj-input-text class="formclass" aria-label="thuout" value="{{ $variables.linesObj.thu_out_time }}"
+                    validators="{{ $application.functions.validateText() }}" required="true">
+                  </oj-input-text>
+
+                  <oj-input-text class="formclass" aria-label="friout" value="{{ $variables.linesObj.fri_out_time }}"
+                    validators="{{ $application.functions.validateText() }}" required="true">
+                  </oj-input-text>
+
+                  <oj-input-text class="formclass" aria-label="satout" value="{{ $variables.linesObj.sat_out_time }}"
+                    validators="{{ $application.functions.validateText() }}" required="true">
+                  </oj-input-text>
+
+                  <oj-input-text class="formclass" aria-label="sunout" value="{{ $variables.linesObj.sun_out_time }}"
+                    validators="{{ $application.functions.validateText() }}" required="true">
+                  </oj-input-text>
+                </oj-form-layout>
+              </oj-bind-if>
+
+              <oj-bind-if test="[[ $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY' ]]">
+                <oj-form-layout class="oj-formlayout-full-width oj-sm-margin-3x-top" columns="8" max-columns="8">
+                  <div class="oj-flex-item">
+                    <span>Quantity</span>
+                  </div>
+
+                  <oj-input-text class="formclass" aria-label="monout" value="{{ $variables.linesObj.mon_quantity }}"
+                    required="[[  $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY']]">
+                  </oj-input-text>
+
+                  <oj-input-text class="formclass" aria-label="tueout" value="{{ $variables.linesObj.tue_quantity }}"
+                    required="[[  $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY']]">
+                  </oj-input-text>
+
+                  <oj-input-text class="formclass" aria-label="wedout" value="{{ $variables.linesObj.wed_quantity }}"
+                    required="[[  $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY']]">
+                  </oj-input-text>
+
+                  <oj-input-text class="formclass" aria-label="thuout" value="{{ $variables.linesObj.thu_quantity }}"
+                    required="[[  $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY']]">
+                  </oj-input-text>
+
+                  <oj-input-text class="formclass" aria-label="friout" value="{{ $variables.linesObj.fri_quantity }}"
+                    required="[[  $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY']]">
+                  </oj-input-text>
+
+                  <oj-input-text class="formclass" aria-label="satout" value="{{ $variables.linesObj.sat_quantity }}"
+                    required="[[  $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY']]">
+                  </oj-input-text>
+
+                  <oj-input-text class="formclass" aria-label="sunout" value="{{ $variables.linesObj.sun_quantity }}"
+                    required="[[  $variables.crewSetupHeaderObj.crew_measure === 'QUANTITY']]">
+                  </oj-input-text>
+                </oj-form-layout>
+              </oj-bind-if>
+
+            </div>
+          </oj-validation-group>
+
+
+          <div class="oj-flex-item oj-sm-margin-2x-top">
+            <oj-toolbar chroming="borderless">
+              <oj-bind-if test="[[ $variables.dialogueLabel === 'Assign' || $variables.dialogueLabel === 'Edit' ]]">
+                <oj-button label="Save" chroming="callToAction" class="oj-button-sm"
+                  on-oj-action="[[$listeners.buttonAction7]]"></oj-button>
+              </oj-bind-if>
+              <oj-button label="[[ $variables.dialogueLabel === 'View' ? 'Close':'Cancel' ]]" chroming="callToAction"
+                class="oj-button-sm" on-oj-action="[[$listeners.buttonAction23]]"></oj-button>
+            </oj-toolbar>
+          </div>
+        </div>
+      </oj-dialog>
+
+
+      <oj-dialog dialog-title="" id="resourceRequest" class="resourceRequest" cancel-behavior="icon"
+        style="width:70vw;max-height:60vh">
+        <div slot="body">
+          <div class="oj-flex-item oj-flex oj-sm-margin-5x-top">
+            <div class="oj-flex-item oj-sm-margin-2x-end oj-sm-flex-initial">
+              <span style="font-size:18px;font-weight:600">Resource Request</span>
+            </div>
+
+            <div class="oj-flex-item oj-sm-margin-2x-end oj-sm-flex-initial">
+              <oj-button label="Add Resource" chroming="callToAction" class="oj-button-sm"
+                on-oj-action="[[$listeners.buttonAction22]]"></oj-button>
+
+            </div>
+          </div>
+
+
+          <div class="oj-flex-item oj-sm-margin-2x-top">
+            <!-- on-oj-before-row-edit-end="[[$listeners.tableBeforeRowEditEnd]]" -->
+            <oj-table scroll-policy="loadMoreOnScroll" style="width:60vw" display="grid"
+              columns='[{"headerText":"Resource Name","field":"resource_name"},{"headerText":"Resource Role","field":"resource_role_id","template":"roleTemplate"},{"headerText":"Resource Count","field":"resource_count","template":"countTemplate"},{"headerText":"Start Date","field":"start_date","template":"startDateTemplate"},{"headerText":"End Date","field":"end_date","template":"endDateTemplate"}]'
+              edit-mode="rowEdit" on-oj-before-row-edit="[[$listeners.tableBeforeRowEdit]]"
+              data="[[ $variables.CrewTemplateTblADP ]]"
+              on-oj-before-row-edit-end="[[$listeners.tableBeforeRowEditEnd2]]">
+              <template slot="countTemplate">
+
+                <oj-bind-if test='[[$current.mode === "navigation"]]'>
+                  <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+                </oj-bind-if>
+                <oj-bind-if test='[[$current.mode === "edit"]]'>
+                  <oj-input-text class="editable" value="{{ $variables.currentRowBuffer.resource_count}}"
+                    :id="[['oj-input-number-1829646926-1-' + $current.key]]"></oj-input-text>
+                </oj-bind-if>
+              </template>
+              <template slot="roleTemplate">
+                <oj-bind-if test='[[$current.mode === "navigation"]]'>
+                  <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+
+                </oj-bind-if>
+                <oj-bind-if test='[[$current.mode === "edit"]]'>
+
+                  <oj-select-single id="Select (Single) 1" value="{{ $variables.currentRowBuffer.resource_role_id}}"
+                    item-text="ProjectRoleName" data="[[$variables.get1113185ProjectRolesLOVListSDP]]">
+                  </oj-select-single>
+                </oj-bind-if>
+              </template>
+              <template slot="startDateTemplate">
+                <oj-bind-if test='[[$current.mode === "navigation"]]'>
+                  <oj-input-date class="editable" value="[[$current.data]]" readonly="true"
+                    converter='{"type": "datetime", "options": {"pattern":"yyyy-mm-dd"}}'></oj-input-date>
+                </oj-bind-if>
+                <oj-bind-if test='[[$current.mode === "edit"]]'>
+                  <oj-input-date class="editable" value="{{ $variables.currentRowBuffer.start_date}}"></oj-input-date>
+                </oj-bind-if>
+              </template>
+              <template slot="endDateTemplate">
+                <oj-bind-if test='[[$current.mode === "navigation"]]'>
+                  <oj-input-date class="editable" value="[[$current.data]]" readonly="true"
+                    converter='{"type": "datetime", "options": {"pattern":"yyyy-mm-dd"}}'></oj-input-date>
+                </oj-bind-if>
+                <oj-bind-if test='[[$current.mode === "edit"]]'>
+                  <oj-input-date class="editable" value="{{ $variables.currentRowBuffer.end_date}}"></oj-input-date>
+                </oj-bind-if>
+              </template>
+            </oj-table>
+
+          </div>
+
+          <div class="oj-flex-item">
+            <oj-toolbar chroming="borderless">
+              <oj-button label="Submit" chroming="callToAction" class="oj-button-sm"
+                on-oj-action="[[$listeners.buttonAction16]]"></oj-button>
+              <oj-button label="Cancel" chroming="callToAction" class="oj-button-sm"
+                on-oj-action="[[$listeners.buttonAction2]]"></oj-button>
+            </oj-toolbar>
+          </div>
+        </div>
+      </oj-dialog>
+
+
+
+      <oj-dialog dialog-title="" id="disbandAppDialog" class="" style="width:26vw;" cancel-behavior="icon">
+        <div slot="body">
+          <div class="oj-flex oj-sm-flex-direction-column">
+            <div class="oj-flex-item oj-flex oj-sm-margin-2x-top oj-sm-justify-content-center">
+              <span style="font-size:18px;font-weight:600">Are you sure you want to Disband the Crew ? </span>
+            </div>
+            <div class="oj-flex-item oj-sm-margin-5x-top">
+              <oj-toolbar chroming="solid" class="oj-flex-item oj-sm-flex-initial">
+                <oj-button label="Ok" chroming="callToAction" on-oj-action="[[$listeners.searchbtnAction2]]"
+                  class="oj-button-sm"></oj-button>
+                <oj-button label="Cancel" chroming="callToAction" class="oj-button-sm"
+                  on-oj-action="[[$listeners.buttonAction14]]"></oj-button>
+              </oj-toolbar>
+            </div>
+          </div>
+        </div>
+      </oj-dialog>
+
+
+
+
+
+      <oj-dialog dialog-title="" id="disbandDialog" class="" style="width:25vw; height:40vh;" cancel-behavior="icon">
+        <div slot="body">
+          <div class="oj-flex-item oj-sm-margin-5x-top">
+            <span style="font-size:18px;font-weight:600">Disband Crew</span>
+          </div>
+          <div class="oj-flex-item oj-sm-margin-3x-top">
+            <oj-validation-group id="disbandgroup">
+              <oj-form-layout columns="1" label-edge="top">
+                <oj-input-date label-hint="Date" value="{{ $variables.disbandCrewObj.crew_disband_date }}"
+                  :title='[[ $application.variables.HelpEnabled ? "Select Disband Date" : "" ]]'
+                  min="[[ $variables.crewSetupHeaderObj.start_date ]]" required="true"></oj-input-date>
+                <oj-text-area label-hint="Comment" value="{{ $variables.disbandCrewObj.crew_disband_comments }}"
+                  :title='[[ $application.variables.HelpEnabled ? "Enter Comments" : "" ]]' required="true">
+                </oj-text-area>
+              </oj-form-layout>
+            </oj-validation-group>
+          </div>
+
+          <div class="oj-flex-item">
+            <oj-toolbar chroming="borderless">
+              <oj-button label="Disband" chroming="callToAction" class="oj-button-sm"
+                on-oj-action="[[$listeners.buttonAction12]]"></oj-button>
+              <oj-button label="Cancel" chroming="callToAction" class="oj-button-sm"
+                on-oj-action="[[$listeners.buttonAction13]]"></oj-button>
+            </oj-toolbar>
+          </div>
+        </div>
+      </oj-dialog>
+
+    </div>
+
+
+  </oj-sp-welcome-page>
+</div>
