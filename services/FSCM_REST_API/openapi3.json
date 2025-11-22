@@ -1,0 +1,1075 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "FscmRestApi",
+        "version": "1.0.0",
+        "x-vb": {
+            "transforms": {
+                "path": "../FSCMTransform.js"
+            }
+        }
+    },
+    "servers": [
+        {
+            "url": "vb-catalog://backends/fscmRestApi",
+            "description": "FscmRestApi"
+        }
+    ],
+    "paths": {
+        "/11.13.18.05/projectRolesLOV": {
+            "get": {
+                "operationId": "get11_13_18_05ProjectRolesLOV",
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Get11_13_18_05ProjectRolesLOV"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/get11_13_18_05ProjectRolesLOV/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+               },
+                "x-vb": {
+                    "actionHint": "getMany"
+                }
+            }
+        },
+        "/11.13.18.05/projectResourceRequests": {
+            "post": {
+                "operationId": "post11_13_18_05ProjectResourceRequests",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Post11_13_18_05ProjectResourceRequestsRequest"
+                            },
+                            "examples": {
+                                "vb": {
+                                    "externalValue": "./examples/post11_13_18_05ProjectResourceRequests/request_application_json_vb.json"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Post11_13_18_05ProjectResourceRequestsResponse"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/post11_13_18_05ProjectResourceRequests/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "actionHint": "getMany",
+                    "headers": {
+                        "Content-Type": "application/vnd.oracle.adf.resourceitem+json"
+                    }
+                }
+            }
+        },
+        "/11.13.18.05/projects/{project_num}/child/ProjectTeamMembers": {
+            "parameters": [
+                {
+                    "name": "project_num",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "get": {
+                "operationId": "fetchEmployeesFromProject",
+                "parameters": [
+                    {
+                        "name": "onlyData",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "x-vb": {
+                            "defaultValue": "true"
+                        }
+                    },
+{
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "x-vb": {
+                            "defaultValue": "25"
+                        }
+                    },
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }                    ,
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Get11_13_18_05ProjectsProject_numChildProjectTeamMembers"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/fetchEmployeesFromProject/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "actionHint": "getMany"
+                }
+            }
+        },
+        "/11.13.18.05/currenciesLOV": {
+            "get": {
+                "operationId": "get11_13_18_05CurrenciesLOV",
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Get11_13_18_05CurrenciesLOV"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/get11_13_18_05CurrenciesLOV/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "actionHint": "getMany"
+                }
+            }
+        },
+        "/11.13.18.05/expenditureTypes": {
+            "get": {
+                "operationId": "ExpenditureTypes",
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Get11_13_18_05ExpenditureTypes"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/ExpenditureTypes/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "actionHint": "getMany",
+                    "queryParameters": {
+                        "q": "SystemLinkageFunction='PJ'"
+                    }
+                },
+                "parameters": []
+            }
+        },
+        "/11.13.18.05/projects": {
+            "get": {
+                "operationId": "getProjectsLOV",
+                "parameters": [
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Get11_13_18_05Projects"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/getProjectsLOV/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "actionHint": "getMany"
+                }
+            }
+        },
+        "/11.13.18.05/projects/{ProjectId}/child/Tasks": {
+            "parameters": [
+                {
+                    "name": "ProjectId",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "get": {
+                "operationId": "getProjectIdChildTasks",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "x-vb": {
+                            "defaultValue": "TaskId,TaskNumber,TaskName,TaskFinishDate"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "onlyData",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Get11_13_18_05ProjectsProjectIdChildTasks"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/getProjectIdChildTasks/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "actionHint": "getMany"
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Get11_13_18_05ProjectRolesLOV": {
+                "type": "object",
+                "properties": {
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "ProjectRoleId": {
+                                    "type": "integer"
+                                },
+                                "ProjectRoleName": {
+                                    "type": "string"
+                                },
+                                "Description": {
+                                    "type": "string",
+                                    "nullable": true
+                                },
+                                "StartDateActive": {
+                                    "type": "string"
+                                },
+                                "EndDateActive": {
+                                    "nullable": true
+                                },
+                                "RoleName": {
+                                    "type": "string",
+                                    "nullable": true
+                                },
+                                "RoleId": {
+                                    "type": "integer",
+                                    "nullable": true
+                                },
+                                "links": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "rel": {
+                                                "type": "string"
+                                            },
+                                            "href": {
+                                                "type": "string"
+                                            },
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "kind": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "count": {
+                        "type": "integer"
+                    },
+                    "hasMore": {
+                        "type": "boolean"
+                    },
+                    "limit": {
+                        "type": "integer"
+                    },
+                    "offset": {
+                        "type": "integer"
+                    },
+                    "links": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "rel": {
+                                    "type": "string"
+                                },
+                                "href": {
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                                "kind": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "Post11_13_18_05ProjectResourceRequestsRequest": {
+                "type": "object",
+                "properties": {
+                    "RequestName": {
+                        "type": "string"
+                    },
+                    "ProjectName": {
+                        "type": "string"
+                    },
+                    "RequestStatusCode": {
+                        "type": "string"
+                    },
+                    "ProjectRoleName": {
+                        "type": "string"
+                    },
+                    "RequestedStartDate": {
+                        "type": "string"
+                    },
+                    "RequestedFinishDate": {
+                        "type": "string"
+                    },
+                    "AssignmentTypeCode": {
+                        "type": "string"
+                    },
+                    "BillablePercentReasonCode": {
+                        "type": "string"
+                    },
+                    "BillablePercent": {
+                        "type": "integer"
+                    },
+                    "UseProjectCalendarFlag": {
+                        "type": "boolean"
+                    },
+                    "SundayHours": {
+                        "type": "integer"
+                    },
+                    "MondayHours": {
+                        "type": "integer"
+                    },
+                    "TuesdayHours": {
+                        "type": "integer"
+                    },
+                    "WednesdayHours": {
+                        "type": "integer"
+                    },
+                    "ThursdayHours": {
+                        "type": "integer"
+                    },
+                    "FridayHours": {
+                        "type": "integer"
+                    },
+                    "SaturdayHours": {
+                        "type": "integer"
+                    },
+                    "UseVariableHoursFlag": {
+                        "type": "boolean"
+                    }
+                }
+            },
+            "Post11_13_18_05ProjectResourceRequestsResponse": {
+                "type": "object",
+                "properties": {
+                    "ResourceRequestId": {
+                        "type": "integer"
+                    },
+                    "RequestName": {
+                        "type": "string"
+                    },
+                    "RequestStatusCode": {
+                        "type": "string"
+                    },
+                    "RequestStatus": {
+                        "type": "string"
+                    },
+                    "RequestedStartDate": {
+                        "type": "string"
+                    },
+                    "RequestedFinishDate": {
+                        "type": "string"
+                    },
+                    "RequestFulfilledDate": {
+                        "nullable": true
+                    },
+                    "RequestedHoursperDay": {
+                        "nullable": true
+                    },
+                    "UseProjectCalendarFlag": {
+                        "type": "boolean"
+                    },
+                    "Location": {
+                        "nullable": true
+                    },
+                    "RequestedResourceId": {
+                        "nullable": true
+                    },
+                    "RequestedResourceName": {
+                        "nullable": true
+                    },
+                    "RequestedResourceEmail": {
+                        "nullable": true
+                    },
+                    "RequestedResourcePersonId": {
+                        "nullable": true
+                    },
+                    "ProjectId": {
+                        "type": "integer"
+                    },
+                    "ProjectName": {
+                        "type": "string"
+                    },
+                    "ProjectNumber": {
+                        "type": "string"
+                    },
+                    "ProjectRoleId": {
+                        "type": "integer"
+                    },
+                    "ProjectRoleName": {
+                        "type": "string"
+                    },
+                    "RequesterResourceId": {
+                        "type": "integer"
+                    },
+                    "RequesterName": {
+                        "nullable": true
+                    },
+                    "RequesterEmail": {
+                        "nullable": true
+                    },
+                    "RequesterPersonId": {
+                        "nullable": true
+                    },
+                    "SpecialInstructions": {
+                        "nullable": true
+                    },
+                    "StaffingOwnerResourceId": {
+                        "nullable": true
+                    },
+                    "StaffingOwnerName": {
+                        "nullable": true
+                    },
+                    "StaffingOwnerEmail": {
+                        "nullable": true
+                    },
+                    "StaffingOwnerPersonId": {
+                        "nullable": true
+                    },
+                    "StaffingRemarks": {
+                        "nullable": true
+                    },
+                    "RequestSubmittedDate": {
+                        "type": "string"
+                    },
+                    "TargetBillRate": {
+                        "nullable": true
+                    },
+                    "TargetBillRateCurrencyCode": {
+                        "type": "string"
+                    },
+                    "TargetCostRate": {
+                        "type": "integer"
+                    },
+                    "TargetCostRateCurrencyCode": {
+                        "type": "string"
+                    },
+                    "RequestedQuantity": {
+                        "type": "integer"
+                    },
+                    "AssignedQuantity": {
+                        "type": "integer"
+                    },
+                    "ProposedQuantity": {
+                        "nullable": true
+                    },
+                    "RemainingQuantity": {
+                        "type": "integer"
+                    },
+                    "AssignmentTypeCode": {
+                        "type": "string"
+                    },
+                    "AssignmentType": {
+                        "type": "string"
+                    },
+                    "BillablePercentReasonCode": {
+                        "type": "string"
+                    },
+                    "BillablePercentReason": {
+                        "type": "string"
+                    },
+                    "BillablePercent": {
+                        "type": "integer"
+                    },
+                    "RequestSource": {
+                        "type": "string"
+                    },
+                    "UseVariableHoursFlag": {
+                        "type": "boolean"
+                    },
+                    "SundayHours": {
+                        "type": "integer"
+                    },
+                    "MondayHours": {
+                        "type": "integer"
+                    },
+                    "TuesdayHours": {
+                        "type": "integer"
+                    },
+                    "WednesdayHours": {
+                        "type": "integer"
+                    },
+                    "ThursdayHours": {
+                        "type": "integer"
+                    },
+                    "FridayHours": {
+                        "type": "integer"
+                    },
+                    "SaturdayHours": {
+                        "type": "integer"
+                    },
+                    "UseWeeklyHoursFlag": {
+                        "type": "boolean"
+                    },
+                    "RequestedHoursPerWeek": {
+                        "nullable": true
+                    },
+                    "TotalHours": {
+                        "type": "integer"
+                    },
+                    "links": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "rel": {
+                                    "type": "string"
+                                },
+                                "href": {
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                                "kind": {
+                                    "type": "string"
+                                },
+                                "properties": {
+                                    "type": "object",
+                                    "properties": {
+                                        "changeIndicator": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "Get11_13_18_05ProjectsProject_numChildProjectTeamMembers": {
+                "type": "object",
+                "properties": {
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "FinishDate": {
+                                    "nullable": true
+                                },
+                                "PersonEmail": {
+                                    "type": "string"
+                                },
+                                "PersonName": {
+                                    "type": "string"
+                                },
+                                "ProjectId": {
+                                    "type": "integer"
+                                },
+                                "ProjectRole": {
+                                    "type": "string"
+                                },
+                                "StartDate": {
+                                    "type": "string"
+                                },
+                                "TeamMemberId": {
+                                    "type": "integer"
+                                },
+                                "PersonId": {
+                                    "type": "integer"
+                                },
+                                "TrackTimeFlag": {
+                                    "type": "boolean",
+                                    "nullable": true
+                                },
+                                "ResourcePlanningCostRate": {
+                                    "type": "integer",
+                                    "nullable": true
+                                },
+                                "ResourceAllocationPercentage": {
+                                    "type": "integer"
+                                },
+                                "ResourceAssignmentEffortInHours": {
+                                    "nullable": true
+                                },
+                                "ResourcePlanningBillRate": {
+                                    "type": "integer",
+                                    "nullable": true
+
+                                },
+                                "AssignmentType": {
+                                    "nullable": true
+                                },
+                                "BillablePercentReason": {
+                                    "nullable": true
+                                },
+                                "AssignmentTypeCode": {
+                                    "nullable": true
+                                },
+                                "BillablePercentReasonCode": {
+                                    "nullable": true
+                                },
+                                "BillablePercent": {
+                                    "nullable": true
+                                }
+                            }
+                        }
+                    },
+                    "count": {
+                        "type": "integer"
+                    },
+                    "hasMore": {
+                        "type": "boolean"
+                    },
+                    "limit": {
+                        "type": "integer"
+                    },
+                    "offset": {
+                        "type": "integer"
+                    },
+                    "links": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "rel": {
+                                    "type": "string"
+                                },
+                                "href": {
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                                "kind": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "Get11_13_18_05CurrenciesLOV": {
+                "type": "object",
+                "properties": {
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "CurrencyCode": {
+                                    "type": "string"
+                                },
+                                "Name": {
+                                    "type": "string"
+                                },
+                                "Description": {
+                                    "type": "string"
+                                },
+                                "EnabledFlag": {
+                                    "type": "string"
+                                },
+                                "StartDateActive": {
+                                    "type": "string"
+                                },
+                                "EndDateActive": {
+                                    "type": "string"
+                                },
+                                "ActiveDate": {
+                                    "nullable": true
+                                },
+                                "CurrencyFormat": {
+                                    "type": "string"
+                                },
+                                "CurrencyFormatWithSymbol": {
+                                    "type": "string"
+                                },
+                                "CurrencyFormatWithCode": {
+                                    "type": "string"
+                                },
+                                "IssuingTerritoryCode": {
+                                    "type": "string"
+                                },
+                                "Symbol": {
+                                    "type": "string"
+                                },
+                                "Precision": {
+                                    "type": "integer"
+                                },
+                                "ExtendedPrecision": {
+                                    "type": "integer"
+                                },
+                                "CurrencyFlag": {
+                                    "type": "string"
+                                },
+                                "links": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "rel": {
+                                                "type": "string"
+                                            },
+                                            "href": {
+                                                "type": "string"
+                                            },
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "kind": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "count": {
+                        "type": "integer"
+                    },
+                    "hasMore": {
+                        "type": "boolean"
+                    },
+                    "limit": {
+                        "type": "integer"
+                    },
+                    "offset": {
+                        "type": "integer"
+                    },
+                    "links": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "rel": {
+                                    "type": "string"
+                                },
+                                "href": {
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                                "kind": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "Get11_13_18_05ExpenditureTypes": {
+                "type": "object",
+                "properties": {
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "ExpenditureTypeName": {
+                                    "type": "string"
+                                },
+                                "SystemLinkageFunction": {
+                                    "type": "string"
+                                },
+                                "ExpenditureTypeId": {
+                                    "type": "integer"
+                                },
+                                "ExpenditureTypeStartActiveDate": {
+                                    "type": "string"
+                                },
+                                "ExpenditureTypeEndActiveDate": {
+                                    "type": "string"
+                                },
+                                "SystemLinkageFunctionName": {
+                                    "type": "string"
+                                },
+                                "links": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "rel": {
+                                                "type": "string"
+                                            },
+                                            "href": {
+                                                "type": "string"
+                                            },
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "kind": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "count": {
+                        "type": "integer"
+                    },
+                    "hasMore": {
+                        "type": "boolean"
+                    },
+                    "limit": {
+                        "type": "integer"
+                    },
+                    "offset": {
+                        "type": "integer"
+                    },
+                    "links": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "rel": {
+                                    "type": "string"
+                                },
+                                "href": {
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                                "kind": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "Get11_13_18_05Projects": {
+                "type": "object",
+                "properties": {
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "ProjectId": {
+                                    "type": "integer"
+                                },
+                                "ProjectName": {
+                                    "type": "string"
+                                },
+                                "ProjectNumber": {
+                                    "type": "string"
+                                },
+                                "ProjectStatus": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "count": {
+                        "type": "integer"
+                    },
+                    "hasMore": {
+                        "type": "boolean"
+                    },
+                    "limit": {
+                        "type": "integer"
+                    },
+                    "offset": {
+                        "type": "integer"
+                    },
+                    "links": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "rel": {
+                                    "type": "string"
+                                },
+                                "href": {
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                                "kind": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "Get11_13_18_05ProjectsProjectIdChildTasks": {
+                "type": "object",
+                "properties": {
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "TaskId": {
+                                    "type": "integer"
+                                },
+                                "TaskNumber": {
+                                    "type": "string"
+                                },
+                                "TaskName": {
+                                    "type": "string"
+                                },
+                                "TaskFinishDate": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "count": {
+                        "type": "integer"
+                    },
+                    "hasMore": {
+                        "type": "boolean"
+                    },
+                    "limit": {
+                        "type": "integer"
+                    },
+                    "offset": {
+                        "type": "integer"
+                    },
+                    "links": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "rel": {
+                                    "type": "string"
+                                },
+                                "href": {
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                                "kind": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

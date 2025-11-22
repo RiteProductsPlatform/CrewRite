@@ -1,0 +1,20 @@
+{
+    "RequestName": "Test Shekhar",
+    "ProjectName": "Hilman SCM Upgrade",
+    "RequestStatusCode": "OPEN",
+    "ProjectRoleName": "Oracle DBA",
+    "RequestedStartDate": "2024-10-29",
+    "RequestedFinishDate": "2024-11-29",
+    "AssignmentTypeCode": "BILLABLE",
+    "BillablePercentReasonCode": "ORA_INVESTMENT",
+    "BillablePercent": 25,
+    "UseProjectCalendarFlag": false,
+    "SundayHours": 0,
+    "MondayHours": 2,
+    "TuesdayHours": 3,
+    "WednesdayHours": 4,
+    "ThursdayHours": 5,
+    "FridayHours": 6,
+    "SaturdayHours": 0,
+    "UseVariableHoursFlag": true
+}

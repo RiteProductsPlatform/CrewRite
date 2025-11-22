@@ -1,0 +1,791 @@
+{
+    "items": [
+        {
+            "CurrencyCode": "ABC",
+            "Name": "ABCD ",
+            "Description": "ABCDEFG",
+            "EnabledFlag": "Y",
+            "StartDateActive": null,
+            "EndDateActive": null,
+            "ActiveDate": null,
+            "CurrencyFormat": "#,##0.00;-#,##0.00",
+            "CurrencyFormatWithSymbol": "'ABC' #,##0.00;'ABC' -#,##0.00",
+            "CurrencyFormatWithCode": "'ABC' #,##0.00;'ABC' -#,##0.00",
+            "IssuingTerritoryCode": null,
+            "Symbol": null,
+            "Precision": 2,
+            "ExtendedPrecision": 5,
+            "CurrencyFlag": "Y",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/ABC",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/ABC",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "CurrencyCode": "ABCD",
+            "Name": "ABCDEF",
+            "Description": "ABCDEFGH",
+            "EnabledFlag": "Y",
+            "StartDateActive": null,
+            "EndDateActive": null,
+            "ActiveDate": null,
+            "CurrencyFormat": "#,##0.00;-#,##0.00",
+            "CurrencyFormatWithSymbol": "'ABCD' #,##0.00;'ABCD' -#,##0.00",
+            "CurrencyFormatWithCode": "'ABCD' #,##0.00;'ABCD' -#,##0.00",
+            "IssuingTerritoryCode": null,
+            "Symbol": null,
+            "Precision": 2,
+            "ExtendedPrecision": 5,
+            "CurrencyFlag": "Y",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/ABCD",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/ABCD",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "CurrencyCode": "AFN",
+            "Name": "Afghani",
+            "Description": "Afghani",
+            "EnabledFlag": "Y",
+            "StartDateActive": null,
+            "EndDateActive": null,
+            "ActiveDate": null,
+            "CurrencyFormat": "#,##0.00;-#,##0.00",
+            "CurrencyFormatWithSymbol": "'؋'#,##0.00;-'؋'#,##0.00",
+            "CurrencyFormatWithCode": "'AFN' #,##0.00;'AFN' -#,##0.00",
+            "IssuingTerritoryCode": "AF",
+            "Symbol": "؋",
+            "Precision": 2,
+            "ExtendedPrecision": 5,
+            "CurrencyFlag": "Y",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/AFN",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/AFN",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "CurrencyCode": "AFA",
+            "Name": "Afghani (old)",
+            "Description": "Afghani (old)",
+            "EnabledFlag": "Y",
+            "StartDateActive": null,
+            "EndDateActive": "2003-01-02",
+            "ActiveDate": null,
+            "CurrencyFormat": "#,##0.00;-#,##0.00",
+            "CurrencyFormatWithSymbol": "'AFA' #,##0.00;'AFA' -#,##0.00",
+            "CurrencyFormatWithCode": "'AFA' #,##0.00;'AFA' -#,##0.00",
+            "IssuingTerritoryCode": "AF",
+            "Symbol": null,
+            "Precision": 2,
+            "ExtendedPrecision": 5,
+            "CurrencyFlag": "Y",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/AFA",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/AFA",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "CurrencyCode": "DZD",
+            "Name": "Algerian Dinar",
+            "Description": "Algerian Dinar",
+            "EnabledFlag": "Y",
+            "StartDateActive": null,
+            "EndDateActive": null,
+            "ActiveDate": null,
+            "CurrencyFormat": "#,##0.00;-#,##0.00",
+            "CurrencyFormatWithSymbol": "'د.ج.‏'#,##0.00;-'د.ج.‏'#,##0.00",
+            "CurrencyFormatWithCode": "'DZD' #,##0.00;'DZD' -#,##0.00",
+            "IssuingTerritoryCode": "DZ",
+            "Symbol": "د.ج.‏",
+            "Precision": 2,
+            "ExtendedPrecision": 5,
+            "CurrencyFlag": "Y",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/DZD",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/DZD",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "CurrencyCode": "ADP",
+            "Name": "Andorran Peseta",
+            "Description": "Andorran Peseta",
+            "EnabledFlag": "Y",
+            "StartDateActive": null,
+            "EndDateActive": null,
+            "ActiveDate": null,
+            "CurrencyFormat": "#,##0;-#,##0",
+            "CurrencyFormatWithSymbol": "'ADP' #,##0;'ADP' -#,##0",
+            "CurrencyFormatWithCode": "'ADP' #,##0;'ADP' -#,##0",
+            "IssuingTerritoryCode": "AD",
+            "Symbol": null,
+            "Precision": 0,
+            "ExtendedPrecision": 3,
+            "CurrencyFlag": "Y",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/ADP",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/ADP",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "CurrencyCode": "ARS",
+            "Name": "Argentine Peso",
+            "Description": "Argentine Peso",
+            "EnabledFlag": "Y",
+            "StartDateActive": null,
+            "EndDateActive": null,
+            "ActiveDate": null,
+            "CurrencyFormat": "#,##0.00;-#,##0.00",
+            "CurrencyFormatWithSymbol": "'$'#,##0.00;-'$'#,##0.00",
+            "CurrencyFormatWithCode": "'ARS' #,##0.00;'ARS' -#,##0.00",
+            "IssuingTerritoryCode": "AR",
+            "Symbol": "$",
+            "Precision": 2,
+            "ExtendedPrecision": 5,
+            "CurrencyFlag": "Y",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/ARS",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/ARS",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "CurrencyCode": "AMD",
+            "Name": "Armenian Dram",
+            "Description": "Armenian Dram",
+            "EnabledFlag": "Y",
+            "StartDateActive": null,
+            "EndDateActive": null,
+            "ActiveDate": null,
+            "CurrencyFormat": "#,##0.00;-#,##0.00",
+            "CurrencyFormatWithSymbol": "'դր.'#,##0.00;-'դր.'#,##0.00",
+            "CurrencyFormatWithCode": "'AMD' #,##0.00;'AMD' -#,##0.00",
+            "IssuingTerritoryCode": "AM",
+            "Symbol": "դր.",
+            "Precision": 2,
+            "ExtendedPrecision": 5,
+            "CurrencyFlag": "Y",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/AMD",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/AMD",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "CurrencyCode": "AWG",
+            "Name": "Aruban Guilder",
+            "Description": "Aruban Guilder",
+            "EnabledFlag": "Y",
+            "StartDateActive": null,
+            "EndDateActive": null,
+            "ActiveDate": null,
+            "CurrencyFormat": "#,##0.00;-#,##0.00",
+            "CurrencyFormatWithSymbol": "'ƒ'#,##0.00;-'ƒ'#,##0.00",
+            "CurrencyFormatWithCode": "'AWG' #,##0.00;'AWG' -#,##0.00",
+            "IssuingTerritoryCode": "AW",
+            "Symbol": "ƒ",
+            "Precision": 2,
+            "ExtendedPrecision": 5,
+            "CurrencyFlag": "Y",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/AWG",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/AWG",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "CurrencyCode": "ARA",
+            "Name": "Austral",
+            "Description": "Austral",
+            "EnabledFlag": "Y",
+            "StartDateActive": null,
+            "EndDateActive": "1994-08-12",
+            "ActiveDate": null,
+            "CurrencyFormat": "#,##0.00;-#,##0.00",
+            "CurrencyFormatWithSymbol": "'ARA' #,##0.00;'ARA' -#,##0.00",
+            "CurrencyFormatWithCode": "'ARA' #,##0.00;'ARA' -#,##0.00",
+            "IssuingTerritoryCode": "AR",
+            "Symbol": null,
+            "Precision": 2,
+            "ExtendedPrecision": 5,
+            "CurrencyFlag": "Y",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/ARA",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/ARA",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "CurrencyCode": "AUD",
+            "Name": "Australian Dollar",
+            "Description": "Australian Dollar",
+            "EnabledFlag": "Y",
+            "StartDateActive": null,
+            "EndDateActive": null,
+            "ActiveDate": null,
+            "CurrencyFormat": "#,##0.00;-#,##0.00",
+            "CurrencyFormatWithSymbol": "'$'#,##0.00;-'$'#,##0.00",
+            "CurrencyFormatWithCode": "'AUD' #,##0.00;'AUD' -#,##0.00",
+            "IssuingTerritoryCode": "AU",
+            "Symbol": "$",
+            "Precision": 2,
+            "ExtendedPrecision": 5,
+            "CurrencyFlag": "Y",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/AUD",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/AUD",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "CurrencyCode": "AZN",
+            "Name": "Azerbaijanian Manat",
+            "Description": "Azerbaijanian Manat",
+            "EnabledFlag": "Y",
+            "StartDateActive": null,
+            "EndDateActive": null,
+            "ActiveDate": null,
+            "CurrencyFormat": "#,##0.00;-#,##0.00",
+            "CurrencyFormatWithSymbol": "'ман'#,##0.00;-'ман'#,##0.00",
+            "CurrencyFormatWithCode": "'AZN' #,##0.00;'AZN' -#,##0.00",
+            "IssuingTerritoryCode": "AZ",
+            "Symbol": "ман",
+            "Precision": 2,
+            "ExtendedPrecision": 5,
+            "CurrencyFlag": "Y",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/AZN",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/AZN",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "CurrencyCode": "AZM",
+            "Name": "Azerbaijanian Manat (old)",
+            "Description": "Azerbaijanian Manat (old)",
+            "EnabledFlag": "Y",
+            "StartDateActive": null,
+            "EndDateActive": "2006-12-31",
+            "ActiveDate": null,
+            "CurrencyFormat": "#,##0.00;-#,##0.00",
+            "CurrencyFormatWithSymbol": "'ман.'#,##0.00;-'ман.'#,##0.00",
+            "CurrencyFormatWithCode": "'AZM' #,##0.00;'AZM' -#,##0.00",
+            "IssuingTerritoryCode": "AZ",
+            "Symbol": "ман.",
+            "Precision": 2,
+            "ExtendedPrecision": 5,
+            "CurrencyFlag": "Y",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/AZM",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/AZM",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "CurrencyCode": "BSD",
+            "Name": "Bahamian Dollar",
+            "Description": "Bahamian Dollar",
+            "EnabledFlag": "Y",
+            "StartDateActive": null,
+            "EndDateActive": null,
+            "ActiveDate": null,
+            "CurrencyFormat": "#,##0.00;-#,##0.00",
+            "CurrencyFormatWithSymbol": "'$'#,##0.00;-'$'#,##0.00",
+            "CurrencyFormatWithCode": "'BSD' #,##0.00;'BSD' -#,##0.00",
+            "IssuingTerritoryCode": "BS",
+            "Symbol": "$",
+            "Precision": 2,
+            "ExtendedPrecision": 5,
+            "CurrencyFlag": "Y",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/BSD",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/BSD",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "CurrencyCode": "BHD",
+            "Name": "Bahraini Dinar",
+            "Description": "Bahraini Dinar",
+            "EnabledFlag": "Y",
+            "StartDateActive": null,
+            "EndDateActive": null,
+            "ActiveDate": null,
+            "CurrencyFormat": "#,##0.000;-#,##0.000",
+            "CurrencyFormatWithSymbol": "'د.ب.‏'#,##0.000;-'د.ب.‏'#,##0.000",
+            "CurrencyFormatWithCode": "'BHD' #,##0.000;'BHD' -#,##0.000",
+            "IssuingTerritoryCode": "BH",
+            "Symbol": "د.ب.‏",
+            "Precision": 3,
+            "ExtendedPrecision": 6,
+            "CurrencyFlag": "Y",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/BHD",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/BHD",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "CurrencyCode": "THB",
+            "Name": "Baht",
+            "Description": "Baht",
+            "EnabledFlag": "Y",
+            "StartDateActive": null,
+            "EndDateActive": null,
+            "ActiveDate": null,
+            "CurrencyFormat": "#,##0.00;-#,##0.00",
+            "CurrencyFormatWithSymbol": "'฿'#,##0.00;-'฿'#,##0.00",
+            "CurrencyFormatWithCode": "'THB' #,##0.00;'THB' -#,##0.00",
+            "IssuingTerritoryCode": "TH",
+            "Symbol": "฿",
+            "Precision": 2,
+            "ExtendedPrecision": 5,
+            "CurrencyFlag": "Y",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/THB",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/THB",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "CurrencyCode": "PAB",
+            "Name": "Balboa",
+            "Description": "Balboa",
+            "EnabledFlag": "Y",
+            "StartDateActive": null,
+            "EndDateActive": null,
+            "ActiveDate": null,
+            "CurrencyFormat": "#,##0.00;-#,##0.00",
+            "CurrencyFormatWithSymbol": "'B/.'#,##0.00;-'B/.'#,##0.00",
+            "CurrencyFormatWithCode": "'PAB' #,##0.00;'PAB' -#,##0.00",
+            "IssuingTerritoryCode": "PA",
+            "Symbol": "B/.",
+            "Precision": 2,
+            "ExtendedPrecision": 5,
+            "CurrencyFlag": "Y",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/PAB",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/PAB",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "CurrencyCode": "BBD",
+            "Name": "Barbados Dollar",
+            "Description": "Barbados Dollar",
+            "EnabledFlag": "Y",
+            "StartDateActive": null,
+            "EndDateActive": null,
+            "ActiveDate": null,
+            "CurrencyFormat": "#,##0.00;-#,##0.00",
+            "CurrencyFormatWithSymbol": "'$'#,##0.00;-'$'#,##0.00",
+            "CurrencyFormatWithCode": "'BBD' #,##0.00;'BBD' -#,##0.00",
+            "IssuingTerritoryCode": "BB",
+            "Symbol": "$",
+            "Precision": 2,
+            "ExtendedPrecision": 5,
+            "CurrencyFlag": "Y",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/BBD",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/BBD",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "CurrencyCode": "BYN",
+            "Name": "Belarusian Ruble",
+            "Description": "The currency of Belarus",
+            "EnabledFlag": "Y",
+            "StartDateActive": "2016-07-16",
+            "EndDateActive": null,
+            "ActiveDate": null,
+            "CurrencyFormat": "#,##0.00;-#,##0.00",
+            "CurrencyFormatWithSymbol": "'Br'#,##0.00;-'Br'#,##0.00",
+            "CurrencyFormatWithCode": "'BYN' #,##0.00;'BYN' -#,##0.00",
+            "IssuingTerritoryCode": "BY",
+            "Symbol": "Br",
+            "Precision": 2,
+            "ExtendedPrecision": 5,
+            "CurrencyFlag": "Y",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/BYN",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/BYN",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "CurrencyCode": "BYB",
+            "Name": "Belarusian Ruble (Withdrawn in 2000)",
+            "Description": "The currency of Belarus withdrawn in year 2000 and replaced with BYR",
+            "EnabledFlag": "Y",
+            "StartDateActive": null,
+            "EndDateActive": "2000-12-31",
+            "ActiveDate": null,
+            "CurrencyFormat": "#,##0;-#,##0",
+            "CurrencyFormatWithSymbol": "'р.'#,##0;-'р.'#,##0",
+            "CurrencyFormatWithCode": "'BYB' #,##0;'BYB' -#,##0",
+            "IssuingTerritoryCode": "BY",
+            "Symbol": "р.",
+            "Precision": 0,
+            "ExtendedPrecision": 3,
+            "CurrencyFlag": "Y",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/BYB",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/BYB",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "CurrencyCode": "BYR",
+            "Name": "Belarusian Ruble (Withdrawn in 2016)",
+            "Description": "The currency of Belarus withdrawn in year 2016 and replaced with BYN",
+            "EnabledFlag": "Y",
+            "StartDateActive": null,
+            "EndDateActive": "2016-12-31",
+            "ActiveDate": null,
+            "CurrencyFormat": "#,##0;-#,##0",
+            "CurrencyFormatWithSymbol": "'p.'#,##0;-'p.'#,##0",
+            "CurrencyFormatWithCode": "'BYR' #,##0;'BYR' -#,##0",
+            "IssuingTerritoryCode": "BY",
+            "Symbol": "p.",
+            "Precision": 0,
+            "ExtendedPrecision": 3,
+            "CurrencyFlag": "Y",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/BYR",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/BYR",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "CurrencyCode": "BEF",
+            "Name": "Belgian Franc",
+            "Description": "Belgian Franc",
+            "EnabledFlag": "Y",
+            "StartDateActive": null,
+            "EndDateActive": null,
+            "ActiveDate": null,
+            "CurrencyFormat": "#,##0;-#,##0",
+            "CurrencyFormatWithSymbol": "'₣'#,##0;-'₣'#,##0",
+            "CurrencyFormatWithCode": "'BEF' #,##0;'BEF' -#,##0",
+            "IssuingTerritoryCode": "BE",
+            "Symbol": "₣",
+            "Precision": 0,
+            "ExtendedPrecision": 3,
+            "CurrencyFlag": "Y",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/BEF",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/BEF",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "CurrencyCode": "BZD",
+            "Name": "Belize Dollar",
+            "Description": "Belize Dollar",
+            "EnabledFlag": "Y",
+            "StartDateActive": null,
+            "EndDateActive": null,
+            "ActiveDate": null,
+            "CurrencyFormat": "#,##0.00;-#,##0.00",
+            "CurrencyFormatWithSymbol": "'BZ$'#,##0.00;-'BZ$'#,##0.00",
+            "CurrencyFormatWithCode": "'BZD' #,##0.00;'BZD' -#,##0.00",
+            "IssuingTerritoryCode": "BZ",
+            "Symbol": "BZ$",
+            "Precision": 2,
+            "ExtendedPrecision": 5,
+            "CurrencyFlag": "Y",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/BZD",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/BZD",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "CurrencyCode": "BMD",
+            "Name": "Bermudian Dollar",
+            "Description": "Bermudian Dollar",
+            "EnabledFlag": "Y",
+            "StartDateActive": null,
+            "EndDateActive": null,
+            "ActiveDate": null,
+            "CurrencyFormat": "#,##0.00;-#,##0.00",
+            "CurrencyFormatWithSymbol": "'$'#,##0.00;-'$'#,##0.00",
+            "CurrencyFormatWithCode": "'BMD' #,##0.00;'BMD' -#,##0.00",
+            "IssuingTerritoryCode": "BM",
+            "Symbol": "$",
+            "Precision": 2,
+            "ExtendedPrecision": 5,
+            "CurrencyFlag": "Y",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/BMD",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/BMD",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "CurrencyCode": "VEB",
+            "Name": "Bolivar",
+            "Description": "Bolivar",
+            "EnabledFlag": "Y",
+            "StartDateActive": null,
+            "EndDateActive": "2007-12-31",
+            "ActiveDate": null,
+            "CurrencyFormat": "#,##0.00;-#,##0.00",
+            "CurrencyFormatWithSymbol": "'Bs'#,##0.00;-'Bs'#,##0.00",
+            "CurrencyFormatWithCode": "'VEB' #,##0.00;'VEB' -#,##0.00",
+            "IssuingTerritoryCode": "VE",
+            "Symbol": "Bs",
+            "Precision": 2,
+            "ExtendedPrecision": 5,
+            "CurrencyFlag": "Y",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/VEB",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV/VEB",
+                    "name": "currenciesLOV",
+                    "kind": "item"
+                }
+            ]
+        }
+    ],
+    "count": 25,
+    "hasMore": true,
+    "limit": 25,
+    "offset": 0,
+    "links": [
+        {
+            "rel": "self",
+            "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/currenciesLOV",
+            "name": "currenciesLOV",
+            "kind": "collection"
+        }
+    ]
+}

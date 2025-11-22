@@ -1,0 +1,158 @@
+{
+    "ResourceRequestId": 300001549971769,
+    "RequestName": "Test Shekhar",
+    "RequestStatusCode": "OPEN",
+    "RequestStatus": "Open",
+    "RequestedStartDate": "2024-10-29",
+    "RequestedFinishDate": "2024-11-29",
+    "RequestFulfilledDate": null,
+    "RequestedHoursperDay": null,
+    "UseProjectCalendarFlag": false,
+    "Location": null,
+    "RequestedResourceId": null,
+    "RequestedResourceName": null,
+    "RequestedResourceEmail": null,
+    "RequestedResourcePersonId": null,
+    "ProjectId": 300000195588489,
+    "ProjectName": "Hilman SCM Upgrade",
+    "ProjectNumber": "PCS10056",
+    "ProjectRoleId": 300000047763114,
+    "ProjectRoleName": "Oracle DBA",
+    "RequesterResourceId": 300000054965021,
+    "RequesterName": null,
+    "RequesterEmail": null,
+    "RequesterPersonId": null,
+    "SpecialInstructions": null,
+    "StaffingOwnerResourceId": null,
+    "StaffingOwnerName": null,
+    "StaffingOwnerEmail": null,
+    "StaffingOwnerPersonId": null,
+    "StaffingRemarks": null,
+    "RequestSubmittedDate": "2024-10-07",
+    "TargetBillRate": null,
+    "TargetBillRateCurrencyCode": "USD",
+    "TargetCostRate": 100,
+    "TargetCostRateCurrencyCode": "USD",
+    "RequestedQuantity": 1,
+    "AssignedQuantity": 0,
+    "ProposedQuantity": null,
+    "RemainingQuantity": 1,
+    "AssignmentTypeCode": "BILLABLE",
+    "AssignmentType": "Billable",
+    "BillablePercentReasonCode": "ORA_INVESTMENT",
+    "BillablePercentReason": "Investment",
+    "BillablePercent": 25,
+    "RequestSource": "RM",
+    "UseVariableHoursFlag": true,
+    "SundayHours": 0,
+    "MondayHours": 2,
+    "TuesdayHours": 3,
+    "WednesdayHours": 4,
+    "ThursdayHours": 5,
+    "FridayHours": 6,
+    "SaturdayHours": 0,
+    "UseWeeklyHoursFlag": false,
+    "RequestedHoursPerWeek": null,
+    "TotalHours": 192,
+    "links": [
+        {
+            "rel": "self",
+            "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projectResourceRequests/300001549971769",
+            "name": "projectResourceRequests",
+            "kind": "item",
+            "properties": {
+                "changeIndicator": "ACED0005737200136A6176612E7574696C2E41727261794C6973747881D21D99C7619D03000149000473697A65787000000001770400000001737200116A6176612E6C616E672E496E746567657212E2A0A4F781873802000149000576616C7565787200106A6176612E6C616E672E4E756D62657286AC951D0B94E08B02000078700000000178"
+            }
+        },
+        {
+            "rel": "canonical",
+            "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projectResourceRequests/300001549971769",
+            "name": "projectResourceRequests",
+            "kind": "item"
+        },
+        {
+            "rel": "lov",
+            "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projectResourceRequests/300001549971769/lov/ProjectPVO1",
+            "name": "ProjectPVO1",
+            "kind": "collection"
+        },
+        {
+            "rel": "lov",
+            "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projectResourceRequests/300001549971769/lov/EnterpriseResourcePVO1",
+            "name": "EnterpriseResourcePVO1",
+            "kind": "collection"
+        },
+        {
+            "rel": "lov",
+            "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projectResourceRequests/300001549971769/lov/EnterpriseResourcePVO2",
+            "name": "EnterpriseResourcePVO2",
+            "kind": "collection"
+        },
+        {
+            "rel": "lov",
+            "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projectResourceRequests/300001549971769/lov/EnterpriseResourcePVO3",
+            "name": "EnterpriseResourcePVO3",
+            "kind": "collection"
+        },
+        {
+            "rel": "lov",
+            "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projectResourceRequests/300001549971769/lov/AssignmentTypeLookUpPVO",
+            "name": "AssignmentTypeLookUpPVO",
+            "kind": "collection"
+        },
+        {
+            "rel": "lov",
+            "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projectResourceRequests/300001549971769/lov/BillablePercentReasonLookupPVO",
+            "name": "BillablePercentReasonLookupPVO",
+            "kind": "collection"
+        },
+        {
+            "rel": "lov",
+            "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projectResourceRequests/300001549971769/lov/ProjectRolePVO1",
+            "name": "ProjectRolePVO1",
+            "kind": "collection"
+        },
+        {
+            "rel": "lov",
+            "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projectResourceRequests/300001549971769/lov/CurrencyPVO1",
+            "name": "CurrencyPVO1",
+            "kind": "collection"
+        },
+        {
+            "rel": "child",
+            "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projectResourceRequests/300001549971769/child/ProjectResourceRequestDFF",
+            "name": "ProjectResourceRequestDFF",
+            "kind": "collection"
+        },
+        {
+            "rel": "child",
+            "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projectResourceRequests/300001549971769/child/ProjectResourceRequestLines",
+            "name": "ProjectResourceRequestLines",
+            "kind": "collection"
+        },
+        {
+            "rel": "child",
+            "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projectResourceRequests/300001549971769/child/ProjectResourceRequestQualifications",
+            "name": "ProjectResourceRequestQualifications",
+            "kind": "collection"
+        },
+        {
+            "rel": "action",
+            "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projectResourceRequests/300001549971769/action/approveRequest",
+            "name": "approveRequest",
+            "kind": "other"
+        },
+        {
+            "rel": "action",
+            "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projectResourceRequests/300001549971769/action/rejectRequest",
+            "name": "rejectRequest",
+            "kind": "other"
+        },
+        {
+            "rel": "action",
+            "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projectResourceRequests/300001549971769/action/cancelRequest",
+            "name": "cancelRequest",
+            "kind": "other"
+        }
+    ]
+}
