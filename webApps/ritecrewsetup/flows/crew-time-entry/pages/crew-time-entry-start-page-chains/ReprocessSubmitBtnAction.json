@@ -1,0 +1,114 @@
+{
+  "root": "forEachInReprocesstblADP",
+  "description": "",
+  "actions": {
+
+    "callRestPostSubmitTimeSheet": {
+      "module": "vb/action/builtin/restAction",
+      "parameters": {
+        "endpoint": "TimeRite_Ords_Service/postSubmitTimeSheet",
+        "body": "{{ $chain.results.callFunctionPayloadGenerator }}"
+      },
+      "outcomes": {
+        "failure": "callFunctionGetsysdate",
+        "success": "assignVariablesSuccessVar"
+
+      }
+    },
+    "fireNotification": {
+      "module": "vb/action/builtin/fireNotificationEventAction",
+      "parameters": {
+        "target": "leaf",
+        "summary": "Time Sheet submitted Successfully",
+        "displayMode": "transient",
+        "type": "confirmation"
+      }
+    },
+    "callFunctionGetsysdate": {
+      "module": "vb/action/builtin/callModuleFunctionAction",
+      "parameters": {
+        "module": "[[ $functions ]]",
+        "functionName": "getsysdate"
+      }
+    },
+    "assignVariablesSuccessVar": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.SuccessVar": {
+          "source": "{{ $page.variables.SuccessVar + 1 }}"
+        }
+      }
+    },
+    "callFunctionDateFormatter": {
+      "module": "vb/action/builtin/callModuleFunctionAction",
+      "parameters": {
+        "module": "[[ $functions ]]",
+        "functionName": "dateFormatter",
+        "params": [
+          "{{ $page.variables.FilteredData[0].week_start_date }}",
+          "{{ $page.variables.FilteredData[0].week_end_date }}",
+          "{{ $page.variables.searchobj.crewdate }}"
+        ]
+      },
+      "outcomes": {
+        "success": "callFunctionPayloadGenerator"
+      }
+    },
+    "callFunctionPayloadGenerator": {
+      "module": "vb/action/builtin/callModuleFunctionAction",
+      "parameters": {
+        "module": "[[ $functions ]]",
+        "functionName": "payloadGenerator",
+        "params": [
+          "{{ $page.variables.ReprocesstblADP.data[$current.index] }}",
+          "{{ $application.user.email }}",
+          "{{ $chain.results.callFunctionDateFormatter.startDate }}",
+          "{{ $chain.results.callFunctionDateFormatter.endDate }}",
+          "{{ $page.variables.searchobj.dateRange }}",
+          "{{ $chain.results.callFunctionDateFormatter.crewDate }}",
+          "{{ $page.variables.searchobj.specific }}",
+          "{{ $page.variables.maxweekid }}"
+        ]
+      },
+      "outcomes": {
+        "success": "runInParallel"
+      }
+    },
+    "forEachInReprocesstblADP": {
+      "module": "vb/action/builtin/forEachAction",
+      "parameters": {
+        "items": "{{ $page.variables.ReprocesstblADP.data }}",
+        "actionId": "callFunctionDateFormatter"
+      },
+      "outcomes": {
+        "success": "fireNotification"
+      }
+    },
+    "runInParallel": {
+      "module": "vb/action/builtin/forkAction",
+      "parameters": {
+        "actions": {
+          "callRestPostSubmitTimeSheet": "callRestPostSubmitTimeSheet",
+          "callRest": "callRestPostTRTimeEntryLogDetails"
+        }
+      },
+      "outcomes": {
+        "join": "callComponentReprocessDialogClose"
+      }
+    },
+    "callRestPostTRTimeEntryLogDetails": {
+      "module": "vb/action/builtin/restAction",
+      "parameters": {
+        "endpoint": "TimeRite_Ords_Service/postTR_TimeEntryLogDetails",
+        "body": "{{ $chain.results.callFunctionPayloadGenerator }}"
+      }
+    },
+    "callComponentReprocessDialogClose": {
+      "module": "vb/action/builtin/callComponentMethodAction",
+      "parameters": {
+        "component": "{{ document.getElementById('reprocessDialog') }}",
+        "method": "close"
+      }
+    }
+  }
+}

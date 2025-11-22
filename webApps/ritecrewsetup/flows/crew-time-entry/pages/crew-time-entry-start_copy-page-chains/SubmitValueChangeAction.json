@@ -1,0 +1,12 @@
+{
+  "root": "forEachInFilteredData",
+  "description": "",
+  "actions": {
+    "forEachInFilteredData": {
+      "module": "vb/action/builtin/forEachAction",
+      "parameters": {
+        "items": "{{ $page.variables.FilteredData }}"
+      }
+    }
+  }
+}

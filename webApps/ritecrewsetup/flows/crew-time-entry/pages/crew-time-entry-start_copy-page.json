@@ -1,0 +1,396 @@
+{
+  "title": "crew time entry",
+  "description": "",
+  "variables": {
+    "ContractLovSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "TimeRite_Ords_Service/getGetCustomerDetails",
+        "keyAttributes": "contract_number",
+        "itemsPath": "items",
+        "responseType": "ContractLovType",
+        "uriParameters": {
+          "CREW_NAME": "{{ $variables.searchobj.timecrew }}",
+          "CONTRACT_NUMBER": "{{ \"\" }}",
+          "CUSTOMER_NAME": "{{ \"\" }}",
+          "PROJECT_NUMBER": "{{ \"\" }}",
+          "Search_Date": "{{ \"\" }}"
+        },
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "contract_number"
+          ]
+        }
+      }
+    },
+    "CrewNameLOVSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "TimeRite_Ords_Service/getGetCustomerDetails",
+        "keyAttributes": "crew_name",
+        "itemsPath": "items",
+        "responseType": "CrewNameLOVType",
+        "uriParameters": {
+          "CONTRACT_NUMBER": "{{ \"\" }}",
+          "CREW_NAME": "{{ \"\" }}",
+          "CUSTOMER_NAME": "{{ \"\" }}",
+          "PROJECT_NUMBER": "{{ \"\" }}",
+          "Search_Date": "{{ \"\" }}"
+        },
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "crew_name"
+          ]
+        }
+      }
+    },
+    "currentRowdata": {
+      "type": "timeSheetTblType"
+    },
+    "editRow": {
+      "type": {
+        "rowKey": "number"
+      }
+    },
+    "FilteredData": {
+      "type": "object[]"
+    },
+    "OriginalRowData": {
+      "type": "timeSheetTblType"
+    },
+    "ProjectsLOVSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "TimeRite_Ords_Service/getGetCustomerDetails",
+        "keyAttributes": "project_number",
+        "itemsPath": "items",
+        "responseType": "ProjectsLOVType",
+        "uriParameters": {
+          "CUSTOMER_NAME": "{{ $variables.searchobj.customer }}",
+          "CREW_NAME": "{{ $variables.searchobj.timecrew }}",
+          "CONTRACT_NUMBER": "{{ \"\" }}",
+          "PROJECT_NUMBER": "{{ \"\" }}",
+          "Search_Date": "{{ \"\" }}"
+        },
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "project_number"
+          ]
+        }
+      }
+    },
+    "searchobj": {
+      "type": {
+        "contract": "string",
+        "customer": "string",
+        "date": "string",
+        "dateRange": "string",
+        "project": "string",
+        "timecrew": "string"
+
+      },
+      "defaultValue": {
+        "dateRange": "[[ $application.variables.CurrentWeek ]]"
+      }
+    },
+    "TimeDetailsArray": {
+      "type": "object[]"
+    },
+    "TimeSheetADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "itemType": "timeSheetTblType",
+        "keyAttributes": "crewsetup_line_id"
+      }
+    },
+    "TimeSheetDetailsADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "data": "{{ $variables.TimeDetailsArray }}"
+      }
+    },
+    "updateTimeSheet": {
+      "type": "updateObj",
+      "defaultValue": {
+        "last_updated_date": "[[ $functions.getsysdate() ]]",
+        "last_updated_by": "[[ $application.user.email ]]"
+      }
+    }
+
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.ContractLovType": {
+      "endpoint": "getGetCustomerDetails",
+      "service": "TimeRite_Ords_Service",
+      "path": "response"
+    },
+    "@decorators.CrewNameLOVType": {
+      "endpoint": "getGetCustomerDetails",
+      "service": "TimeRite_Ords_Service",
+      "path": "response"
+    },
+    "@decorators.ProjectsLOVType": {
+      "endpoint": "getGetCustomerDetails",
+      "service": "TimeRite_Ords_Service",
+      "path": "response"
+    },
+    "@decorators.timeSheetTblType": {
+      "endpoint": "getGetTimeSheetTbl",
+      "service": "TimeRite_Ords_Service",
+      "path": "response-_-items[0]"
+    },
+    "@decorators.updateObj": {
+      "endpoint": "UpdatetimeSheetTime",
+      "service": "TimeRite_Ords_Service",
+      "path": "request"
+    },
+    "ContractLovType": {
+      "items": [
+        {
+          "contract_number": "string"
+        }
+      ]
+    },
+    "CrewNameLOVType": {
+      "items": [
+        {
+          "crew_name": "string",
+          "customer_name": "string"
+        }
+      ]
+    },
+    "dateRangeType": {
+      "range": "string"
+    },
+    "ProjectsLOVType": {
+      "items": [
+        {
+          "project_number": "string"
+        }
+      ]
+    },
+    "timeSheetTblType": {
+      "active_flag": "string",
+      "bill_rate": "string",
+      "crew_week": "string",
+      "crewsetup_line_id": "number",
+      "equipment_category": "any",
+      "equipment_rate": "any",
+      "fri_in_time": "string",
+      "fri_out_time": "string",
+      "isRowEdited": "boolean",
+      "mon_in_time": "string",
+      "mon_out_time": "string",
+      "ot_rate": "string",
+      "pay_rate": "string",
+      "project_number": "string",
+      "resource_location": "string",
+      "resource_name": "string",
+      "resource_number": "string",
+      "resource_role": "string",
+      "sat_in_time": "string",
+      "sat_out_time": "string",
+      "sun_in_time": "string",
+      "sun_out_time": "string",
+      "task_name": "string",
+      "thu_in_time": "string",
+      "thu_out_time": "string",
+      "tue_in_time": "string",
+      "tue_out_time": "string",
+      "wed_in_time": "string",
+      "wed_out_time": "string",
+      "crew_day": "any",
+      "day": "any"
+
+    },
+    "updateObj": {
+
+      "crewsetup_line_id":"string",
+      "fri_in_time": "string",
+      "fri_out_time": "string",
+      "last_updated_by":"string" ,
+"last_updated_date":"string",
+      "mon_in_time": "string",
+      "mon_out_time": "string",
+      "sat_in_time": "string",
+      "sat_out_time": "string",
+      "sun_in_time": "string",
+      "sun_out_time": "string",
+        "thu_in_time": "string",
+      "thu_out_time": "string",
+      "tue_in_time": "string",
+      "tue_out_time": "string",
+      "wed_in_time": "string",
+      "wed_out_time": "string"
+}
+
+  },
+  "eventListeners": {
+    "buttonAction": {
+      "chains": [
+        {
+          "chain": "resetBtnAction"
+        }
+      ]
+    },
+    "buttonAction2": {
+      "chains": [
+        {
+          "chainId": "FetchTimeSheetData"
+        }
+      ]
+    },
+    "buttonAction3": {
+      "chains": [
+        {
+          "chainId": "SavebuttonAction"
+        }
+      ]
+    },
+    "buttonAction4": {
+      "chains": [
+        {
+          "chain": "EditIconClickAction",
+          "parameters": {
+            "key": "{{ $current.key }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "buttonAction5": {
+      "chains": [
+        {
+          "chain": "EditDlgCloseAction"
+        }
+      ]
+    },
+    "buttonAction6": {
+      "chains": [
+        {
+          "chain": "SavebtnAction"
+        }
+      ]
+    },
+    "buttonAction7": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain"
+        }
+      ]
+    },
+    "iconClick": {
+      "chains": [
+        {
+          "chain": "EditClickAction",
+          "parameters": {
+            "key": "{{ $current.key }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "selectValueItem": {
+      "chains": [
+        {
+          "chain": "CrewNamevalueChangeAction",
+          "parameters": {
+            "key": "{{$event.detail.value.key}}",
+            "data": "{{$event.detail.value.data}}",
+            "metadata": "{{$event.detail.value.metadata}}"
+          }
+        }
+      ]
+    },
+    "tableBeforeRowEdit": {
+      "chains": [
+        {
+          "chain": "TimeTblBeforeRowEdit",
+          "parameters": {
+            "rowKey": "{{$event.detail.rowContext.status.rowKey}}",
+            "rowIndex": "{{$event.detail.rowContext.status.rowIndex}}",
+            "rowData": "{{$event.detail.rowContext.componentElement.getDataForVisibleRow($event.detail.rowContext.status.rowIndex).data}}"
+          }
+        }
+      ]
+    },
+    "tableBeforeRowEditEnd": {
+      "chains": [
+        {
+          "chain": "TimeTblEditBeforeRowEdit",
+          "parameters": {
+            "cancelEdit": "{{$event.detail.cancelEdit}}",
+            "rowKey": "{{$event.detail.rowContext.status.rowKey}}",
+            "rowIndex": "{{$event.detail.rowContext.status.rowIndex}}",
+            "rowData": "{{$event.detail.rowContext.componentElement.getDataForVisibleRow($event.detail.rowContext.status.rowIndex).data}}"
+          }
+        }
+      ]
+    },
+    "tableSelected": {
+      "chains": [
+        {
+          "chain": "MultipleRowSelectionAction",
+          "parameters": {
+            "keys": "{{ $event.detail.value.row.values ? Array.from($event.detail.value.row.values()) : [] }}",
+            "selected": "{{ $event.detail.value }}"
+          }
+        }
+      ]
+    },
+    "toggleDrawer": {
+      "chains": [
+        {
+          "chain": "application:toggleDrawerHandler"
+        }
+      ]
+    }
+
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-data-grid": {
+        "path": "ojs/ojdatagrid"
+      },
+      "oj-dialog": {
+        "path": "ojs/ojdialog"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-input-date": {
+        "path": "ojs/ojdatetimepicker"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-label": {
+        "path": "ojs/ojlabel"
+      },
+      "oj-select-single": {
+        "path": "ojs/ojselectsingle"
+      },
+      "oj-table": {
+        "path": "ojs/ojtable"
+      },
+      "oj-toolbar": {
+        "path": "ojs/ojtoolbar"
+      },
+      "oj-validation-group": {
+        "path": "ojs/ojvalidationgroup"
+      }
+
+    },
+    "modules": {
+      "ojValidationDateTime": {
+        "path": "ojs/ojvalidation-datetime"
+      }
+    }
+  }
+}

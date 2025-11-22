@@ -1,0 +1,275 @@
+<!-- Mobile only header and page title -->
+<header role="banner" class="oj-sm-flex-initial vb-web-applayout-header oj-md-hide">
+  <div role="image" class="vb-web-applayout-header-image-stripe"></div>
+  <div class="oj-flex-bar oj-sm-align-items-center vb-web-applayout-header-content">
+    <!-- Navigator toggle button will render only if we have a drawer -->
+    <oj-bind-if test="[[ document.querySelector('oj-vb-fragment[name=\'shell-drawer\']') ]]">
+      <div class="oj-flex-bar">
+        <oj-button on-oj-action="[[$listeners.toggleDrawer]]" chroming="borderless" display="icons">
+          <span slot="startIcon" class="oj-ux-ico-menu"></span>
+          <span><oj-bind-text value="[[$application.translations.app.app_title_navigation_drawer]]"></oj-bind-text></span>
+        </oj-button>
+      </div>
+    </oj-bind-if>
+    <!-- Page specific title and actions with overflow menu displayed -->
+    <!--<div class="oj-sm-margin-2x-horizontal oj-sm-align-items-center oj-md-hide oj-sm-flex-1">
+      <div class="vb-content-header oj-flex oj-sm-flex-items-initial oj-sm-align-items-center">
+        <div class="oj-flex-item">
+          <div class="oj-typography-body-lg oj-typography-semi-bold">
+            <oj-bind-text value="crew time entry"></oj-bind-text>
+          </div>-->
+    <!-- Add Page specific actions etc -->
+    <!--</div>
+      </div>
+    </div>-->
+  </div>
+</header>
+
+<!-- Page specific title and actions for desktop formfactor -->
+<!--<div class="vb-content-header oj-flex oj-sm-flex-1 oj-sm-only-hide oj-sm-align-items-center">
+  <div role="image" class="vb-content-header-image-stripe"></div>
+  <div class="oj-flex-item">
+    <div class="oj-typography-body-lg oj-typography-semi-bold">
+      <oj-bind-text value="crew time entry"></oj-bind-text>
+    </div>-->
+<!-- Add Page specific actions etc -->
+<!--</div>
+</div>-->
+
+<div class="oj-flex">
+  <oj-vb-fragment id="page-header" bridge="[[vbBridge]]" name="page-header">
+    <oj-vb-fragment-param name="title" value="CrewTime Entry"></oj-vb-fragment-param>
+  </oj-vb-fragment>
+  <div class="oj-panel oj-flex oj-flex-item oj-sm-12 oj-md-12 oj-sm-margin-2x-top">
+    <div class="oj-flex-item oj-flex oj-sm-flex-direction-column">
+      <div class="oj-flex-item">
+        <oj-validation-group id="SearchValidationgroup">
+          <oj-form-layout label-edge="inside" columns="5" max-columns="5">
+            <div class="oj-flex-item">
+              <oj-select-single label-hint="Timerite Crew" item-text="crew_name"
+                value="{{ $variables.searchobj.timecrew }}" on-value-item-changed="[[$listeners.selectValueItem]]"
+                data="[[$variables.CrewNameLOVSDP]]" required="true"></oj-select-single>
+            </div>
+            <div class="oj-flex-item ">
+              <oj-input-text label-hint="Customer" disabled="true" value="{{ $variables.searchobj.customer }}"
+                required="true">
+              </oj-input-text>
+            </div>
+            <div class="oj-flex-item">
+              <oj-select-single label-hint="Week" item-text="range" id="dateRange"
+                data="[[ $application.variables.dateRangeADP ]]" value="{{ $variables.searchobj.dateRange }}">
+              </oj-select-single>
+            </div>
+            <!-- <div class="oj-flex-item ">
+              <oj-input-date label-hint="Date" value="{{ $variables.searchobj.date }}"
+                converter='{"type": "datetime", "options": {"pattern":"yyyy-MM-dd"}}' required="true"></oj-input-date>
+            </div> -->
+
+            <div class="oj-flex-item ">
+              <oj-select-single label-hint="Contract" value="{{ $variables.searchobj.contract }}"
+                data="[[$variables.ContractLovSDP]]" item-text="contract_number"></oj-select-single>
+            </div>
+            <div class="oj-flex-item">
+              <oj-select-single label-hint="Project" value="{{ $variables.searchobj.project }}"
+                data="[[$variables.ProjectsLOVSDP]]" item-text="project_number"></oj-select-single>
+            </div>
+          </oj-form-layout>
+        </oj-validation-group>
+      </div>
+      <div class="oj-flex-item oj-flex oj-sm-justify-content-flex-end" style="margin-top:-2vh">
+        <div class="oj-flex-item oj-sm-flex-initial oj-sm-margin-1x-end">
+          <oj-button label="Search" chroming="callToAction" class="oj-button-sm"
+            on-oj-action="[[$listeners.buttonAction2]]"></oj-button>
+        </div>
+        <div class="oj-flex-item oj-sm-flex-initial oj-sm-margin-1x-end">
+          <oj-button label="Reset" chroming="callToAction" class="oj-button-sm"
+            on-oj-action="[[$listeners.buttonAction]]"></oj-button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="oj-panel oj-flex oj-flex-item oj-sm-12 oj-md-12 oj-sm-margin-2x-top">
+    <div class="oj-flex-item oj-flex oj-sm-justify-content-flex-end oj-sm-12 oj-md-12">
+      <div class="oj-flex-item oj-sm-flex-initial oj-sm-margin-2x-end">
+        <oj-button label="Save" chroming="callToAction" class="oj-button-sm"
+          on-oj-action="[[$listeners.buttonAction3]]"></oj-button>
+      </div>
+      <div class="oj-flex-item oj-sm-flex-initial">
+        <oj-button label="Submit" chroming="callToAction" class="oj-button-sm"
+          disabled="[[ !$variables.FilteredData.length >0 ]]" on-oj-action="[[$listeners.buttonAction7]]"></oj-button>
+      </div>
+    </div>
+    <div class="oj-flex-item oj-sm-margin-1x-top">
+    </div>
+
+    <oj-data-grid id="datagrid" class="demo-data-grid" aria-label="Data Grid Cell Based Grid Demo"
+      data="[[ $variables.TimeSheetDetailsADP ]]" selection-mode.cell="multiple" scroll-policy="loadMoreOnScroll"
+      header.row.class-name="demo-data-grid-header-row" header.column.resizable='{"width":"enable", "height":"enable"}'
+      header.row.resizable='{"width":"enable", "height":"enable"}' header.row.sortable="disable">
+
+    </oj-data-grid>
+
+
+  </div>
+  <oj-table scroll-policy="loadMoreOnScroll" style="width:92vw" columns='[
+        {"headerText":"","field":"","template":"action","frozenEdge": "start","sortable":"disabled"},
+        {"headerText":"Resource Name","field":"resource_name" ,"frozenEdge": "start","classname":"oj-read-only"},
+        {"headerText":"Project Number","field":"project_number","frozenEdge": "start","classname":"oj-read-only"},
+        {"headerText":"Task Name","field":"task_name","frozenEdge": "start","classname":"oj-read-only"},
+        {"headerText":"Mon In","field":"mon_in_time" ,"template":"monin"},
+        {"headerText":"Mon Out","field":"mon_out_time","template":"monout"},
+        {"headerText":"Tue In","field":"tue_in_time","template":"tuein"},
+        {"headerText":"Tue Out","field":"tue_out_time","template":"tueout"},
+        {"headerText":"Wed In","field":"wed_in_time","template":"wedin"},
+        {"headerText":"Wed Out","field":"wed_out_time","template":"wedout"},
+        {"headerText":"Thu In","field":"thu_in_time","template":"thuin"},
+        {"headerText":"Thu Out","field":"thu_out_time","template":"thuout"},
+        {"headerText":"Fri In","field":"fri_in_time","template":"friin"},
+        {"headerText":"Fri Out","field":"fri_out_time","template":"friout"},
+        {"headerText":"Sat In","field":"sat_in_time","template":"satin"},
+        {"headerText":"Sat Out","field":"sat_out_time","template":"satout"},
+        {"headerText":"Sun In","field":"sun_in_time","template":"sunin"},
+        {"headerText":"Sun Out","field":"sun_out_time","template":"sunout"}   
+        ]' selection-mode.row="multiple" data="[[ $variables.TimeSheetADP ]]" display="grid"
+    on-selected-changed="[[$listeners.tableSelected]]" on-oj-before-row-edit="[[$listeners.tableBeforeRowEdit]]"
+    edit-mode="rowEdit" on-oj-before-row-edit-end="[[$listeners.tableBeforeRowEditEnd]]"
+    edit-row="{{ $variables.editRow }}" class="oj-flex-item oj-sm-flex-initial">
+    <template slot="action" data-oj-as="cell">
+      <span class="oj-ux-ico-edit" style="cursor:pointer" on-click="[[$listeners.iconClick]]"></span>
+    </template>
+    <template slot="monin" data-oj-as="cell">
+      <oj-bind-if test='[[cell.mode==="navigation"]]'>
+        <oj-bind-text value="[[cell.data]]"></oj-bind-text>
+      </oj-bind-if>
+      <oj-bind-if test='[[cell.mode==="edit"]]'>
+        <oj-input-text id="it1" value="{{ $variables.currentRowdata.mon_in_time }}" class="editable"></oj-input-text>
+      </oj-bind-if>
+    </template>
+    <template slot="monout" data-oj-as="cell">
+      <oj-bind-if test='[[cell.mode==="navigation"]]'>
+        <oj-bind-text value="[[cell.data]]"></oj-bind-text>
+      </oj-bind-if>
+      <oj-bind-if test='[[cell.mode==="edit"]]'>
+        <oj-input-text id="it2" value="{{ $variables.currentRowdata.mon_out_time }}" class="editable"></oj-input-text>
+      </oj-bind-if>
+    </template>
+    <template slot="tuein" data-oj-as="cell">
+      <oj-bind-if test='[[cell.mode==="navigation"]]'>
+        <oj-bind-text value="[[cell.data]]"></oj-bind-text>
+      </oj-bind-if>
+      <oj-bind-if test='[[cell.mode==="edit"]]'>
+        <oj-input-text id="it3" value="{{ $variables.currentRowdata.tue_in_time }}" class="editable"></oj-input-text>
+      </oj-bind-if>
+    </template>
+    <template slot="tueout" data-oj-as="cell">
+      <oj-bind-if test='[[cell.mode==="navigation"]]'>
+        <oj-bind-text value="[[cell.data]]"></oj-bind-text>
+      </oj-bind-if>
+      <oj-bind-if test='[[cell.mode==="edit"]]'>
+        <oj-input-text id="it4" value="{{ $variables.currentRowdata.tue_out_time }}" class="editable"></oj-input-text>
+      </oj-bind-if>
+    </template>
+    <template slot="wedin" data-oj-as="cell">
+      <oj-bind-if test='[[cell.mode==="navigation"]]'>
+        <oj-bind-text value="[[cell.data]]"></oj-bind-text>
+      </oj-bind-if>
+      <oj-bind-if test='[[cell.mode==="edit"]]'>
+        <oj-input-text id="it5" value="{{ $variables.currentRowdata.wed_in_time }}" class="editable"></oj-input-text>
+      </oj-bind-if>
+    </template>
+    <template slot="wedout" data-oj-as="cell">
+      <oj-bind-if test='[[cell.mode==="navigation"]]'>
+        <oj-bind-text value="[[cell.data]]"></oj-bind-text>
+      </oj-bind-if>
+      <oj-bind-if test='[[cell.mode==="edit"]]'>
+        <oj-input-text id="it6" value="{{ $variables.currentRowdata.wed_out_time }}" class="editable"></oj-input-text>
+      </oj-bind-if>
+    </template>
+    <template slot="thuin" data-oj-as="cell">
+      <oj-bind-if test='[[cell.mode==="navigation"]]'>
+        <oj-bind-text value="[[cell.data]]"></oj-bind-text>
+      </oj-bind-if>
+      <oj-bind-if test='[[cell.mode==="edit"]]'>
+        <oj-input-text id="it7" value="{{ $variables.currentRowdata.thu_in_time }}" class="editable"></oj-input-text>
+      </oj-bind-if>
+    </template>
+    <template slot="thuout" data-oj-as="cell">
+      <oj-bind-if test='[[cell.mode==="navigation"]]'>
+        <oj-bind-text value="[[cell.data]]"></oj-bind-text>
+      </oj-bind-if>
+      <oj-bind-if test='[[cell.mode==="edit"]]'>
+        <oj-input-text id="it8" value="{{ $variables.currentRowdata.thu_out_time }}" class="editable"></oj-input-text>
+      </oj-bind-if>
+    </template>
+    <template slot="friin" data-oj-as="cell">
+      <oj-bind-if test='[[cell.mode==="navigation"]]'>
+        <oj-bind-text value="[[cell.data]]"></oj-bind-text>
+      </oj-bind-if>
+      <oj-bind-if test='[[cell.mode==="edit"]]'>
+        <oj-input-text id="it9" value="{{ $variables.currentRowdata.fri_in_time }}" class="editable"></oj-input-text>
+      </oj-bind-if>
+    </template>
+    <template slot="friout" data-oj-as="cell">
+      <oj-bind-if test='[[cell.mode==="navigation"]]'>
+        <oj-bind-text value="[[cell.data]]"></oj-bind-text>
+      </oj-bind-if>
+      <oj-bind-if test='[[cell.mode==="edit"]]'>
+        <oj-input-text id="it10" value="{{ $variables.currentRowdata.fri_out_time }}" class="editable"></oj-input-text>
+      </oj-bind-if>
+    </template>
+    <template slot="satin" data-oj-as="cell">
+      <oj-bind-if test='[[cell.mode==="navigation"]]'>
+        <oj-bind-text value="[[cell.data]]"></oj-bind-text>
+      </oj-bind-if>
+      <oj-bind-if test='[[cell.mode==="edit"]]'>
+        <oj-input-text id="it11" value="{{ $variables.currentRowdata.sat_in_time }}" class="editable"></oj-input-text>
+      </oj-bind-if>
+    </template>
+    <template slot="satout" data-oj-as="cell">
+      <oj-bind-if test='[[cell.mode==="navigation"]]'>
+        <oj-bind-text value="[[cell.data]]"></oj-bind-text>
+      </oj-bind-if>
+      <oj-bind-if test='[[cell.mode==="edit"]]'>
+        <oj-input-text id="it12" value="{{ $variables.currentRowdata.sat_out_time }}" class="editable"></oj-input-text>
+      </oj-bind-if>
+    </template>
+    <template slot="sunin" data-oj-as="cell">
+      <oj-bind-if test='[[cell.mode==="navigation"]]'>
+        <oj-bind-text value="[[cell.data]]"></oj-bind-text>
+      </oj-bind-if>
+      <oj-bind-if test='[[cell.mode==="edit"]]'>
+        <oj-input-text id="it13" value="{{ $variables.currentRowdata.sun_in_time }}" class="editable"></oj-input-text>
+      </oj-bind-if>
+    </template>
+    <template slot="sunout" data-oj-as="cell">
+      <oj-bind-if test='[[cell.mode==="navigation"]]'>
+        <oj-bind-text value="[[cell.data]]"></oj-bind-text>
+      </oj-bind-if>
+      <oj-bind-if test='[[cell.mode==="edit"]]'>
+        <oj-input-text id="it14" value="{{ $variables.currentRowdata.sun_out_time }}" class="editable"></oj-input-text>
+      </oj-bind-if>
+    </template>
+  </oj-table>
+</div>
+
+<oj-dialog dialog-title="" id="cnfirmationDlg" style="width:35vw">
+  <div slot="body">
+    <div class="oj-flex oj-sm-flex-direction-column">
+      <div class="oj-flex-item oj-flex oj-sm-margin-6x-top">
+        <span style="font-size:18px;font-weight:600;margin-left:23px">Make sure you save your changes before submitting.</span>
+      </div>
+      <div class="oj-flex-item oj-flex oj-sm-margin-3x-top oj-sm-justify-content-center">
+        <span style="font-size:18px;font-weight:600">Would you like to Proceed?</span>
+      </div>
+    </div>
+  </div>
+  <div class="oj-flex-item oj-flex oj-sm-margin-3x-top oj-sm-justify-content-center">
+    <div class="oj-flex-item oj-sm-margin-2x-end oj-sm-flex-initial">
+      <oj-button chroming="callToAction">Submit</oj-button>
+    </div>
+    <div class="oj-flex-item oj-sm-flex-initial">
+      <oj-button on-oj-action="[[$listeners.buttonAction5]]" chroming="callToAction">Cancel</oj-button>
+    </div>
+  </div>
+</oj-dialog>
