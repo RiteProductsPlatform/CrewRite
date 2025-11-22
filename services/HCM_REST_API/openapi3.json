@@ -1,0 +1,438 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "HcmRestApi",
+        "version": "1.0.0",
+        "x-vb": {
+            "transforms": {
+                "path": "../Transform.js"
+            }
+         }
+    },
+    "servers": [
+        {
+            "url": "vb-catalog://backends/hcmRestApi",
+            "description": "HcmRestApi"
+        }
+    ],
+    "paths": {
+        "/11.13.18.05/jobsLov": {
+            "get": {
+                "operationId": "get11_13_18_05JobsLov",
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Get11_13_18_05JobsLov"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/get11_13_18_05JobsLov/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "actionHint": "getMany"
+                }
+            }
+        },
+        "/11.13.18.05/elementEntries": {
+            "get": {
+                "operationId": "get11_13_18_05ElementEntries",
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Get11_13_18_05ElementEntries"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/get11_13_18_05ElementEntries/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "actionHint": "getMany"
+                },
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "x-vb": {
+                            "defaultValue": "ElementEntryId,ElementName,ElementTypeId,CreatorType,PayrollRelationshipNumber,ElementName,EntryType,ElementTypeId,EntrySequence"
+                        }
+                    },
+                    {
+                        "name": "onlyData",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "x-vb": {
+                            "defaultValue": "true"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "number"
+                        },
+                        "x-vb": {
+                        }
+                    }
+                ]
+            }
+        },
+        "/11.13.18.05/workers/": {
+            "parameters": [],
+            "get": {
+                "operationId": "getWorkers",
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Get11_13_18_05Workers"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/getWorkers/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "actionHint": "getMany"
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Get11_13_18_05JobsLov": {
+                "type": "object",
+                "properties": {
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "JobId": {
+                                    "type": "integer"
+                                },
+                                "EffectiveStartDate": {
+                                    "type": "string"
+                                },
+                                "EffectiveEndDate": {
+                                    "type": "string"
+                                },
+                                "JobCode": {
+                                    "type": "string"
+                                },
+                                "JobName": {
+                                    "type": "string"
+                                },
+                                "ActiveStatus": {
+                                    "type": "string"
+                                },
+                                "JobFunctionCode": {
+                                    "nullable": true
+                                },
+                                "JobFunctionName": {
+                                    "nullable": true
+                                },
+                                "JobFamilyId": {
+                                    "nullable": true
+                                },
+                                "JobFamilyName": {
+                                    "nullable": true
+                                },
+                                "ManagerLevel": {
+                                    "nullable": true
+                                },
+                                "SetId": {
+                                    "type": "integer"
+                                },
+                                "SetCode": {
+                                    "type": "string"
+                                },
+                                "SetName": {
+                                    "type": "string"
+                                },
+                                "SchedulingGroup": {
+                                    "nullable": true
+                                },
+                                "SchedulingGroupName": {
+                                    "nullable": true
+                                },
+                                "links": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "rel": {
+                                                "type": "string"
+                                            },
+                                            "href": {
+                                                "type": "string"
+                                            },
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "kind": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "count": {
+                        "type": "integer"
+                    },
+                    "hasMore": {
+                        "type": "boolean"
+                    },
+                    "limit": {
+                        "type": "integer"
+                    },
+                    "offset": {
+                        "type": "integer"
+                    },
+                    "links": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "rel": {
+                                    "type": "string"
+                                },
+                                "href": {
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                                "kind": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "Get11_13_18_05ElementEntries": {
+                "type": "object",
+                "properties": {
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "ElementEntryId": {
+                                    "type": "integer"
+                                },
+                                "ElementName": {
+                                    "type": "string"
+                                },
+                                "ElementTypeId": {
+                                    "type": "integer"
+                                },
+                                "CreatorType": {
+                                    "type": "string"
+                                },
+                                "PayrollRelationshipNumber": {
+                                    "type": "string"
+                                },
+                                "EntryType": {
+                                    "type": "string"
+                                },
+                                "EntrySequence": {
+                                    "type": "integer",
+                                    "nullable": true
+                                }
+                            }
+                        }
+                    },
+                    "count": {
+                        "type": "integer"
+                    },
+                    "hasMore": {
+                        "type": "boolean"
+                    },
+                    "limit": {
+                        "type": "integer"
+                    },
+                    "offset": {
+                        "type": "integer"
+                    },
+                    "links": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "rel": {
+                                    "type": "string"
+                                },
+                                "href": {
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                                "kind": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "Get11_13_18_05Workers": {
+                "type": "object",
+                "properties": {
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "PersonId": {
+                                    "type": "integer"
+                                },
+                                "PersonNumber": {
+                                    "type": "string"
+                                },
+                                "CorrespondenceLanguage": {
+                                    "nullable": true
+                                },
+                                "BloodType": {
+                                    "nullable": true
+                                },
+                                "DateOfBirth": {
+                                    "nullable": true
+                                },
+                                "DateOfDeath": {
+                                    "nullable": true
+                                },
+                                "CountryOfBirth": {
+                                    "nullable": true
+                                },
+                                "RegionOfBirth": {
+                                    "nullable": true
+                                },
+                                "TownOfBirth": {
+                                    "nullable": true
+                                },
+                                "ApplicantNumber": {
+                                    "nullable": true
+                                },
+                                "CreatedBy": {
+                                    "type": "string"
+                                },
+                                "CreationDate": {
+                                    "type": "string"
+                                },
+                                "LastUpdatedBy": {
+                                    "type": "string"
+                                },
+                                "LastUpdateDate": {
+                                    "type": "string"
+                                },
+                                "links": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "rel": {
+                                                "type": "string"
+                                            },
+                                            "href": {
+                                                "type": "string"
+                                            },
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "kind": {
+                                                "type": "string"
+                                            },
+                                            "properties": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "changeIndicator": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "count": {
+                        "type": "integer"
+                    },
+                    "hasMore": {
+                        "type": "boolean"
+                    },
+                    "limit": {
+                        "type": "integer"
+                    },
+                    "offset": {
+                        "type": "integer"
+                    },
+                    "links": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "rel": {
+                                    "type": "string"
+                                },
+                                "href": {
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                                "kind": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

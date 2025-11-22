@@ -1,0 +1,816 @@
+{
+    "items": [
+        {
+            "JobId": 300000240874717,
+            "EffectiveStartDate": "1990-01-01",
+            "EffectiveEndDate": "4712-12-31",
+            "JobCode": "010000RECRUITER1378",
+            "JobName": "010000RECRUITER1378",
+            "ActiveStatus": "A",
+            "JobFunctionCode": null,
+            "JobFunctionName": null,
+            "JobFamilyId": null,
+            "JobFamilyName": null,
+            "ManagerLevel": null,
+            "SetId": 0,
+            "SetCode": "COMMON",
+            "SetName": "Common Set",
+            "SchedulingGroup": null,
+            "SchedulingGroupName": null,
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCA34DD0000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCA34DD0000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "JobId": 300000241082497,
+            "EffectiveStartDate": "1990-01-01",
+            "EffectiveEndDate": "4712-12-31",
+            "JobCode": "010000RECRUITER1378Y",
+            "JobName": "010000RECRUITER1378Y",
+            "ActiveStatus": "A",
+            "JobFunctionCode": null,
+            "JobFunctionName": null,
+            "JobFamilyId": null,
+            "JobFamilyName": null,
+            "ManagerLevel": null,
+            "SetId": 0,
+            "SetCode": "COMMON",
+            "SetName": "Common Set",
+            "SchedulingGroup": null,
+            "SchedulingGroupName": null,
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCD60810000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCD60810000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "JobId": 300000240874002,
+            "EffectiveStartDate": "1950-01-01",
+            "EffectiveEndDate": "4712-12-31",
+            "JobCode": "0201973",
+            "JobName": "0201973",
+            "ActiveStatus": "A",
+            "JobFunctionCode": null,
+            "JobFunctionName": null,
+            "JobFamilyId": null,
+            "JobFamilyName": null,
+            "ManagerLevel": null,
+            "SetId": 0,
+            "SetCode": "COMMON",
+            "SetName": "Common Set",
+            "SchedulingGroup": null,
+            "SchedulingGroupName": null,
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCA32120000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCA32120000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "JobId": 300000241081486,
+            "EffectiveStartDate": "1950-01-01",
+            "EffectiveEndDate": "4712-12-31",
+            "JobCode": "0201973Y",
+            "JobName": "0201973Y",
+            "ActiveStatus": "A",
+            "JobFunctionCode": null,
+            "JobFunctionName": null,
+            "JobFamilyId": null,
+            "JobFamilyName": null,
+            "ManagerLevel": null,
+            "SetId": 0,
+            "SetCode": "COMMON",
+            "SetName": "Common Set",
+            "SchedulingGroup": null,
+            "SchedulingGroupName": null,
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCD5C8E0000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCD5C8E0000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "JobId": 300000241083241,
+            "EffectiveStartDate": "1999-12-26",
+            "EffectiveEndDate": "4712-12-31",
+            "JobCode": "0201HUMANRESOURCESMAN1769Y",
+            "JobName": "0201HUMANRESOURCESMAN1769Y",
+            "ActiveStatus": "A",
+            "JobFunctionCode": null,
+            "JobFunctionName": null,
+            "JobFamilyId": null,
+            "JobFamilyName": null,
+            "ManagerLevel": null,
+            "SetId": 0,
+            "SetCode": "COMMON",
+            "SetName": "Common Set",
+            "SchedulingGroup": null,
+            "SchedulingGroupName": null,
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCD63690000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCD63690000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "JobId": 300000240914377,
+            "EffectiveStartDate": "1999-12-26",
+            "EffectiveEndDate": "4712-12-31",
+            "JobCode": "0201HUMANRESOURCESMANA1769",
+            "JobName": "0201HUMANRESOURCESMANA1769",
+            "ActiveStatus": "A",
+            "JobFunctionCode": null,
+            "JobFunctionName": null,
+            "JobFamilyId": null,
+            "JobFamilyName": null,
+            "ManagerLevel": null,
+            "SetId": 0,
+            "SetCode": "COMMON",
+            "SetName": "Common Set",
+            "SchedulingGroup": null,
+            "SchedulingGroupName": null,
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCACFC90000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCACFC90000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "JobId": 300000240874045,
+            "EffectiveStartDate": "1950-01-01",
+            "EffectiveEndDate": "4712-12-31",
+            "JobCode": "0203975",
+            "JobName": "0203975",
+            "ActiveStatus": "A",
+            "JobFunctionCode": null,
+            "JobFunctionName": null,
+            "JobFamilyId": null,
+            "JobFamilyName": null,
+            "ManagerLevel": null,
+            "SetId": 0,
+            "SetCode": "COMMON",
+            "SetName": "Common Set",
+            "SchedulingGroup": null,
+            "SchedulingGroupName": null,
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCA323D0000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCA323D0000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "JobId": 300000241081854,
+            "EffectiveStartDate": "1950-01-01",
+            "EffectiveEndDate": "4712-12-31",
+            "JobCode": "0203975Y",
+            "JobName": "0203975Y",
+            "ActiveStatus": "A",
+            "JobFunctionCode": null,
+            "JobFunctionName": null,
+            "JobFamilyId": null,
+            "JobFamilyName": null,
+            "ManagerLevel": null,
+            "SetId": 0,
+            "SetCode": "COMMON",
+            "SetName": "Common Set",
+            "SchedulingGroup": null,
+            "SchedulingGroupName": null,
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCD5DFE0000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCD5DFE0000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "JobId": 300000240875463,
+            "EffectiveStartDate": "1999-12-26",
+            "EffectiveEndDate": "4712-12-31",
+            "JobCode": "0203PERSONNELASSISTANT1775",
+            "JobName": "0203PERSONNELASSISTANT1775",
+            "ActiveStatus": "A",
+            "JobFunctionCode": null,
+            "JobFunctionName": null,
+            "JobFamilyId": null,
+            "JobFamilyName": null,
+            "ManagerLevel": null,
+            "SetId": 0,
+            "SetCode": "COMMON",
+            "SetName": "Common Set",
+            "SchedulingGroup": null,
+            "SchedulingGroupName": null,
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCA37C70000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCA37C70000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "JobId": 300000241083266,
+            "EffectiveStartDate": "1999-12-26",
+            "EffectiveEndDate": "4712-12-31",
+            "JobCode": "0203PERSONNELASSISTANT1775Y",
+            "JobName": "0203PERSONNELASSISTANT1775Y",
+            "ActiveStatus": "A",
+            "JobFunctionCode": null,
+            "JobFunctionName": null,
+            "JobFamilyId": null,
+            "JobFamilyName": null,
+            "ManagerLevel": null,
+            "SetId": 0,
+            "SetCode": "COMMON",
+            "SetName": "Common Set",
+            "SchedulingGroup": null,
+            "SchedulingGroupName": null,
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCD63820000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCD63820000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "JobId": 300000240874540,
+            "EffectiveStartDate": "1950-01-01",
+            "EffectiveEndDate": "4712-12-31",
+            "JobCode": "0212976",
+            "JobName": "0212976",
+            "ActiveStatus": "A",
+            "JobFunctionCode": null,
+            "JobFunctionName": null,
+            "JobFamilyId": null,
+            "JobFamilyName": null,
+            "ManagerLevel": null,
+            "SetId": 0,
+            "SetCode": "COMMON",
+            "SetName": "Common Set",
+            "SchedulingGroup": null,
+            "SchedulingGroupName": null,
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCA342C0000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCA342C0000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "JobId": 300000241081408,
+            "EffectiveStartDate": "1950-01-01",
+            "EffectiveEndDate": "4712-12-31",
+            "JobCode": "0212976Y",
+            "JobName": "0212976Y",
+            "ActiveStatus": "A",
+            "JobFunctionCode": null,
+            "JobFunctionName": null,
+            "JobFamilyId": null,
+            "JobFamilyName": null,
+            "ManagerLevel": null,
+            "SetId": 0,
+            "SetCode": "COMMON",
+            "SetName": "Common Set",
+            "SchedulingGroup": null,
+            "SchedulingGroupName": null,
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCD5C400000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCD5C400000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "JobId": 300000240873850,
+            "EffectiveStartDate": "1950-01-01",
+            "EffectiveEndDate": "4712-12-31",
+            "JobCode": "0221977",
+            "JobName": "0221977",
+            "ActiveStatus": "A",
+            "JobFunctionCode": null,
+            "JobFunctionName": null,
+            "JobFamilyId": null,
+            "JobFamilyName": null,
+            "ManagerLevel": null,
+            "SetId": 0,
+            "SetCode": "COMMON",
+            "SetName": "Common Set",
+            "SchedulingGroup": null,
+            "SchedulingGroupName": null,
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCA317A0000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCA317A0000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "JobId": 300000241081575,
+            "EffectiveStartDate": "1950-01-01",
+            "EffectiveEndDate": "4712-12-31",
+            "JobCode": "0221977Y",
+            "JobName": "0221977Y",
+            "ActiveStatus": "A",
+            "JobFunctionCode": null,
+            "JobFunctionName": null,
+            "JobFamilyId": null,
+            "JobFamilyName": null,
+            "ManagerLevel": null,
+            "SetId": 0,
+            "SetCode": "COMMON",
+            "SetName": "Common Set",
+            "SchedulingGroup": null,
+            "SchedulingGroupName": null,
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCD5CE70000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCD5CE70000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "JobId": 300000241083168,
+            "EffectiveStartDate": "1999-12-26",
+            "EffectiveEndDate": "4712-12-31",
+            "JobCode": "0235EMPLOYEEDEVELOPMEN1776Y",
+            "JobName": "0235EMPLOYEEDEVELOPMEN1776Y",
+            "ActiveStatus": "A",
+            "JobFunctionCode": null,
+            "JobFunctionName": null,
+            "JobFamilyId": null,
+            "JobFamilyName": null,
+            "ManagerLevel": null,
+            "SetId": 0,
+            "SetCode": "COMMON",
+            "SetName": "Common Set",
+            "SchedulingGroup": null,
+            "SchedulingGroupName": null,
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCD63200000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCD63200000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "JobId": 300000240914435,
+            "EffectiveStartDate": "1999-12-26",
+            "EffectiveEndDate": "4712-12-31",
+            "JobCode": "0235EMPLOYEEDEVELOPMENT1776",
+            "JobName": "0235EMPLOYEEDEVELOPMENT1776",
+            "ActiveStatus": "A",
+            "JobFunctionCode": null,
+            "JobFunctionName": null,
+            "JobFamilyId": null,
+            "JobFamilyName": null,
+            "ManagerLevel": null,
+            "SetId": 0,
+            "SetCode": "COMMON",
+            "SetName": "Common Set",
+            "SchedulingGroup": null,
+            "SchedulingGroupName": null,
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCAD0030000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCAD0030000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "JobId": 300000240874102,
+            "EffectiveStartDate": "1950-01-01",
+            "EffectiveEndDate": "4712-12-31",
+            "JobCode": "0301972",
+            "JobName": "0301972",
+            "ActiveStatus": "A",
+            "JobFunctionCode": null,
+            "JobFunctionName": null,
+            "JobFamilyId": null,
+            "JobFamilyName": null,
+            "ManagerLevel": null,
+            "SetId": 0,
+            "SetCode": "COMMON",
+            "SetName": "Common Set",
+            "SchedulingGroup": null,
+            "SchedulingGroupName": null,
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCA32760000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCA32760000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "JobId": 300000241082025,
+            "EffectiveStartDate": "1950-01-01",
+            "EffectiveEndDate": "4712-12-31",
+            "JobCode": "0301972Y",
+            "JobName": "0301972Y",
+            "ActiveStatus": "A",
+            "JobFunctionCode": null,
+            "JobFunctionName": null,
+            "JobFamilyId": null,
+            "JobFamilyName": null,
+            "ManagerLevel": null,
+            "SetId": 0,
+            "SetCode": "COMMON",
+            "SetName": "Common Set",
+            "SchedulingGroup": null,
+            "SchedulingGroupName": null,
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCD5EA90000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCD5EA90000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "JobId": 300000241083096,
+            "EffectiveStartDate": "1999-12-26",
+            "EffectiveEndDate": "4712-12-31",
+            "JobCode": "0301MISC\\ADMINISTRATI1771Y",
+            "JobName": "0301MISC\\ADMINISTRATI1771Y",
+            "ActiveStatus": "A",
+            "JobFunctionCode": null,
+            "JobFunctionName": null,
+            "JobFamilyId": null,
+            "JobFamilyName": null,
+            "ManagerLevel": null,
+            "SetId": 0,
+            "SetCode": "COMMON",
+            "SetName": "Common Set",
+            "SchedulingGroup": null,
+            "SchedulingGroupName": null,
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCD62D80000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCD62D80000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "JobId": 300000240914423,
+            "EffectiveStartDate": "1999-12-26",
+            "EffectiveEndDate": "4712-12-31",
+            "JobCode": "0301MISC\\ADMINISTRATIO1771",
+            "JobName": "0301MISC\\ADMINISTRATIO1771",
+            "ActiveStatus": "A",
+            "JobFunctionCode": null,
+            "JobFunctionName": null,
+            "JobFamilyId": null,
+            "JobFamilyName": null,
+            "ManagerLevel": null,
+            "SetId": 0,
+            "SetCode": "COMMON",
+            "SetName": "Common Set",
+            "SchedulingGroup": null,
+            "SchedulingGroupName": null,
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCACFF70000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCACFF70000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "JobId": 300000240873955,
+            "EffectiveStartDate": "1950-01-01",
+            "EffectiveEndDate": "4712-12-31",
+            "JobCode": "0305978",
+            "JobName": "0305978",
+            "ActiveStatus": "A",
+            "JobFunctionCode": null,
+            "JobFunctionName": null,
+            "JobFamilyId": null,
+            "JobFamilyName": null,
+            "ManagerLevel": null,
+            "SetId": 0,
+            "SetCode": "COMMON",
+            "SetName": "Common Set",
+            "SchedulingGroup": null,
+            "SchedulingGroupName": null,
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCA31E30000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCA31E30000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "JobId": 300000241081830,
+            "EffectiveStartDate": "1950-01-01",
+            "EffectiveEndDate": "4712-12-31",
+            "JobCode": "0305978Y",
+            "JobName": "0305978Y",
+            "ActiveStatus": "A",
+            "JobFunctionCode": null,
+            "JobFunctionName": null,
+            "JobFamilyId": null,
+            "JobFamilyName": null,
+            "ManagerLevel": null,
+            "SetId": 0,
+            "SetCode": "COMMON",
+            "SetName": "Common Set",
+            "SchedulingGroup": null,
+            "SchedulingGroupName": null,
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCD5DE60000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCD5DE60000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "JobId": 300000240874324,
+            "EffectiveStartDate": "1950-01-01",
+            "EffectiveEndDate": "4712-12-31",
+            "JobCode": "0318974",
+            "JobName": "0318974",
+            "ActiveStatus": "A",
+            "JobFunctionCode": null,
+            "JobFunctionName": null,
+            "JobFamilyId": null,
+            "JobFamilyName": null,
+            "ManagerLevel": null,
+            "SetId": 0,
+            "SetCode": "COMMON",
+            "SetName": "Common Set",
+            "SchedulingGroup": null,
+            "SchedulingGroupName": null,
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCA33540000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCA33540000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "JobId": 300000241082073,
+            "EffectiveStartDate": "1950-01-01",
+            "EffectiveEndDate": "4712-12-31",
+            "JobCode": "0318974Y",
+            "JobName": "0318974Y",
+            "ActiveStatus": "A",
+            "JobFunctionCode": null,
+            "JobFunctionName": null,
+            "JobFamilyId": null,
+            "JobFamilyName": null,
+            "ManagerLevel": null,
+            "SetId": 0,
+            "SetCode": "COMMON",
+            "SetName": "Common Set",
+            "SchedulingGroup": null,
+            "SchedulingGroupName": null,
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCD5ED90000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCD5ED90000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                }
+            ]
+        },
+        {
+            "JobId": 300000240875553,
+            "EffectiveStartDate": "1999-12-26",
+            "EffectiveEndDate": "4712-12-31",
+            "JobCode": "0318SECRETARY1770",
+            "JobName": "0318SECRETARY1770",
+            "ActiveStatus": "A",
+            "JobFunctionCode": null,
+            "JobFunctionName": null,
+            "JobFamilyId": null,
+            "JobFamilyName": null,
+            "ManagerLevel": null,
+            "SetId": 0,
+            "SetCode": "COMMON",
+            "SetName": "Common Set",
+            "SchedulingGroup": null,
+            "SchedulingGroupName": null,
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCA38210000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov/00020000000EACED00057708000110D93FCA38210000004AACED00057372000D6A6176612E73716C2E4461746514FA46683F3566970200007872000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000191FD47640078",
+                    "name": "jobsLov",
+                    "kind": "item"
+                }
+            ]
+        }
+    ],
+    "count": 25,
+    "hasMore": true,
+    "limit": 25,
+    "offset": 0,
+    "links": [
+        {
+            "rel": "self",
+            "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/jobsLov",
+            "name": "jobsLov",
+            "kind": "collection"
+        }
+    ]
+}

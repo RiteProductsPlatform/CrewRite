@@ -1,0 +1,4516 @@
+{
+    "items": [
+        {
+            "ElementEntryId": 14016,
+            "ElementName": "Regular Salary",
+            "ElementTypeId": 300000048007880,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "2204",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 109,
+            "ElementName": "Annual Salary Japan",
+            "ElementTypeId": 300000047953385,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "256",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 14180,
+            "ElementName": "Reg Hourly HE",
+            "ElementTypeId": 300000095447915,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "2008",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 14182,
+            "ElementName": "Reg Hourly HE",
+            "ElementTypeId": 300000095447915,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1988",
+            "EntryType": "E",
+            "EntrySequence": 2
+        },
+        {
+            "ElementEntryId": 14184,
+            "ElementName": "Reg Hourly HE",
+            "ElementTypeId": 300000095447915,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "2009",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 140,
+            "ElementName": "Annual Salary China",
+            "ElementTypeId": 300000047946461,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "257",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 162,
+            "ElementName": "Annual Salary Japan",
+            "ElementTypeId": 300000047953385,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "278",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 179,
+            "ElementName": "Annual Salary Netherlands",
+            "ElementTypeId": 300000048863341,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "372",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048024116,
+            "ElementName": "Statutory Deductions",
+            "ElementTypeId": 300000000375462,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "120",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 14037,
+            "ElementName": "Regular Salary",
+            "ElementTypeId": 300000048007880,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "2246",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 14038,
+            "ElementName": "Regular Wages",
+            "ElementTypeId": 300000052568674,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "2248",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 19,
+            "ElementName": "Annual Salary Japan",
+            "ElementTypeId": 300000047953385,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "141",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048041480,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "143",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 26,
+            "ElementName": "Annual Salary Japan",
+            "ElementTypeId": 300000047953385,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "151",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048048245,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "150",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048053450,
+            "ElementName": "Statutory Deductions",
+            "ElementTypeId": 300000000375462,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "157",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 33,
+            "ElementName": "Annual Salary Japan",
+            "ElementTypeId": 300000047953385,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "159",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 66,
+            "ElementName": "Annual Salary Japan",
+            "ElementTypeId": 300000047953385,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "200",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 87,
+            "ElementName": "Annual Salary Japan",
+            "ElementTypeId": 300000047953385,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "221",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048119177,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "230",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 114,
+            "ElementName": "Annual Salary Japan",
+            "ElementTypeId": 300000047953385,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "261",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 120,
+            "ElementName": "Annual Salary Japan",
+            "ElementTypeId": 300000047953385,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "271",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 121,
+            "ElementName": "Annual Salary Singapore",
+            "ElementTypeId": 300000047956549,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "272",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 203,
+            "ElementName": "Annual Salary Netherlands",
+            "ElementTypeId": 300000048863341,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "442",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 207,
+            "ElementName": "Annual Salary UK",
+            "ElementTypeId": 300000048711353,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "457",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048051644,
+            "ElementName": "Statutory Deductions",
+            "ElementTypeId": 300000000375462,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "156",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048056017,
+            "ElementName": "Statutory Deductions",
+            "ElementTypeId": 300000000375462,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "160",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 35,
+            "ElementName": "Annual Salary Australia",
+            "ElementTypeId": 300000047943981,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "160",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048057000,
+            "ElementName": "Statutory Deductions",
+            "ElementTypeId": 300000000375462,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "163",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048059733,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "158",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048064075,
+            "ElementName": "Statutory Deductions",
+            "ElementTypeId": 300000000375462,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "172",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048069331,
+            "ElementName": "Statutory Deductions",
+            "ElementTypeId": 300000000375462,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "175",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048078912,
+            "ElementName": "Statutory Deductions",
+            "ElementTypeId": 300000000375462,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "187",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048079910,
+            "ElementName": "Statutory Deductions",
+            "ElementTypeId": 300000000375462,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "189",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000156937648,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "3999",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000048080892,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "188",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 100000288713735,
+            "ElementName": "Regular Wages",
+            "ElementTypeId": 300000052568674,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "3999",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000048083642,
+            "ElementName": "Statutory Deductions",
+            "ElementTypeId": 300000000375462,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "193",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000156922752,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "3996",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 61,
+            "ElementName": "Annual Salary Japan",
+            "ElementTypeId": 300000047953385,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "194",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048086941,
+            "ElementName": "Statutory Deductions",
+            "ElementTypeId": 300000000375462,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "197",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 63,
+            "ElementName": "Annual Salary Australia",
+            "ElementTypeId": 300000047943981,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "197",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 100000288712262,
+            "ElementName": "Regular Wages",
+            "ElementTypeId": 300000052568674,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "3996",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 69,
+            "ElementName": "Annual Salary Japan",
+            "ElementTypeId": 300000047953385,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "201",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 79,
+            "ElementName": "Annual Salary Japan",
+            "ElementTypeId": 300000047953385,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "214",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 101,
+            "ElementName": "Annual Salary Japan",
+            "ElementTypeId": 300000047953385,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "245",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048133696,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "248",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 104,
+            "ElementName": "Annual Salary Hong Kong",
+            "ElementTypeId": 300000047948829,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "250",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048135313,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "251",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 105,
+            "ElementName": "Annual Salary Japan",
+            "ElementTypeId": 300000047953385,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "249",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048141038,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "257",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048144293,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "262",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 3,
+            "ElementName": "Annual Salary Japan",
+            "ElementTypeId": 300000047953385,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "121",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 7,
+            "ElementName": "Annual Salary Japan",
+            "ElementTypeId": 300000047953385,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "126",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000105450119,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1677",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 14034,
+            "ElementName": "Regular Salary",
+            "ElementTypeId": 300000048007880,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "2240",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000144938616,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "3886",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000048035397,
+            "ElementName": "Statutory Deductions",
+            "ElementTypeId": 300000000375462,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "137",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 14,
+            "ElementName": "Annual Salary Japan",
+            "ElementTypeId": 300000047953385,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "131",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048039728,
+            "ElementName": "Statutory Deductions",
+            "ElementTypeId": 300000000375462,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "140",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048043095,
+            "ElementName": "Statutory Deductions",
+            "ElementTypeId": 300000000375462,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "146",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048045672,
+            "ElementName": "Statutory Deductions",
+            "ElementTypeId": 300000000375462,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "147",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048049045,
+            "ElementName": "Statutory Deductions",
+            "ElementTypeId": 300000000375462,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "152",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048063255,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "168",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048069332,
+            "ElementName": "Statutory Deductions",
+            "ElementTypeId": 300000000375462,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "178",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 90,
+            "ElementName": "Annual Salary India",
+            "ElementTypeId": 300000047951107,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "233",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 91,
+            "ElementName": "Annual Salary Japan",
+            "ElementTypeId": 300000047953385,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "234",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000144938638,
+            "ElementName": "Pensions Automatic Enrolment",
+            "ElementTypeId": 300000076608424,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "3886",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 100000243863481,
+            "ElementName": "Annual Salary UK",
+            "ElementTypeId": 300000048711353,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "3886",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000144938833,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "3887",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000144938855,
+            "ElementName": "Pensions Automatic Enrolment",
+            "ElementTypeId": 300000076608424,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "3887",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 100000243864356,
+            "ElementName": "Annual Salary UK",
+            "ElementTypeId": 300000048711353,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "3887",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 110,
+            "ElementName": "Annual Salary Japan",
+            "ElementTypeId": 300000047953385,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "259",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048143399,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "260",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048145132,
+            "ElementName": "Statutory Deductions",
+            "ElementTypeId": 300000000375462,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "263",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048146903,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "264",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048151276,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "267",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048152899,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "270",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048156259,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "273",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000047999083,
+            "ElementName": "Statutory Deductions",
+            "ElementTypeId": 300000000375462,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "114",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048022077,
+            "ElementName": "Statutory Deductions",
+            "ElementTypeId": 300000000375462,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "115",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048027477,
+            "ElementName": "Statutory Deductions",
+            "ElementTypeId": 300000000375462,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "123",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048028488,
+            "ElementName": "Statutory Deductions",
+            "ElementTypeId": 300000000375462,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "122",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048031171,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "129",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 17494,
+            "ElementName": "HC Wellness Employer",
+            "ElementTypeId": 300000102351959,
+            "CreatorType": "BEN",
+            "PayrollRelationshipNumber": "1672",
+            "EntryType": "E",
+            "EntrySequence": 2
+        },
+        {
+            "ElementEntryId": 300000048032799,
+            "ElementName": "Statutory Deductions",
+            "ElementTypeId": 300000000375462,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "128",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 17495,
+            "ElementName": "HC Wellness Pretax",
+            "ElementTypeId": 300000102311486,
+            "CreatorType": "BEN",
+            "PayrollRelationshipNumber": "1672",
+            "EntryType": "E",
+            "EntrySequence": 2
+        },
+        {
+            "ElementEntryId": 300000048060619,
+            "ElementName": "Statutory Deductions",
+            "ElementTypeId": 300000000375462,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "164",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 17496,
+            "ElementName": "Flex Credits HC",
+            "ElementTypeId": 300000108107466,
+            "CreatorType": "BEN",
+            "PayrollRelationshipNumber": "1672",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 40,
+            "ElementName": "Annual Salary Japan",
+            "ElementTypeId": 300000047953385,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "167",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048072046,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "177",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 49,
+            "ElementName": "Annual Salary Japan",
+            "ElementTypeId": 300000047953385,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "176",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048073698,
+            "ElementName": "Statutory Deductions",
+            "ElementTypeId": 300000000375462,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "181",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048074715,
+            "ElementName": "Statutory Deductions",
+            "ElementTypeId": 300000000375462,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "182",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048081824,
+            "ElementName": "Statutory Deductions",
+            "ElementTypeId": 300000000375462,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "192",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048092174,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "202",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048095322,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "207",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 73,
+            "ElementName": "Annual Salary Japan",
+            "ElementTypeId": 300000047953385,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "210",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048101114,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "212",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048105062,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "217",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048115211,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "227",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048124006,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "236",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 97,
+            "ElementName": "Annual Salary Japan",
+            "ElementTypeId": 300000047953385,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "239",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048130571,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "243",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 123,
+            "ElementName": "Annual Salary Japan",
+            "ElementTypeId": 300000047953385,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "274",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000048159963,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "275",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 125,
+            "ElementName": "Annual Salary Japan",
+            "ElementTypeId": 300000047953385,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "276",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 285,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "980",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 286,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "981",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 287,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "982",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 323,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "879-1",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 324,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "879-1",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 325,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "873-1",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 326,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "873-1",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 331,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "877-1",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 332,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "877-1",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 335,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "878-1",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 336,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "878-1",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 337,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "987",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 338,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "987",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 13951,
+            "ElementName": "Regular Salary HE",
+            "ElementTypeId": 300000095432985,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "2000",
+            "EntryType": "E",
+            "EntrySequence": 2
+        },
+        {
+            "ElementEntryId": 13959,
+            "ElementName": "Regular Salary HE",
+            "ElementTypeId": 300000095432985,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1987",
+            "EntryType": "E",
+            "EntrySequence": 3
+        },
+        {
+            "ElementEntryId": 13913,
+            "ElementName": "Regular Salary HE",
+            "ElementTypeId": 300000095432985,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "2003",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 13961,
+            "ElementName": "Regular Salary HE",
+            "ElementTypeId": 300000095432985,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "2002",
+            "EntryType": "E",
+            "EntrySequence": 6
+        },
+        {
+            "ElementEntryId": 300000105995826,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1734",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 264,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "971",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 265,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "971",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000106155168,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "2038",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 289,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "984",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000106158384,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1739",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000106158757,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1690",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 225,
+            "ElementName": "Annual Salary Netherlands",
+            "ElementTypeId": 300000048863341,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "534",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 283,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "978",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 284,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "979",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 290,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "985",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 327,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "874-1",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 328,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "874-1",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 329,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "875-1",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 330,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "875-1",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 333,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "876-1",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 334,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "876-1",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 13957,
+            "ElementName": "Regular Salary HE",
+            "ElementTypeId": 300000095432985,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1996",
+            "EntryType": "E",
+            "EntrySequence": 3
+        },
+        {
+            "ElementEntryId": 14025,
+            "ElementName": "Regular Wages",
+            "ElementTypeId": 300000052568674,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "2222",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 14027,
+            "ElementName": "Regular Salary",
+            "ElementTypeId": 300000048007880,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "2226",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 288,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "983",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 303,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "324",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1149,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "415",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1150,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "457",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1152,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "447",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1154,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "363",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1155,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "374",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1157,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "355",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1161,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "393",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1163,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "433",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1187,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "332",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1191,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "514",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1192,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "334",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1193,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "373",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1194,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "401",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1199,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "504",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1201,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "480",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1203,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "426",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1246,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "540",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1247,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "541",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1248,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "573",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1253,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "661",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1254,
+            "ElementName": "Regular Salary",
+            "ElementTypeId": 300000048007880,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1006",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1255,
+            "ElementName": "Regular Salary",
+            "ElementTypeId": 300000048007880,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1007",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1256,
+            "ElementName": "Regular Salary",
+            "ElementTypeId": 300000048007880,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1009",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1258,
+            "ElementName": "Regular Salary",
+            "ElementTypeId": 300000048007880,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1011",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1262,
+            "ElementName": "Regular Wages",
+            "ElementTypeId": 300000052568674,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1015",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1263,
+            "ElementName": "Regular Wages",
+            "ElementTypeId": 300000052568674,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1017",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1275,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "576",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1279,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "650",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1284,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "655",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1285,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "656",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1294,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "660",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1295,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "665",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1300,
+            "ElementName": "Regular Wages",
+            "ElementTypeId": 300000052568674,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1028",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1302,
+            "ElementName": "Regular Wages",
+            "ElementTypeId": 300000052568674,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1030",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1303,
+            "ElementName": "Regular Wages",
+            "ElementTypeId": 300000052568674,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1031",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1304,
+            "ElementName": "Regular Wages",
+            "ElementTypeId": 300000052568674,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1032",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1305,
+            "ElementName": "Regular Wages",
+            "ElementTypeId": 300000052568674,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1033",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1306,
+            "ElementName": "Regular Wages",
+            "ElementTypeId": 300000052568674,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1034",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1307,
+            "ElementName": "Regular Wages",
+            "ElementTypeId": 300000052568674,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1035",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1308,
+            "ElementName": "Regular Wages",
+            "ElementTypeId": 300000052568674,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1036",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1309,
+            "ElementName": "Regular Salary",
+            "ElementTypeId": 300000048007880,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1037",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1310,
+            "ElementName": "Regular Wages",
+            "ElementTypeId": 300000052568674,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1038",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1311,
+            "ElementName": "Regular Wages",
+            "ElementTypeId": 300000052568674,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1039",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1314,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "671",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1315,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "672",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1316,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "673",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1317,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "674",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1318,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "675",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1319,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "676",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1320,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "662",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1143,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "351",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1144,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "346",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1145,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "331",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1146,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "422",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1147,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "441",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1151,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "452",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1153,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "336",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1156,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "387",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1158,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "368",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1160,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "397",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1162,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "406",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1183,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "342",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1148,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "429",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1159,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "381",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1164,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "411",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1184,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "323",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1185,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "364",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1186,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "359",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1188,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "497",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1189,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "438",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1190,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "519",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1195,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "392",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1196,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "416",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1197,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "384",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1198,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "353",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1200,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "471",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1202,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "460",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1243,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "494",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1244,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "538",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1245,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "539",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1249,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "542",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1250,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "658",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1251,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "659",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1252,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "668",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1257,
+            "ElementName": "Regular Salary",
+            "ElementTypeId": 300000048007880,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1010",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1259,
+            "ElementName": "Regular Salary",
+            "ElementTypeId": 300000048007880,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1012",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1260,
+            "ElementName": "Regular Salary",
+            "ElementTypeId": 300000048007880,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1013",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1261,
+            "ElementName": "Regular Salary",
+            "ElementTypeId": 300000048007880,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1014",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1274,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "575",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1276,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "647",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1277,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "648",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1278,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "649",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1280,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "577",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1281,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "652",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1282,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "653",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1283,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "654",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1286,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "657",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1287,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "100",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1288,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "695",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1289,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "696",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1290,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "697",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1291,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "698",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1292,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "699",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1293,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "578",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1296,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "666",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1297,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "667",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1298,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "669",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1299,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "670",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1301,
+            "ElementName": "Regular Wages",
+            "ElementTypeId": 300000052568674,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1029",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1323,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "679",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1324,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "680",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1327,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "682",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1329,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "684",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1328,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "677",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1330,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "685",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1332,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "687",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1333,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "618",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1321,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "99",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1322,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "678",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1325,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "543",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1326,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "681",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1335,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "689",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1341,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "693",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1337,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "7",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1339,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "101",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1340,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "692",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1342,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "694",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1343,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "683",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1334,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "688",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1336,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "690",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 1338,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "691",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2692,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "802",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 4326,
+            "ElementName": "Annual Salary China",
+            "ElementTypeId": 300000047946461,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1482",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000081572006,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1482",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000092935557,
+            "ElementName": "Auto TB",
+            "ElementTypeId": 300000085745169,
+            "CreatorType": "F",
+            "PayrollRelationshipNumber": "842",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000092935759,
+            "ElementName": "Auto TB",
+            "ElementTypeId": 300000085745169,
+            "CreatorType": "F",
+            "PayrollRelationshipNumber": "848",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 6275,
+            "ElementName": "Wellness Employer",
+            "ElementTypeId": 300000081426694,
+            "CreatorType": "BEN",
+            "PayrollRelationshipNumber": "675",
+            "EntryType": "E",
+            "EntrySequence": 3
+        },
+        {
+            "ElementEntryId": 6278,
+            "ElementName": "HSA Savings Pretax",
+            "ElementTypeId": 300000050906225,
+            "CreatorType": "BEN",
+            "PayrollRelationshipNumber": "675",
+            "EntryType": "E",
+            "EntrySequence": 3
+        },
+        {
+            "ElementEntryId": 6279,
+            "ElementName": "HSA Employer",
+            "ElementTypeId": 300000081415242,
+            "CreatorType": "BEN",
+            "PayrollRelationshipNumber": "675",
+            "EntryType": "E",
+            "EntrySequence": 3
+        },
+        {
+            "ElementEntryId": 6342,
+            "ElementName": "Regular Salary",
+            "ElementTypeId": 300000048007880,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1649",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000085909202,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1649",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 6280,
+            "ElementName": "LTD Post Tax",
+            "ElementTypeId": 300000050845169,
+            "CreatorType": "BEN",
+            "PayrollRelationshipNumber": "675",
+            "EntryType": "E",
+            "EntrySequence": 3
+        },
+        {
+            "ElementEntryId": 6281,
+            "ElementName": "Vision Employer Contribution",
+            "ElementTypeId": 300000050921424,
+            "CreatorType": "BEN",
+            "PayrollRelationshipNumber": "675",
+            "EntryType": "E",
+            "EntrySequence": 3
+        },
+        {
+            "ElementEntryId": 6282,
+            "ElementName": "Vision Pretax",
+            "ElementTypeId": 300000055009390,
+            "CreatorType": "BEN",
+            "PayrollRelationshipNumber": "675",
+            "EntryType": "E",
+            "EntrySequence": 3
+        },
+        {
+            "ElementEntryId": 6283,
+            "ElementName": "Life Pretax",
+            "ElementTypeId": 300000050908301,
+            "CreatorType": "BEN",
+            "PayrollRelationshipNumber": "675",
+            "EntryType": "E",
+            "EntrySequence": 3
+        },
+        {
+            "ElementEntryId": 300000085918012,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1658",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000069709530,
+            "ElementName": "FSA HC Pretax",
+            "ElementTypeId": 300000050860018,
+            "CreatorType": "F",
+            "PayrollRelationshipNumber": "650",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 10902,
+            "ElementName": "Regular Wages",
+            "ElementTypeId": 300000052568674,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1016",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000087860118,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1636",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000073869126,
+            "ElementName": "UK Club Membership",
+            "ElementTypeId": 300000071813484,
+            "CreatorType": "F",
+            "PayrollRelationshipNumber": "323",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000073869203,
+            "ElementName": "UK Club Membership",
+            "ElementTypeId": 300000071813484,
+            "CreatorType": "F",
+            "PayrollRelationshipNumber": "364",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000073869429,
+            "ElementName": "UK Club Membership",
+            "ElementTypeId": 300000071813484,
+            "CreatorType": "F",
+            "PayrollRelationshipNumber": "359",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000087948828,
+            "ElementName": "Pretax 401k",
+            "ElementTypeId": 300000064964057,
+            "CreatorType": "F",
+            "PayrollRelationshipNumber": "666",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000073869506,
+            "ElementName": "UK Club Membership",
+            "ElementTypeId": 300000071813484,
+            "CreatorType": "F",
+            "PayrollRelationshipNumber": "332",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000073893583,
+            "ElementName": "UK Club Membership",
+            "ElementTypeId": 300000071813484,
+            "CreatorType": "F",
+            "PayrollRelationshipNumber": "334",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000073893809,
+            "ElementName": "UK Club Membership",
+            "ElementTypeId": 300000071813484,
+            "CreatorType": "F",
+            "PayrollRelationshipNumber": "353",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2694,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "809",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2695,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "805",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 13843,
+            "ElementName": "Regular Wages HC",
+            "ElementTypeId": 300000081296818,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "2040",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 2697,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "798",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2699,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "796",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 13845,
+            "ElementName": "Regular Wages HC",
+            "ElementTypeId": 300000081296818,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "2044",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 2701,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "783",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2702,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "787",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2703,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "792",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2704,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "718",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2705,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "786",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2706,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "803",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 13975,
+            "ElementName": "Annual Salary Japan",
+            "ElementTypeId": 300000047953385,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "2122",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 13976,
+            "ElementName": "Annual Salary Japan",
+            "ElementTypeId": 300000047953385,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "2123",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 2709,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "795",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2710,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "785",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2711,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "794",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2712,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "807",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2713,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "804",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2714,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "814",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2715,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "816",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2716,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "779",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 13977,
+            "ElementName": "Annual Salary Japan",
+            "ElementTypeId": 300000047953385,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "2124",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 2718,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "793",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 13978,
+            "ElementName": "Annual Salary Japan",
+            "ElementTypeId": 300000047953385,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "2125",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 13979,
+            "ElementName": "Annual Salary Japan",
+            "ElementTypeId": 300000047953385,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "2126",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 13980,
+            "ElementName": "Annual Salary Japan",
+            "ElementTypeId": 300000047953385,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "2127",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 13981,
+            "ElementName": "Annual Salary Japan",
+            "ElementTypeId": 300000047953385,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "2128",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 13982,
+            "ElementName": "Annual Salary Japan",
+            "ElementTypeId": 300000047953385,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "2129",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 13983,
+            "ElementName": "Annual Salary Japan",
+            "ElementTypeId": 300000047953385,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "2130",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 2725,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "811",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000105450217,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1682",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000105450413,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1719",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 14028,
+            "ElementName": "Regular Salary",
+            "ElementTypeId": 300000048007880,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "2228",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 14030,
+            "ElementName": "Regular Salary",
+            "ElementTypeId": 300000048007880,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "2232",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 2730,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "817",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 14032,
+            "ElementName": "Regular Salary",
+            "ElementTypeId": 300000048007880,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "2236",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 2732,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "782",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2733,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "810",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2736,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "815",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2737,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "819",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2738,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "820",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2739,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "813",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2740,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "834",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2741,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "837",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2743,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "825",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2744,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "824",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2746,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "828",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2748,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "829",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2749,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "841",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2750,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "797",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2751,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "827",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2752,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "806",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2753,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "832",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2754,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "788",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2755,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "781",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2756,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "821",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2757,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "826",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2758,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "823",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2759,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "835",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2760,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "818",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2761,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "840",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2762,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "822",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2763,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "839",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2764,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "812",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2765,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "831",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2766,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "836",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2767,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "833",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2768,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "838",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2769,
+            "ElementName": "Annual Salary France",
+            "ElementTypeId": 300000050889488,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "830",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000069709691,
+            "ElementName": "Loan Repayment",
+            "ElementTypeId": 300000052423965,
+            "CreatorType": "F",
+            "PayrollRelationshipNumber": "650",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 13912,
+            "ElementName": "Regular Salary HE",
+            "ElementTypeId": 300000095432985,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "2006",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000089235086,
+            "ElementName": "Canadian Taxation",
+            "ElementTypeId": 300000000393123,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "859",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000091151225,
+            "ElementName": "Canadian Taxation",
+            "ElementTypeId": 300000000393123,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "864",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 13971,
+            "ElementName": "Annual Salary Japan",
+            "ElementTypeId": 300000047953385,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "2118",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 13972,
+            "ElementName": "Annual Salary Japan",
+            "ElementTypeId": 300000047953385,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "2119",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 13973,
+            "ElementName": "Annual Salary Japan",
+            "ElementTypeId": 300000047953385,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "2120",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 13974,
+            "ElementName": "Annual Salary Japan",
+            "ElementTypeId": 300000047953385,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "2121",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000069709614,
+            "ElementName": "FSA DC Pretax",
+            "ElementTypeId": 300000050855857,
+            "CreatorType": "F",
+            "PayrollRelationshipNumber": "650",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 2815,
+            "ElementName": "Regular Salary",
+            "ElementTypeId": 300000048007880,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "928",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000071743208,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "5",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 3450,
+            "ElementName": "Regular Salary",
+            "ElementTypeId": 300000048007880,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1110",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000074227728,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1110",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 3449,
+            "ElementName": "Regular Salary",
+            "ElementTypeId": 300000048007880,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1106",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000074225587,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1106",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000073949766,
+            "ElementName": "Spot Bonus",
+            "ElementTypeId": 300000048808761,
+            "CreatorType": "VC",
+            "PayrollRelationshipNumber": "928",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 3534,
+            "ElementName": "Annual Salary China",
+            "ElementTypeId": 300000047946461,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1118",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000075316471,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1118",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000076232026,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1203",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000074228195,
+            "ElementName": "Pretax 401k",
+            "ElementTypeId": 300000064964057,
+            "CreatorType": "F",
+            "PayrollRelationshipNumber": "540",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 6403,
+            "ElementName": "Annual Salary Progress UK",
+            "ElementTypeId": 300000081357361,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1589",
+            "EntryType": "E",
+            "EntrySequence": 2
+        },
+        {
+            "ElementEntryId": 3309,
+            "ElementName": "Regular Salary",
+            "ElementTypeId": 300000048007880,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1105",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000074186747,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1105",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000074309942,
+            "ElementName": "Health Club Membership",
+            "ElementTypeId": 300000074309394,
+            "CreatorType": "F",
+            "PayrollRelationshipNumber": "650",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000075318811,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1120",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 3535,
+            "ElementName": "Annual Salary China",
+            "ElementTypeId": 300000047946461,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1120",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 3555,
+            "ElementName": "Annual Salary China",
+            "ElementTypeId": 300000047946461,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1128",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000075392119,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1128",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 3557,
+            "ElementName": "Annual Salary China",
+            "ElementTypeId": 300000047946461,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1132",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000075397257,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1132",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 3558,
+            "ElementName": "Annual Salary China",
+            "ElementTypeId": 300000047946461,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1134",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000075399595,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1134",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 3562,
+            "ElementName": "Annual Salary China",
+            "ElementTypeId": 300000047946461,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1142",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000075413880,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1142",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 3563,
+            "ElementName": "Annual Salary China",
+            "ElementTypeId": 300000047946461,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1144",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000075414709,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1144",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 3564,
+            "ElementName": "Annual Salary China",
+            "ElementTypeId": 300000047946461,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1146",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000075415538,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1146",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 3566,
+            "ElementName": "Annual Salary China",
+            "ElementTypeId": 300000047946461,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1150",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000075476158,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1150",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 3567,
+            "ElementName": "Annual Salary China",
+            "ElementTypeId": 300000047946461,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1152",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000075476973,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1152",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 3568,
+            "ElementName": "Annual Salary China",
+            "ElementTypeId": 300000047946461,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1154",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 3532,
+            "ElementName": "Annual Salary China",
+            "ElementTypeId": 300000047946461,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1113",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000075309339,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1113",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 3533,
+            "ElementName": "Annual Salary China",
+            "ElementTypeId": 300000047946461,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1116",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000075314651,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1116",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 3552,
+            "ElementName": "Annual Salary China",
+            "ElementTypeId": 300000047946461,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1122",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000075388121,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1122",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 3553,
+            "ElementName": "Annual Salary China",
+            "ElementTypeId": 300000047946461,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1124",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000075389955,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1124",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 3554,
+            "ElementName": "Annual Salary China",
+            "ElementTypeId": 300000047946461,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1126",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000075391290,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1126",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 3556,
+            "ElementName": "Annual Salary China",
+            "ElementTypeId": 300000047946461,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1130",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000075393936,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1130",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 3559,
+            "ElementName": "Annual Salary China",
+            "ElementTypeId": 300000047946461,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1136",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000075402888,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1136",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 3560,
+            "ElementName": "Annual Salary China",
+            "ElementTypeId": 300000047946461,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1138",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000075407208,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1138",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 3561,
+            "ElementName": "Annual Salary China",
+            "ElementTypeId": 300000047946461,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1140",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000075412545,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1140",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 3565,
+            "ElementName": "Annual Salary China",
+            "ElementTypeId": 300000047946461,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1148",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000075473329,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1148",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000075477787,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1154",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 3569,
+            "ElementName": "Annual Salary China",
+            "ElementTypeId": 300000047946461,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1156",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000075478601,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1156",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 3570,
+            "ElementName": "Annual Salary China",
+            "ElementTypeId": 300000047946461,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1158",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000075817334,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1158",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 3571,
+            "ElementName": "Annual Salary China",
+            "ElementTypeId": 300000047946461,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1160",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000075838171,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1160",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000076167338,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1164",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000076221797,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1182",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000076222987,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1187",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000076224149,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1194",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000076226727,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1196",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000076238007,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1207",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000076240020,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1209",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 3669,
+            "ElementName": "Regular Salary",
+            "ElementTypeId": 300000048007880,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1215",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 3648,
+            "ElementName": "Regular Salary",
+            "ElementTypeId": 300000048007880,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1211",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000076235958,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1205",
+            "EntryType": "E",
+            "EntrySequence": null
+        },
+        {
+            "ElementEntryId": 300000156768984,
+            "ElementName": "Employee Loan Repayment UAE",
+            "ElementTypeId": 300000156659824,
+            "CreatorType": "F",
+            "PayrollRelationshipNumber": "2917",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 4400,
+            "ElementName": "Annual Salary China",
+            "ElementTypeId": 300000047946461,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1488",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000081577673,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1488",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 3668,
+            "ElementName": "Regular Salary",
+            "ElementTypeId": 300000048007880,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1213",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 4381,
+            "ElementName": "Annual Salary China",
+            "ElementTypeId": 300000047946461,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1484",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000081572874,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1484",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 4399,
+            "ElementName": "Annual Salary China",
+            "ElementTypeId": 300000047946461,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1486",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000081574773,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1486",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 4632,
+            "ElementName": "Annual Salary China",
+            "ElementTypeId": 300000047946461,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1493",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000081580460,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1493",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 4401,
+            "ElementName": "Annual Salary China",
+            "ElementTypeId": 300000047946461,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1491",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000081579569,
+            "ElementName": "Aggregation Information",
+            "ElementTypeId": 300000000370540,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1491",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 11305,
+            "ElementName": "Regular Salary HE",
+            "ElementTypeId": 300000095432985,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1935",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 11344,
+            "ElementName": "Regular Salary HE",
+            "ElementTypeId": 300000095432985,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1971",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 11345,
+            "ElementName": "Regular Salary HE",
+            "ElementTypeId": 300000095432985,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1972",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 11346,
+            "ElementName": "Regular Salary HE",
+            "ElementTypeId": 300000095432985,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1973",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 11294,
+            "ElementName": "Regular Salary HE",
+            "ElementTypeId": 300000095432985,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1924",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 11302,
+            "ElementName": "Reg Hourly HE",
+            "ElementTypeId": 300000095447915,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1932",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 11303,
+            "ElementName": "Reg Hourly HE",
+            "ElementTypeId": 300000095447915,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1933",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000156768848,
+            "ElementName": "Social Insurance or Pension Fund",
+            "ElementTypeId": 300000000375048,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "2917",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000156769049,
+            "ElementName": "Social Insurance or Pension Fund",
+            "ElementTypeId": 300000000375048,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "2920",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000156769397,
+            "ElementName": "Employee Loan Repayment UAE",
+            "ElementTypeId": 300000156659824,
+            "CreatorType": "F",
+            "PayrollRelationshipNumber": "3892",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 5279,
+            "ElementName": "HSA Savings Pretax",
+            "ElementTypeId": 300000050906225,
+            "CreatorType": "BEN",
+            "PayrollRelationshipNumber": "693",
+            "EntryType": "E",
+            "EntrySequence": 2
+        },
+        {
+            "ElementEntryId": 5276,
+            "ElementName": "Wellness Employer",
+            "ElementTypeId": 300000081426694,
+            "CreatorType": "BEN",
+            "PayrollRelationshipNumber": "693",
+            "EntryType": "E",
+            "EntrySequence": 2
+        },
+        {
+            "ElementEntryId": 5305,
+            "ElementName": "HSA Employer",
+            "ElementTypeId": 300000081415242,
+            "CreatorType": "BEN",
+            "PayrollRelationshipNumber": "693",
+            "EntryType": "E",
+            "EntrySequence": 3
+        },
+        {
+            "ElementEntryId": 300000091151364,
+            "ElementName": "Canadian Taxation",
+            "ElementTypeId": 300000000393123,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "860",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000091151503,
+            "ElementName": "Canadian Taxation",
+            "ElementTypeId": 300000000393123,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "856",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000091151865,
+            "ElementName": "Canadian Taxation",
+            "ElementTypeId": 300000000393123,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "862",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000091152008,
+            "ElementName": "Canadian Taxation",
+            "ElementTypeId": 300000000393123,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "861",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000091153148,
+            "ElementName": "Canadian Taxation",
+            "ElementTypeId": 300000000393123,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "855",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000091153372,
+            "ElementName": "Canadian Taxation",
+            "ElementTypeId": 300000000393123,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "857",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000091153650,
+            "ElementName": "Canadian Taxation",
+            "ElementTypeId": 300000000393123,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "847",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000091154004,
+            "ElementName": "Canadian Taxation",
+            "ElementTypeId": 300000000393123,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "852",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000091155358,
+            "ElementName": "Canadian Taxation",
+            "ElementTypeId": 300000000393123,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "854",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000091155530,
+            "ElementName": "Canadian Taxation",
+            "ElementTypeId": 300000000393123,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "848",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 5304,
+            "ElementName": "HSA Savings Pretax",
+            "ElementTypeId": 300000050906225,
+            "CreatorType": "BEN",
+            "PayrollRelationshipNumber": "693",
+            "EntryType": "E",
+            "EntrySequence": 3
+        },
+        {
+            "ElementEntryId": 5307,
+            "ElementName": "Medical Pretax",
+            "ElementTypeId": 300000055005230,
+            "CreatorType": "BEN",
+            "PayrollRelationshipNumber": "693",
+            "EntryType": "E",
+            "EntrySequence": 3
+        },
+        {
+            "ElementEntryId": 5308,
+            "ElementName": "Vision Employer Contribution",
+            "ElementTypeId": 300000050921424,
+            "CreatorType": "BEN",
+            "PayrollRelationshipNumber": "693",
+            "EntryType": "E",
+            "EntrySequence": 3
+        },
+        {
+            "ElementEntryId": 5309,
+            "ElementName": "Vision Pretax",
+            "ElementTypeId": 300000055009390,
+            "CreatorType": "BEN",
+            "PayrollRelationshipNumber": "693",
+            "EntryType": "E",
+            "EntrySequence": 3
+        },
+        {
+            "ElementEntryId": 5310,
+            "ElementName": "Life Pretax",
+            "ElementTypeId": 300000050908301,
+            "CreatorType": "BEN",
+            "PayrollRelationshipNumber": "693",
+            "EntryType": "E",
+            "EntrySequence": 3
+        },
+        {
+            "ElementEntryId": 300000115253308,
+            "ElementName": "US Taxation",
+            "ElementTypeId": 300000000365518,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1743",
+            "EntryType": "E",
+            "EntrySequence": 2
+        },
+        {
+            "ElementEntryId": 5964,
+            "ElementName": "Annual Salary Progress UK",
+            "ElementTypeId": 300000081357361,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1587",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000085373126,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1587",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000085373300,
+            "ElementName": "Pensions Automatic Enrolment",
+            "ElementTypeId": 300000076608424,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1587",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 5984,
+            "ElementName": "Annual Salary Progress UK",
+            "ElementTypeId": 300000081357361,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1595",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000085386007,
+            "ElementName": "Tax and NI",
+            "ElementTypeId": 300000000370915,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1595",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 300000085387181,
+            "ElementName": "Pensions Automatic Enrolment",
+            "ElementTypeId": 300000076608424,
+            "CreatorType": "DIR_COMP",
+            "PayrollRelationshipNumber": "1595",
+            "EntryType": "E",
+            "EntrySequence": 1
+        },
+        {
+            "ElementEntryId": 5987,
+            "ElementName": "Annual Salary Progress UK",
+            "ElementTypeId": 300000081357361,
+            "CreatorType": "SP",
+            "PayrollRelationshipNumber": "1580",
+            "EntryType": "E",
+            "EntrySequence": 1
+        }
+    ],
+    "count": 500,
+    "hasMore": true,
+    "limit": 500,
+    "offset": 0,
+    "links": [
+        {
+            "rel": "self",
+            "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/hcmRestApi/resources/11.13.18.05/elementEntries",
+            "name": "elementEntries",
+            "kind": "collection"
+        }
+    ]
+}
