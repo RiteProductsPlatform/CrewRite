@@ -1,0 +1,98 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Riteoicdev Idjm2yj32zav Ia Integration Us Ashburn 1 Ocp Oraclecloud Com",
+        "version": "1.0.0",
+        "x-vb": {
+            "transforms": {
+                "path": "../Transform.js"
+            }
+        }
+    },
+    "servers": [
+        {
+            "url": "vb-catalog://backends/CrewRite_OIC"
+        }
+    ],
+    "paths": {
+        "/CREWRITE/CR_PROJECTS_LOV/1.0/getProjects": {
+            "get": {
+                "operationId": "getCREWRITECR_PROJECTS_LOV1_0GetProjects",
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetCREWRITECR_PROJECTS_LOV1_0GetProjects"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/getCREWRITECR_PROJECTS_LOV1_0GetProjects/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "actionHint": "getMany"
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "GetCREWRITECR_PROJECTS_LOV1_0GetProjects": {
+                "type": "object",
+                "properties": {
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "projectId": {
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                                "number": {
+                                    "type": "string"
+                                },
+                                "projectName": {
+                                    "type": "string"
+                                },
+                                "projectTypeId": {
+                                    "type": "string"
+                                },
+                                "projectStatusCode": {
+                                    "type": "string"
+                                },
+                                "startDate": {
+                                    "type": "string"
+                                },
+                                "completionDate": {
+                                    "type": "string"
+                                },
+                                "enabledFlag": {
+                                    "type": "string"
+                                },
+                                "orgId": {
+                                    "type": "string"
+                                },
+                                "businessUnitName": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "count": {
+                        "type": "integer"
+                    }
+                }
+            }
+        }
+    }
+}
