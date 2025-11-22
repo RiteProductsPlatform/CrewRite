@@ -1,0 +1,25 @@
+{
+    "paths": {
+        "exclude": [
+            "build/**",
+            "docs/**",
+            "scripts/**",
+            "tests/**",
+            "**/private",
+            "+(web|mobile)Apps/**/resources/components/**/lib/*"
+        ]
+    },
+    "rules": {
+        "translations.audit.propertyNotTranslated": {
+            "enabled": false
+        },
+        "htmlhint.tag-pair": {
+            "description": "Tag must be paired.",
+            "enabled": false
+        },
+        "eslint.complexity": {
+            "enabled": false
+        }
+    },
+    "auditors": {}
+}
