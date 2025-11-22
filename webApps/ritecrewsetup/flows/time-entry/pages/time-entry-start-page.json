@@ -1,0 +1,334 @@
+{
+  "title": "time entry",
+  "description": "",
+  "variables": {
+    "Columns": {
+      "type": "object[]"
+    },
+    "columnsArray": {
+      "type": "object[]"
+    },
+    "crewtimeObj": {
+      "type": "getCrewRite_TimeEntryCrew"
+    },
+    "dynamicADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "itemType": "timeEntry",
+        "keyAttributes": "id"
+      }
+    },
+    "getGetCustomerDetailsListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "TimeRite_Ords_Service/getGetCustomerDetails",
+        "keyAttributes": "crew_name",
+        "itemsPath": "items",
+        "responseType": "getGetCustomerDetailsResponse",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "crew_name"
+          ]
+        }
+      }
+    },
+    "headerObj": {
+      "type": {
+        "crewName": "any"
+      }
+    },
+    "illustrationBackground": {
+      "type": "string",
+      "defaultValue": "https://static.oracle.com/cdn/fnd/gallery/2307.0.2/images/illust-welcome-banner-bg-01.png"
+    },
+    "illustrationForeground": {
+      "type": "string",
+      "defaultValue": "https://static.oracle.com/cdn/fnd/gallery/2307.0.2/images/illust-welcome-banner-fg-01.png"
+    },
+    "tableAdp": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "data": "{{ $variables.Columns }}",
+        "itemType": "getCrewRite_TimeEntryCrew",
+        "keyAttributes": "@index"
+
+      }
+    },
+    "timeEntryObj": {
+      "type": "timeEntry"
+    },
+    "timeEntryObj_copy": {
+      "type": "timeEntry"
+    }
+
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getCrewRite_TimeEntryCrew": {
+      "endpoint": "getCrewRite_TimeEntryCrew",
+      "service": "CrewRite_ORDS",
+      "path": "response-_-items[0]"
+    },
+    "@decorators.getGetCustomerDetailsResponse": {
+      "endpoint": "getGetCustomerDetails",
+      "service": "TimeRite_Ords_Service",
+      "path": "response"
+    },
+    "getCrewRite_TimeEntryCrew": {
+      "attribute1": "any",
+      "attribute10": "any",
+      "attribute2": "any",
+      "attribute3": "any",
+      "attribute4": "any",
+      "attribute5": "any",
+      "attribute6": "any",
+      "attribute7": "any",
+      "attribute8": "any",
+      "attribute9": "any",
+      "crew_name": "string",
+      "crewsetup_id": "number",
+      "data_source": "string",
+      "field_label": "string",
+      "layout_name": "string",
+      "project_number": "string",
+      "resource_name": "string"
+
+    },
+    "getGetCustomerDetailsResponse": {
+      "items": [
+        {
+          "crew_name": "string",
+          "crewsetup_id": "number"
+        }
+      ]
+    },
+    "timeEntry": {
+      "costCategory": "string",
+      "craftOverride": "string",
+      "demobization": "string",
+      "department": "string",
+      "employee": "string",
+      "hours": "string",
+      "id": "number",
+      "job": "string",
+      "location": "string",
+      "mileage": "string",
+      "mobilation": "string",
+      "perDiem": "string",
+      "project": "string",
+      "resourceName": "string",
+      "shift": "string",
+      "task": "string",
+      "timeType": "string",
+      "workPackage": "string"
+    }
+
+  },
+  "eventListeners": {
+    "buttonAction": {
+      "chains": [
+        {
+          "chain": "SearchButtonActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction2": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction3": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain1",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}",
+            "key": "{{ $current.key }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "buttonAction4": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain2",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction5": {
+      "chains": [
+        {
+          "chain": "dialogcloseButtonActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction6": {
+      "chains": [
+        {
+          "chain": "AddButtonActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "iconClick": {
+      "chains": [
+        {
+          "chain": "DeleteIconClickChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "key": "{{ $current.key }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "tableBeforeRowEdit": {
+      "chains": [
+        {
+          "chain": "TableBeforeRowEditChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "accept": "{{$event.detail.accept}}",
+            "rowContext": "{{$event.detail.rowContext}}",
+            "rowKey": "{{$event.detail.rowContext.status.rowKey}}",
+            "rowIndex": "{{$event.detail.rowContext.status.rowIndex}}",
+            "rowData": "{{$event.detail.rowContext.componentElement.getDataForVisibleRow($event.detail.rowContext.status.rowIndex).data}}"
+          }
+        }
+      ]
+    },
+    "tableBeforeRowEdit2": {
+      "chains": [
+        {
+          "chain": "TableBeforeRowEditChain1",
+          "parameters": {
+            "event": "{{$event}}",
+            "accept": "{{$event.detail.accept}}",
+            "rowContext": "{{$event.detail.rowContext}}",
+            "rowKey": "{{$event.detail.rowContext.status.rowKey}}",
+            "rowIndex": "{{$event.detail.rowContext.status.rowIndex}}",
+            "rowData": "{{$event.detail.rowContext.componentElement.getDataForVisibleRow($event.detail.rowContext.status.rowIndex).data}}"
+          }
+        }
+      ]
+    },
+    "tableBeforeRowEditEnd": {
+      "chains": [
+        {
+          "chain": "TableBeforeRowEditEndChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "accept": "{{$event.detail.accept}}",
+            "setUpdatedItem": "{{$event.detail.setUpdatedItem}}",
+            "rowContext": "{{$event.detail.rowContext}}",
+            "cancelEdit": "{{$event.detail.cancelEdit}}",
+            "rowKey": "{{$event.detail.rowContext.status.rowKey}}",
+            "rowIndex": "{{$event.detail.rowContext.status.rowIndex}}",
+            "rowData": "{{$event.detail.rowContext.componentElement.getDataForVisibleRow($event.detail.rowContext.status.rowIndex).data}}"
+          }
+        }
+      ]
+    },
+    "tableBeforeRowEditEnd2": {
+      "chains": [
+        {
+          "chain": "TableBeforeRowEditEndChain1",
+          "parameters": {
+            "event": "{{$event}}",
+            "accept": "{{$event.detail.accept}}",
+            "setUpdatedItem": "{{$event.detail.setUpdatedItem}}",
+            "rowContext": "{{$event.detail.rowContext}}",
+            "cancelEdit": "{{$event.detail.cancelEdit}}",
+            "rowKey": "{{$event.detail.rowContext.status.rowKey}}",
+            "rowIndex": "{{$event.detail.rowContext.status.rowIndex}}",
+            "rowData": "{{$event.detail.rowContext.componentElement.getDataForVisibleRow($event.detail.rowContext.status.rowIndex).data}}"
+          }
+        }
+      ]
+    },
+    "tableFirstSelectedRow": {
+      "chains": [
+        {
+          "chain": "TableFirstSelectedRowChangeChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "previousValue": "{{$event.detail.previousValue}}",
+            "value": "{{$event.detail.value}}",
+            "updatedFrom": "{{$event.detail.updatedFrom}}",
+            "rowKey": "{{$event.detail.value.key}}",
+            "rowData": "{{$event.detail.value.data}}",
+            "firstSelectedRow": "{{ $event.detail.value }}"
+          }
+        }
+      ]
+    },
+    "vbEnter": {
+      "chains": [
+        {
+          "chain": "PageVbEnterChain",
+          "parameters": {
+            "event": "{{$event}}"
+          }
+        }
+      ]
+    }
+
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-combobox-one": {
+        "path": "ojs/ojselectcombobox"
+      },
+      "oj-dialog": {
+        "path": "ojs/ojdialog"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-option": {
+        "path": "ojs/ojoption"
+      },
+      "oj-select-single": {
+        "path": "ojs/ojselectsingle"
+      },
+      "oj-sp-welcome-page": {
+        "path": "oj-sp/welcome-page/loader"
+      },
+      "oj-table": {
+        "path": "ojs/ojtable"
+      }
+
+   }
+  }
+}

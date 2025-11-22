@@ -1,0 +1,159 @@
+<oj-sp-welcome-page id="oj-sp-wp1" illustration-background="[[ require.toUrl($page.variables.illustrationBackground) ]]"
+  illustration-foreground="[[ require.toUrl($page.variables.illustrationForeground) ]]"
+  display-options.responsive-padding="on" page-title="Layout Manager" background-color="dark-pebble">
+  <div class="oj-panel" style="margin-top:-48px">
+    <oj-form-layout columns="5" max-columns="5" label-edge="top">
+      <oj-select-single label-hint="Layout" data="[[$variables.getCrewRiteLayoutSearchListSDP]]"
+        item-text="layout_name" value="{{ $variables.headerobj.layout }}" required="true"></oj-select-single>
+      <div style="margin-top:20px">
+        <oj-button label="Search" class="oj-button-sm" chroming="callToAction"
+          on-oj-action="[[$listeners.buttonAction9]]"></oj-button>
+        <oj-button label="Reset" chroming="callToAction" class="oj-button-sm"></oj-button>
+      </div>
+    </oj-form-layout>
+    <div class="oj-helper-text-align-end">
+      <oj-button label="Create" chroming="callToAction" class="oj-button-sm" on-oj-action="[[$listeners.buttonAction]]">
+      </oj-button>
+    </div>
+    <oj-table scroll-policy="loadMoreOnScroll" data="[[ $variables.tableAdp ]]" style="width:100%"
+      columns='[{"headerText":"Layout Name","field":"layout_name"},{"headerText":"Field Name","field":"field_label"},{"headerText":"Field Type","field":"field_type"},{"headerText":"Mandatory","field":"is_required"},{"headerText":"Start Date","field":"start_date"},{"headerText":"End Date","field":"end_date"}]'>
+    </oj-table>
+  </div>
+  <oj-dialog dialog-title="Dialog" id="layoutTableDialog" style="width:90%">
+    <br>
+    <div slot="body">
+      <oj-form-layout columns="3" max-columns="3" label-edge="top">
+        <oj-input-text label-hint="Layout Name" value="{{ $variables.layoutdialogHeaderobj.layoutname }}"></oj-input-text>
+        <oj-input-text label-hint="Description" value="{{ $variables.layoutdialogHeaderobj.description }}"></oj-input-text>
+        <oj-select-single label-hint="Layout Type" value="{{ $variables.layoutdialogHeaderobj.layoutType }}"
+          data="[[$variables.getCrewRiteLookupListSDP]]" item-text="code_meaning">
+        </oj-select-single>
+        <oj-input-date label-hint="Start Date" value="{{ $variables.layoutdialogHeaderobj.startDate }}"></oj-input-date>
+         <oj-input-date label-hint="End Date" value="{{ $variables.layoutdialogHeaderobj.endDate }}"></oj-input-date>
+        <oj-switch label-hint="Enable Flag" value="{{ $variables.layoutdialogHeaderobj.flag }}"></oj-switch> 
+        <oj-button label="Save Header" chroming="callToAction" class="oj-button-sm"
+          on-oj-action="[[$listeners.buttonAction5]]">
+          <span class="oj-ux-ico-save" slot="endIcon"></span>
+        </oj-button>
+      </oj-form-layout>
+      <div class="oj-helper-text-align-end">
+<oj-button label="Add" chroming="callToAction" on-oj-action="[[$listeners.buttonAction8]]">
+</oj-button>
+      </div>
+      <oj-table data="[[ $variables.layoutTableAdp ]]" style="width:100%"
+        columns='[{"headerText":"Id","field":"id"},{"headerText":"Field Label","field":"field_label","template":"fieldLabel"},{"headerText":"Sequence","field":"sequence","template":"sequence"},{"headerText":"Mandatory","field":"mandatory","template":"mandatory"},{"headerText":"Field Type","field":"field_type","template":"fieldtype"},{"headerText":"Field Source","field":"field_source","template":"fieldsource"},{"headerText":"Field Value","field":"field_additionlData","template":"additionaldata"},{"headerText":"Field Mapping","field":"field_mapping","template":"tempmapping"}]'
+        selection-mode.row="multiple" edit-mode="rowEdit" on-oj-before-row-edit="[[$listeners.tableBeforeRowEdit]]"
+        on-oj-before-row-edit-end="[[$listeners.tableBeforeRowEditEnd]]">
+
+        <template slot="fieldLabel">
+          <oj-bind-if test='[[$current.mode=="navigation"]]'>
+            <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+          </oj-bind-if>
+          <oj-bind-if test='[[$current.mode=="edit"]]'>
+            <oj-input-text  required="true" value="{{ $variables.postLayout.field_label }}">
+            </oj-input-text>
+          </oj-bind-if>
+        </template>
+
+        <template slot="sequence">
+          <oj-bind-if test='[[$current.mode=="navigation"]]'>
+            <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+          </oj-bind-if>
+          <oj-bind-if test='[[$current.mode=="edit"]]'>
+            <oj-input-text  required="true" value="{{ $variables.postLayout.sequence }}">
+            </oj-input-text>
+          </oj-bind-if>
+        </template>
+
+        <template slot="mandatory">
+          <oj-bind-if test='[[$current.mode=="navigation"]]'>
+            <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+          </oj-bind-if>
+          <oj-bind-if test='[[$current.mode=="edit"]]'>
+            <oj-input-text  required="true" value="{{ $variables.postLayout.mandatory }}">
+            </oj-input-text>
+          </oj-bind-if>
+        </template>
+
+        <template slot="fieldtype">
+          <oj-bind-if test='[[$current.mode=="navigation"]]'>
+            <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+          </oj-bind-if>
+          <oj-bind-if test='[[$current.mode=="edit"]]'>
+            <oj-input-text  required="true" value="{{ $variables.postLayout.field_type }}">
+            </oj-input-text>
+          </oj-bind-if>
+        </template>
+
+        <template slot="fieldsource">
+          <oj-bind-if test='[[$current.mode=="navigation"]]'>
+            <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+          </oj-bind-if>
+          <oj-bind-if test='[[$current.mode=="edit"]]'>
+            <oj-input-text  required="true" value="{{ $variables.postLayout.field_source }}">
+            </oj-input-text>
+          </oj-bind-if>
+        </template>
+
+         <template slot="additionaldata">
+          <oj-bind-if test='[[$current.mode=="navigation"]]'>
+            <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+          </oj-bind-if>
+          <oj-bind-if test='[[$current.mode=="edit"]]'>
+            <oj-input-text  required="true" value="{{ $variables.postLayout.field_additionlData }}">
+            </oj-input-text>
+          </oj-bind-if>
+        </template>
+         <template slot="tempmapping">
+          <oj-bind-if test='[[$current.mode=="navigation"]]'>
+            <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+          </oj-bind-if>
+          <oj-bind-if test='[[$current.mode=="edit"]]'>
+            <oj-input-text  required="true" value="{{ $variables.postLayout.field_mapping }}">
+            </oj-input-text>
+          </oj-bind-if>
+        </template>
+
+        
+
+      </oj-table>
+
+        <!-- <template slot="act">
+          <oj-button chroming="borderless">
+            <span class="oj-ux-ico-action" slot="startIcon"></span>
+          </oj-button>
+        </template>
+      </oj-table> -->
+    </div>
+    <div slot="footer">
+      <oj-button label="Save" chroming="callToAction" class="oj-button-sm" on-oj-action="[[$listeners.buttonAction7]]">
+        <span class="oj-ux-ico-save" slot="startIcon"></span>
+      </oj-button>
+      <oj-button chroming="callToAction" class="oj-button-sm" on-oj-action="[[$listeners.buttonAction2]]">Close
+        <span class="oj-ux-ico-log-out" slot="endIcon"></span>
+      </oj-button>
+    </div>
+  </oj-dialog>
+  <oj-popup tail="simple" id="actionpopup">
+
+    <oj-form-layout columns="1" label-edge="top">
+      <oj-button label="Add Line" chroming="outlined" class="oj-button-sm" on-oj-action="[[$listeners.buttonAction4]]">
+      </oj-button>
+      <oj-button label="Delete Line" chroming="outlined" class="oj-button-sm">
+      </oj-button>
+    </oj-form-layout>
+  </oj-popup>
+
+  <oj-dialog dialog-title="" id="loadingDialog" class="myloader" style="width: 350px">
+      <div slot="body">
+        <div class="oj-flex-item">
+          <span style="font-size:20px;color:#006AA2;font-weight:600;margin-top:-2vh">Loading .....</span>
+          <br />
+          <oj-progress-bar value="-1" class="oj-sm-margin-3x-top"></oj-progress-bar>
+        </div>
+      </div>
+    </oj-dialog>
+
+  
+
+</oj-sp-welcome-page>

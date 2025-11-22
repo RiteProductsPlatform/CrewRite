@@ -1,0 +1,279 @@
+<oj-sp-welcome-page id="oj-sp-wp1" illustration-background="[[ require.toUrl($page.variables.illustrationBackground) ]]"
+  illustration-foreground="[[ require.toUrl($page.variables.illustrationForeground) ]]"
+  display-options.responsive-padding="on" page-title="Time Entry" background-color="dark-pebble">
+
+  <div class="oj-panel" style="margin-top:-48px">
+
+    <oj-form-layout columns="4" max-columns="4" label-edge="top">
+      <oj-select-single label-hint="Crew" data="[[$variables.getGetCustomerDetailsListSDP]]" item-text="crew_name"
+        value="{{ $variables.headerObj.crewName }}"></oj-select-single>
+      <!-- <oj-select-single label-hint="Select (Single)"></oj-select-single>
+  
+      <oj-select-single label-hint="Select (Single)"></oj-select-single> -->
+      <div style="margin-top:20px">
+        <oj-button label="Search" chroming="callToAction" class="oj-button-sm"
+          on-oj-action="[[$listeners.buttonAction]]"></oj-button>
+        <oj-button label="Reset" chroming="callToAction" class="oj-button-sm"
+          on-oj-action="[[$listeners.buttonAction2]]">
+        </oj-button>
+
+      </div>
+
+    </oj-form-layout>
+
+
+    <!-- <oj-table scroll-policy="loadMoreOnScroll" data="[[ $variables.tableAdp ]]" columns="{{ $variables.columnoptions }}"
+      style="width:100%;height:500px">
+
+      <template slot="act">
+        <oj-button chroming="borderless" class="" on-oj-action="[[$listeners.buttonAction3]]">
+          <span class="oj-ux-ico-action"
+ 
+            slot="startIcon"
+     ></span>
+        </oj-button>
+      </template>
+
+    </oj-table> -->
+
+
+    <!-- <oj-table data="[[ $variables.tableAdp ]]" style="width:97vw;height:550px" columns="{{ $variables.Columns }}"
+      on-first-selected-row-changed="[[$listeners.tableFirstSelectedRow]]" selection-mode.row="single"
+      on-oj-before-row-edit="[[$listeners.tableBeforeRowEdit]]"
+      on-oj-before-row-edit-end="[[$listeners.tableBeforeRowEditEnd]]" edit-mode="rowEdit">
+      <template slot="resource_name">
+        <oj-bind-if test='[[$current.mode=="navigation"]]'>
+          <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+        </oj-bind-if>
+      </template>
+      
+      <template slot="attribute3">
+        <oj-bind-if test='[[$current.mode=="navigation"]]'>
+          <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+        </oj-bind-if>
+        <oj-bind-if test='[[$current.mode=="edit"]]'>
+             <oj-bind-if test='[[ $current.row.data_source=="Dropdown" ]]'>
+           <oj-select-single>
+           </oj-select-single>
+           </oj-bind-if>
+              <oj-bind-if test='[[ $current.row.data_source=="Static" ]]'>
+            <oj-input-text value="{{ $variables.crewtimeObj.attribute3 }}" required="true">
+            </oj-input-text>
+            </oj-bind-if>
+        </oj-bind-if>
+      </template>
+
+       <template slot="attribute2">
+        <oj-bind-if test='[[$current.mode=="navigation"]]'>
+          <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+        </oj-bind-if>
+        <oj-bind-if test='[[$current.mode=="edit"]]'>
+             <oj-bind-if test='[[ $current.row.data_source=="Dropdown" && $current.row.field_label=="Location" ]]'>
+           <oj-select-single>
+           </oj-select-single>
+           </oj-bind-if>
+          <oj-bind-if test='[[ $current.row.data_source=="Static" && $current.row.field_label=="Location" ]]'>
+            <oj-input-text value="{{ $variables.crewtimeObj.attribute2 }}" required="true">
+            </oj-input-text>
+            </oj-bind-if>
+        </oj-bind-if>
+      </template>
+
+       <template slot="attribute1">
+        <oj-bind-if test='[[$current.mode=="navigation"]]'>
+          <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+        </oj-bind-if>
+        <oj-bind-if test='[[$current.mode=="edit"]]'>
+          <oj-bind-if test='[[ $current.row.data_source=="Dropdown" && $current.row.field_label=="Shift" ]]'>
+           <oj-select-single>
+           </oj-select-single>
+           </oj-bind-if>
+                <oj-bind-if test='[[ $current.row.data_source=="Static" && $current.row.field_label=="Shift" ]]'>
+            <oj-input-text value="{{ $variables.crewtimeObj.attribute1 }}" required="true">
+            </oj-input-text>
+            </oj-bind-if>
+        </oj-bind-if>
+      </template>
+
+ <template slot="attribute4">
+        <oj-bind-if test='[[$current.mode=="navigation"]]'>
+          <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+        </oj-bind-if>
+        <oj-bind-if test='[[$current.mode=="edit"]]'>
+          <oj-bind-if test='[[ $current.row.data_source=="Dropdown" ]]'>
+           <oj-select-single>
+           </oj-select-single>
+           </oj-bind-if>
+            <oj-bind-if test='[[ $current.row.data_source=="Static" ]]'>
+            <oj-input-text value="{{ $variables.crewtimeObj.attribute4 }}" required="true">
+            </oj-input-text>
+            </oj-bind-if>
+        </oj-bind-if>
+      </template>
+
+       <template slot="attribute5">
+        <oj-bind-if test='[[$current.mode=="navigation"]]'>
+          <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+        </oj-bind-if>
+        <oj-bind-if test='[[$current.mode=="edit"]]'>
+          <oj-bind-if test='[[ $current.row.data_source=="Dropdown" ]]'>
+           <oj-select-single>
+           </oj-select-single>
+           </oj-bind-if>
+            <oj-bind-if test='[[ $current.row.data_source=="Static" ]]'>
+            <oj-input-text value="{{ $variables.crewtimeObj.attribute5 }}" required="true">
+            </oj-input-text>
+            </oj-bind-if>
+        </oj-bind-if>
+      </template>
+
+       <template slot="attribute6">
+        <oj-bind-if test='[[$current.mode=="navigation"]]'>
+          <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+        </oj-bind-if>
+        <oj-bind-if test='[[$current.mode=="edit"]]'>
+          <oj-bind-if test='[[ $current.row.data_source=="Dropdown" ]]'>
+           <oj-select-single>
+           </oj-select-single>
+           </oj-bind-if>
+            <oj-bind-if test='[[ $current.row.data_source=="Static" ]]'>
+            <oj-input-text value="{{ $variables.crewtimeObj.attribute6 }}" required="true">
+            </oj-input-text>
+            </oj-bind-if>
+        </oj-bind-if>
+      </template>
+
+       <template slot="attribute7">
+        <oj-bind-if test='[[$current.mode=="navigation"]]'>
+          <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+        </oj-bind-if>
+        <oj-bind-if test='[[$current.mode=="edit"]]'>
+          <oj-bind-if test='[[ $current.row.data_source=="Dropdown" ]]'>
+           <oj-select-single>
+           </oj-select-single>
+           </oj-bind-if>
+            <oj-bind-if test='[[ $current.row.data_source=="Static" ]]'>
+            <oj-input-text value="{{ $variables.crewtimeObj.attribute7 }}" required="true">
+            </oj-input-text>
+            </oj-bind-if>
+        </oj-bind-if>
+      </template>
+
+       <template slot="attribute8">
+        <oj-bind-if test='[[$current.mode=="navigation"]]'>
+          <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+        </oj-bind-if>
+        <oj-bind-if test='[[$current.mode=="edit"]]'>
+          <oj-bind-if test='[[ $current.row.data_source=="Dropdown" ]]'>
+           <oj-select-single>
+           </oj-select-single>
+           </oj-bind-if>
+            <oj-bind-if test='[[ $current.row.data_source=="Static" ]]'>
+            <oj-input-text value="{{ $variables.crewtimeObj.attribute8 }}" required="true">
+            </oj-input-text>
+            </oj-bind-if>
+        </oj-bind-if>
+      </template>
+
+       <template slot="attribute9">
+        <oj-bind-if test='[[$current.mode=="navigation"]]'>
+          <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+        </oj-bind-if>
+        <oj-bind-if test='[[$current.mode=="edit"]]'>
+          <oj-bind-if test='[[ $current.row.data_source=="Dropdown" ]]'>
+           <oj-select-single>
+           </oj-select-single>
+           </oj-bind-if>
+            <oj-bind-if test='[[ $current.row.data_source=="Static" ]]'>
+            <oj-input-text value="{{ $variables.crewtimeObj.attribute9 }}" required="true">
+            </oj-input-text>
+            </oj-bind-if>
+        </oj-bind-if>
+      </template>
+
+      <template slot="attribute10">
+        <oj-bind-if test='[[$current.mode=="navigation"]]'>
+          <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+        </oj-bind-if>
+        <oj-bind-if test='[[ $current.row.data_source=="Dropdown" ]]'>
+           <oj-select-single>
+           </oj-select-single>
+           </oj-bind-if>
+            <oj-bind-if test='[[ $current.row.data_source=="Static" ]]'>
+            <oj-input-text value="{{ $variables.crewtimeObj.attribute10 }}" required="true">
+            </oj-input-text>
+            </oj-bind-if>
+        </oj-bind-if>
+      </template>
+
+    </oj-table> -->
+
+
+  </div>
+  <!-- <oj-dialog dialog-title="Dialog" id="oj-dialog--433523170-1">
+    <div slot="body">
+
+    </div>
+    <div slot="footer">
+      <oj-button chroming="callToAction" class="oj-button-sm" on-oj-action="[[$listeners.buttonAction4]]">Close
+      </oj-button>
+    </div>
+  </oj-dialog> -->
+
+    <div class="oj-flex">
+      <div class="oj-flex-item oj-sm-12">
+        <div style='text-align:right;margin:10px'>
+          <oj-button label="Add" chroming="callToAction" on-oj-action="[[$listeners.buttonAction6]]"></oj-button>
+        </div>
+      </div>
+    </div>
+     <div class="oj-flex">
+      <div class="oj-flex-item oj-sm-12" style="padding:10px;">
+      <oj-table scroll-policy="loadMoreOnScroll" edit-mode="rowEdit" data="[[ $variables.dynamicADP ]]"
+        style="width:95vw;overflow:scroll"
+        columns='[{"headerText":"Actions","field":"","template":"action"},
+        {"headerText":"Resource Name","field":"resourceName","template":"resName"},
+        {"headerText":"Employee","field":"employee"},
+        {"headerText":"Job","field":"job"},
+        {"headerText":"Project","field":"project"},{"headerText":"Task","field":"task"},{"headerText":"Shift","field":"shift"},{"headerText":"Location","field":"location"},{"headerText":"Work Package","field":"workPackage"},{"headerText":"Department","field":"department"},{"headerText":"Cost Category","field":"costCategory"},{"headerText":"Craft Override","field":"craftOverride"},{"headerText":"Time Type","field":"timeType"},{"headerText":"Hours","field":"hours"},{"headerText":"Mileage","field":"mileage"},{"headerText":"PerDiem","field":"perDiem"},{"headerText":"Mobilation","field":"mobilation"},{"headerText":"Demobization","field":"demobization"}]'
+        on-oj-before-row-edit="[[$listeners.tableBeforeRowEdit2]]"
+        on-oj-before-row-edit-end="[[$listeners.tableBeforeRowEditEnd2]]">
+     
+        <template slot="action" data-oj-as="cell">
+          <span class="oj-ux-ico-add-child" style="font-size:20px;margin-right:10px;"></span>
+            <span class="oj-ux-ico-trash" style="font-size:20px" on-click="[[$listeners.iconClick]]"></span>
+        </template>
+        
+        <template slot="resName" data-oj-as="cell">
+          <oj-bind-if test='[[cell.mode=="navigation"]]'>
+            <oj-bind-text value="[[cell.data]]"></oj-bind-text>
+          </oj-bind-if>        
+          <oj-bind-if test='[[cell.mode=="edit"]]'>
+            <oj-input-text class="editable" value="{{ $variables.timeEntryObj.resourceName }}"></oj-input-text>
+          </oj-bind-if>
+        </template>
+
+
+
+
+
+     
+      </oj-table>        
+      </div>      
+     </div>
+
+
+
+  <oj-dialog id="extraColumns">
+    <div slot="body">
+      <oj-form-layout max-columns="2" columns="2" label-edge="top">
+
+      </oj-form-layout>
+    </div>
+    <div slot="footer">
+      <oj-button chroming="callToAction" class="oj-button-sm" label="Close" on-oj-action="[[$listeners.buttonAction5]]">
+      </oj-button>
+    </div>
+
+  </oj-dialog>
+</oj-sp-welcome-page>

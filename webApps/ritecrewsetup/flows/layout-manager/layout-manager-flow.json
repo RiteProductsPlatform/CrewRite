@@ -1,0 +1,8 @@
+{
+  "id": "layout-manager",
+  "description": "Flow main",
+  "defaultPage": "layout-manager-start",
+  "services": {},
+  "types": {},
+  "variables": {}
+}

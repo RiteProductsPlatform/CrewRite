@@ -1,0 +1,77 @@
+<oj-sp-welcome-page id="oj-sp-wp1" illustration-background="[[ require.toUrl($page.variables.illustrationBackground) ]]"
+  illustration-foreground="[[ require.toUrl($page.variables.illustrationForeground) ]]"
+  display-options.image-stretch="[[ $page.variables.imageStretch ]]"
+  display-options.mobile-image="[[ $page.variables.mobileImage ]]" display-options.responsive-padding="on"
+  page-title="Employee Clock In" background-color="dark-pebble">
+  <div class="oj-flex oj-panel oj-panel-shadow-md" style="margin-top:-48px;">    
+      <div class="oj-flex-item oj-flex  oj-sm-margin-3x-top">
+        <oj-bind-text value="[['User Name :' + $application.user.email ]]"></oj-bind-text>
+     </div>
+  </div>
+    <div class="oj-flex oj-panel oj-panel-shadow-md">    
+      <div class="oj-flex-item oj-flex oj-sm-justify-content-center">
+        <div class="oj-flex-item oj-sm-12 oj-md-2">
+           <oj-button label="Check In" on-oj-action="[[$listeners.buttonAction5]]" chroming="callToAction"></oj-button>
+        </div>  
+        <div class="oj-flex-item oj-sm-12 oj-md-2">
+           <oj-button label="Meal Check In" on-oj-action="[[$listeners.buttonAction6]]" chroming="callToAction"></oj-button>
+        </div> 
+        <div class="oj-flex-item oj-sm-12 oj-md-2">
+           <oj-button label="Meal Check Out" on-oj-action="[[$listeners.buttonAction7]]" chroming="callToAction"></oj-button>
+        </div> 
+
+         <div class="oj-flex-item oj-sm-12 oj-md-2">
+           <oj-button label="Check Out" on-oj-action="[[$listeners.buttonAction8]]" chroming="callToAction"></oj-button>
+        </div>      
+     </div>
+  </div>
+   <div class="oj-flex oj-panel oj-panel-shadow-md">    
+      <div class="oj-flex-item oj-flex oj-sm-justify-content-center txtHeader">
+         <oj-bind-text value="[[$variables.locationDtls]]"></oj-bind-text>
+      </div>
+   </div>
+   <div class="oj-flex oj-panel oj-panel-shadow-md">    
+      <div class="oj-flex-item oj-flex oj-sm-justify-content-center">
+        <div class="oj-flex-item oj-sm-12 oj-md-2">
+        <oj-bind-text value="[[$variables.checkDetails.checkIn]]"></oj-bind-text>
+        </div>  
+        <div class="oj-flex-item oj-sm-12 oj-md-2">
+         <oj-bind-text value="[[$variables.checkDetails.mealChkin]]"></oj-bind-text>
+        </div> 
+        <div class="oj-flex-item oj-sm-12 oj-md-2">
+           <oj-bind-text value="[[$variables.checkDetails.mealChkout]]"></oj-bind-text>
+        </div> 
+
+         <div class="oj-flex-item oj-sm-12 oj-md-2">
+           <oj-bind-text value="[[$variables.checkDetails.checkOut]]"></oj-bind-text>
+        </div>      
+     </div>
+  </div>
+    
+  <div class="oj-flex oj-panel oj-panel-shadow-md">
+     
+    
+      <oj-table scroll-policy="loadMoreOnScroll" class="oj-flex-item oj-sm-12 oj-md-12"
+        data="[[ $variables.crewChkADP ]]" 
+        columns='[{"headerText":"SNo","field":"","template":"sno"},
+        {"headerText":"Date","field":"checkInDate"},
+        {"headerText":"Check In","field":"checkIn"},
+        {"headerText":"Meal Check In","field":"mealChkin"},
+        {"headerText":"Meal Check Out","field":"mealChkout"},
+        {"headerText":"Meal Total","field":"mealtotal"},
+        {"headerText":"Check Out","field":"checkOut"},
+        {"headerText":"Work Total","field":"worktotal"}]'>
+        <template slot="sno">
+          <oj-bind-text value="{{$current.index + 1}}"></oj-bind-text>
+        </template>
+      
+        
+    
+        
+  </div>
+
+
+</oj-sp-welcome-page>
+
+
+

@@ -1,0 +1,324 @@
+{
+  "title": "layout manager",
+  "description": "",
+  "variables": {
+    "getCrewRiteLayoutSearchListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "CrewRite_ORDS/getCrewRite_LayoutSearch",
+        "keyAttributes": "layout_name",
+        "itemsPath": "items",
+        "responseType": "getCrewRiteLayoutSearchResponse",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "layout_name"
+          ]
+        }
+      }
+    },
+    "getCrewRiteLookupListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "CrewRite_ORDS/getCrewRite_Lookup",
+        "keyAttributes": "code_meaning",
+        "itemsPath": "items",
+        "responseType": "getCrewRiteLookupResponse",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "code_meaning"
+          ]
+        }
+      }
+    },
+    "headerobj": {
+      "type": {
+        "layout": "any"
+      }
+    },
+    "illustrationBackground": {
+      "type": "string",
+      "defaultValue": "https://static.oracle.com/cdn/fnd/gallery/2307.0.2/images/illust-welcome-banner-bg-01.png"
+    },
+    "illustrationForeground": {
+      "type": "string",
+      "defaultValue": "https://static.oracle.com/cdn/fnd/gallery/2307.0.2/images/illust-welcome-banner-fg-01.png"
+    },
+    "layoutdialogHeaderobj": {
+      "type": {
+        "description": "any",
+        "endDate": "any",
+        "flag": "any",
+        "layoutname": "any",
+        "layoutType": "any",
+        "responseid": "number",
+        "startDate": "any"
+
+      }
+    },
+    "layoutTableAdp": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "itemType": "layoutType",
+        "keyAttributes": "id"
+      }
+    },
+    "postLayout": {
+      "type": "layoutType"
+    },
+    "postlayoutCopy": {
+      "type": "layoutType"
+    },
+    "tableAdp": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "itemType": "getCrewRite_LayoutManagerSearch",
+        "keyAttributes": "@index"
+      }
+    }
+
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getCrewRite_LayoutManagerSearch": {
+      "endpoint": "getCrewRite_LayoutManagerSearch",
+      "service": "CrewRite_ORDS",
+      "path": "response-_-items[0]"
+    },
+    "@decorators.getCrewRiteLayoutSearchResponse": {
+      "endpoint": "getCrewRite_LayoutSearch",
+      "service": "CrewRite_ORDS",
+      "path": "response"
+    },
+    "@decorators.getCrewRiteLookupResponse": {
+      "endpoint": "getCrewRite_Lookup",
+      "service": "CrewRite_ORDS",
+      "path": "response"
+    },
+    "getCrewRite_LayoutManagerSearch": {
+      "end_date": "string",
+      "field_label": "string",
+      "field_type": "string",
+      "is_required": "string",
+      "layout_id": "number",
+      "layout_name": "string",
+      "start_date": "string"
+    },
+    "getCrewRiteLayoutSearchResponse": {
+      "items": [
+        {
+          "layout_name": "string"
+        }
+      ]
+    },
+    "getCrewRiteLookupResponse": {
+      "items": [
+        {
+          "code_description": "string",
+          "code_meaning": "string",
+          "created_by": "any",
+          "creation_date": "string",
+          "enabled": "string",
+          "end_date": "any",
+          "last_update_date": "string",
+          "last_updated_by": "any",
+          "lookup_code": "string",
+          "lookup_config_level": "any",
+          "lookup_type": "string",
+          "lookup_type_id": "number",
+          "module": "any",
+          "start_date": "string",
+          "type_description": "any",
+          "type_meaning": "any"
+        }
+      ]
+    },
+    "layoutType": {
+      "field_additionlData": "any",
+      "field_label": "string",
+      "field_mapping": "string",
+      "field_name": "string",
+      "field_source": "string",
+      "field_type": "string",
+      "id": "number",
+      "mandatory": "string",
+      "sequence": "string"
+
+    }
+
+  },
+  "eventListeners": {
+    "buttonAction": {
+      "chains": [
+        {
+          "chain": "createButtonActionchain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction2": {
+      "chains": [
+        {
+          "chain": "layoutDialogcloseActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction3": {
+      "chains": [
+        {
+          "chain": "actionbuttonChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}",
+            "key": "{{ $current.key }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "buttonAction4": {
+      "chains": [
+        {
+          "chain": "addLineButtonActionchain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction5": {
+      "chains": [
+        {
+          "chain": "layoutHreaderSaveActoionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction6": {
+      "chains": [
+        {
+          "chain": "saveButtonActionchain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction7": {
+      "chains": [
+        {
+          "chain": "saveButtonActionchain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction8": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction9": {
+      "chains": [
+        {
+          "chain": "searchButtonActionchain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "tableBeforeRowEdit": {
+      "chains": [
+        {
+          "chain": "TableBeforeRowEditChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "accept": "{{$event.detail.accept}}",
+            "rowContext": "{{$event.detail.rowContext}}",
+            "rowKey": "{{$event.detail.rowContext.status.rowKey}}",
+            "rowIndex": "{{$event.detail.rowContext.status.rowIndex}}",
+            "rowData": "{{$event.detail.rowContext.componentElement.getDataForVisibleRow($event.detail.rowContext.status.rowIndex).data}}"
+          }
+        }
+      ]
+    },
+    "tableBeforeRowEditEnd": {
+      "chains": [
+        {
+          "chain": "TableBeforeRowEditEndChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "accept": "{{$event.detail.accept}}",
+            "setUpdatedItem": "{{$event.detail.setUpdatedItem}}",
+            "rowContext": "{{$event.detail.rowContext}}",
+            "cancelEdit": "{{$event.detail.cancelEdit}}",
+            "rowKey": "{{$event.detail.rowContext.status.rowKey}}",
+            "rowIndex": "{{$event.detail.rowContext.status.rowIndex}}",
+            "rowData": "{{$event.detail.rowContext.componentElement.getDataForVisibleRow($event.detail.rowContext.status.rowIndex).data}}"
+          }
+        }
+      ]
+    }
+
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-dialog": {
+        "path": "ojs/ojdialog"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-input-date": {
+        "path": "ojs/ojdatetimepicker"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-popup": {
+        "path": "ojs/ojpopup"
+      },
+      "oj-progress-bar": {
+        "path": "ojs/ojprogress-bar"
+      },
+      "oj-select-single": {
+        "path": "ojs/ojselectsingle"
+      },
+      "oj-sp-welcome-page": {
+        "path": "oj-sp/welcome-page/loader"
+      },
+      "oj-switch": {
+        "path": "ojs/ojswitch"
+      },
+      "oj-table": {
+        "path": "ojs/ojtable"
+      }
+
+   }
+  }
+}

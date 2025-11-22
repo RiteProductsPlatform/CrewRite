@@ -1,0 +1,322 @@
+{
+  "title": "CrewRite Employee Clockin",
+  "description": "",
+  "variables": {
+    "checkDetails": {
+      "type": "crewChekinDtls"
+    },
+    "checkHdrs": {
+      "type": "crewChekinHdrs",
+      "defaultValue": {
+        "crewDate": "[[ new Date().toLocaleDateString('en-GB') ]]"
+      }
+    },
+    "crewChkADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "itemType": "crewChekinDtls",
+        "keyAttributes": "resource_id"
+      }
+    },
+    "empName": {
+      "type": "string"
+    },
+    "getGetCrewNameLOVListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "TimeRite_Ords_Service/getGetCrewNameLOV",
+        "keyAttributes": "crew_name",
+        "itemsPath": "items",
+        "responseType": "getGetCrewNameLOVResponse",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "crew_name"
+          ]
+        }
+      }
+    },
+    "illustrationBackground": {
+      "type": "string",
+      "defaultValue": "https://static.oracle.com/cdn/fnd/gallery/2307.0.2/images/illust-welcome-banner-bg-01.png"
+    },
+    "illustrationForeground": {
+      "type": "string",
+      "defaultValue": "https://static.oracle.com/cdn/fnd/gallery/2307.0.2/images/illust-welcome-banner-fg-01.png"
+    },
+    "imageStretch": {
+      "type": "string",
+      "defaultValue": "none"
+    },
+    "isCheckin": {
+      "type": "boolean",
+      "defaultValue": false
+    },
+    "locationDtls": {
+      "type": "string"
+    },
+    "mealBreak": {
+      "type": "boolean",
+      "defaultValue": true
+    },
+    "mobileImage": {
+      "type": "string",
+      "defaultValue": "on"
+    },
+    "scrollPos": {
+      "type": "any",
+      "defaultValue": {
+        "rowIndex": 0
+      }
+    },
+    "userLoginDetail": {
+      "type": {
+        "CheckIn": "string",
+        "CheckOut": "string",
+        "checkOutLocation": "string",
+        "EmpNumber": "string",
+        "MealCheckIn": "string",
+        "MealCheckOut": "string",
+        "MealTotal": "string",
+        "TotalWorkHours": "string",
+        "UserLocation": "string",
+        "UserName": "string"
+      }
+    }
+
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getGetCrewNameLOVResponse": {
+      "endpoint": "getGetCrewNameLOV",
+      "service": "TimeRite_Ords_Service",
+      "path": "response"
+    },
+    "crewChekinDtls": {
+      "checkIn": "string",
+      "checkInDate": "string",
+      "checkOut": "string",
+      "crewName": "string",
+      "empName": "string",
+      "mealChkin": "string",
+      "mealChkout": "string",
+      "mealtotal": "string",
+      "resource_id": "number",
+      "worktotal": "string"
+
+    },
+    "crewChekinHdrs": {
+      "crewDate": "string",
+      "crewId": "string",
+      "crewName": "string"
+    },
+    "getGetCrewNameLOVResponse": {
+      "items": [
+        {
+          "crew_name": "string",
+          "crewsetup_id": "number"
+        }
+      ]
+    }
+  },
+  "eventListeners": {
+    "buttonAction": {
+      "chains": [
+        {
+          "chain": "CheckInActionChain"
+        }
+      ]
+    },
+    "buttonAction2": {
+      "chains": [
+        {
+          "chain": "CheckOutActionChain"
+        }
+      ]
+    },
+    "buttonAction3": {
+      "chains": [
+        {
+          "chain": "MealBrkInActionChain"
+        }
+      ]
+    },
+    "buttonAction4": {
+      "chains": [
+        {
+          "chain": "ResumeToWorkActionChain"
+        }
+      ]
+    },
+    "buttonAction5": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain"
+        }
+      ]
+    },
+    "buttonAction6": {
+      "chains": [
+        {
+          "chain": "MealCheckIn"
+        }
+      ]
+    },
+    "buttonAction7": {
+      "chains": [
+        {
+          "chain": "MealCheckOutAction"
+        }
+      ]
+    },
+    "buttonAction8": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain1"
+        }
+      ]
+    },
+    "goAction": {
+      "chains": [
+        {
+          "chain": "SearchButtonActionChain"
+        }
+      ]
+    },
+    "iconClick": {
+      "chains": [
+        {
+          "chain": "checkInClickChain",
+          "parameters": {
+            "key": "{{ $current.key }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "iconClick2": {
+      "chains": [
+        {
+          "chain": "mealClickChain",
+          "parameters": {
+            "key": "{{ $current.key }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "iconClick3": {
+      "chains": [
+        {
+          "chain": "mealCheckoutClickChain",
+          "parameters": {
+            "key": "{{ $current.key }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "inputSearchRawValue": {
+      "chains": [
+        {
+          "chain": "InputSearchRawValueChangeChain",
+          "parameters": {
+            "rawValue": "{{ $event.detail.value }}"
+          }
+        }
+      ]
+    },
+    "inputSearchRawValue2": {
+      "chains": [
+        {
+          "chain": "InputSearchRawValueChangeChain1",
+          "parameters": {
+            "rawValue": "{{ $event.detail.value }}"
+          }
+        }
+      ]
+    },
+    "inputSearchValueAction": {
+      "chains": [
+        {
+          "chain": "InputSearchValueActionChain",
+          "parameters": {
+            "value": "{{$event.detail.value}}",
+            "itemContext": "{{$event.detail.itemContext}}"
+          }
+        }
+      ]
+    },
+    "selectValueItem": {
+      "chains": [
+        {
+          "chain": "CrewValueItemChangeChain",
+          "parameters": {
+            "key": "{{$event.detail.value.key}}",
+            "data": "{{$event.detail.value.data}}",
+            "metadata": "{{$event.detail.value.metadata}}"
+          }
+        }
+      ]
+    },
+    "spanClick": {
+      "chains": [
+        {
+          "chain": "CheckOutspanClickChain",
+          "parameters": {
+            "key": "{{ $current.key }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    }
+
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-c-select-multiple": {
+        "path": "oj-c/select-multiple"
+      },
+      "oj-collapsible": {
+        "path": "ojs/ojcollapsible"
+      },
+      "oj-combobox-one": {
+        "path": "ojs/ojselectcombobox"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-input-number": {
+        "path": "ojs/ojinputnumber"
+      },
+      "oj-input-search": {
+        "path": "ojs/ojinputsearch"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-select-single": {
+        "path": "ojs/ojselectsingle"
+      },
+      "oj-sp-welcome-page": {
+        "path": "oj-sp/welcome-page/loader"
+      },
+      "oj-switch": {
+        "path": "ojs/ojswitch"
+      },
+      "oj-table": {
+        "path": "ojs/ojtable"
+      },
+      "oj-toolbar": {
+        "path": "ojs/ojtoolbar"
+      }
+
+   }
+  }
+}
