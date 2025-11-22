@@ -1,0 +1,135 @@
+<!-- <div class="oj-flex">
+  <oj-vb-fragment id="page-header" bridge="[[vbBridge]]" name="page-header">
+    <oj-vb-fragment-param name="title" value="Crew Consolidate TimeSheet"></oj-vb-fragment-param>
+    <template slot="actions">
+    </template>
+  </oj-vb-fragment> -->
+
+<oj-sp-welcome-page id="oj-sp-wp1" illustration-background="[[ require.toUrl($page.variables.illustrationBackground) ]]"
+  illustration-foreground="[[ require.toUrl($page.variables.illustrationForeground) ]]"
+  display-options.image-stretch="[[ $page.variables.imageStretch ]]"
+  display-options.mobile-image="[[ $page.variables.mobileImage ]]" display-options.responsive-padding="on"
+  page-title="Crew Consolidate TimeSheet" background-color="dark-pebble">
+  <div class="oj-flex oj-sm-flex-direction-column oj-panel oj-panel-shadow-md" style="margin-top:-48px">
+    <div class="oj-flex-item oj-flex oj-sm-justify-content-center oj-sm-margin-3x-top">
+      <oj-form-layout label-edge="top" columns="6" style="width:100%" max-columns="6">
+        <oj-select-single label-hint="Crew Name" item-text="crew_name" data="[[ $variables.CrewNameSDP ]]"
+          value="{{ $variables.SearchParams.crew_name }}" on-value-item-changed="[[$listeners.selectValueItem]]">
+        </oj-select-single>
+        <oj-select-single label-hint="Project Name" item-text="project_name" data="[[ $variables.ProjectNameSDP ]]"
+          value="{{ $variables.SearchParams.project_name }}" on-value-item-changed="[[$listeners.selectValueItem2]]">
+        </oj-select-single>
+        <oj-input-text label-hint="Employee Name" value="{{ $variables.SearchParams.employee_name }}"
+          disabled="[[ !$variables.SearchParams.project_name ]]">
+          <span class="oj-ux-ico-search oj-sm-margin-1x-end" slot="end" id="Icon-search-employee"
+            on-click="[[$listeners.iconSearchEmployeeClick]]"></span>
+        </oj-input-text>
+        <oj-input-date label-hint="Start Date" required="true" value="{{ $variables.SearchParams.start_date }}"
+          converter='[[ {    "type": "datetime",    "options": {        "formatType": "dd-MM-yy"    }} ]]'>
+        </oj-input-date>
+        <oj-input-date class="formclass" label-hint="End Date" aria-label="monin" required="true"
+          value="{{ $variables.SearchParams.end_date }}"
+          converter='[[ {    "type": "datetime",    "options": {        "formatType": "dd-MM-yy"    }} ]]'
+          min="[[ $variables.SearchParams.start_date?$variables.SearchParams.start_date:'' ]]">
+        </oj-input-date>
+      </oj-form-layout>
+    </div>
+
+    <div class="oj-flex">
+      <div class="oj-flex-item oj-flex oj-sm-justify-content-flex-end oj-sm-flex-items-initial oj-sm-margin-4x-top">
+        <div class="oj-flex-item oj-sm-flex-initial oj-sm-margin-1x-end">
+          <oj-button label="Search" chroming="callToAction" class="oj-button-sm" id="btn-search"
+            on-oj-action="[[$listeners.btnSearchAction]]"></oj-button>
+        </div>
+        <div class="oj-flex-item oj-sm-flex-initial oj-sm-margin-1x-end">
+          <oj-button label="Reset" chroming="callToAction" class="oj-button-sm" id="btn-reset"
+            on-oj-action="[[$listeners.btnResetAction]]">
+          </oj-button>
+        </div>
+        <div class="oj-flex-item oj-sm-flex-initial oj-sm-margin-1x-end">
+          <oj-button label="Approve" chroming="callToAction" class="oj-button-sm"
+            disabled="[[ !$variables.filteredArray.length > 0 ]]" on-oj-action="[[$listeners.buttonAction]]"></oj-button>
+        </div>
+        <oj-button label="Reject" chroming="callToAction" class="oj-button-sm"
+          disabled="[[ !$variables.filteredArray.length > 0 ]]" on-oj-action="[[$listeners.buttonAction2]]">
+        </oj-button>
+      </div>
+    </div>
+
+
+
+    <div class="oj-flex-item oj-sm-flex-initial">
+      <oj-table scroll-policy="loadMoreOnScroll" display="grid" style="width:92vw;max-height:70vh"
+        selection-mode.row="multiple" data="[[ $variables.ManualTimeEntryADP ]]"
+        columns='[{"headerText":"Resource Name","field":"resource_name"},
+      {"headerText":"Project Name","field":"project_name"},
+      {"headerText":"Date","field":"crew_date"},
+      {"headerText":"Total Hours","field":"total_hours","template":"total-hours-temp","className": "oj-helper-text-align-end"}]' on-selected-changed="[[$listeners.tableSelected]]">
+        <template slot="total-hours-temp">
+          <span style="font-size:20px;font-weight:500;text-decoration: underline;cursor:pointer"><a on-click="[[$listeners.hyperlinkClick]]"><oj-bind-text value="[[ $current.data ]]"></oj-bind-text></a></span>
+        </template>
+      </oj-table>
+    </div>
+  </div>
+
+  <oj-dialog dialog-title="Search Employee" id="dlg-employee-search">
+    <div slot="body">
+      <div class="oj-flex oj-sm-flex-direction-column">
+        <div class="oj-flex-item  oj-sm-margin-3x-top">
+          <span class="subheadings">Search Employee</span>
+        </div>
+      </div>
+      <div class="oj-flex oj-sm-margin-4x-top oj-sm-flex-direction-column">
+        <div class="oj-flex-item">
+          <oj-form-layout label-edge="top" columns="2">
+            <oj-input-text label-hint="Employee Name" user-assistance-density="compact"
+              value="{{ $variables.empSearchParam.emp_name }}"></oj-input-text>
+          </oj-form-layout>
+          <oj-toolbar class="oj-helper-justify-content-flex-end">
+            <oj-button label="Search" chroming="callToAction" class="oj-button-sm" id="btn-search-dlg-emp-search"
+              on-oj-action="[[$listeners.btnSearchDlgEmpSearchAction]]"></oj-button>
+            <oj-button label="Reset" chroming="callToAction" class="oj-button-sm" id="btn-reset-dlg-emp-search"
+              on-oj-action="[[$listeners.btnResetDlgEmpSearchAction]]"></oj-button>
+          </oj-toolbar>
+        </div>
+        <div class="oj-flex-item">
+          <oj-table class="oj-sm-12" data="[[ $variables.EmployeeNameADP ]]" style="width:92vw;max-height:70vh" columns='[{"headerText":"Person Name","field":"PersonName"},
+          {"headerText":"Person Email","field":"PersonEmail"}]' selection-mode.row="single"
+            on-first-selected-row-changed="[[$listeners.tableFirstSelectedRow]]" id="tab-emp-search">
+          </oj-table>
+        </div>
+      </div>
+    </div>
+    <div slot="footer">
+      <oj-button label="Save" chroming="callToAction" class="oj-button-sm" id="btn-save-dlg-emp-search"
+        on-oj-action="[[$listeners.btnSaveDlgEmpSearchAction]]"></oj-button>
+      <oj-button label="Cancel" chroming="callToAction" class="oj-button-sm" id="btn-cancel-dlg-emp-search"
+        on-oj-action="[[$listeners.btnCancelDlgEmpSearchAction]]"></oj-button>
+    </div>
+  </oj-dialog>
+
+  <oj-dialog dialog-title="Task List" id="dlg-task-list" style="width: 700px;">
+    <div slot="body">
+      <div class="oj-flex oj-sm-flex-direction-column">
+        <div class="oj-flex-item  oj-sm-margin-3x-top">
+          <span class="subheadings">Task List</span>
+        </div>
+      </div>
+      <div class="oj-flex oj-sm-margin-4x-top oj-sm-flex-direction-column">
+
+        <div class="oj-flex-item">
+          <oj-table class="oj-sm-12" display="grid" data="[[ $variables.taskTableADP ]]"
+            style="width:110vw;max-height:70vh"
+            columns='[{"headerText":"Resource Name","field":"resource_name"},{"headerText":"Project Name","field":"project_name"},
+          {"headerText":"Task Name","field":"task_name"},{"headerText":"Task Hours","field":"task_hours","className": "oj-helper-text-align-end"}]'
+            selection-mode.row="single" on-first-selected-row-changed="[[$listeners.tableFirstSelectedRow]]"
+            id="tab-emp-search">
+          </oj-table>
+        </div>
+      </div>
+    </div>
+    <div slot="footer">
+      <oj-button label="Cancel" chroming="callToAction" class="oj-button-sm" id="btn-cancel-dlg-task"
+        on-oj-action="[[$listeners.btnCancelDlgTaskAction]]"></oj-button>
+    </div>
+  </oj-dialog>

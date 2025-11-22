@@ -1,0 +1,72 @@
+<oj-sp-welcome-page id="oj-sp-wp1" illustration-background="[[ require.toUrl($page.variables.illustrationBackground) ]]"
+  illustration-foreground="[[ require.toUrl($page.variables.illustrationForeground) ]]"
+  display-options.image-stretch="[[ $page.variables.imageStretch ]]"
+  display-options.mobile-image="[[ $page.variables.mobileImage ]]" display-options.responsive-padding="on"
+  page-title="Crew Check In" background-color="dark-pebble">
+  <div class="oj-flex oj-panel oj-panel-shadow-md" style="margin-top:-48px;">
+    
+      <div class="oj-flex-item oj-flex oj-sm-justify-content-center oj-sm-margin-3x-top">
+      <oj-form-layout label-edge="top" columns="5" style="width:100%" max-columns="5">
+        <oj-select-single label-hint="Crew Name" data="[[$variables.getGetCrewNameLOVListSDP]]" item-text="crew_name"
+          value="{{ $variables.checkHdrs.crewName }}" on-value-item-changed="[[$listeners.selectValueItem]]"></oj-select-single>
+        <oj-input-text label-hint="Date" value="{{ $variables.checkHdrs.crewDate }}" readonly="true"></oj-input-text>
+           <div class="oj-flex-item oj-sm-margin-2x-end oj-sm-flex-initial" style="margin-top:20px">
+         <oj-button chroming="callToAction" label="Go" id="go"
+                       class="oj-button-sm" on-oj-action="[[$listeners.goAction]]">
+          
+          </oj-button>
+           </div>
+      </oj-form-layout>
+      </div>
+      
+
+   
+  </div>
+    
+    
+  <div class="oj-flex oj-panel oj-panel-shadow-md">
+      <div class="txtRgt">
+        <oj-input-search class="oj-flex-item oj-md-2" on-oj-value-action="[[$listeners.inputSearchValueAction]]"></oj-input-search>
+       
+      </div>
+    
+      <oj-table scroll-policy="loadMoreOnScroll" class="oj-flex-item oj-sm-12 oj-md-12"
+        data="[[ $variables.crewChkADP ]]" 
+        columns='[{"headerText":"SNo","field":"","template":"sno"},
+        {"headerText":"Employee Name","field":"empName"},
+        {"headerText":"Check In","field":"checkIn","template":"checkIn"},
+        {"headerText":"Meal Check In","field":"mealChkin","template":"mealChkin"},
+        {"headerText":"Meal Check Out","field":"mealChkout","template":"mealChkout"},
+        {"headerText":"Meal Total","field":"mealtotal","template":"mtotal"},
+        {"headerText":"Check Out","field":"checkOut","template":"checkOut"},
+        {"headerText":"Work Total","field":"worktotal","template":"wtotal"}]'>
+        <template slot="sno">
+          <oj-bind-text value="{{$current.index + 1}}"></oj-bind-text>
+        </template>
+        <template slot="checkIn" data-oj-as="cell">
+           <oj-bind-text value="[[cell.data]]"></oj-bind-text>
+           <span class="sbox" on-click="[[$listeners.iconClick]]"><i class="oj-ux-ico-type-time-input"></i></span>
+
+        </template>
+         <template slot="mealChkin" data-oj-as="cell">
+           <oj-bind-text value="[[cell.data]]"></oj-bind-text>
+           <span class="sbox" on-click="[[$listeners.iconClick2]]"><i class="oj-ux-ico-type-time-input"></i></span>
+        </template>
+         <template slot="mealChkout" data-oj-as="cell">
+           <oj-bind-text value="[[cell.data]]"></oj-bind-text>
+           <span class="sbox"  on-click="[[$listeners.iconClick3]]"><i class="oj-ux-ico-type-time-input"></i></span>
+        </template>
+<template slot="checkOut" data-oj-as="cell">
+           <oj-bind-text value="[[cell.data]]"></oj-bind-text>
+           <span class="sbox" on-click="[[$listeners.spanClick]]" ><i class="oj-ux-ico-type-time-input"></i></span>
+        </template>
+        
+    
+        
+  </div>
+
+
+</oj-sp-welcome-page>
+
+
+
