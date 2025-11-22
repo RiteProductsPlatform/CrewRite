@@ -1,0 +1,8 @@
+{
+  "id": "mobileapplication",
+  "description": "Flow main",
+  "defaultPage": "mobileapplication-start",
+  "services": {},
+  "types": {},
+  "variables": {}
+}
