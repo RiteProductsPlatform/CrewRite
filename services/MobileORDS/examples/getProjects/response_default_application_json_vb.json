@@ -1,0 +1,72 @@
+{
+    "items": [
+        {
+            "project_name": "Hilman SCM Upgrade",
+            "project_id": 300000195588489,
+            "project_number": "PCS10056"
+        },
+        {
+            "project_name": "Dixon PPM Implementation",
+            "project_id": 300000184239472,
+            "project_number": "PCS10068"
+        },
+        {
+            "project_name": "Usage Project",
+            "project_id": 300001444147488,
+            "project_number": "1029"
+        },
+        {
+            "project_name": "Fox Stores ERP Upgrade",
+            "project_id": 300000227241579,
+            "project_number": "PCS10049"
+        },
+        {
+            "project_name": "Equipment Project",
+            "project_id": 300001444147002,
+            "project_number": "1027"
+        },
+        {
+            "project_name": "Bill Hold Project",
+            "project_id": 300000262139818,
+            "project_number": "BHP1000"
+        },
+        {
+            "project_name": "Business World ERP Implementation",
+            "project_id": 300000227241738,
+            "project_number": "PCS10048"
+        },
+        {
+            "project_name": "Business World BDA Implementation",
+            "project_id": 300000227241487,
+            "project_number": "PCS10043"
+        },
+        {
+            "project_name": "LAF SCM Implementation",
+            "project_id": 300000191631958,
+            "project_number": "PCS10044"
+        },
+        {
+            "project_name": "Stark BI Implementation",
+            "project_id": 300000195588662,
+            "project_number": "PCS10062"
+        }
+    ],
+    "hasMore": false,
+    "limit": 25,
+    "offset": 0,
+    "count": 10,
+    "links": [
+        {
+            "rel": "self",
+            "href": "http://129.158.228.138:8080/ords/timerite/mobileapp/projects"
+        },
+        {
+            "rel": "describedby",
+            "href": "http://129.158.228.138:8080/ords/timerite/metadata-catalog/mobileapp/item"
+        },
+        {
+            "rel": "first",
+            "href": "http://129.158.228.138:8080/ords/timerite/mobileapp/projects"
+        }
+    ]
+}
