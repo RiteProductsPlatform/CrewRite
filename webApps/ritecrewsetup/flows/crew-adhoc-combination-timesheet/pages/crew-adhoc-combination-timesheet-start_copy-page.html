@@ -1,0 +1,483 @@
+<oj-sp-welcome-page id="oj-sp-wp1" illustration-background="[[ require.toUrl($page.variables.illustrationBackground) ]]"
+  illustration-foreground="[[ require.toUrl($page.variables.illustrationForeground) ]]"
+  display-options.responsive-padding="on" page-title="Time Entry - Combination Method" background-color="dark-pebble">
+
+  <div class="oj-panel" style="margin-top:-48px">
+    <oj-validation-group id="combinationValidation">
+      <oj-form-layout max-columns="4" label-edge="top" columns="4">
+        <oj-select-single label-hint="Crew Name" value="{{ $variables.headerobj.crewname }}"
+          data="[[$variables.getGetCustomerDetailsListSDP]]" item-text="crew_name"
+          on-value-item-changed="[[$listeners.selectValueItem]]" required="true"></oj-select-single>
+        <oj-input-date label-hint="Crew Date" value="{{ $variables.headerobj.crewDate }}" required="true">
+        </oj-input-date>
+        <div>
+
+          <oj-button label="Search" style="margin-top:20px" chroming="callToAction" class="oj-button-sm"
+            on-oj-action="[[$listeners.buttonAction]]">
+            <span class="oj-ux-ico-search" slot="startIcon"></span>
+          </oj-button>
+          <oj-button label="Reset" style="margin-top:20px" chroming="callToAction" class="oj-button-sm"
+            on-oj-action="[[$listeners.buttonAction2]]">
+            <span class="oj-ux-ico-reset-variable" slot="startIcon"></span>
+          </oj-button>
+
+          <oj-button label="Submit" style="margin-top:20px" chroming="callToAction" class="oj-button-sm"
+            on-oj-action="[[$listeners.buttonAction8]]" disabled="[[ $variables.selectedData.length === 0 ]]">
+            <span class="oj-ux-ico-save" slot="startIcon"></span>
+          </oj-button>
+        </div>
+      </oj-form-layout>
+    </oj-validation-group>
+    <div class="oj-flex">
+      <div class="oj-flex-item oj-sm-9 oj-md-9">
+        <h6>Combination Definitions</h6>
+      </div>
+      <div class="oj-flex-item oj-sm-3 oj-md-3">
+        <!-- <oj-button label="Save" id="save-combination" style="margin-left: 25%;">
+          <span class="oj-ux-ico-save" slot="startIcon"></span>
+        </oj-button> -->
+        <oj-button label=" + Add Combination" id="add-combination" style="float : right;"
+          on-oj-action="[[$listeners.addCombinationAction]]" disabled="[[ $variables.disableFlag ]]"></oj-button>
+      </div>
+      <oj-table scroll-policy="loadMoreOnScroll" data="[[ $variables.combinationsTableADP ]]" style="width:94vw"
+        columns-default.resizable="enabled" columns='[{"headerText":"Combination Name","field":"combination_name","template":"CombinationName","width":180,"frozenEdge":"all"},
+      {"headerText":"Project","field":"project","template":"ProjectName","width":150},
+      {"headerText":"Task","field":"task_name","template":"TaskName","width":120},
+      {"headerText":"Shift","field":"shift","template":"Shift","width":130},
+      {"headerText":"Location/Tax Jurisdiction","field":"location_tax_jurisdiction","template":"Location"},
+      {"headerText":"Work Package","field":"work_package","template":"WorkPackage"},
+      {"headerText":"Department","field":"department","template":"Department"},
+      {"headerText":"Cost Category","field":"cost_category","template":"CostCategory"},
+      {"headerText":"Time Type","field":"time_type","template":"TimeType"},
+      {"headerText":"Hours","field":"hours","template":"hours"},
+      {"headerText":"Default","field":"","template":"default"},
+      {"headerText":"Actions","field":"","template":"Actions"}]'
+        on-oj-before-row-edit="[[$listeners.tableBeforeRowEdit]]" edit-mode="rowEdit"
+        on-oj-before-row-edit-end="[[$listeners.tableBeforeRowEditEnd]]" display="grid">
+        <template slot="default">
+          <oj-button label="Default" on-oj-action="[[$listeners.buttonAction3]]" class="oj-button-sm"
+            style="height : 25px;" chroming="solid"></oj-button>
+        </template>
+
+        <template slot="CombinationName">
+          <oj-bind-if test='[[$current.mode ==="navigation"]]'>
+            <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+            <!-- <oj-bind-if test='[[$variables.combinationsCurrentRowObj.isNew === "Y" ]]'>
+            <div style="background-color : lightblue;"> 
+              <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+            </div>
+          </oj-bind-if>
+          <oj-bind-if test='[[$variables.combinationsCurrentRowObj.isNew === undefined ]]'>
+            <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+          </oj-bind-if> -->
+          </oj-bind-if>
+          <oj-bind-if test='[[$current.mode ==="edit"]]'>
+            <oj-input-text value="{{ $variables.combinationsCurrentRowObj.combination_name }}">
+            </oj-input-text>
+          </oj-bind-if>
+        </template>
+
+        <template slot="ProjectName">
+          <oj-bind-if test='[[$current.mode ==="navigation"]]'>
+            <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+          </oj-bind-if>
+          <oj-bind-if test='[[$current.mode ==="edit"]]'>
+            <oj-select-single value="{{ $variables.combinationsCurrentRowObj.project }}" item-text="name"
+              on-value-item-changed="[[$listeners.selectValueItem2]]" data="[[ $variables.fetchProjectSDP ]]"
+              label-hint=" "></oj-select-single>
+          </oj-bind-if>
+        </template>
+
+        <template slot="TaskName">
+          <oj-bind-if test='[[$current.mode ==="navigation"]]'>
+            <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+          </oj-bind-if>
+          <oj-bind-if test='[[$current.mode ==="edit"]]'>
+            <oj-select-single label-hint=" " value="{{ $variables.combinationsCurrentRowObj.task_name }}"
+              data="[[ $variables.tasksProjectSDP ]]" item-text="TaskName"
+              on-value-item-changed="[[$listeners.selectValueItem4]]">
+            </oj-select-single>
+          </oj-bind-if>
+        </template>
+
+        <template slot="Shift">
+          <oj-bind-if test='[[$current.mode ==="navigation"]]'>
+            <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+          </oj-bind-if>
+          <oj-bind-if test='[[$current.mode ==="edit"]]'>
+            <oj-input-text value="{{ $variables.combinationsCurrentRowObj.shift }}">
+            </oj-input-text>
+          </oj-bind-if>
+        </template>
+
+        <template slot="WorkPackage">
+          <oj-bind-if test='[[$current.mode ==="navigation"]]'>
+            <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+          </oj-bind-if>
+          <oj-bind-if test='[[$current.mode ==="edit"]]'>
+            <oj-input-text value="{{ $variables.combinationsCurrentRowObj.work_package }}">
+            </oj-input-text>
+          </oj-bind-if>
+        </template>
+
+        <template slot="Location">
+          <oj-bind-if test='[[$current.mode ==="navigation"]]'>
+            <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+          </oj-bind-if>
+          <oj-bind-if test='[[$current.mode ==="edit"]]'>
+            <oj-input-text value="{{ $variables.combinationsCurrentRowObj.location_tax_jurisdiction }}">
+            </oj-input-text>
+
+            <!-- <oj-select-single label-hint="Location"
+              value="{{ $variables.combinationsCurrentRowObj.location_tax_jurisdiction }}"
+              data="[[$variables.getGetCustomerDetailsListSDP]]" item-text="crew_name"></oj-select-single> -->
+          </oj-bind-if>
+        </template>
+
+        <template slot="TimeType">
+          <oj-bind-if test='[[$current.mode ==="navigation"]]'>
+            <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+          </oj-bind-if>
+          <oj-bind-if test='[[$current.mode ==="edit"]]'>
+            <!-- <oj-input-text value="{{ $variables.combinationsCurrentRowObj.time_type }}">
+            </oj-input-text> -->
+            <oj-select-single value="{{ $variables.combinationsCurrentRowObj.time_type }}" item-text="time_type_name"
+              data="[[ $variables.getCombinationTimeTypeSDP ]]" label-hint=" "></oj-select-single>
+          </oj-bind-if>
+        </template>
+
+        <template slot="Department">
+          <oj-bind-if test='[[$current.mode ==="navigation"]]'>
+            <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+          </oj-bind-if>
+          <oj-bind-if test='[[$current.mode ==="edit"]]'>
+            <!-- <oj-input-text value="{{ $variables.combinationsCurrentRowObj.department }}">
+            </oj-input-text> -->
+            <oj-select-single value="{{ $variables.combinationsCurrentRowObj.department }}" item-text="department"
+              data="[[ $variables.getCombinationDepartmentSDP ]]" label-hint=" "></oj-select-single>
+          </oj-bind-if>
+        </template>
+
+        <template slot="Phase">
+          <oj-bind-if test='[[$current.mode ==="navigation"]]'>
+            <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+          </oj-bind-if>
+          <oj-bind-if test='[[$current.mode ==="edit"]]'>
+            <!-- <oj-input-text value="{{ $variables.combinationsCurrentRowObj.phase }}">
+          </oj-input-text> -->
+          </oj-bind-if>
+        </template>
+
+        <template slot="CostCategory">
+          <oj-bind-if test='[[$current.mode ==="navigation"]]'>
+            <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+          </oj-bind-if>
+          <oj-bind-if test='[[$current.mode ==="edit"]]'>
+            <oj-input-text value="{{ $variables.combinationsCurrentRowObj.cost_category }}">
+            </oj-input-text>
+          </oj-bind-if>
+        </template>
+
+        <template slot="hours">
+          <oj-bind-if test='[[$current.mode ==="navigation"]]'>
+            <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+          </oj-bind-if>
+          <oj-bind-if test='[[$current.mode ==="edit"]]'>
+            <oj-input-text value="{{ $variables.combinationsCurrentRowObj.hours }}">
+            </oj-input-text>
+          </oj-bind-if>
+        </template>
+
+        <template slot="Actions">
+          <span class="oj-ux-ico-save" style="font-size:20px;" on-click="[[$listeners.iconClick2]]"></span>
+          <span class="oj-ux-ico-trash" style="font-size:20px;margin-left: 20px;" on-click="[[$listeners.iconClick]]"></span>
+        </template>
+
+      </oj-table>
+    </div>
+
+    <div class="oj-flex" style="margin-top : 15px;">
+      <div class="oj-flex-item oj-sm-10 oj-md-10">
+        <h6>Time Entries</h6>
+      </div>
+      <div class="oj-flex-item oj-sm-2 oj-md-2">
+        <oj-button label="+ Add Entry" id="add-employee-entry" style="float: right;"
+          disabled="[[ $variables.disableFlag ]]" on-oj-action="[[$listeners.addEmployeeEntryAction]]"></oj-button>
+      </div>
+      <oj-table scroll-policy="loadMoreOnScroll" data="[[ $variables.mainTimeEntriesTableADP ]]" style="width:94vw"
+        columns-default.resizable="enabled" columns='[{"headerText":"Resource Name","field":"resource_name","template":"resourceTemplate","width":180,"frozenEdge":"all"},
+      {"headerText":"Emp Number","field":"resource_number"},
+      {"headerText":"Job","field":"resource_role"},
+      {"headerText":"Combination Name","field":"combination_name","template":"CombinationName","width":180,"frozenEdge":"all"},
+      {"headerText":"Project","field":"project","template":"ProjectName"},
+      {"headerText":"Task","field":"task_name","template":"TaskName"},
+      {"headerText":"Shift","field":"shift","template":"Shift"},
+      {"headerText":"Location/Tax Jurisdiction","field":"location","template":"location"},
+      {"headerText":"Work Package","field":"work_package","template":"workpackage"},
+      {"headerText":"Department","field":"department","template":"Department"},
+      {"headerText":"Cost Category","field":"cost_category","template":"costcategory"},
+      {"headerText":"Craft Override","field":""},
+      {"headerText":"Time Type","field":"time_type","template":"TimeType"},
+      {"headerText":"Hours","field":"total_hours","template":"hours"},
+      {"headerText":"Mileage","field":"mileage","template":"Mileage"},
+      {"headerText":"Per Diem","field":"per_diem_amount","template":"perDiemAmount"},
+      {"headerText":"Mobilation","field":"mobilation","template":"Mobilation"},
+      {"headerText":"Demobization","field":"demobization","template":"Demobization"},
+      {"headerText":"Actions","field":"","template":"Actions"}]' edit-mode="rowEdit" selection-mode.row="multiple"
+        on-oj-before-row-edit="[[$listeners.tableBeforeRowEdit2]]"
+        on-oj-before-row-edit-end="[[$listeners.tableBeforeRowEditEnd2]]" display="grid"
+        on-selected-changed="[[$listeners.tableSelected2]]">
+
+        <template slot="CombinationName">
+          <oj-bind-if test='[[$current.mode ==="navigation"]]'>
+            <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+          </oj-bind-if>
+          <oj-bind-if test='[[$current.mode ==="edit"]]'>
+            <!-- <oj-input-text value="{{ $variables.timeEntriesCurrentRowObj.combination_name }}">
+
+              value="{{ $variables.timeEntriesCurrentRowObj.combination_name }}" 
+            </oj-input-text> -->
+            <oj-select-single label-hint=" " value="{{ $current.data }}" data="[[ $variables.combinationLOV ]]"
+              item-text="combination_name" on-value-item-changed="[[$listeners.selectValueItem3]]"></oj-select-single>
+          </oj-bind-if>
+        </template>
+
+
+
+        <template slot="resourceTemplate">
+          <oj-bind-if test='[[$current.mode ==="navigation"]]'>
+            <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+          </oj-bind-if>
+          <oj-bind-if test='[[$current.mode ==="edit"]]'>
+            <oj-bind-if test='[[$variables.timeEntriesCurrentRowObj.isNew ==="Y"]]'>
+              <oj-select-single label-hint=" " value="{{ $variables.timeEntriesCurrentRowObj.resource_name }}"
+                data="[[ $variables.resourceLOVADP ]]" item-text="resource_name"
+                on-value-item-changed="[[$listeners.selectValueItem5]]"></oj-select-single>
+            </oj-bind-if>
+            <oj-bind-if test='[[$variables.timeEntriesCurrentRowObj.isNew !=="Y"]]'>
+              <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+            </oj-bind-if>
+          </oj-bind-if>
+        </template>
+
+        <template slot="TimeType">
+          <oj-bind-if test='[[$current.mode ==="navigation"]]'>
+            <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+          </oj-bind-if>
+          <oj-bind-if test='[[$current.mode ==="edit"]]'>
+            <oj-bind-if test='[[$variables.timeEntriesCurrentRowObj.combination_name ==="Custom"]]'>
+              <oj-select-single value="{{ $variables.timeEntriesCurrentRowObj.time_type }}" item-text="time_type_name"
+                data="[[ $variables.getCombinationTimeTypeSDP ]]" label-hint=" "></oj-select-single>
+            </oj-bind-if>
+            <oj-bind-if test='[[$variables.timeEntriesCurrentRowObj.combination_name !=="Custom"]]'>
+              <oj-input-text value="{{ $variables.timeEntriesCurrentRowObj.time_type }}" readonly="true"
+                disabled="true"></oj-input-text>
+            </oj-bind-if>
+          </oj-bind-if>
+        </template>
+
+        <template slot="Department">
+          <oj-bind-if test='[[$current.mode ==="navigation"]]'>
+            <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+          </oj-bind-if>
+          <oj-bind-if test='[[$current.mode ==="edit"]]'>
+            <oj-bind-if test='[[$variables.timeEntriesCurrentRowObj.combination_name ==="Custom"]]'>
+              <oj-select-single value="{{ $variables.timeEntriesCurrentRowObj.department }}" item-text="department"
+                data="[[ $variables.getCombinationDepartmentSDP ]]" label-hint=" "></oj-select-single>
+            </oj-bind-if>
+            <oj-bind-if test='[[$variables.timeEntriesCurrentRowObj.combination_name !=="Custom"]]'>
+              <oj-input-text value="{{ $variables.timeEntriesCurrentRowObj.time_type }}" readonly="true"
+                disabled="true"></oj-input-text>
+            </oj-bind-if>
+
+          </oj-bind-if>
+        </template>
+
+        <template slot="Shift">
+          <oj-bind-if test='[[$current.mode ==="navigation"]]'>
+            <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+          </oj-bind-if>
+          <oj-bind-if test='[[$current.mode ==="edit"]]'>
+            <oj-bind-if test='[[$variables.timeEntriesCurrentRowObj.combination_name ==="Custom"]]'>
+              <oj-input-text value="{{ $variables.timeEntriesCurrentRowObj.shift }}"></oj-input-text>
+            </oj-bind-if>
+            <oj-bind-if test='[[$variables.timeEntriesCurrentRowObj.combination_name !=="Custom"]]'>
+              <oj-input-text value="{{ $variables.timeEntriesCurrentRowObj.shift }}" readonly="true" disabled="true">
+              </oj-input-text>
+            </oj-bind-if>
+          </oj-bind-if>
+        </template>
+
+         <template slot="location">
+          <oj-bind-if test='[[$current.mode ==="navigation"]]'>
+            <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+          </oj-bind-if>
+          <oj-bind-if test='[[$current.mode ==="edit"]]'>
+            <oj-bind-if test='[[$variables.timeEntriesCurrentRowObj.combination_name ==="Custom"]]'>
+              <oj-input-text value="{{ $variables.timeEntriesCurrentRowObj.location }}"></oj-input-text>
+            </oj-bind-if>
+            <oj-bind-if test='[[$variables.timeEntriesCurrentRowObj.combination_name !=="Custom"]]'>
+              <oj-input-text value="{{ $variables.timeEntriesCurrentRowObj.location }}" readonly="true" disabled="true">
+              </oj-input-text>
+            </oj-bind-if>
+          </oj-bind-if>
+        </template>
+
+         <template slot="workpackage">
+          <oj-bind-if test='[[$current.mode ==="navigation"]]'>
+            <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+          </oj-bind-if>
+          <oj-bind-if test='[[$current.mode ==="edit"]]'>
+            <oj-bind-if test='[[$variables.timeEntriesCurrentRowObj.combination_name ==="Custom"]]'>
+              <oj-input-text value="{{ $variables.timeEntriesCurrentRowObj.work_package }}"></oj-input-text>
+            </oj-bind-if>
+            <oj-bind-if test='[[$variables.timeEntriesCurrentRowObj.combination_name !=="Custom"]]'>
+              <oj-input-text value="{{ $variables.timeEntriesCurrentRowObj.work_package }}" readonly="true" disabled="true">
+              </oj-input-text>
+            </oj-bind-if>
+          </oj-bind-if>
+        </template>
+
+         <template slot="costcategory">
+          <oj-bind-if test='[[$current.mode ==="navigation"]]'>
+            <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+          </oj-bind-if>
+          <oj-bind-if test='[[$current.mode ==="edit"]]'>
+            <oj-bind-if test='[[$variables.timeEntriesCurrentRowObj.combination_name ==="Custom"]]'>
+              <oj-input-text value="{{ $variables.timeEntriesCurrentRowObj.cost_category }}"></oj-input-text>
+            </oj-bind-if>
+            <oj-bind-if test='[[$variables.timeEntriesCurrentRowObj.combination_name !=="Custom"]]'>
+              <oj-input-text value="{{ $variables.timeEntriesCurrentRowObj.cost_category }}" readonly="true" disabled="true">
+              </oj-input-text>
+            </oj-bind-if>
+          </oj-bind-if>
+        </template>
+
+        <template slot="ProjectName">
+          <oj-bind-if test='[[$current.mode ==="navigation"]]'>
+            <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+          </oj-bind-if>
+          <oj-bind-if test='[[$current.mode ==="edit"]]'>
+            <oj-bind-if test='[[$variables.timeEntriesCurrentRowObj.combination_name ==="Custom"]]'>
+              <!-- <oj-select-single value="{{ $variables.timeEntriesCurrentRowObj.project }}" item-text="ProjectName"
+                data="[[ $variables.projectsLOV ]]" label-hint=" "
+                on-value-item-changed="[[$listeners.selectValueItem6]]"></oj-select-single> -->
+              <oj-select-single value="{{ $current.data }}" item-text="name"
+                on-value-item-changed="[[$listeners.selectValueItem6]]" data="[[ $variables.fetchProjectSDP ]]"
+                label-hint=" "></oj-select-single>
+            </oj-bind-if>
+            <oj-bind-if test='[[$variables.timeEntriesCurrentRowObj.combination_name !=="Custom"]]'>
+              <oj-input-text value="{{ $variables.timeEntriesCurrentRowObj.project }}" readonly="true" disabled="true">
+              </oj-input-text>
+            </oj-bind-if>
+          </oj-bind-if>
+        </template>
+
+        <template slot="TaskName">
+          <oj-bind-if test='[[$current.mode ==="navigation"]]'>
+            <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+          </oj-bind-if>
+          <oj-bind-if test='[[$current.mode ==="edit"]]'>
+            <oj-bind-if test='[[$variables.timeEntriesCurrentRowObj.combination_name ==="Custom"]]'>
+              <oj-select-single label-hint=" "value="{{ $current.data }}"
+                data="[[ $variables.tasksProjectSDP ]]" item-text="TaskName"
+                on-value-item-changed="[[$listeners.selectValueItem7]]">
+              </oj-select-single>
+            </oj-bind-if>
+            <oj-bind-if test='[[$variables.timeEntriesCurrentRowObj.combination_name !=="Custom"]]'>
+              <oj-input-text value="{{ $variables.timeEntriesCurrentRowObj.task_name }}" readonly="true"
+                disabled="true"></oj-input-text>
+            </oj-bind-if>
+          </oj-bind-if>
+        </template>
+
+        <template slot="hours">
+          <oj-bind-if test='[[$current.mode ==="navigation"]]'>
+            <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+          </oj-bind-if>
+          <oj-bind-if test='[[$current.mode ==="edit"]]'>
+            <oj-input-text value="{{ $variables.timeEntriesCurrentRowObj.total_hours }}">
+            </oj-input-text>
+          </oj-bind-if>
+        </template>
+
+        <template slot="Mileage">
+          <oj-bind-if test='[[$current.mode ==="navigation"]]'>
+            <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+          </oj-bind-if>
+          <oj-bind-if test='[[$current.mode ==="edit"]]'>
+            <oj-input-text value="{{ $variables.timeEntriesCurrentRowObj.mileage }}">
+            </oj-input-text>
+          </oj-bind-if>
+        </template>
+
+        <template slot="perDiemAmount">
+          <oj-bind-if test='[[$current.mode ==="navigation"]]'>
+            <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+          </oj-bind-if>
+          <oj-bind-if test='[[$current.mode ==="edit"]]'>
+            <oj-input-text value="{{ $variables.timeEntriesCurrentRowObj.per_diem_amount }}">
+            </oj-input-text>
+          </oj-bind-if>
+        </template>
+
+        <template slot="Mobilation">
+          <oj-bind-if test='[[$current.mode ==="navigation"]]'>
+            <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+          </oj-bind-if>
+          <oj-bind-if test='[[$current.mode ==="edit"]]'>
+            <oj-input-text value="{{ $variables.timeEntriesCurrentRowObj.mobilation }}">
+            </oj-input-text>
+          </oj-bind-if>
+        </template>
+
+
+
+        <template slot="Demobization">
+          <oj-bind-if test='[[$current.mode ==="navigation"]]'>
+            <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+          </oj-bind-if>
+          <oj-bind-if test='[[$current.mode ==="edit"]]'>
+            <oj-input-text value="{{ $variables.timeEntriesCurrentRowObj.demobization }}">
+            </oj-input-text>
+          </oj-bind-if>
+        </template>
+
+        <template slot="Actions">
+          <!-- <span class="oj-ux-ico-edit" style="font-size:20px;"></span> -->
+          <span class="oj-ux-ico-trash" style="font-size:20px;margin-left: 20px;"
+              on-click="[[$listeners.iconClick3]]"></span>
+        </template>
+
+      </oj-table>
+    </div>
+  </div>
+
+</oj-sp-welcome-page>
+<oj-dialog dialog-title="Resource Mapping" id="oj-dialog-Combination-Resource-Mapping">
+  <div slot="body">
+    <div class="oj-flex">
+      <h6>Combination Resource Mapping</h6>
+      <oj-table scroll-policy="loadMoreOnScroll" class="oj-flex-item oj-sm-12 oj-md-12"
+        data="[[ $variables.resourceTableADP ]]" selection-mode.row="multiple"
+        columns='[{"headerText":"Resource Name","field":"resource_name"},{"headerText":"Resource Number","field":"resource_number"},{"headerText":"Resource Type","field":"resource_type"},{"headerText":"Resource Role","field":"resource_role"}]'
+        on-selected-changed="[[$listeners.tableSelected]]" id="resource-mapping-popup"></oj-table>
+
+    </div>
+  </div>
+  <div slot="footer">
+    <oj-button on-oj-action="[[$listeners.buttonAction5]]">Assign</oj-button>
+    <oj-button on-oj-action="[[$listeners.buttonAction4]]">Cancel</oj-button>
+  </div>
+</oj-dialog>
+<oj-dialog dialog-title="Delete Confirmation Popup" id="oj-dialog-delete-confirm">
+  <div slot="body">
+    <div class="oj-flex" style="margin-top: 15px;">
+      <h6>Are you Sure you want to Delete this Combination ?</h6>
+    </div>
+  </div>
+  <div slot="footer">
+    <oj-button on-oj-action="[[$listeners.buttonAction7]]">Delete</oj-button>
+    <oj-button on-oj-action="[[$listeners.buttonAction6]]">Cancel</oj-button>
+  </div>
+</oj-dialog>
