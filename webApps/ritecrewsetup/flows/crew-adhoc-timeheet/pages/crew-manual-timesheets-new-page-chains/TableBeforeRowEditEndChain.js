@@ -1,0 +1,37 @@
+define([
+  'vb/action/actionChain',
+  'vb/action/actions',
+  'vb/action/actionUtils',
+], (
+  ActionChain,
+  Actions,
+  ActionUtils
+) => {
+  'use strict';
+
+  class TableBeforeRowEditEndChain extends ActionChain {
+
+    /**
+     * @param {Object} context
+     * @param {Object} params
+     * @param {any} params.cancelEdit 
+     * @param {any} params.rowKey 
+     * @param {number} params.rowIndex 
+     * @param {any} params.rowData 
+     */
+    async run(context, { cancelEdit, rowKey, rowIndex, rowData }) {
+      const { $page, $flow, $application, $constants, $variables, $functions } = context;
+
+      $variables.currentAdhocRowData.crew_date = $functions.formatDate($variables.currentAdhocRowData.crew_date);
+
+      await Actions.fireDataProviderEvent(context, {
+        target: $variables.AdhocMainUITableADP,
+        update: {
+          data: $variables.currentAdhocRowData,
+        },
+      });
+    }
+  }
+
+  return TableBeforeRowEditEndChain;
+});

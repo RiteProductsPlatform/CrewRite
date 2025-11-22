@@ -1,0 +1,133 @@
+{
+  "root": "resetVariablesColumns",
+  "description": "",
+  "actions": {
+    "fireNotification": {
+      "module": "vb/action/builtin/fireNotificationEventAction",
+      "parameters": {
+        "target": "leaf",
+        "summary": "Failed to fetch details",
+        "type": "error",
+        "displayMode": "transient"
+      }
+    },
+    "callFunctionColumnsGenerator": {
+      "module": "vb/action/builtin/callModuleFunctionAction",
+      "parameters": {
+        "module": "[[ $functions ]]",
+        "functionName": "columnsGenerator",
+        "params": [
+          "{{ $page.variables.headerParams }}",
+          "{{ $page.variables.taskTblADP.data }}"
+        ]
+      },
+      "outcomes": {
+        "success": "callFunctionCreateAdhocUITableADP"
+      }
+    },
+    "assignVariablesColumns": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.columns": {
+          "source": "{{ $chain.results.callFunctionColumnsGenerator }}",
+          "reset": "empty"
+        },
+        "$page.variables.AdhocMainUITableADP": {
+          "source": {
+            "data": "{{ $chain.results.callFunctionCreateAdhocUITableADP }}"
+          },
+          "reset": "none",
+          "auto": "always",
+          "mapping": {
+            "$target.data": {
+              "source": "$source.data",
+              "reset": "empty"
+            }
+          }
+        }
+      }
+    },
+    "callFunctionCreateAdhocUITableADP": {
+      "module": "vb/action/builtin/callModuleFunctionAction",
+      "parameters": {
+        "module": "[[ $functions ]]",
+        "functionName": "createAdhocUITableADP",
+        "params": [
+          "{{ $chain.results.callRestTRProjectResourceDetails.body.items }}",
+          "{{ $page.variables.headerParams }}",
+          "{{ $page.variables.taskTblADP.data }}",
+          "{{ $page.variables.equipNameArray.length > 0 ? $page.variables.equipNameArray : [] }}",
+          "{{ $page.variables.AddResourceParams.resource_name ? $page.variables.AddResourceParams : \"\" }}"
+        ]
+      },
+      "outcomes": {
+        "success": "assignVariablesColumns"
+      }
+    },
+    "resetVariablesColumns": {
+      "module": "vb/action/builtin/resetVariablesAction",
+      "parameters": {
+        "variables": [
+          "$page.variables.columns"
+        ]
+      },
+      "outcomes": {
+        "success": "runInParallel"
+      }
+    },
+    "callRestTRProjectResourceDetails": {
+      "module": "vb/action/builtin/restAction",
+      "parameters": {
+        "endpoint": "TimeRite_Ords_Service/TR_ProjectResourceDetails",
+        "uriParams": {
+          "project_id": "{{ $page.variables.headerParams.projectId }}"
+        }
+      },
+      "outcomes": {
+        "success": "callFunctionColumnsGenerator",
+        "failure": "fireNotification"
+      }
+    },
+    "runInParallel": {
+      "module": "vb/action/builtin/forkAction",
+      "parameters": {
+        "actions": {
+          "callRestTRProjectResourceDetails": "callRestTRProjectResourceDetails",
+          "callRest": "callRestGetMaxCrewDate"
+        }
+      },
+      "outcomes": {
+        "join": "callComponentAddresourceClose"
+      }
+    },
+    "callRestGetMaxCrewDate": {
+      "module": "vb/action/builtin/restAction",
+      "parameters": {
+        "endpoint": "TimeRite_Ords_Service/getMaxCrewDate",
+        "uriParams": {
+          "p_crew_date": "{{ $page.variables.headerParams.date }}",
+          "p_crewsetup_id": "{{ $page.variables.headerParams.crewId ? $page.variables.headerParams.crewId : \"\" }}",
+          "p_project_id": "{{ $page.variables.headerParams.projectId }}"
+        }
+      },
+      "outcomes": {
+        "success": "assignVariablesMaxweekid"
+      }
+    },
+    "assignVariablesMaxweekid": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.maxweekid": {
+          "source": "{{ $chain.results.callRestGetMaxCrewDate.body.items.length > 0 ? $chain.results.callRestGetMaxCrewDate.body.items[0].max_crew_date_id : 1 }}"
+        }
+      }
+    },
+    "callComponentAddresourceClose": {
+      "module": "vb/action/builtin/callComponentMethodAction",
+      "parameters": {
+        "component": "{{ document.getElementById('addresource') }}",
+        "method": "close"
+      }
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "root": "assignVariablesCreateObj",
+  "description": "",
+  "actions": {
+    "assignVariablesCreateObj": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.createObj": {
+          "source": {
+            "p_crew_date": "{{ $functions.formatDate($page.variables.createObj.p_crew_date) }}",
+            "p_last_updated_by": "{{ $application.user.email }}"
+          },
+          "reset": "none",
+          "auto": "always"
+        }
+      },
+      "outcomes": {
+        "success": "callRestPutTRManualTimeentrySubmit"
+      }
+    },
+    "fireNotification": {
+      "module": "vb/action/builtin/fireNotificationEventAction",
+      "parameters": {
+        "target": "leaf",
+        "summary": "Failed to Update Timesheet",
+        "type": "error",
+        "displayMode": "transient"
+      }
+    },
+    "callRestPutTRManualTimeentrySubmit": {
+      "module": "vb/action/builtin/restAction",
+      "parameters": {
+        "endpoint": "TimeRite_Ords_Service/putTR_Manual_Timeentry_Submit",
+        "body": "{{ $page.variables.createObj }}"
+      },
+      "outcomes": {
+        "success": "fireNotification3",
+        "failure": "fireNotification"
+      }
+    },
+    "fireNotification3": {
+      "module": "vb/action/builtin/fireNotificationEventAction",
+      "parameters": {
+        "target": "leaf",
+        "summary": "Timesheet updated Successfully",
+        "displayMode": "transient",
+        "type": "confirmation"
+      },
+      "outcomes": {
+        "success": "callRestGetManualTimeEntriesHdr"
+      }
+    },
+    "callComponentEditTimesheetsClose": {
+      "module": "vb/action/builtin/callComponentMethodAction",
+      "parameters": {
+        "component": "{{ document.getElementById('editTimesheets') }}",
+        "method": "close"
+      }
+    },
+    "resetVariablesCreateObj": {
+      "module": "vb/action/builtin/resetVariablesAction",
+      "parameters": {
+        "variables": [
+          "$page.variables.createObj"
+        ]
+      },
+      "outcomes": {
+        "success": "callComponentEditTimesheetsClose"
+      }
+    },
+    "callRestGetManualTimeEntriesHdr": {
+      "module": "vb/action/builtin/restAction",
+      "parameters": {
+        "endpoint": "TimeRite_Ords_Service/getManualTimeEntriesHdr",
+        "uriParams": {
+          "crewsetup_id": "{{ $page.variables.headerParams.crewId }}",
+          "project_id": "{{ $page.variables.headerParams.projectId }}",
+          "task_id_1": "{{ $page.variables.headerParams.task_id_1 ? $page.variables.headerParams.task_id_1 : \"\" }}",
+          "task_id_2": "{{ $page.variables.headerParams.task_id_2 ? $page.variables.headerParams.task_id_2 : \"\" }}",
+          "task_id_3": "{{ $page.variables.headerParams.task_id_3 ? $page.variables.headerParams.task_id_3 : \"\" }}",
+          "task_id_4": "{{ $page.variables.headerParams.task_id_4 ? $page.variables.headerParams.task_id_4 : \"\" }}",
+          "crew_date": "{{ $functions.formatDate($page.variables.headerParams.date) }}"
+        }
+      },
+      "outcomes": {
+        "success": "assignVariablesAdhocMainUITableADP"
+      }
+    },
+    "assignVariablesAdhocMainUITableADP": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.AdhocMainUITableADP": {
+          "source": {
+            "data": "{{ $chain.results.callRestGetManualTimeEntriesHdr.body.items }}"
+          },
+          "reset": "none",
+          "auto": "always"
+        }
+      },
+      "outcomes": {
+        "success": "resetVariablesCreateObj"
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+define([
+  'vb/action/actionChain',
+  'vb/action/actions',
+  'vb/action/actionUtils',
+], (
+  ActionChain,
+  Actions,
+  ActionUtils
+) => {
+  'use strict';
+
+  class Task1ValueChangeAction extends ActionChain {
+
+    /**
+     * @param {Object} context
+     * @param {Object} params
+     * @param {any} params.key 
+     * @param {any} params.data 
+     * @param {any} params.metadata 
+     */
+    async run(context, { key, data, metadata }) {
+      const { $page, $flow, $application, $constants, $variables } = context;
+
+      $variables.headerParams.task_id_1 = data.task_id;
+      $variables.headerParams.task_number_1 = data.task_number;
+    }
+  }
+
+  return Task1ValueChangeAction;
+});

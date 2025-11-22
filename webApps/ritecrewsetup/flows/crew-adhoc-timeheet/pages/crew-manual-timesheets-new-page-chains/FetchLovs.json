@@ -1,0 +1,52 @@
+{
+  "root": "callRestProjectDetailsPWA",
+  "description": "",
+  "actions": {
+
+    "assignVariablesProjectsADP": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+
+        "$page.variables.headerParams": {
+          "source": {
+            "per_deim_amount": "{{ $chain.results.callRestGetCrewAdminDetails.body.items[0].per_dm_amount }}",
+            "per_deim_rate": "{{ $chain.results.callRestGetCrewAdminDetails.body.items[0].per_dm_rate }}"
+          },
+          "reset": "none",
+          "auto": "always"
+        },
+        "$page.variables.ProjectsADP": {
+          "source": {
+            "data": "{{ $chain.results.callRestProjectDetailsPWA.body.items }}"
+          },
+          "reset": "none",
+          "auto": "always",
+          "mapping": {
+            "$target.data": {
+              "source": "$source.data",
+              "reset": "empty"
+            }
+          }
+        }
+      }
+    },
+    "callRestGetCrewAdminDetails": {
+      "module": "vb/action/builtin/restAction",
+      "parameters": {
+        "endpoint": "TimeRite_Ords_Service/getCrewAdminDetails"
+      },
+      "outcomes": {
+        "success": "assignVariablesProjectsADP"
+      }
+    },
+    "callRestProjectDetailsPWA": {
+      "module": "vb/action/builtin/restAction",
+      "parameters": {
+        "endpoint": "TimeRite_Ords_Service/ProjectDetailsPWA"
+      },
+      "outcomes": {
+        "success": "callRestGetCrewAdminDetails"
+      }
+    }
+  }
+}

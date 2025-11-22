@@ -1,0 +1,40 @@
+{
+  "root": "callFunctionFilterData",
+  "description": "",
+  "actions": {
+    "callFunctionFilterData": {
+      "module": "vb/action/builtin/callModuleFunctionAction",
+      "parameters": {
+        "module": "[[ $functions ]]",
+        "functionName": "filterData",
+        "params": [
+          "{{ $variables.selected }}",
+          "{{ $page.variables.AdhocMainUITableADP.data }}",
+          "{{ $variables.Keys }}"
+        ]
+      },
+      "outcomes": {
+        "success": "assignVariablesSubmittedRows"
+      }
+    },
+    "assignVariablesSubmittedRows": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.SubmittedRows": {
+          "source": "{{ $chain.results.callFunctionFilterData }}"
+        }
+      }
+    }
+  },
+  "variables": {
+    "Keys": {
+      "type": "any[]",
+      "input": "fromCaller"
+    },
+    "selected": {
+      "type": "any",
+      "required": true,
+      "input": "fromCaller"
+    }
+  }
+}

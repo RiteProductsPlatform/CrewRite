@@ -1,0 +1,191 @@
+{
+  "root": "forEachInSubmittedRows",
+  "description": "",
+  "actions": {
+    "fireNotification": {
+      "module": "vb/action/builtin/fireNotificationEventAction",
+      "parameters": {
+        "target": "leaf",
+        "summary": "Timesheets Submitted successfully",
+        "displayMode": "transient",
+        "type": "confirmation"
+      },
+      "outcomes": {
+        "success": "resetVariablesAdhocMainUITableADP"
+      }
+    },
+    "forEachInSubmittedRows": {
+      "module": "vb/action/builtin/forEachAction",
+      "parameters": {
+        "items": "{{ $page.variables.SubmittedRows }}",
+        "actionId": "assignVariablesCreateObj"
+      },
+      "outcomes": {
+        "success": "if"
+      }
+    },
+    "assignVariablesCreateObj": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.createObj": {
+          "source": {
+
+            "p_crewsetup_id": "{{ $page.variables.headerParams.crewId }}",
+            "p_crew_name": "{{ $page.variables.headerParams.crewName }}",
+            "p_crew_date": "{{ $page.variables.SubmittedRows[$current.index].crew_date }}",
+            "p_person_id": "{{ $page.variables.SubmittedRows[$current.index].person_id }}",
+            "p_resource_role": "{{ $page.variables.SubmittedRows[$current.index].resource_role }}",
+            "p_resource_name": "{{ $page.variables.SubmittedRows[$current.index].resource_name }}",
+            "p_overwritepayable": "",
+            "p_project_id": "{{ $page.variables.headerParams.projectId }}",
+            "p_project_number": "{{ $page.variables.headerParams.projectNumber }}",
+            "p_project_name": "{{ $page.variables.headerParams.projectName }}",
+            "p_task_id_1": "{{ $page.variables.SubmittedRows[$current.index].task_id_1 }}",
+            "p_task_id_2": "{{ $page.variables.SubmittedRows[$current.index].task_id_2 ? $page.variables.SubmittedRows[$current.index].task_id_2 : null }}",
+            "p_task_id_3": "{{ $page.variables.SubmittedRows[$current.index].task_id_3 ? $page.variables.SubmittedRows[$current.index].task_id_3 : null }}",
+            "p_task_id_4": "{{ $page.variables.SubmittedRows[$current.index].task_id_4 ? $page.variables.SubmittedRows[$current.index].task_id_4 : null }}",
+            "p_task4_hours": "{{ $page.variables.SubmittedRows[$current.index].task4_hours ? $page.variables.SubmittedRows[$current.index].task4_hours : null }}",
+            "p_task_name_4": "{{ $page.variables.SubmittedRows[$current.index].task_name_4 ? $page.variables.SubmittedRows[$current.index].task_name_4 : null }}",
+            "p_task_number_4": "{{ $page.variables.SubmittedRows[$current.index].task_number_4 ?$page.variables.SubmittedRows[$current.index].task_number_4 : \"\" }}",
+            "p_task1_hours": "{{ $page.variables.SubmittedRows[$current.index].task1_hours ? $page.variables.SubmittedRows[$current.index].task1_hours : null }}",
+            "p_task_name_1": "{{ $page.variables.SubmittedRows[$current.index].task_name_1 ? $page.variables.SubmittedRows[$current.index].task_name_1 : null }}",
+            "p_task_number_1": "{{ $page.variables.SubmittedRows[$current.index].task_number_1 ? $page.variables.SubmittedRows[$current.index].task_number_1 : null }}",
+            "p_task3_hours": "{{ $page.variables.SubmittedRows[$current.index].task3_hours ? $page.variables.SubmittedRows[$current.index].task3_hours : null }}",
+            "p_task_name_3": "{{ $page.variables.SubmittedRows[$current.index].task_name_3 ? $page.variables.SubmittedRows[$current.index].task_name_3 : null }}",
+            "p_task_number_3": "{{ $page.variables.SubmittedRows[$current.index].task_number_3 ? $page.variables.SubmittedRows[$current.index].task_number_3 : null }}",
+            "p_task2_hours": "{{ $page.variables.SubmittedRows[$current.index].task2_hours ? $page.variables.SubmittedRows[$current.index].task2_hours : null }}",
+            "p_task_name_2": "{{ $page.variables.SubmittedRows[$current.index].task_name_2 ? $page.variables.SubmittedRows[$current.index].task_name_2 : null }}",
+            "p_task_number_2": "{{ $page.variables.SubmittedRows[$current.index].task_number_2 ? $page.variables.SubmittedRows[$current.index].task_number_2 : null }}",
+            "p_in_time": "",
+            "p_per_dm_rate": "{{ $page.variables.headerParams.per_deim_rate }}",
+            "p_per_dm_amount": "{{ $page.variables.headerParams.per_deim_amount }}"
+
+          },
+          "reset": "none",
+          "auto": "always"
+        }
+      },
+      "outcomes": {
+        "success": "forEachInTaskTblADP"
+      }
+    },
+    "callRestPostTRManualTimeentrySubmit": {
+      "module": "vb/action/builtin/restAction",
+      "parameters": {
+        "endpoint": "TimeRite_Ords_Service/postTR_Manual_Timeentry_Submit",
+        "body": "{{ $page.variables.createObj }}"
+      },
+      "outcomes": {
+        "failure": "assignVariablesSuccessvar"
+      }
+    },
+    "assignVariablesSuccessvar": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.successvar": {
+          "source": "{{ $page.variables.successvar +1 }}"
+        }
+      }
+    },
+    "if": {
+      "module": "vb/action/builtin/ifAction",
+      "parameters": {
+        "condition": "[[ $page.variables.SubmittedRows.length !== $page.variables.successvar ]]"
+      },
+      "outcomes": {
+        "true": "fireNotification"
+      }
+    },
+    "callRestGetManualTimeEntriesHdr": {
+      "module": "vb/action/builtin/restAction",
+      "parameters": {
+        "endpoint": "TimeRite_Ords_Service/getManualTimeEntriesHdr",
+        "uriParams": {
+          "crewsetup_id": "{{ $page.variables.headerParams.crewId }}",
+          "project_id": "{{ $page.variables.headerParams.projectId }}",
+          "task_id_1": "{{ $page.variables.headerParams.task_id_1 ? $page.variables.headerParams.task_id_1 : \"\" }}",
+          "task_id_2": "{{ $page.variables.headerParams.task_id_2 ? $page.variables.headerParams.task_id_2 : \"\" }}",
+          "task_id_3": "{{ $page.variables.headerParams.task_id_3 ? $page.variables.headerParams.task_id_3 : \"\" }}",
+          "task_id_4": "{{ $page.variables.headerParams.task_id_4 ? $page.variables.headerParams.task_id_4 : \"\" }}",
+          "crew_date": "{{ $functions.formatDate($page.variables.headerParams.date) }}"
+        }
+      },
+      "outcomes": {
+        "success": "assignVariablesAdhocMainUITableADP"
+      }
+    },
+    "resetVariablesAdhocMainUITableADP": {
+      "module": "vb/action/builtin/resetVariablesAction",
+      "parameters": {
+        "variables": [
+          "$page.variables.AdhocMainUITableADP.data"
+        ]
+      },
+      "outcomes": {
+        "success": "callRestGetManualTimeEntriesHdr"
+      }
+    },
+    "assignVariablesAdhocMainUITableADP": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.AdhocMainUITableADP": {
+          "source": {
+            "data": "{{ $chain.results.callRestGetManualTimeEntriesHdr.body.items }}"
+          },
+          "reset": "none",
+          "auto": "always",
+          "mapping": {
+            "$target.data": {
+              "source": "$source.data",
+              "reset": "empty"
+            }
+          }
+        }
+      }
+    },
+    "callFunctionPayloadGenerator": {
+      "module": "vb/action/builtin/callModuleFunctionAction",
+      "parameters": {
+        "module": "[[ $functions ]]",
+        "functionName": "payloadGenerator",
+        "params": [
+          "{{ $page.variables.SubmittedRows[$current.index] }}",
+          "{{ $application.user.email }}",
+          "{{ $page.variables.headerParams.date }}",
+          "{{ $page.variables.headerParams.date }}",
+          "{{ \"\" }}",
+          "{{ $page.variables.headerParams.date }}",
+          "{{ $page.variables.headerParams }}",
+          "{{ $page.variables.maxweekid }}",
+          "{{ $page.variables.taskTblADP.data[$current.index] }}"
+        ]
+      },
+      "outcomes": {
+        "success": "runInParallel"
+      }
+    },
+    "forEachInTaskTblADP": {
+      "module": "vb/action/builtin/forEachAction",
+      "parameters": {
+        "items": "{{ $page.variables.taskTblADP.data }}",
+        "actionId": "callFunctionPayloadGenerator"
+      }
+    },
+    "runInParallel": {
+      "module": "vb/action/builtin/forkAction",
+      "parameters": {
+        "actions": {
+          "callRestPostTRManualTimeentrySubmit": "callRestPostTRManualTimeentrySubmit",
+          "callRest": "callRestPostTRManualTimeEntryMain"
+        }
+      }
+    },
+    "callRestPostTRManualTimeEntryMain": {
+      "module": "vb/action/builtin/restAction",
+      "parameters": {
+        "endpoint": "TimeRite_Ords_Service/postTR_ManualTimeEntry_Main",
+        "body": "{{ $chain.results.callFunctionPayloadGenerator }}"
+      }
+    }
+  }
+}

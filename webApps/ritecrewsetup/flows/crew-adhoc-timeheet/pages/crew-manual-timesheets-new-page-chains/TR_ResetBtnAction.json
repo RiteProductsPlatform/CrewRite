@@ -1,0 +1,16 @@
+{
+  "root": "resetVariablesColumns",
+  "description": "",
+  "actions": {
+    "resetVariablesColumns": {
+      "module": "vb/action/builtin/resetVariablesAction",
+      "parameters": {
+        "variables": [
+          "$page.variables.columns",
+          "$page.variables.headerParams",
+          "$page.variables.AdhocMainUITableADP.data"
+        ]
+      }
+    }
+  }
+}

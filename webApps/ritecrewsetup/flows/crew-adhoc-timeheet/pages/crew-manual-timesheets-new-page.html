@@ -1,0 +1,293 @@
+<!-- <div class="oj-flex">
+  <oj-vb-fragment id="page-header" bridge="[[vbBridge]]" name="page-header">
+    <oj-vb-fragment-param name="title" value="Crew Manual Timesheet"></oj-vb-fragment-param>
+  </oj-vb-fragment> -->
+
+
+<oj-sp-welcome-page id="oj-sp-wp1" illustration-background="[[ require.toUrl($page.variables.illustrationBackground) ]]"
+  illustration-foreground="[[ require.toUrl($page.variables.illustrationForeground) ]]"
+  display-options.image-stretch="[[ $page.variables.imageStretch ]]"
+  display-options.mobile-image="[[ $page.variables.mobileImage ]]" display-options.responsive-padding="on"
+  page-title="Crew Manual Timesheet" background-color="dark-pebble">
+  <div class="oj-flex oj-sm-flex-direction-column oj-panel oj-panel-shadow-md" style="margin-top:-48px">
+
+    <div class="oj-flex-item oj-flex oj-sm-justify-content-center oj-sm-margin-3x-top">
+      <div class="oj-flex-item" style="width:50%">
+        <oj-form-layout label-edge="top" columns="3" max-columns="3" style="margin-left:-2vw">
+          <oj-select-single label-hint="Crew Name" item-text="crew_name" value="{{ $variables.headerParams.crewName }}"
+            required="true" data="[[$variables.getGetCustomerDetailsListSDP]]"
+            on-value-item-changed="[[$listeners.selectValueItem]]">
+          </oj-select-single>
+          <oj-select-single label-hint="Project Name" value="{{ $variables.headerParams.projectName }}"
+            item-text="project_name" on-value-item-changed="[[$listeners.selectValueItem2]]"
+            data="[[ $variables.ProjectsADP ]]">
+          </oj-select-single>
+          <oj-select-single label-hint="Time Type" value="{{ $variables.headerParams.timetype }}"
+            data="[[$variables.tRTimeTypesListSDP]]" item-text="time_type">
+          </oj-select-single>
+
+          <oj-input-date label-hint="Date" value="{{ $variables.headerParams.date }}"></oj-input-date>
+          <oj-input-text class="formclass" label-hint="In Time" aria-label="monin"
+            value="{{ $variables.headerParams.time }}" validators="{{ $application.functions.validateText() }}"
+            required="true">
+          </oj-input-text>
+
+          <oj-input-text label-hint="Per Dm Rate" value="{{ $variables.headerParams.per_deim_rate }}"></oj-input-text>
+          <oj-input-text label-hint="Perdiem Amount" value="{{ $variables.headerParams.per_deim_amount }}">
+          </oj-input-text>
+          <oj-select-single label-hint="Equipment Class" value="{{ $variables.headerParams.equpClass }}"
+            data="[[$variables.getGetEquipmentClassLOVListSDP]]" item-text="equipment_class"
+            on-value-item-changed="[[$listeners.selectValueItem8]]">
+          </oj-select-single>
+          <oj-select-single label-hint="Equipment Name" value="{{ $variables.headerParams.equipName }}"
+            data="[[$variables.getGetEquipmentLOVListSDP]]" item-text="lkpvalue"
+            on-value-item-changed="[[$listeners.selectValueItem9]]">
+          </oj-select-single>
+
+
+        </oj-form-layout>
+        <div class="oj-flex oj-sm-flex-direction-column" style="margin-left:1vw;width:92%">
+          <div class="oj-flex-item">
+            <oj-label>COMMENTS</oj-label>
+          </div>
+          <div class="oj-flex-item oj-sm-margin-2x-top">
+            <oj-text-area></oj-text-area>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="oj-flex-item oj-sm-margin-2x-start" style="width:40%">
+        <div class="oj-flex-item oj-flex oj-sm-flex-direction-column">
+          <div class="oj-flex-item oj-flex">
+            <oj-button label="Add Task" chroming="callToAction" class="oj-button-sm"
+              on-oj-action="[[$listeners.buttonAction7]]"></oj-button>
+          </div>
+          <div class="oj-flex-item">
+            <oj-table scroll-policy="loadMoreOnScroll" display="grid" style="width:40vw;height:30vh"
+              data="[[ $variables.taskTblADP ]]" columns='[{"headerText":"Name","field":"name","template":"name"},
+      {"headerText":"Number","field":"number","template":"number" ,"className": "oj-helper-text-align-end"},
+      {"headerText":"Hours","field":"hours","template":"hours" ,"className": "oj-helper-text-align-end"}]'
+              edit-mode="rowEdit" on-oj-before-row-edit="[[$listeners.tableBeforeRowEdit2]]"
+              on-oj-before-row-edit-end="[[$listeners.tableBeforeRowEditEnd2]]">
+              <template slot="name">
+                <oj-bind-if test='[[ $current.mode === "navigation"]]'>
+                  <oj-bind-text value='[[ $current.data ]]'></oj-bind-text>
+                </oj-bind-if>
+                <oj-bind-if test='[[ $current.mode === "edit"]]'>
+                  <oj-select-single aria-label="Task " item-text="TaskName" data="[[ $variables.TasksADP ]]"
+                    value="{{ $variables.taskObj.name }}" on-value-item-changed="[[$listeners.selectValueItem7]]">
+                  </oj-select-single>
+                </oj-bind-if>
+              </template>
+              <template slot="number">
+                <oj-bind-if test='[[ $current.mode === "navigation"]]'>
+                  <oj-bind-text value='[[ $current.data ]]'></oj-bind-text>
+                </oj-bind-if>
+                <oj-bind-if test='[[ $current.mode === "edit"]]'>
+                  <oj-input-text aria-label="Tasknumber" value="{{ $variables.taskObj.number }}" readonly="true">
+                  </oj-input-text>
+                </oj-bind-if>
+              </template>
+              <template slot="hours">
+                <oj-bind-if test='[[ $current.mode === "navigation"]]'>
+                  <oj-bind-text value='[[ $current.data ]]'></oj-bind-text>
+                </oj-bind-if>
+                <oj-bind-if test='[[ $current.mode === "edit"]]'>
+                  <oj-input-number aria-label="hours" value="{{ $variables.taskObj.hours }}"></oj-input-number>
+                </oj-bind-if>
+              </template>
+            </oj-table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="oj-flex oj-sm-margin-2x-top">
+      <div class="oj-flex-item oj-flex">
+
+        <div class="oj-flex-item oj-sm-flex-initial oj-sm-margin-2x-end oj-sm-margin-2x-start">
+          <!-- <oj-button label="Download" chroming="callToAction" class="oj-button-sm" disabled="true"></oj-button> -->
+          <oj-sample-export-data max-rows="1000" include-header-row="true" chroming="callToAction"
+            data="[[ $variables.AdhocMainUITableADP ]]" class="export" format="plain">
+            <span><oj-bind-text value="Download"></oj-bind-text></span>
+          </oj-sample-export-data>
+        </div>
+        <!-- columns='[[ [    {        "field": "id",        "headerText": "Id"    },    {        "field": "crewName",        "headerText": "Crew Name"    },    {        "field": "employeeName",        "headerText": "Employee Name"    },    {        "field": "employeeDesignation",        "headerText": "Employee Designation"    },    {        "field": "overwritePayable",        "headerText": "Overwrite Payroll Job Title (Y/N)"    },    {        "field": "projectName",        "headerText": "Project Name"    },    {        "field": "taskOneName",        "headerText": "Task#1"    },    {        "field": "taskOneHours",        "headerText": "Task#1 Hours"    },    {        "field": "taskTwoName",        "headerText": "Task#2"    },    {        "field": "taskTwoHours",        "headerText": "Task#2 Hours"    },    {        "field": "taskThreeName",        "headerText": "Task#3"    },    {        "field": "taskThreeHours",        "headerText": "Task#3 Hours"    },    {        "field": "taskFourName",        "headerText": "Task#4"    },    {        "field": "taskFourHours",        "headerText": "Task#4 Hours"    }] ]]'> -->
+        <div class="oj-flex-item oj-sm-flex-initial oj-sm-margin-2x-end">
+          <oj-file-picker id="file-picker" selection-mode="single" accept='[".csv",".xlsx"]'
+            on-oj-select="[[$listeners.filePickerSelect]]">
+            <oj-button slot='trigger' label="Upload" chroming="callToAction" class="oj-button-sm" id="btn-upload">
+            </oj-button>
+          </oj-file-picker>
+        </div>
+        <div class="oj-flex-item oj-sm-flex-initial oj-sm-margin-2x-end">
+          <oj-button label="Add Resource" chroming="callToAction" class="oj-button-sm"
+            on-oj-action="[[$listeners.buttonAction8]]">
+          </oj-button>
+        </div>
+      </div>
+      <div class="oj-flex-item oj-flex oj-sm-justify-content-flex-end oj-sm-flex-items-initial">
+        <!-- <div class="oj-flex-item oj-sm-flex-initial oj-sm-margin-1x-end">
+          <oj-button label="Search" chroming="callToAction" class="oj-button-sm" disabled="true"></oj-button>
+        </div> -->
+
+        <div class="oj-flex-item oj-sm-flex-initial oj-sm-margin-1x-end">
+          <oj-button label="Add" chroming="callToAction" class="oj-button-sm"
+            on-oj-action="[[$listeners.buttonAction]]"></oj-button>
+        </div>
+        <div class="oj-flex-item oj-sm-flex-initial oj-sm-margin-1x-end">
+          <oj-button label="Reset" chroming="callToAction" class="oj-button-sm"
+            on-oj-action="[[$listeners.buttonAction3]]"></oj-button>
+        </div>
+        <oj-button label="Submit" chroming="callToAction" class="oj-button-sm"
+          on-oj-action="[[$listeners.buttonAction4]]">
+        </oj-button>
+        <!-- disabled="[[ !$variables.SubmittedRows.length > 0 ]]" -->
+      </div>
+    </div>
+
+
+    <div class="oj-flex-item oj-flex oj-sm-12 oj-md-12" style="width:100%" data-vb-layout-type="flex">
+    </div>
+    <div class="oj-flex-item oj-sm-flex-initial">
+      <!-- edit-mode="rowEdit"
+      on-oj-before-row-edit="[[$listeners.tableBeforeRowEdit]]"
+      on-oj-before-row-edit-end="[[$listeners.tableBeforeRowEditEnd]]" -->
+      <oj-table scroll-policy="loadMoreOnScroll" display="grid" style="width:92vw;max-height:70vh"
+        columns="{{ $variables.columns}} " data="[[ $variables.AdhocMainUITableADP ]]" selection-mode.row="multiple"
+        on-oj-before-row-edit="[[$listeners.tableBeforeRowEdit]]"
+        on-oj-before-row-edit-end="[[$listeners.tableBeforeRowEditEnd]]"
+        on-selected-changed="[[$listeners.tableSelected2]]">
+        <template slot="icon">
+          <span class="oj-ux-ico-edit" style="font-size:18px;cursor:pointer" on-click="[[$listeners.iconClick]]" ></span>
+        </template>
+        <template slot="copy">
+          <span class="oj-ux-ico-copy" style="font-size:18px;cursor:pointer" on-click="[[$listeners.iconClick2]]" ></span>
+        </template>
+
+        <template slot="Task1">
+          <oj-bind-if test='[[ $current.mode === "navigation"]]'>
+            <oj-bind-text value='[[ $current.data ]]'></oj-bind-text>
+          </oj-bind-if>
+          <oj-bind-if test='[[ $current.mode === "edit"]]'>
+            <oj-input-number value="{{ $variables.currentAdhocRowData.task1_hours }}" style="text-align: right;">
+            </oj-input-number>
+          </oj-bind-if>
+        </template>
+        <template slot="date">
+          <oj-bind-if test='[[ $current.mode === "navigation"]]'>
+            <oj-bind-text value='[[ $current.data ]]'></oj-bind-text>
+          </oj-bind-if>
+          <oj-bind-if test='[[ $current.mode === "edit"]]'>
+            <oj-input-date value="{{ $variables.currentAdhocRowData.crew_date }}" style="text-align: right;"
+              converter='{"type": "datetime", "options": {"pattern":"dd/MM/yyyy"}}'>
+            </oj-input-date>
+          </oj-bind-if>
+        </template>
+        <template slot="time">
+          <oj-bind-if test='[[ $current.mode === "navigation"]]'>
+            <oj-bind-text value='[[ $current.data ]]'></oj-bind-text>
+          </oj-bind-if>
+          <oj-bind-if test='[[ $current.mode === "edit"]]'>
+            <oj-input-text value="{{ $variables.currentAdhocRowData.in_time }}"
+              validators="{{ $application.functions.validateText() }}" style="text-align: right;">
+            </oj-input-text>
+          </oj-bind-if>
+        </template>
+        <template slot="Task2">
+          <oj-bind-if test='[[ $current.mode === "navigation"]]'>
+            <oj-bind-text value='[[ $current.data ]]'></oj-bind-text>
+          </oj-bind-if>
+          <oj-bind-if test='[[ $current.mode === "edit"]]'>
+            <oj-input-number value="{{ $variables.currentAdhocRowData.task2_hours }}" style="text-align: right;">
+            </oj-input-number>
+          </oj-bind-if>
+        </template>
+        <template slot="Task3">
+          <oj-bind-if test='[[ $current.mode === "navigation"]]'>
+            <oj-bind-text value='[[ $current.data ]]'></oj-bind-text>
+          </oj-bind-if>
+          <oj-bind-if test='[[ $current.mode === "edit"]]'>
+            <oj-input-number value="{{ $variables.currentAdhocRowData.task3_hours }}" style="text-align: right;">
+            </oj-input-number>
+          </oj-bind-if>
+        </template>
+        <template slot="Task4">
+          <oj-bind-if test='[[ $current.mode === "navigation"]]'>
+            <oj-bind-text value='[[ $current.data ]]'></oj-bind-text>
+          </oj-bind-if>
+          <oj-bind-if test='[[ $current.mode === "edit"]]'>
+            <oj-input-number value="{{ $variables.currentAdhocRowData.task4_hours }}" style="text-align: right;">
+            </oj-input-number>
+          </oj-bind-if>
+        </template>
+      </oj-table>
+    </div>
+
+  </div>
+</oj-sp-welcome-page>
+<oj-dialog dialog-title="Add Resource" id="addresource" style="width:60vw;max-height:70vh">
+  <div slot="body">
+    <div class="oj-flex oj-sm-margin-3x-top oj-sm-flex-direction-column">
+      <div class="oj-flex-item oj-sm-flex-initial oj-sm-align-self-center">
+        <span class="subheadings">Add Resource</span>
+      </div>
+      <div class="oj-flex-item oj-sm-12 oj-md-12 oj-sm-margin-3x-top">
+        <oj-form-layout max-columns="4" columns="4" label-edge="top">
+          <oj-input-text label-hint="Crew Name" value="{{ $variables.AddResourceParams.crewName }}" readonly="true">
+          </oj-input-text>
+          <oj-input-date label-hint="Crew Date" value="{{ $variables.AddResourceParams.date }}" readonly="true">
+          </oj-input-date>
+
+          <oj-input-text label-hint="Project Name" value="{{ $variables.AddResourceParams.projectName }}"
+            readonly="true">
+          </oj-input-text>
+          <!-- <oj-combobox-one label-hint="Resource Name" value="{{ $variables.AddResourceParams.resource_name }}"
+            options="[[ $variables.ResourcesArray ]]" options-keys.value="resource_name"
+            options-keys.label="resource_name_label" on-value-changed="[[$listeners.comboValue]]">
+          </oj-combobox-one> -->
+
+            <oj-combobox-one label-hint="Resource Name" value="{{ $variables.AddResourceParams.resource_name }}"
+              options-keys.value="resource_name"
+             options-keys.label="resource_name"
+              on-value-changed="[[$listeners.comboValue]]"
+              options="[[$variables.getCrewRiteProjectResourceValidationListSDP]]">
+          </oj-combobox-one>
+
+          <oj-input-text label-hint="Resource Number" value="{{ $variables.AddResourceParams.resource_number }}"
+            readonly="true">
+          </oj-input-text>
+          <oj-input-text label-hint="Resource job" value="{{ $variables.AddResourceParams.resource_job }}"
+            readonly="true">
+          </oj-input-text>
+          <oj-input-text label-hint="Resource Location" value="{{ $variables.AddResourceParams.resource_location }}"
+            readonly="true">
+          </oj-input-text>
+
+          <oj-input-text label-hint="Per Dm Rate" value="{{ $variables.AddResourceParams.per_deim_rate }}"
+            readonly="true">
+          </oj-input-text>
+          <oj-input-text label-hint="Per Dm Amount" value="{{ $variables.AddResourceParams.per_deim_amount }}"
+            readonly="true">
+          </oj-input-text>
+        </oj-form-layout>
+        <div class="oj-flex-item">
+          <oj-toolbar chroming="solid">
+            <!-- on-oj-action="[[$listeners.buttonAction10]]" -->
+            <oj-button label="Create" chroming="callToAction" class="oj-button-sm"
+              on-oj-action="[[$listeners.buttonAction10]]">
+            </oj-button>
+            <oj-button label="Cancel" chroming="callToAction" class="oj-button-sm"
+              on-oj-action="[[$listeners.buttonAction9]]">
+            </oj-button>
+          </oj-toolbar>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</oj-dialog>
