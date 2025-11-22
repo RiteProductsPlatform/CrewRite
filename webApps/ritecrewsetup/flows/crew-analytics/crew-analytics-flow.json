@@ -1,0 +1,8 @@
+{
+  "id": "crew-analytics",
+  "description": "Flow main",
+  "defaultPage": "crew-analytics-start",
+  "services": {},
+  "types": {},
+  "variables": {}
+}

@@ -1,0 +1,242 @@
+{
+  "title": "CrewRite Analytics",
+  "description": "",
+  "variables": {
+    "CrewTblADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {}
+    },
+    "backgroundColor": {
+      "type": "string",
+      "defaultValue": "dark-ocean"
+    },
+    "illustrationBackground": {
+      "type": "string",
+      "defaultValue": "https://static.oracle.com/cdn/fnd/gallery/2307.0.2/images/illust-welcome-banner-bg-01.png"
+    },
+    "illustrationForeground": {
+      "type": "string",
+      "defaultValue": "https://static.oracle.com/cdn/fnd/gallery/2307.0.2/images/illust-welcome-banner-fg-01.png"
+    },
+    "imageStretch": {
+      "type": "string",
+      "defaultValue": "none"
+    },
+    "mobileImage": {
+      "type": "string",
+      "defaultValue": "on"
+    },
+    "getGetCustomerDetailsListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "TimeRite_Ords_Service/getGetCustomerDetails",
+        "keyAttributes": "crew_name",
+        "itemsPath": "items",
+        "responseType": "getGetCustomerDetailsResponse",
+        "uriParameters": {
+          "CONTRACT_NUMBER": "{{ \"\" }}",
+          "CREW_NAME": "{{ \"\" }}",
+          "CUSTOMER_NAME": "{{ \"\" }}",
+          "PROJECT_NUMBER": "{{ \"\" }}",
+          "Search_Date": "{{ \"\" }}"
+        },
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "crew_name"
+          ]
+        }
+      }
+    },
+    "ChartADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "data": "{{ $variables.chartArray }}"
+      }
+    },
+    "chartArray": {
+      "type": "object[]"
+    },
+    "columns": {
+      "type": "object[]"
+    },
+    "getResourcesDetailsListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "TimeRite_Ords_Service/getResourcesDetails",
+        "keyAttributes": "resource_name",
+        "itemsPath": "items",
+        "responseType": "getResourcesDetailsResponse",
+        "uriParameters": {
+          "project_id": "{{ \"\" }}",
+          "res_name": "{{ \"\" }}"
+        },
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "resource_name"
+          ]
+        }
+      }
+    },
+    "reportADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "data": "{{ $variables.reportsArray }}",
+        "keyAttributes": "label"
+      }
+    },
+    "reportsArray": {
+      "type": "object[]",
+      "defaultValue": [
+        {
+          "label": "Crew and Customer Details"
+        },
+        {
+          "label": "Crew and Resource Details"
+        }
+      ]
+    },
+    "ResourceADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "data": "{{ $variables.ResourceNameArray }}",
+        "keyAttributes": "resource_name"
+      }
+    },
+    "ResourceNameArray": {
+      "type": "object[]"
+    },
+    "searchObj": {
+      "type": {
+        "crewName": "string",
+        "from_date": "string",
+        "name": "string",
+        "report": "string",
+        "to_date": "string"
+      },
+      "defaultValue": {
+        "report": "Crew and Resource Details"
+      }
+    }
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.CrewTimeAnalyticsTblType": {
+      "endpoint": "CrewTimeAnalytics",
+      "service": "TimeRite_Ords_Service",
+      "path": "response-_-items[0]"
+    },
+    "@decorators.getGetCustomerDetailsResponse": {
+      "endpoint": "getGetCustomerDetails",
+      "service": "TimeRite_Ords_Service",
+      "path": "response"
+    },
+    "@decorators.getResourcesDetailsResponse": {
+      "endpoint": "getResourcesDetails",
+      "service": "TimeRite_Ords_Service",
+      "path": "response"
+    },
+    "CrewTimeAnalyticsTblType": {
+      "crew_end_week": "string",
+      "crew_name": "string",
+      "crew_start_week": "string",
+      "crew_type": "string",
+      "crewsetup_id": "number",
+      "end_date": "string",
+      "project_number": "any",
+      "resource_name": "string",
+      "start_date": "string"
+    },
+    "getGetCustomerDetailsResponse": {
+      "items": [
+        {
+          "crew_name": "string"
+        }
+      ]
+    },
+    "getResourcesDetailsResponse": {
+      "items": [
+        {
+          "resource_name": "string"
+        }
+      ]
+    }
+  },
+  "eventListeners": {
+    "buttonAction": {
+      "chains": [
+        {
+          "chain": "SearchBtnAction"
+        }
+      ]
+    },
+    "buttonAction2": {
+      "chains": [
+        {
+          "chain": "ResetBtnAction"
+        }
+      ]
+    },
+    "buttonAction3": {
+      "chains": [
+        {
+          "chain": "ExportBtnAction"
+        }
+      ]
+    },
+    "vbEnter": {
+      "chains": [
+        {
+          "parameters": {},
+          "chain": "SearchBtnAction"
+        },
+        {
+          "parameters": {},
+          "chain": "fetchresource"
+        }
+      ]
+    }
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-chart": {
+        "path": "ojs/ojchart"
+      },
+      "oj-chart-item": {
+        "path": "ojs/ojchart"
+      },
+      "oj-dialog": {
+        "path": "ojs/ojdialog"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-input-date": {
+        "path": "ojs/ojdatetimepicker"
+      },
+      "oj-select-single": {
+        "path": "ojs/ojselectsingle"
+      },
+      "oj-sp-welcome-page": {
+        "path": "oj-sp/welcome-page/loader"
+      },
+      "oj-table": {
+        "path": "ojs/ojtable"
+      },
+      "oj-toolbar": {
+        "path": "ojs/ojtoolbar"
+      },
+      "oj-validation-group": {
+        "path": "ojs/ojvalidationgroup"
+      }
+
+    },
+    "modules": {
+      "ojValidationDateTime": {
+        "path": "ojs/ojvalidation-datetime"
+      }
+    }
+  }
+}
