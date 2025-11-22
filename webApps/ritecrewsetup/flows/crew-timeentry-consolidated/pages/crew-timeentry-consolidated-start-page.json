@@ -1,0 +1,19 @@
+{
+  "title": "crew timeentry consolidated",
+  "description": "",
+  "variables": {},
+  "metadata": {},
+  "types": {},
+  "eventListeners": {
+    "vbEnter": {
+      "chains": [
+        {
+          "chain": "PageVbEnterChain"
+        }
+      ]
+    }
+  },
+  "imports": {
+    "components": {}
+  }
+}

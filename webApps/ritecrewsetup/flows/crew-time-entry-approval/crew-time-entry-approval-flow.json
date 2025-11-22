@@ -1,0 +1,8 @@
+{
+  "id": "crew-time-entry-approval",
+  "description": "Flow main",
+  "defaultPage": "crew-time-entry-approval",
+  "services": {},
+  "types": {},
+  "variables": {}
+}

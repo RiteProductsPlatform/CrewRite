@@ -1,0 +1,109 @@
+{
+  "title": "crew time sheet",
+  "description": "",
+  "variables": {
+    "getGetCustomerDetailsListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "TimeRite_Ords_Service/getGetCustomerDetails",
+        "keyAttributes": "crew_name",
+        "itemsPath": "items",
+        "responseType": "getGetCustomerDetailsResponse",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "crew_name"
+          ]
+        }
+      }
+    },
+    "headerObj": {
+      "type": {
+        "crewname": "any",
+        "crewSetupId": "any",
+        "customer": "string",
+        "measure": "any",
+        "specification": "any",
+        "week": "any"
+      }
+    },
+    "illustrationBackground": {
+      "type": "any",
+      "defaultValue": "https://static.oracle.com/cdn/fnd/gallery/2307.0.2/images/illust-welcome-banner-bg-01.png"
+    },
+    "illustrationForeground": {
+      "type": "any",
+      "defaultValue": "https://static.oracle.com/cdn/fnd/gallery/2307.0.2/images/illust-welcome-banner-fg-01.png"
+    },
+    "specificADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "data": "{{ $variables.specificationArray }}",
+        "keyAttributes": "value",
+        "textFilterAttributes": [
+          "value"
+        ]
+      }
+    },
+    "specificationArray": {
+      "type": "object[]",
+      "defaultValue": "[[ $functions.specificationArray() ]]"
+    }
+
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getGetCustomerDetailsResponse": {
+      "endpoint": "getGetCustomerDetails",
+      "service": "TimeRite_Ords_Service",
+      "path": "response"
+    },
+    "getGetCustomerDetailsResponse": {
+      "items": [
+        {
+          "contract_number": "string",
+          "crew_day": "any",
+          "crew_end_week": "string",
+          "crew_measure": "string",
+          "crew_name": "string",
+          "crew_start_week": "string",
+          "crewsetup_id": "number",
+          "customer_name": "string",
+          "day": "any",
+          "in_time": "any",
+          "out_time": "any",
+          "project_number": "string"
+        }
+      ]
+    }
+  },
+  "eventListeners": {
+    "selectValueItem": {
+      "chains": [
+        {
+          "chain": "crewNameValueChangeActionChain",
+          "parameters": {
+            "key": "{{$event.detail.value.key}}",
+            "data": "{{$event.detail.value.data}}",
+            "metadata": "{{$event.detail.value.metadata}}"
+          }
+        }
+      ]
+    }
+  },
+  "imports": {
+    "components": {
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-select-single": {
+        "path": "ojs/ojselectsingle"
+      },
+      "oj-sp-welcome-page": {
+        "path": "oj-sp/welcome-page/loader"
+      }
+   }
+  }
+}

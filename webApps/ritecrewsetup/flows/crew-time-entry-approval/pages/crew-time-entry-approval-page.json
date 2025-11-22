@@ -1,0 +1,1027 @@
+{
+  "title": "CrewRite Entry",
+  "description": "",
+  "variables": {
+    "AddRowData": {
+      "type": "timeSheetTblType"
+    },
+    "backgroundColor": {
+      "type": "string",
+      "defaultValue": "dark-ocean"
+    },
+    "copyweek": {
+      "type": "string"
+    },
+    "getCrewRiteLookupDetailsListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "CrewRite_ORDS/getCrewRite_LookupDetails",
+        "keyAttributes": "lookup_code",
+        "itemsPath": "items",
+        "responseType": "getCrewRiteLookupDetailsResponse",
+        "uriParameters": {
+          "p_lookup_type": "CrewRite_otType"
+        },
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "lookup_code"
+          ]
+        }
+      }
+    },
+    "illustrationBackground": {
+      "type": "string",
+      "defaultValue": "https://static.oracle.com/cdn/fnd/gallery/2307.0.2/images/illust-welcome-banner-bg-01.png"
+    },
+    "illustrationForeground": {
+      "type": "string",
+      "defaultValue": "https://static.oracle.com/cdn/fnd/gallery/2307.0.2/images/illust-welcome-banner-fg-01.png"
+    },
+    "imageStretch": {
+      "type": "string",
+      "defaultValue": "none"
+    },
+    "isLogDetails": {
+      "type": "boolean",
+      "defaultValue": false
+    },
+    "mobileImage": {
+      "type": "string",
+      "defaultValue": "on"
+    },
+    "AddTimeSheetADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "itemType": "timeSheetTblType",
+        "keyAttributes": "crew_setup_lines_rownum"
+      }
+    },
+    "columnOptions": {
+      "type": "object[]"
+    },
+    "Columns": {
+      "type": "object[]",
+      "defaultValue": "[[ $functions.getColumns($variables.searchobj.measure,$variables.isAdd) ]]"
+    },
+    "ContractLovSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "TimeRite_Ords_Service/getGetCustomerDetails",
+        "keyAttributes": "contract_number",
+        "itemsPath": "items",
+        "responseType": "ContractLovType",
+        "uriParameters": {
+          "CREW_NAME": "{{ $variables.searchobj.timecrew }}",
+          "CONTRACT_NUMBER": "{{ \"\" }}",
+          "CUSTOMER_NAME": "{{ \"\" }}",
+          "PROJECT_NUMBER": "{{ \"\" }}",
+          "Search_Date": "{{ \"\" }}"
+        },
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "contract_number"
+          ]
+        }
+      }
+    },
+    "CrewNameLOVSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "TimeRite_Ords_Service/getGetCustomerDetails",
+        "keyAttributes": "crew_name",
+        "itemsPath": "items",
+        "responseType": "CrewNameLOVType",
+        "uriParameters": {
+          "CONTRACT_NUMBER": "{{ \"\" }}",
+          "CREW_NAME": "{{ \"\" }}",
+          "CUSTOMER_NAME": "{{ \"\" }}",
+          "PROJECT_NUMBER": "{{ \"\" }}",
+          "Search_Date": "{{ \"\" }}"
+        },
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "crew_name"
+          ]
+        }
+      }
+    },
+    "dialoguelabel": {
+      "type": "string"
+    },
+    "editRow": {
+      "type": {
+        "rowKey": "number"
+      }
+    },
+    "EditType": {
+      "type": "string"
+    },
+    "enableOtRow": {
+      "type": {
+        "fri_in_time": "string",
+        "fri_out_time": "string",
+        "fri_total_hours": "number",
+        "mon_in_time": "string",
+        "mon_out_time": "string",
+        "mon_total_hours": "number",
+        "sat_in_time": "string",
+        "sat_out_time": "string",
+        "sat_total_hours": "number",
+        "sun_in_time": "string",
+        "sun_out_time": "string",
+        "sun_total_hours": "number",
+        "thu_in_time": "string",
+        "thu_out_time": "string",
+        "thu_total_hours": "number",
+        "tue_in_time": "string",
+        "tue_out_time": "string",
+        "tue_total_hours": "number",
+        "wed_in_time": "string",
+        "wed_out_time": "string",
+        "wed_total_hours": "number",
+        "ot_type": "any"
+      },
+      "defaultValue": {
+        "fri_in_time": "00 : 00",
+        "mon_in_time": "00 : 00",
+        "mon_out_time": "00 : 00",
+        "sat_in_time": "00 : 00",
+        "sat_out_time": "00 : 00",
+        "sun_in_time": "00 : 00",
+        "sun_out_time": "00 : 00",
+        "thu_in_time": "00 : 00",
+        "thu_out_time": "00 : 00",
+        "tue_in_time": "00 : 00",
+        "tue_out_time": "00 : 00",
+        "wed_in_time": "00 : 00",
+        "wed_out_time": "00 : 00",
+        "ot_type": " ",
+        "fri_out_time": "00 : 00"
+      }
+    },
+    "FilteredData": {
+      "type": "object[]"
+    },
+    "isAdd": {
+      "type": "boolean",
+      "defaultValue": false
+    },
+    "IsApprove": {
+      "type": "boolean",
+      "defaultValue": false
+    },
+    "isPayRollLock": {
+      "type": "boolean",
+      "defaultValue": false
+    },
+    "maxweekid": {
+      "type": "number"
+    },
+    "menuValue": {
+      "type": "string[]",
+      "defaultValue": "[[ $variables.Columns.map(op=>op.field) ]]",
+      "onValueChanged": {
+        "chains": [
+          {
+            "parameters": {
+              "event": "{{ $event }}"
+            },
+            "chainId": "updateTblColumnsAction"
+          }
+        ]
+      }
+    },
+    "MyDay": {
+      "type": "string",
+      "defaultValue": "[[ $variables.WeekObj.mon ? \"mon_total_hours\" :$variables.WeekObj.tue ? \"tue_total_hours\" :$variables.WeekObj.wed ? \"wed_total_hours\" :$variables.WeekObj.thu ? \"thu_total_hours\" :$variables.WeekObj.fri ? \"fri_total_hours\" :$variables.WeekObj.sat ? \"sat_total_hours\" :$variables.WeekObj.sun ? \"sun_total_hours\" :\"total_hours\" ]]"
+    },
+    "otTypeSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_EnableOt",
+        "responseType": "getall_EnableOt",
+        "itemsPath": "items",
+        "keyAttributes": "otLabel"
+      }
+    },
+    "PayrolLock": {
+      "type": "PayrollLockUnlock"
+    },
+    "ProjectsLOVSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "TimeRite_Ords_Service/getGetCustomerDetails",
+        "keyAttributes": "project_number",
+        "itemsPath": "items",
+        "responseType": "ProjectsLOVType",
+        "uriParameters": {
+          "CUSTOMER_NAME": "{{ $variables.searchobj.customer }}",
+          "CREW_NAME": "{{ $variables.searchobj.timecrew }}",
+          "CONTRACT_NUMBER": "{{ \"\" }}",
+          "PROJECT_NUMBER": "{{ \"\" }}",
+          "Search_Date": "{{ \"\" }}"
+        },
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "project_number"
+          ]
+        }
+      }
+    },
+    "ReprocessColumns": {
+      "defaultValue": "[[ $functions.getreprocessColumns($variables.searchobj.measure,$variables.isLogDetails) ]]",
+      "type": "object[]"
+    },
+    "reprocessRowData": {
+      "type": "searchTimeEntryTblType"
+    },
+    "ReprocesstblADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "itemType": "searchTimeEntryTblType",
+        "keyAttributes": "time_entry_id"
+      }
+    },
+    "rowToEdit": {
+      "type": {
+        "rowKey": "number"
+      }
+    },
+    "searchobj": {
+      "type": {
+        "contract": "string",
+        "crewdate": "string",
+        "crewSetup_id": "number",
+        "customer": "string",
+        "date": "string",
+        "measure": "string",
+        "dateRange": "string",
+        "project": "string",
+        "specific": "string",
+        "timecrew": "string"
+      },
+      "defaultValue": {
+        "specific": "WEEK"
+      }
+    },
+    "SearchRowdata": {
+      "type": "searchTimeEntryTblType"
+    },
+    "SearchTimeSheetADP": {
+      "defaultValue": {
+        "itemType": "searchTimeEntryTblType",
+        "keyAttributes": "time_entry_id"
+      },
+      "type": "vb/ArrayDataProvider2"
+    },
+    "selectedFlag": {
+      "type": "string"
+    },
+    "SpecifArray": {
+      "type": "object[]",
+      "defaultValue": [
+        {
+          "value": "DAY"
+        },
+        {
+          "value": "WEEK"
+        }
+      ]
+    },
+    "specificADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "data": "{{ $variables.SpecifArray }}",
+        "keyAttributes": "value"
+      }
+    },
+    "SuccessVar": {
+      "type": "number",
+      "defaultValue": 0
+    },
+    "time_week_id": {
+      "type": "number",
+      "persisted": "session"
+    },
+    "tRTimeTypesListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "TimeRite_Ords_Service/TRTimeTypes",
+        "keyAttributes": "time_type",
+        "itemsPath": "items",
+        "responseType": "tRTimeTypesResponse",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "time_type"
+          ]
+        }
+      }
+    },
+    "updateTimeSheet": {
+      "type": "updateObj",
+      "defaultValue": {
+        "last_updated_date": "[[ $functions.getsysdate() ]]",
+        "last_updated_by": "[[ $application.user.email ]]"
+      }
+    },
+    "WeekObj": {
+      "type": {
+        "sun": "boolean",
+        "mon": "boolean",
+        "tue": "boolean",
+        "wed": "boolean",
+        "thu": "boolean",
+        "fri": "boolean",
+        "sat": "boolean"
+      },
+      "defaultValue": {
+        "mon": false,
+        "sun": false,
+        "tue": false,
+        "wed": false,
+        "thu": false,
+        "fri": false,
+        "sat": false
+      }
+    }
+
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.ContractLovType": {
+      "endpoint": "getGetCustomerDetails",
+      "service": "TimeRite_Ords_Service",
+      "path": "response"
+    },
+    "@decorators.CrewNameLOVType": {
+      "endpoint": "getGetCustomerDetails",
+      "service": "TimeRite_Ords_Service",
+      "path": "response"
+    },
+    "@decorators.getall_EnableOt": {
+      "endpoint": "getall_EnableOt",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getCrewRiteLookupDetailsResponse": {
+      "endpoint": "getCrewRite_LookupDetails",
+      "service": "CrewRite_ORDS",
+      "path": "response"
+    },
+    "@decorators.PayrollLockUnlock": {
+      "endpoint": "PayrollLockUnlock",
+      "service": "TimeRite_Ords_Service",
+      "path": "request"
+    },
+    "@decorators.ProjectsLOVType": {
+      "endpoint": "getGetCustomerDetails",
+      "service": "TimeRite_Ords_Service",
+      "path": "response"
+    },
+    "@decorators.searchTimeEntryTblType": {
+      "endpoint": "getSearchTimeEntryTbl",
+      "service": "TimeRite_Ords_Service",
+      "path": "response-_-items[0]"
+    },
+    "@decorators.timeSheetTblType": {
+      "endpoint": "getGetTimeSheetTbl",
+      "service": "TimeRite_Ords_Service",
+      "path": "response-_-items[0]"
+    },
+    "@decorators.tRTimeTypesResponse": {
+      "endpoint": "TRTimeTypes",
+      "service": "TimeRite_Ords_Service",
+      "path": "response"
+    },
+    "@decorators.updateObj": {
+      "endpoint": "UpdatetimeSheetTime",
+      "service": "TimeRite_Ords_Service",
+      "path": "request"
+    },
+    "ContractLovType": {
+      "items": [
+        {
+          "contract_number": "string"
+        }
+      ]
+    },
+    "CrewNameLOVType": {
+      "items": [
+        {
+          "crew_measure": "string",
+          "crew_name": "string",
+          "crewsetup_id": "number",
+          "customer_name": "string"
+        }
+      ]
+    },
+    "getall_EnableOt": {
+      "items": [
+        {
+          "id": "number",
+          "otLabel": "string",
+          "otValue": "string"
+        }
+      ]
+    },
+    "getCrewRiteLookupDetailsResponse": {
+      "items": [
+        {
+          "lookup_code": "string",
+          "lookup_code_id": "number"
+        }
+      ]
+    },
+    "PayrollLockUnlock": {
+      "crew_date": "string",
+      "crew_setup_id": "string",
+      "crew_week": "string",
+      "lock_status": "string"
+    },
+    "ProjectsLOVType": {
+      "items": [
+        {
+          "project_number": "string"
+        }
+      ]
+    },
+    "searchTimeEntryTblType": {
+      "assignment_number": "string",
+      "bill_rate": "any",
+      "bonus_amount": "string",
+      "comments": "any",
+      "contract_number": "string",
+      "craft_job_override": "string",
+      "crew_name": "string",
+      "crew_week": "string",
+      "crewsetup_id": "number",
+      "crewsetup_line_id": "number",
+      "customer_name": "string",
+      "equipment_category": "any",
+      "equipment_rate": "any",
+      "ext_time_diff_flag": "string",
+      "fri_in_time": "string",
+      "fri_out_time": "string",
+      "fri_total_hours": "string",
+      "installed_qty": "number",
+      "mon_in_time": "string",
+      "mon_out_time": "string",
+      "mon_total_hours": "string",
+      "ot_rate": "any",
+      "pay_rate": "any",
+      "per_diem_amount": "string",
+      "person_id": "string",
+      "project_name": "string",
+      "project_number": "string",
+      "resource_name": "string",
+      "resource_role": "string",
+      "resource_type": "string",
+      "sat_in_time": "string",
+      "sat_out_time": "string",
+      "sat_total_hours": "string",
+      "secondary_timekeeper_id": "string",
+      "status": "string",
+      "sun_in_time": "string",
+      "sun_out_time": "string",
+      "sun_total_hours": "string",
+      "supervisor_id": "string",
+      "task_name": "string",
+      "thu_in_time": "string",
+      "thu_out_time": "string",
+      "thu_total_hours": "string",
+      "time_entry_id": "number",
+      "time_keeper_id": "string",
+      "time_type": "string",
+      "timeentry_week_id": "number",
+      "timesheet_week_id": "number",
+      "total_hours": "number",
+      "tue_in_time": "string",
+      "tue_out_time": "string",
+      "tue_total_hours": "string",
+      "wed_in_time": "string",
+      "wed_out_time": "string",
+      "wed_total_hours": "string",
+      "crew_date": "any"
+
+    },
+    "specifiType": {
+      "value": "string"
+    },
+    "timeSheetTblType": {
+      "active_flag": "string",
+      "assignment_number": "string",
+      "bill_rate": "string",
+      "bonus_amount": "string",
+      "bonus_flag": "string",
+      "bonus_quantity": "string",
+      "bonus_rate": "string",
+      "contract_id": "number",
+      "craft_job_override": "string",
+      "crew_setup_lines_rownum": "number",
+      "crew_week": "any",
+      "crewsetup_id": "number",
+      "crewsetup_line_id": "number",
+      "customer_id": "number",
+      "end_date": "string",
+      "equipment_category": "any",
+      "equipment_rate": "any",
+      "fri_in_time": "string",
+      "fri_out_time": "string",
+      "fri_total_hours": "number",
+      "hours_validation": "string",
+      "installed_qty": "number",
+      "mon_in_time": "string",
+      "mon_out_time": "string",
+      "mon_total_hours": "number",
+      "ot_rate": "string",
+      "pay_rate": "string",
+      "per_diem_amount": "string",
+      "per_diem_rate": "string",
+      "perdiem_flag": "string",
+      "perdiem_quantity": "string",
+      "po": "any",
+      "po_line": "any",
+      "primary_timekeeper_id": "number",
+      "project_id": "number",
+      "project_name": "string",
+      "project_number": "string",
+      "resource_location": "string",
+      "resource_name": "string",
+      "resource_number": "string",
+      "resource_role": "string",
+      "resource_type": "string",
+      "sat_in_time": "string",
+      "sat_out_time": "string",
+      "sat_total_hours": "number",
+      "secondary_timekeeper_id": "number",
+      "start_date": "string",
+      "sun_in_time": "string",
+      "sun_out_time": "string",
+      "sun_total_hours": "number",
+      "supervisor": "string",
+      "task_id": "number",
+      "task_name": "string",
+      "thu_in_time": "string",
+      "thu_out_time": "string",
+      "thu_total_hours": "number",
+      "time_type": "string",
+      "total_hours": "number",
+      "tue_in_time": "string",
+      "tue_out_time": "string",
+      "tue_total_hours": "number",
+      "wed_in_time": "string",
+      "wed_out_time": "string",
+      "wed_total_hours": "number",
+      "week_end_date": "any",
+      "week_start_date": "any",
+      "comments": "string",
+      "totalhours": "number",
+      "isRowEdited": "boolean",
+      "crew_day": "any",
+      "day": "any",
+      "iscopy": "string",
+      "rowid": "number"
+
+    },
+    "tRTimeTypesResponse": {
+      "items": [
+        {
+          "time_type": "string"
+        }
+      ]
+    },
+    "updateObj": {
+      "comments": "string",
+      "crewsetup_id": "number",
+      "crewsetup_line_id": "string",
+      "fri_in_time": "string",
+      "fri_out_time": "string",
+      "last_updated_by": "string",
+      "last_updated_date": "string",
+      "mon_in_time": "string",
+      "mon_out_time": "string",
+      "sat_in_time": "string",
+      "sat_out_time": "string",
+      "sun_in_time": "string",
+      "sun_out_time": "string",
+      "thu_in_time": "string",
+      "thu_out_time": "string",
+      "timesheet_week_id": "number",
+      "tue_in_time": "string",
+      "tue_out_time": "string",
+      "wed_in_time": "string",
+      "wed_out_time": "string"
+    }
+
+  },
+  "eventListeners": {
+    "btnSaveDlgSaveAction": {
+      "chains": [
+        {
+          "chain": "BtnSaveDlgEnableOt"
+        }
+      ]
+    },
+    "buttonAction": {
+      "chains": [
+        {
+          "chain": "TR_resetBtnAction"
+        }
+      ]
+    },
+    "buttonAction10": {
+      "chains": [
+        {
+          "chain": "TR_SubmitBtnAction_New"
+        }
+      ]
+    },
+    "buttonAction11": {
+      "chains": [
+        {
+          "chain": "TR_SearchBtnAction_New"
+        }
+      ]
+    },
+    "buttonAction12": {
+      "chains": [
+        {
+          "chain": "TR_RejectBtnAction_New"
+        }
+      ]
+    },
+    "buttonAction13": {
+      "chains": [
+        {
+          "chain": "CloseTimeDlgAction"
+        }
+      ]
+    },
+    "buttonAction14": {
+      "chains": [
+        {
+          "chain": "ReprocessBtnAction"
+        }
+      ]
+    },
+    "buttonAction15": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain"
+        }
+      ]
+    },
+    "buttonAction16": {
+      "chains": [
+        {
+          "chain": "CopyTimesheetAction"
+        }
+      ]
+    },
+    "buttonAction17": {
+      "chains": [
+        {
+          "chain": "CancelCopyBtnAction"
+        }
+      ]
+    },
+    "buttonAction18": {
+      "chains": [
+        {
+          "chain": "CopyDlgDataAction"
+        }
+      ]
+    },
+    "buttonAction19": {
+      "chains": [
+        {
+          "chain": "ReprocessSubmitBtnAction_New"
+        }
+      ]
+    },
+    "buttonAction2": {
+      "chains": [
+        {
+          "chain": "TR_AddBtnAction_New"
+        }
+      ]
+    },
+    "buttonAction3": {
+      "chains": [
+        {
+          "chain": "PayrollLockBtnAction"
+        }
+      ]
+    },
+    "buttonAction4": {
+      "chains": [
+        {
+          "chain": "TR_searchUpdateAction_New"
+        }
+      ]
+    },
+    "buttonAction5": {
+      "chains": [
+        {
+          "chain": "PayrolUnlockBtnAction"
+        }
+      ]
+    },
+    "buttonAction6": {
+      "chains": [
+        {
+          "chain": "updateAllBtnAction"
+        }
+      ]
+    },
+    "buttonAction7": {
+      "chains": [
+        {
+          "chain": "TR_SubmitBtnAction"
+        }
+      ]
+    },
+    "buttonAction8": {
+      "chains": [
+        {
+          "chain": "TR_updateBtnAction_New"
+        }
+      ]
+    },
+    "buttonAction9": {
+      "chains": [
+        {
+          "chain": "CopyBtnAddAction"
+        }
+      ]
+    },
+    "buttonClick": {
+      "chains": [
+        {
+          "chain": "TR_ApproveBtnAction_New"
+        }
+      ]
+    },
+    "dateRangeValueItem": {
+      "chains": [
+        {
+          "chain": "WeekvalueChangeAction",
+          "parameters": {
+            "key": "{{$event.detail.value.key}}",
+            "data": "{{$event.detail.value.data}}",
+            "metadata": "{{$event.detail.value.metadata}}"
+          }
+        }
+      ]
+    },
+    "enableOtAction": {
+      "chains": [
+        {
+          "chain": "BtnEnableOt"
+        }
+      ]
+    },
+    "enableOtBtnCancelAction": {
+      "chains": [
+        {
+          "chain": "BntCancelDlgEnableOt"
+        }
+      ]
+    },
+    "iconClick": {
+      "chains": [
+        {
+          "chain": "SearchEditClickAction",
+          "parameters": {
+            "key": "{{ $current.key }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "iconClick2": {
+      "chains": [
+        {
+          "chain": "AddEditClickAction",
+          "parameters": {
+            "key": "{{ $current.key }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "iconClick3": {
+      "chains": [
+        {
+          "chain": "CopyBtnAction",
+          "parameters": {
+            "key": "{{ $current.key }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "iconClick4": {
+      "chains": [
+        {
+          "chain": "LoggerFetchBtnAction",
+          "parameters": {
+            "key": "{{ $current.key }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "iconClick5": {
+      "chains": [
+        {
+          "chain": "ReprocessEditIconClickAction",
+          "parameters": {
+            "key": "{{ $current.key }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "inputDateValue": {
+      "chains": [
+        {
+          "chain": "TR_DateValueChangeChain",
+          "parameters": {
+            "value": "{{ $event.detail.value }}"
+          }
+        }
+      ]
+    },
+    "selectValueItem": {
+      "chains": [
+        {
+          "chain": "TR_CrewNamevalueChangeAction",
+          "parameters": {
+            "key": "{{$event.detail.value.key}}",
+            "data": "{{$event.detail.value.data}}",
+            "metadata": "{{$event.detail.value.metadata}}"
+          }
+        }
+      ]
+    },
+    "spanClick": {
+      "chains": [
+        {
+          "chainId": "SelectAllColumns"
+        }
+      ]
+    },
+    "specificationValueItem": {
+      "chains": [
+        {
+          "chain": "SelectValueItemChangeChain",
+          "parameters": {
+            "key": "{{$event.detail.value.key}}",
+            "data": "{{$event.detail.value.data}}",
+            "metadata": "{{$event.detail.value.metadata}}"
+          }
+        }
+      ]
+    },
+    "tableBeforeRowEdit": {
+      "chains": [
+        {
+          "chain": "reprocessADPBeforeRowEdit",
+          "parameters": {
+            "rowKey": "{{$event.detail.rowContext.status.rowKey}}",
+            "rowIndex": "{{$event.detail.rowContext.status.rowIndex}}",
+            "rowData": "{{$event.detail.rowContext.componentElement.getDataForVisibleRow($event.detail.rowContext.status.rowIndex).data}}"
+          }
+        }
+      ]
+    },
+    "tableBeforeRowEditEnd": {
+      "chains": [
+        {
+          "chain": "reprocessBeforeRowEditEnd",
+          "parameters": {
+            "cancelEdit": "{{$event.detail.cancelEdit}}",
+            "rowKey": "{{$event.detail.rowContext.status.rowKey}}",
+            "rowIndex": "{{$event.detail.rowContext.status.rowIndex}}",
+            "rowData": "{{$event.detail.rowContext.componentElement.getDataForVisibleRow($event.detail.rowContext.status.rowIndex).data}}"
+          }
+        }
+      ]
+    },
+    "tableFirstSelectedRow": {
+      "chains": [
+        {
+          "chain": "TR_TableFirstSelectedRowChangeChain",
+          "parameters": {
+            "rowKey": "{{$event.detail.value.key}}",
+            "rowData": "{{$event.detail.value.data}}"
+          }
+        }
+      ]
+    },
+    "tableSelected": {
+      "chains": [
+        {
+          "chainId": "TR_MultRowColumnsAction",
+          "parameters": {
+            "keys": "{{ $event.detail.value.row.values ? Array.from($event.detail.value.row.values()) : [] }}",
+            "selected": "[[ $event.detail.value ]]"
+          }
+        }
+      ]
+    },
+    "tableSelected2": {
+      "chains": [
+        {
+          "chain": "TR_MultRowColumnsAction_New",
+          "parameters": {
+            "event": "{{$event}}",
+            "previousValue": "{{$event.detail.previousValue}}",
+            "value": "{{$event.detail.value}}",
+            "updatedFrom": "{{$event.detail.updatedFrom}}",
+            "keys": "{{ $event.detail.value.row.values ? Array.from($event.detail.value.row.values()) : [] }}",
+            "selected": "{{ $event.detail.value }}"
+          }
+        }
+      ]
+    },
+    "toggleDrawer": {
+      "chains": [
+        {
+          "chain": "application:toggleDrawerHandler"
+        }
+      ]
+    }
+
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-dialog": {
+        "path": "ojs/ojdialog"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-input-date": {
+        "path": "ojs/ojdatetimepicker"
+      },
+      "oj-input-number": {
+        "path": "ojs/ojinputnumber"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-label": {
+        "path": "ojs/ojlabel"
+      },
+      "oj-menu": {
+        "path": "ojs/ojmenu"
+      },
+      "oj-menu-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-menu-select-many": {
+        "path": "ojs/ojmenuselectmany"
+      },
+      "oj-option": {
+        "path": "ojs/ojoption"
+      },
+      "oj-select-single": {
+        "path": "ojs/ojselectsingle"
+      },
+      "oj-sp-welcome-page": {
+        "path": "oj-sp/welcome-page/loader"
+      },
+      "oj-table": {
+        "path": "ojs/ojtable"
+      },
+      "oj-text-area": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-toolbar": {
+        "path": "ojs/ojtoolbar"
+      },
+      "oj-validation-group": {
+        "path": "ojs/ojvalidationgroup"
+      }
+
+    },
+    "modules": {
+      "ojValidationBase": {
+        "path": "ojs/ojvalidation-base"
+      },
+      "ojValidationDateTime": {
+        "path": "ojs/ojvalidation-datetime"
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "root": "callFunctionValidateGroup",
+  "description": "",
+  "actions": {
+    "fireNotification": {
+      "module": "vb/action/builtin/fireNotificationEventAction",
+      "parameters": {
+        "target": "leaf",
+        "summary": "[[ $chain.results.callRestGetGetTimeSheetTbl.message.summary ]]",
+        "type": "error",
+        "displayMode": "persist"
+      }
+    },
+    "assignVariablesTimeSheetADP": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.TimeSheetADP": {
+          "source": {
+            "data": "{{ $chain.results.callRestGetGetTimeSheetTbl.body.items }}"
+          },
+          "reset": "none",
+          "auto": "always",
+          "mapping": {
+            "$target.data": {
+              "source": "$source.data",
+              "reset": "empty"
+            }
+          }
+        }
+      }
+    },
+    "callRestGetGetTimeSheetTbl": {
+      "module": "vb/action/builtin/restAction",
+      "parameters": {
+        "endpoint": "TimeRite_Ords_Service/getGetTimeSheetTbl",
+        "uriParams": {
+          "search_date": "{{ $page.variables.searchobj.dateRange ? $page.variables.searchobj.dateRange : \"\" }}",
+          "project_number": "{{ $page.variables.searchobj.project ? $page.variables.searchobj.project : \"\" }}",
+          "crew_name": "{{ $page.variables.searchobj.timecrew ? $page.variables.searchobj.timecrew : \"\" }}",
+          "customer_name": "{{ $page.variables.searchobj.customer ? $page.variables.searchobj.customer : \"\" }}",
+          "contract_number": "{{ $page.variables.searchobj.contract ? $page.variables.searchobj.contract : \"\" }}"
+        }
+      },
+      "outcomes": {
+        "success": "assignVariablesTimeSheetADP",
+        "failure": "fireNotification"
+      }
+    },
+    "if": {
+      "module": "vb/action/builtin/ifAction",
+      "parameters": {
+        "condition": "[[ $chain.results.callFunctionValidateGroup === 'valid' ]]"
+      },
+      "outcomes": {
+        "true": "resetVariablesTimeSheetADP"
+      }
+    },
+    "callFunctionValidateGroup": {
+      "module": "vb/action/builtin/callModuleFunctionAction",
+      "parameters": {
+        "module": "[[ $functions ]]",
+        "functionName": "validateGroup",
+        "params": [
+          "SearchValidationgroup"
+        ]
+      },
+      "outcomes": {
+        "success": "if"
+      }
+    },
+    "resetVariablesTimeSheetADP": {
+      "module": "vb/action/builtin/resetVariablesAction",
+      "parameters": {
+        "variables": [
+          "$page.variables.TimeSheetADP.data"
+        ]
+      },
+      "outcomes": {
+        "success": "callRestGetGetTimeSheetTbl"
+      }
+    }
+  }
+}

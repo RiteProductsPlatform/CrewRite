@@ -1,0 +1,54 @@
+{
+  "root": "callFunctionUpdatejson",
+  "description": "",
+  "actions": {
+    "callFunctionUpdatejson": {
+      "module": "vb/action/builtin/callModuleFunctionAction",
+      "parameters": {
+        "module": "[[ $functions ]]",
+        "functionName": "updatejson",
+        "params": [
+          "{{ $page.variables.TimeSheetADP.data }}"
+        ]
+      },
+      "outcomes": {
+        "success": "forEach"
+      }
+    },
+    "forEach": {
+      "module": "vb/action/builtin/forEachAction",
+      "parameters": {
+        "items": "{{ $chain.results.callFunctionUpdatejson }}",
+        "actionId": "assignVariablesUpdateTimeSheet"
+      },
+      "outcomes": {
+        "success": "callChainFetchTimeSheetData"
+      }
+    },
+    "assignVariablesUpdateTimeSheet": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.updateTimeSheet": {
+          "source": "{{ $chain.results.callFunctionUpdatejson[$current.index] }}",
+          "auto": "always"
+        }
+      },
+      "outcomes": {
+        "success": "callRestUpdatetimeSheetTime"
+      }
+    },
+    "callRestUpdatetimeSheetTime": {
+      "module": "vb/action/builtin/restAction",
+      "parameters": {
+        "endpoint": "TimeRite_Ords_Service/UpdatetimeSheetTime",
+        "body": "{{ $page.variables.updateTimeSheet }}"
+      }
+    },
+    "callChainFetchTimeSheetData": {
+      "module": "vb/action/builtin/callChainAction",
+      "parameters": {
+        "id": "FetchTimeSheetData"
+      }
+    }
+  }
+}

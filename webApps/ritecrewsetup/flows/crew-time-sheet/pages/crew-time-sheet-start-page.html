@@ -1,0 +1,18 @@
+<oj-sp-welcome-page id="oj-sp-wp1" illustration-background="[[ require.toUrl($page.variables.illustrationBackground) ]]"
+  illustration-foreground="[[ require.toUrl($page.variables.illustrationForeground) ]]"
+ display-options.responsive-padding="on"
+  page-title="Crew Time Sheet" background-color="dark-pebble">
+<div class="oj-panel" style="margin-top:-48px">
+  <oj-form-layout columns="5" max-columns="5" label-edge="top">
+    <oj-select-single label-hint="Crew Name" data="[[$variables.getGetCustomerDetailsListSDP]]" item-text="crew_name"
+      on-value-item-changed="[[$listeners.selectValueItem]]"></oj-select-single>
+    <oj-input-text label-hint="Customer" readonly="true" value="{{ $variables.headerObj.customer }}"></oj-input-text>
+    <oj-select-single label-hint="Specification" data="[[ $variables.specificADP ]]" item-text="value"></oj-select-single>
+    <oj-select-single label-hint="Week"></oj-select-single>    
+  </oj-form-layout> 
+</div>
+
+</oj-sp-welcome-page>
+
+
+
