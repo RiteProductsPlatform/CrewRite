@@ -1,0 +1,181 @@
+<oj-sp-welcome-page id="oj-sp-wp1" illustration-background="[[ require.toUrl($page.variables.illustrationBackground) ]]"
+  illustration-foreground="[[ require.toUrl($page.variables.illustrationForeground) ]]"
+  display-options.responsive-padding="on" page-title="Time Entry" background-color="dark-pebble">
+  <div class="oj-panel" style="margin-top:-48px">
+    <oj-form-layout max-columns="4" label-edge="top" columns="4">
+      <oj-select-single label-hint="Crew Name" value="{{ $variables.headerobj.crewname }}"
+        data="[[$variables.getGetCustomerDetailsListSDP]]" item-text="crew_name"
+        on-value-item-changed="[[$listeners.selectValueItem]]"></oj-select-single>
+
+      <oj-input-date label-hint="Crew Date" value="{{ $variables.headerobj.crewDate }}"></oj-input-date>
+
+      <div>
+        <oj-button label="Search" style="margin-top:20px" chroming="callToAction" class="oj-button-sm"
+          on-oj-action="[[$listeners.buttonAction]]">
+          <span class="oj-ux-ico-search" slot="startIcon"></span>
+        </oj-button>
+
+        <oj-button label="Reset" style="margin-top:20px" chroming="callToAction" class="oj-button-sm"
+          on-oj-action="[[$listeners.buttonAction2]]">
+          <span class="oj-ux-ico-reset-variable" slot="startIcon"></span>
+        </oj-button>
+      </div>
+
+
+    </oj-form-layout>
+    <oj-table scroll-policy="loadMoreOnScroll" data="[[ $variables.crewTimeTableAdp ]]" style="width:94vw"
+      columns-default.resizable="enabled"
+      columns='[{"headerText":"Resource Name","field":"resource_name","width":180,"frozenEdge":"all"},{"headerText":"Project Name","field":"project_name","width":150},{"headerText":"Task Name","field":"task_name","width":120},{"headerText":"Date","field":"input_date","template":"date","width":130},{"headerText":"Time Type","field":"time_type"},{"headerText":"Hours","field":"total_hours","template":"hours"},{"headerText":"Shift","field":"shift","template":"shift"},{"headerText":"Location","field":"location","template":"location"},{"headerText":"Work Package","field":"work_package","template":"work"},{"headerText":"Department","field":"department"},{"headerText":"Phase","field":"phase","template":"phase"},{"headerText":"Cost Category","field":"cost_category","template":"costCat"},{"headerText":"Craft Override","field":"craft_override","template":"craft"},{"headerText":"Installed Quantity","field":"installed_quantity","template":"qty"},{"headerText":"Milage","field":"millage","template":"milage"},{"headerText":"Amount","field":"amount","template":"amnt"},{"headerText":"Amount Type","field":"amount_type","template":"amntType"},{"headerText":"Comments","field":"comments","template":"comments"}]'
+      on-oj-before-row-edit="[[$listeners.tableBeforeRowEdit]]" edit-mode="rowEdit"
+      on-oj-before-row-edit-end="[[$listeners.tableBeforeRowEditEnd]]" selection-mode.row="multiple">
+
+
+      <template slot="date">
+        <oj-bind-if test='[[$current.mode=="navigation"]]'>
+          <oj-bind-text value="[[ $variables.headerobj.crewDate ]]"></oj-bind-text>
+        </oj-bind-if>
+        <oj-bind-if test='[[$current.mode=="edit"]]'>
+            <oj-input-text value="[[ $variables.headerobj.crewDate ]]" readonly="true"></oj-input-text>
+          </oj-bind-if>
+      </template>
+
+      <template slot="shift">
+        <oj-bind-if test='[[$current.mode=="navigation"]]'>
+           <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+        </oj-bind-if>
+          <oj-bind-if test='[[$current.mode=="edit"]]'>
+            <oj-select-single value="{{ $variables.timneEntryObj.shift }}" >
+            </oj-select-single>
+          </oj-bind-if>
+      </template>
+
+
+
+      <template slot="hours">
+        <oj-bind-if test='[[$current.mode=="navigation"]]'>
+          <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+        </oj-bind-if>
+        <oj-bind-if test='[[$current.mode=="edit"]]'>
+          <oj-input-text value="{{ $variables.timneEntryObj.total_hours }}">
+          </oj-input-text>
+        </oj-bind-if>
+      </template>
+
+      <template slot="location">
+        <oj-bind-if test='[[$current.mode=="navigation"]]'>
+          <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+        </oj-bind-if>
+        <oj-bind-if test='[[$current.mode=="edit"]]'>
+          <oj-input-text value="{{ $variables.timneEntryObj.location }}">
+          </oj-input-text>
+        </oj-bind-if>
+      </template>
+
+      <template slot="work">
+        <oj-bind-if test='[[$current.mode=="navigation"]]'>
+          <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+        </oj-bind-if>
+        <oj-bind-if test='[[$current.mode=="edit"]]'>
+          <oj-input-text value="{{ $variables.timneEntryObj.work_package }}">
+          </oj-input-text>
+        </oj-bind-if>
+      </template>
+
+      <template slot="phase">
+        <oj-bind-if test='[[$current.mode=="navigation"]]'>
+          <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+        </oj-bind-if>
+        <oj-bind-if test='[[$current.mode=="edit"]]'>
+          <oj-input-text value="{{ $variables.timneEntryObj.phase }}">
+          </oj-input-text>
+        </oj-bind-if>
+      </template>
+
+      <template slot="costCat">
+        <oj-bind-if test='[[$current.mode=="navigation"]]'>
+          <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+        </oj-bind-if>
+        <oj-bind-if test='[[$current.mode=="edit"]]'>
+          <oj-input-text value="{{ $variables.timneEntryObj.cost_category }}">
+          </oj-input-text>
+        </oj-bind-if>
+      </template>
+
+      <template slot="craft">
+        <oj-bind-if test='[[$current.mode=="navigation"]]'>
+          <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+        </oj-bind-if>
+        <oj-bind-if test='[[$current.mode=="edit"]]'>
+          <oj-input-text value="{{ $variables.timneEntryObj.craft_override }}">
+          </oj-input-text>
+        </oj-bind-if>
+      </template>
+
+      <template slot="qty">
+        <oj-bind-if test='[[$current.mode=="navigation"]]'>
+          <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+        </oj-bind-if>
+        <oj-bind-if test='[[$current.mode=="edit"]]'>
+          <oj-input-text value="{{ $variables.timneEntryObj.installed_quantity }}">
+          </oj-input-text>
+        </oj-bind-if>
+      </template>
+
+      <template slot="comments">
+        <oj-bind-if test='[[$current.mode=="navigation"]]'>
+          <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+        </oj-bind-if>
+        <oj-bind-if test='[[$current.mode=="edit"]]'>
+          <oj-input-text value="{{ $variables.timneEntryObj.comments }}">
+          </oj-input-text>
+        </oj-bind-if>
+      </template>
+
+
+      <template slot="milage">
+        <oj-bind-if test='[[$current.mode=="navigation"]]'>
+          <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+        </oj-bind-if>
+        <oj-bind-if test='[[$current.mode=="edit"]]'>
+          <oj-input-text value="{{ $variables.timneEntryObj.millage }}">
+          </oj-input-text>
+        </oj-bind-if>
+      </template>
+
+
+      <template slot="amnt">
+        <oj-bind-if test='[[$current.mode=="navigation"]]'>
+          <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+        </oj-bind-if>
+        <oj-bind-if test='[[$current.mode=="edit"]]'>
+          <oj-input-text value="{{ $variables.timneEntryObj.amount }}">
+          </oj-input-text>
+        </oj-bind-if>
+      </template>
+
+       <template slot="amntType">
+        <oj-bind-if test='[[$current.mode=="navigation"]]'>
+          <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+        </oj-bind-if>
+        <oj-bind-if test='[[$current.mode=="edit"]]'>
+          <oj-input-text value="{{ $variables.timneEntryObj.amount_type }}">
+          </oj-input-text>
+        </oj-bind-if>
+      </template>
+
+
+
+
+
+
+    </oj-table>
+
+
+
+
+
+
+
+
+  </div>
+</oj-sp-welcome-page>
