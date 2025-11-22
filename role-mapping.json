@@ -1,0 +1,36 @@
+{
+    "roleMapping": {
+        "idcsHostUrl": "https://idcs-7fbc55daef0342fd8c0a302c5afb14f9.identity.oraclecloud.com:443",
+        "roles": {
+            "EnduserRole": {
+                "base_configuration": {
+                    "users": [ ],
+                    "groups": [ ]
+                }
+            },
+            "AdminRole": {
+                "base_configuration": {
+                    "users": [ ],
+                    "groups": [
+                        {
+                            "id": "9ed7aa4f3ae74c2f9618f26aefdb45af",
+                            "displayName": "CloudGuardUsers"
+                        },
+                        {
+                            "id": "abfe47b7bcb3418681e83073be7f0bf5",
+                            "displayName": "IDCS_Administrators"
+                        },
+                        {
+                            "id": "e80e6173e5784b76bb17180c9e0428ef",
+                            "displayName": "OCI_Administrators"
+                        },
+                        {
+                            "id": "a717081fb0814886841d837db26db05f",
+                            "displayName": "VBCS-AR_Manger"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}
