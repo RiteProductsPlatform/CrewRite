@@ -1,0 +1,13 @@
+{
+  "root": "callComponentResourceRequestOpen",
+  "description": "",
+  "actions": {
+    "callComponentResourceRequestOpen": {
+      "module": "vb/action/builtin/callComponentMethodAction",
+      "parameters": {
+        "component": "{{ document.getElementById('resourceRequest') }}",
+        "method": "open"
+      }
+    }
+  }
+}

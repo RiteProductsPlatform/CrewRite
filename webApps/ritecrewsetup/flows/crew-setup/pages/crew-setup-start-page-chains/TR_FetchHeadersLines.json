@@ -1,0 +1,159 @@
+{
+  "root": "resetVariablesCrewSetupHeaderObj",
+  "description": "",
+  "actions": {
+    "fireNotification": {
+      "module": "vb/action/builtin/fireNotificationEventAction",
+      "parameters": {
+        "target": "leaf",
+        "summary": "Failed to fetch Headers",
+        "type": "error",
+        "displayMode": "transient"
+      }
+    },
+    "callRestGetGetCrewSetupHeader": {
+      "module": "vb/action/builtin/restAction",
+      "parameters": {
+        "endpoint": "TimeRite_Ords_Service/getGetCrewSetupHeader",
+        "uriParams": {
+          "CREW_NAME": "{{ $page.variables.searchCrew }}"
+        }
+      },
+      "outcomes": {
+        "success": "assignVariablesCrewSetupHeaderObj",
+        "failure": "fireNotification"
+      }
+    },
+    "assignVariablesCrewSetupHeaderObj": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.crewSetupHeaderObj": {
+          "source": "{{ $chain.results.callRestGetGetCrewSetupHeader.body.items[0] }}",
+          "auto": "always"
+        },
+        "$page.variables.IsSearch": {
+          "source": true
+        }
+      },
+      "outcomes": {
+        "success": "ifCrewSetupHeaderObj"
+      }
+    },
+    "callRestGetGetCrewSetUpLines2": {
+      "module": "vb/action/builtin/restAction",
+      "parameters": {
+        "endpoint": "TimeRite_Ords_Service/getGetCrewSetUpLines2",
+        "uriParams": {
+          "crewsetup_id": "{{ $page.variables.crewSetupHeaderObj.crewsetup_id }}",
+          "resource_id": "{{ $page.variables.searchresourceid ? $page.variables.searchresourceid : \"\" }}"
+        }
+      },
+      "outcomes": {
+        "success": "ifAssignEnabled",
+        "failure": "fireNotification3"
+      }
+    },
+    "fireNotification3": {
+      "module": "vb/action/builtin/fireNotificationEventAction",
+      "parameters": {
+        "target": "leaf",
+        "summary": "Failed to fetch Lines",
+        "type": "error",
+        "displayMode": "transient"
+      }
+    },
+    "assignVariablesCrewSetupLines": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.crewSetupLinesADP": {
+          "source": {
+            "data": "{{ $chain.results.callRestGetGetCrewSetUpLines2.body.items }}"
+          },
+          "reset": "none",
+          "auto": "always",
+          "mapping": {
+            "$target.data": {
+              "source": "$source.data",
+              "reset": "empty"
+            }
+          }
+        }
+      }
+    },
+    "ifCrewSetupHeaderObj": {
+      "module": "vb/action/builtin/ifAction",
+      "parameters": {
+        "condition": "[[ $page.variables.crewSetupHeaderObj.crewsetup_id ]]"
+      },
+      "outcomes": {
+        "true": "resetVariablesCrewSetupLines"
+      }
+    },
+    "resetVariablesCrewSetupLines": {
+      "module": "vb/action/builtin/resetVariablesAction",
+      "parameters": {
+        "variables": [
+          "$page.variables.crewSetupLinesADP.data"
+        ]
+      },
+      "outcomes": {
+        "success": "callRestGetGetCrewSetUpLines2"
+      }
+    },
+    "resetVariablesCrewSetupHeaderObj": {
+      "module": "vb/action/builtin/resetVariablesAction",
+      "parameters": {
+        "variables": [
+          "$page.variables.crewSetupHeaderObj"
+        ]
+      },
+      "outcomes": {
+        "success": "callRestGetGetCrewSetupHeader"
+      }
+    },
+    "ifAssignEnabled": {
+      "module": "vb/action/builtin/ifAction",
+      "parameters": {
+        "condition": "[[ $page.variables.AssignEnabled ]]"
+      },
+      "outcomes": {
+        "false": "assignVariablesCrewSetupLines",
+        "true": "assignVariablesCrewSetupLines2"
+      }
+    },
+    "assignVariables": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.linesObj": {
+          "source": "{{ $chain.results.callRestGetGetCrewSetUpLines2.body.items[0] }}",
+          "auto": "always"
+        }
+      },
+      "outcomes": {
+        "success": "callComponentResourceDialogOpen"
+      }
+    },
+    "callComponentResourceDialogOpen": {
+      "module": "vb/action/builtin/callComponentMethodAction",
+      "parameters": {
+        "component": "{{ document.getElementById('resourceDialog') }}",
+        "method": "open"
+      }
+    },
+    "assignVariablesCrewSetupLines2": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.crewSetupLinesADP": {
+          "source": {
+            "data": "{{ $chain.results.callRestGetGetCrewSetUpLines2.body.items }}"
+          },
+          "reset": "none",
+          "auto": "always"
+        }
+      },
+      "outcomes": {
+        "success": "assignVariables"
+      }
+    }
+  }
+}
