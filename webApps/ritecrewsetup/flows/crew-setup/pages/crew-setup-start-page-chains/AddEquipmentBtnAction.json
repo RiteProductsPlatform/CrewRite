@@ -1,0 +1,59 @@
+{
+  "root": "assignVariablesAddEquipObj",
+  "description": "",
+  "actions": {
+
+    "assignVariablesAddEquipObj": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.addEquipObj": {
+          "source": {
+            "fri_quantity": "{{ $page.variables.crewSetupHeaderObj.fri_quantity }}",
+            "mon_quantity": "{{ $page.variables.crewSetupHeaderObj.mon_quantity }}",
+            "sat_quantity": "{{ $page.variables.crewSetupHeaderObj.sat_quantity }}",
+            "sun_quantity": "{{ $page.variables.crewSetupHeaderObj.sun_quantity }}",
+            "thu_quantity": "{{ $page.variables.crewSetupHeaderObj.thu_quantity }}",
+            "tue_quantity": "{{ $page.variables.crewSetupHeaderObj.tue_quantity }}",
+            "wed_quantity": "{{ $page.variables.crewSetupHeaderObj.wed_quantity }}",
+            "project_number": "{{ $page.variables.crewSetupHeaderObj.project_number }}",
+            "project_name": "{{ $page.variables.crewSetupHeaderObj.project_name }}",
+            "project_id": "{{ $page.variables.crewSetupHeaderObj.project_id }}",
+            "crew_name": "{{ $page.variables.crewSetupHeaderObj.crew_name }}",
+            "crewsetup_id": "{{ $page.variables.crewSetupHeaderObj.crewsetup_id }}",
+            "customer_id": "{{ $page.variables.crewSetupHeaderObj.customer_id }}",
+            "contract_id": "{{ $page.variables.crewSetupHeaderObj.contract_id }}",
+            "end_date": "{{ $page.variables.crewSetupHeaderObj.end_date }}",
+            "po": "{{ $page.variables.crewSetupHeaderObj.po_number }}",
+            "start_date": "{{ $page.variables.crewSetupHeaderObj.start_date }}",
+            "fri_in_time": "{{ $page.variables.crewSetupHeaderObj.fri_in_time }}",
+            "fri_out_time": "{{ $page.variables.crewSetupHeaderObj.fri_out_time }}",
+            "mon_in_time": "{{ $page.variables.crewSetupHeaderObj.mon_in_time }}",
+            "mon_out_time": "{{ $page.variables.crewSetupHeaderObj.mon_out_time }}",
+            "sat_out_time": "{{ $page.variables.crewSetupHeaderObj.sat_out_time }}",
+            "sat_in_time": "{{ $page.variables.crewSetupHeaderObj.sat_in_time }}",
+            "sun_in_time": "{{ $page.variables.crewSetupHeaderObj.sun_in_time }}",
+            "sun_out_time": "{{ $page.variables.crewSetupHeaderObj.sun_out_time }}",
+            "thu_in_time": "{{ $page.variables.crewSetupHeaderObj.thu_in_time }}",
+            "thu_out_time": "{{ $page.variables.crewSetupHeaderObj.thu_out_time }}",
+            "tue_in_time": "{{ $page.variables.crewSetupHeaderObj.tue_in_time }}",
+            "tue_out_time": "{{ $page.variables.crewSetupHeaderObj.tue_out_time }}",
+            "wed_in_time": "{{ $page.variables.crewSetupHeaderObj.wed_in_time }}",
+            "wed_out_time": "{{ $page.variables.crewSetupHeaderObj.wed_out_time }}"
+          },
+          "reset": "none",
+          "auto": "always"
+        }
+      },
+      "outcomes": {
+        "success": "callComponentEquipmentDialogOpen"
+      }
+    },
+    "callComponentEquipmentDialogOpen": {
+      "module": "vb/action/builtin/callComponentMethodAction",
+      "parameters": {
+        "component": "{{ document.getElementById('EquipmentDialog') }}",
+        "method": "open"
+      }
+    }
+  }
+}

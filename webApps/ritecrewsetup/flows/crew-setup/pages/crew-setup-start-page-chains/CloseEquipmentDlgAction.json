@@ -1,0 +1,13 @@
+{
+  "root": "callComponentEquipmentDialogClose",
+  "description": "",
+  "actions": {
+    "callComponentEquipmentDialogClose": {
+      "module": "vb/action/builtin/callComponentMethodAction",
+      "parameters": {
+        "component": "{{ document.getElementById('EquipmentDialog') }}",
+        "method": "close"
+      }
+    }
+  }
+}

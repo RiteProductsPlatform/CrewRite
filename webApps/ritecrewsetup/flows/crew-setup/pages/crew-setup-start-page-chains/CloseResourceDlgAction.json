@@ -1,0 +1,13 @@
+{
+  "root": "callComponentResourceDialogClose",
+  "description": "",
+  "actions": {
+    "callComponentResourceDialogClose": {
+      "module": "vb/action/builtin/callComponentMethodAction",
+      "parameters": {
+        "component": "{{ document.getElementById('resourceDialog') }}",
+        "method": "close"
+      }
+    }
+  }
+}

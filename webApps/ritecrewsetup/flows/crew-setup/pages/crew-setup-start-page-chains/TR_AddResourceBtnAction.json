@@ -1,0 +1,141 @@
+{
+  "root": "resetVariablesResourcesArray",
+  "description": "",
+  "actions": {
+    "callComponentResourceDialogOpen": {
+      "module": "vb/action/builtin/callComponentMethodAction",
+      "parameters": {
+        "component": "{{ document.getElementById('resourceDialog') }}",
+        "method": "open"
+      },
+      "outcomes": {}
+    },
+    "assignVariablesLinesObj": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.linesObj": {
+          "source": {
+            "customer_id": "{{ $page.variables.crewSetupHeaderObj.customer_id }}",
+            "crewsetup_id": "{{ $page.variables.crewSetupHeaderObj.crewsetup_id }}",
+            "contract_id": "{{ $page.variables.crewSetupHeaderObj.contract_id }}",
+            "project_number": "{{ $page.variables.crewSetupHeaderObj.project_number ? $page.variables.crewSetupHeaderObj.project_number : \"\" }}",
+            "project_id": "{{ $page.variables.crewSetupHeaderObj.project_id ? $page.variables.crewSetupHeaderObj.project_id:\"\" }}",
+            "project_name": "{{ $page.variables.crewSetupHeaderObj.project_name }}",
+            "mon_in_time": "{{ $page.variables.crewSetupHeaderObj.mon_in_time }}",
+            "mon_out_time": "{{ $page.variables.crewSetupHeaderObj.mon_out_time }}",
+            "mon_quantity": "{{ $page.variables.crewSetupHeaderObj.mon_quantity }}",
+            "sat_in_time": "{{ $page.variables.crewSetupHeaderObj.sat_in_time }}",
+            "sat_out_time": "{{ $page.variables.crewSetupHeaderObj.sat_out_time }}",
+            "sat_quantity": "{{ $page.variables.crewSetupHeaderObj.sat_quantity }}",
+            "sun_in_time": "{{ $page.variables.crewSetupHeaderObj.sun_in_time }}",
+            "sun_out_time": "{{ $page.variables.crewSetupHeaderObj.sun_out_time }}",
+            "sun_quantity": "{{ $page.variables.crewSetupHeaderObj.sun_quantity }}",
+            "thu_in_time": "{{ $page.variables.crewSetupHeaderObj.thu_in_time }}",
+            "thu_out_time": "{{ $page.variables.crewSetupHeaderObj.thu_out_time }}",
+            "thu_quantity": "{{ $page.variables.crewSetupHeaderObj.thu_quantity }}",
+            "tue_in_time": "{{ $page.variables.crewSetupHeaderObj.tue_in_time }}",
+            "tue_out_time": "{{ $page.variables.crewSetupHeaderObj.tue_out_time }}",
+            "tue_quantity": "{{ $page.variables.crewSetupHeaderObj.tue_quantity }}",
+            "wed_in_time": "{{ $page.variables.crewSetupHeaderObj.wed_in_time }}",
+            "wed_out_time": "{{ $page.variables.crewSetupHeaderObj.wed_out_time }}",
+            "wed_quantity": "{{ $page.variables.crewSetupHeaderObj.wed_quantity }}",
+            "bonus_quantity": "{{ $chain.results.callRestGetCrewAdminDetails.body.items[0].bonus_hours }}",
+            "bonus_rate": "{{ $chain.results.callRestGetCrewAdminDetails.body.items[0].bonus_rate }}",
+            "perdiem_quantity": "{{ $chain.results.callRestGetCrewAdminDetails.body.items[0].per_dm_hours }}",
+            "per_diem_rate": "{{ $chain.results.callRestGetCrewAdminDetails.body.items[0].per_dm_rate }}",
+            "ot_threshold_limit": "{{ $chain.results.callRestCustDetails.body.items.length >0 ? $chain.results.callRestCustDetails.body.items[0].ot_threshold_limit : \"0\" }}"
+          },
+          "reset": "none",
+          "auto": "always"
+        },
+        "$page.variables.minEffeDate": {
+          "source": "{{ $chain.results.callFunctionEffectiveDate }}"
+        }
+      },
+      "outcomes": {
+        "success": "callRestGetResourcesDetails"
+      }
+    },
+    "callFunctionEffectiveDate": {
+      "module": "vb/action/builtin/callModuleFunctionAction",
+      "parameters": {
+        "module": "[[ $functions ]]",
+        "functionName": "effectiveDate",
+        "params": [
+          "{{ $page.variables.crewSetupHeaderObj.start_date }}"
+        ]
+      },
+      "outcomes": {
+        "success": "assignVariablesLinesObj"
+      }
+    },
+    "callRestGetResourcesDetails": {
+      "module": "vb/action/builtin/restAction",
+      "parameters": {
+        "endpoint": "TimeRite_Ords_Service/getResourcesDetails",
+        "uriParams": {
+          "project_id": "{{ $page.variables.crewSetupHeaderObj.crew_specific === \"PROJECT SPECIFIC\"? $page.variables.linesObj.project_id :\"\" }}"
+        }
+      },
+      "outcomes": {
+        "success": "callFunctionGetuniqueResource"
+      }
+    },
+    "resetVariablesResourcesArray": {
+      "module": "vb/action/builtin/resetVariablesAction",
+      "parameters": {
+        "variables": [
+          "$page.variables.ResourcesArray"
+        ]
+      },
+      "outcomes": {
+        "success": "callRestGetCrewAdminDetails"
+      }
+    },
+    "assignVariablesResourcesArray": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.ResourcesArray": {
+          "source": "{{ $chain.results.callFunctionGetuniqueResource }}"
+        }
+      },
+      "outcomes": {
+        "success": "callComponentResourceDialogOpen"
+      }
+    },
+    "callRestGetCrewAdminDetails": {
+      "module": "vb/action/builtin/restAction",
+      "parameters": {
+        "endpoint": "TimeRite_Ords_Service/getCrewAdminDetails"
+      },
+      "outcomes": {
+        "success": "callRestCustDetails"
+      }
+    },
+    "callRestCustDetails": {
+      "module": "vb/action/builtin/restAction",
+      "parameters": {
+        "endpoint": "TimeRite_Ords_Service/CustDetails",
+        "uriParams": {
+          "customer_number": "{{ $page.variables.crewSetupHeaderObj.customer_name }}"
+        }
+      },
+      "outcomes": {
+        "success": "callFunctionEffectiveDate"
+      }
+    },
+    "callFunctionGetuniqueResource": {
+      "module": "vb/action/builtin/callModuleFunctionAction",
+      "parameters": {
+        "module": "[[ $functions ]]",
+        "functionName": "getuniqueResource",
+        "params": [
+          "{{ $chain.results.callRestGetResourcesDetails.body.items }}"
+        ]
+      },
+      "outcomes": {
+        "success": "assignVariablesResourcesArray"
+      }
+    }
+  }
+}
