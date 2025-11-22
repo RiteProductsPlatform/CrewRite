@@ -1,0 +1,333 @@
+{
+  "title": "crew template configuration",
+  "description": "",
+  "variables": {
+    "illustrationBackground": {
+      "type": "string",
+      "defaultValue": "https://static.oracle.com/cdn/fnd/gallery/2307.0.2/images/illust-welcome-banner-bg-01.png "
+    },
+    "illustrationForeground": {
+      "type": "string",
+      "defaultValue": "https://static.oracle.com/cdn/fnd/gallery/2307.0.2/images/illust-welcome-banner-fg-01.png "
+    },
+    "imageStretch": {
+      "type": "string",
+      "defaultValue": "none"
+    },
+    "mappingADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "data": "{{ $variables.mappingsArray }}",
+        "itemType": "mappings",
+        "keyAttributes": "value"
+      }
+    },
+    "mappingsArray": {
+      "type": "object[]",
+      "defaultValue": [
+        {
+          "id": 1,
+          "value": "attribute_1",
+          "label": "attribute_1"
+        },
+        {
+          "id": 2,
+          "value": "attribute_2",
+          "label": "attribute_2"
+        },
+        {
+          "id": 3,
+          "value": "attribute_3",
+          "label": "attribute_3"
+        },
+        {
+          "id": 4,
+          "value": "attribute_4",
+          "label": "attribute_4"
+        },
+        {
+          "id": 5,
+          "value": "attribute_5",
+          "label": "attribute_5"
+        },
+        {
+          "id": 6,
+          "value": "attribute_6",
+          "label": "attribute_6"
+        },
+        {
+          "id": 7,
+          "value": "attribute_7",
+          "label": "attribute_7"
+        },
+        {
+          "id": 8,
+          "value": "attribute_8",
+          "label": "attribute_8"
+        },
+        {
+          "id": 9,
+          "value": "attribute_9",
+          "label": "attribute_9"
+        },
+        {
+          "id": 10,
+          "value": "attribute_10",
+          "label": "attribute_10"
+        },
+        {
+          "id": 11,
+          "value": "attributenumber_1",
+          "label": "attributenumber_1"
+        },
+        {
+          "id": 12,
+          "value": "attributenumber_2",
+          "label": "attributenumber_2"
+        },
+        {
+          "id": 13,
+          "value": "attributenumber_3",
+          "label": "attributenumber_3"
+        },
+        {
+          "id": 14,
+          "value": "attributenumber_4",
+          "label": "attributenumber_4"
+        },
+        {
+          "id": 15,
+          "value": "attributenumber_5",
+          "label": "attributenumber_5"
+        },
+        {
+          "id": 16,
+          "value": "attributenumber_6",
+          "label": "attributenumber_6"
+        },
+        {
+          "id": 17,
+          "value": "attributenumber_7",
+          "label": "attributenumber_7"
+        },
+        {
+          "id": 18,
+          "value": "attributenumber_8",
+          "label": "attributenumber_8"
+        },
+        {
+          "id": 19,
+          "value": "attributenumber_9",
+          "label": "attributenumber_9"
+        },
+        {
+          "id": 20,
+          "value": "attributenumber_10",
+          "label": "attributenumber_10"
+        },
+        {
+          "id": 21,
+          "value": "attributedate_1",
+          "label": "attributedate_1"
+        },
+        {
+          "id": 22,
+          "value": "attributedate_2",
+          "label": "attributedate_2"
+        },
+        {
+          "id": 23,
+          "value": "attributedate_3",
+          "label": "attributedate_3"
+        },
+        {
+          "id": 24,
+          "value": "attributedate_4",
+          "label": "attributedate_4"
+        },
+        {
+          "id": 25,
+          "value": "attributedate_5",
+          "label": "attributedate_5"
+        },
+        {
+          "id": 26,
+          "value": "attributedate_6",
+          "label": "attributedate_6"
+        },
+        {
+          "id": 27,
+          "value": "attributedate_7",
+          "label": "attributedate_7"
+        },
+        {
+          "id": 28,
+          "value": "attributedate_8",
+          "label": "attributedate_8"
+        },
+        {
+          "id": 29,
+          "value": "attributedate_9",
+          "label": "attributedate_9"
+        },
+        {
+          "id": 30,
+          "value": "attributedate_10",
+          "label": "attributedate_10"
+        }
+      ]
+    },
+    "mobileImage": {
+      "type": "string",
+      "defaultValue": "on"
+    },
+    "tempHeader": {
+      "type": "tempHeader"
+    },
+    "templateADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "itemType": "temConfig",
+        "keyAttributes": "id"
+      }
+    },
+    "templatesMap": {
+      "type": "temConfig"
+    },
+    "templatesMap_copy": {
+      "type": "temConfig"
+    }
+  },
+  "metadata": {},
+  "types": {
+    "mappings": {
+      "id": "number",
+      "label": "string",
+      "value": "string"
+    },
+    "temConfig": {
+      "fieldName": "string",
+      "id": "number",
+      "mappings": "string"
+    },
+    "tempHeader": {
+      "description": "string",
+      "tempName": "string"
+    }
+  },
+  "eventListeners": {
+    "buttonAction": {
+      "chains": [
+        {
+          "chain": "CreateBtnActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction2": {
+      "chains": [
+        {
+          "chain": "ClsoeBtnActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction3": {
+      "chains": [
+        {
+          "chain": "SaveButtonActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "iconClick": {
+      "chains": [
+        {
+          "chain": "PlusClickChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "key": "{{ $current.key }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "tableBeforeRowEdit": {
+      "chains": [
+        {
+          "chain": "TableBeforeRowEditChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "accept": "{{$event.detail.accept}}",
+            "rowContext": "{{$event.detail.rowContext}}",
+            "rowKey": "{{$event.detail.rowContext.status.rowKey}}",
+            "rowIndex": "{{$event.detail.rowContext.status.rowIndex}}",
+            "rowData": "{{$event.detail.rowContext.componentElement.getDataForVisibleRow($event.detail.rowContext.status.rowIndex).data}}"
+          }
+        }
+      ]
+    },
+    "tableBeforeRowEditEnd": {
+      "chains": [
+        {
+          "chain": "TableBeforeRowEditEndChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "accept": "{{$event.detail.accept}}",
+            "setUpdatedItem": "{{$event.detail.setUpdatedItem}}",
+            "rowContext": "{{$event.detail.rowContext}}",
+            "cancelEdit": "{{$event.detail.cancelEdit}}",
+            "rowKey": "{{$event.detail.rowContext.status.rowKey}}",
+            "rowIndex": "{{$event.detail.rowContext.status.rowIndex}}",
+            "rowData": "{{$event.detail.rowContext.componentElement.getDataForVisibleRow($event.detail.rowContext.status.rowIndex).data}}"
+          }
+        }
+      ]
+    },
+    "vbEnter": {
+      "chains": [
+        {
+          "chain": "PageVbEnterChain",
+          "parameters": {
+            "event": "{{$event}}"
+          }
+        }
+      ]
+    }
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-dialog": {
+        "path": "ojs/ojdialog"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-select-single": {
+        "path": "ojs/ojselectsingle"
+      },
+      "oj-sp-welcome-page": {
+        "path": "oj-sp/welcome-page/loader"
+      },
+      "oj-table": {
+        "path": "ojs/ojtable"
+      }
+   }
+  }
+}

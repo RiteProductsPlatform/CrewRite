@@ -1,0 +1,139 @@
+{
+  "root": "resetVariablesCrewSetupHeaderObj",
+  "description": "",
+  "actions": {
+    "fireNotification": {
+      "module": "vb/action/builtin/fireNotificationEventAction",
+      "parameters": {
+        "target": "leaf",
+        "summary": "Failed to fetch Headers",
+        "type": "error",
+        "displayMode": "transient"
+      }
+    },
+    "fireNotification3": {
+      "module": "vb/action/builtin/fireNotificationEventAction",
+      "parameters": {
+        "target": "leaf",
+        "summary": "Failed to fetch Lines",
+        "type": "error",
+        "displayMode": "transient"
+      }
+    },
+    "assignVariablesCrewSetupLines": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.crewSetupLines": {
+          "source": {
+            "data": "{{ $chain.results.callRestGetCrewTemplateLines.body.items }}"
+          },
+          "reset": "none",
+          "auto": "always",
+          "mapping": {
+            "$target.data": {
+              "source": "$source.data",
+              "reset": "empty"
+            }
+          }
+        }
+      },
+      "outcomes": {
+        "success": "assignVariablesIsEdit"
+      }
+    },
+    "resetVariablesCrewSetupHeaderObj": {
+      "module": "vb/action/builtin/resetVariablesAction",
+      "parameters": {
+        "variables": [
+          "$page.variables.crewSetupHeaderObj"
+        ]
+      },
+      "outcomes": {
+        "success": "callRestGetCrewTemplateHeader"
+      }
+    },
+    "ifAssignEnabled": {
+      "module": "vb/action/builtin/ifAction",
+      "parameters": {
+        "condition": "[[ $page.variables.AssignEnabled ]]"
+      },
+      "outcomes": {
+        "false": "assignVariablesCrewSetupLines",
+        "true": "assignVariablesCrewSetupLines2"
+      }
+    },
+    "assignVariablesCrewSetupLines2": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.crewSetupLines": {
+          "source": {
+            "data": "{{ $chain.results.callRestGetCrewTemplateLines.body.items }}"
+          },
+          "reset": "none",
+          "auto": "always"
+        }
+      },
+      "outcomes": {
+        "success": "assignVariablesIsEdit"
+      }
+    },
+    "callRestGetCrewTemplateHeader": {
+      "module": "vb/action/builtin/restAction",
+      "parameters": {
+        "endpoint": "TimeRite_Ords_Service/getCrewTemplateHeader",
+        "uriParams": {
+          "template_name": "{{ $page.variables.searchCrew }}"
+        }
+      },
+      "outcomes": {
+        "success": "assignVariablesIsSearch",
+        "failure": "fireNotification"
+      }
+    },
+    "assignVariablesIsSearch": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.IsSearch": {
+          "source": true
+        },
+        "$page.variables.crewTemplateHeader": {
+          "source": "{{ $chain.results.callRestGetCrewTemplateHeader.body.items[0] }}",
+          "auto": "always"
+        }
+      },
+      "outcomes": {
+        "success": "if"
+      }
+    },
+    "if": {
+      "module": "vb/action/builtin/ifAction",
+      "parameters": {
+        "condition": "true"
+      },
+      "outcomes": {
+        "true": "callRestGetCrewTemplateLines"
+      }
+    },
+    "callRestGetCrewTemplateLines": {
+      "module": "vb/action/builtin/restAction",
+      "parameters": {
+        "endpoint": "TimeRite_Ords_Service/getCrewTemplateLines",
+        "uriParams": {
+          "crew_template_id": "{{ $page.variables.crewTemplateHeader.crew_template_id }}"
+        }
+      },
+      "outcomes": {
+        "success": "ifAssignEnabled",
+        "failure": "fireNotification3"
+      }
+    },
+    "assignVariablesIsEdit": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.IsEdit": {
+          "source": true
+        }
+      }
+    }
+  }
+}

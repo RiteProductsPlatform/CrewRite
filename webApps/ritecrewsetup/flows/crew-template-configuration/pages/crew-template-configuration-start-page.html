@@ -1,0 +1,86 @@
+<oj-sp-welcome-page id="oj-sp-wp1" illustration-background="[[ require.toUrl($page.variables.illustrationBackground) ]]"
+  illustration-foreground="[[ require.toUrl($page.variables.illustrationForeground) ]]"
+  display-options.image-stretch="[[ $page.variables.imageStretch ]]"
+  display-options.mobile-image="[[ $page.variables.mobileImage ]]" display-options.responsive-padding="on"
+  page-title="Crew Template Configuration" background-color="dark-pebble">
+ 
+ 
+ 
+  <oj-dialog dialog-title="Template Configuration" id="oj-dialog-1044644296-1" style="width:50vw">
+    <div slot="body">
+      <div class="oj-flex">
+        <div class="oj-flex-item oj-sm-12 oj-md-12" style="margin-top:20px;">
+          <div style="font-size:20px;font-weight:bold;margin-bottom:10px;">Template Configuration</div>
+          <oj-form-layout label-edge="top" columns="2">
+            <oj-input-text label-hint="Template Name" value="{{ $variables.tempHeader.tempName }}"></oj-input-text>
+             <oj-input-text label-hint="Description" value="{{ $variables.tempHeader.description }}"></oj-input-text>
+          </oj-form-layout>
+        </div>
+      </div>
+       <div class="oj-flex">
+        <oj-table scroll-policy="loadMoreOnScroll" class="oj-flex-item oj-sm-12 oj-md-12"
+          data="[[ $variables.templateADP ]]" columns='[{"headerText":"SNO","field":"id"},
+          
+          {"headerText":"Field Name","field":"fieldName","template":"ftemp"},
+          {"headerText":"Mappings","field":"mappings","template":"maptemp"},
+          {"headerText":"Action","field":"","template":"act"}
+          ]' edit-mode="rowEdit"
+          on-oj-before-row-edit="[[$listeners.tableBeforeRowEdit]]"
+          on-oj-before-row-edit-end="[[$listeners.tableBeforeRowEditEnd]]">
+          <template slot="ftemp">
+            <oj-bind-if test='[[$current.mode=="navigation"]]'>
+              <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+            </oj-bind-if>
+            <oj-bind-if test='[[$current.mode=="edit"]]'>
+              <oj-input-text value="{{ $variables.templatesMap.fieldName }}"></oj-input-text>
+            </oj-bind-if>
+          </template>
+
+            <template slot="maptemp">
+            <oj-bind-if test='[[$current.mode=="navigation"]]'>
+              <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+            </oj-bind-if>
+            <oj-bind-if test='[[$current.mode=="edit"]]'>
+               <oj-select-single value="{{$variables.templatesMap.mappings}}" class="editable"
+                 data="[[ $variables.mappingADP ]]" item-text="value"></oj-select-single>
+            </oj-bind-if>
+          </template>
+
+            <template slot="act">
+              <div style="text-align:center;font-size:20px;vertical-align:center">
+                <span class="oj-ux-ico-plus-circle" on-click="[[$listeners.iconClick]]"></span>
+              </div>
+            </template>
+          
+          
+          </oj-table>
+
+
+
+
+        
+      </div>
+    </div>
+    <div slot="footer">
+      <oj-button chroming="callToAction" on-oj-action="[[$listeners.buttonAction3]]">Add</oj-button>
+      <oj-button on-oj-action="[[$listeners.buttonAction2]]" chroming="callToAction">Close</oj-button>
+    </div>
+  </oj-dialog>
+
+
+  
+
+  <div class="oj-flex" >
+    <div class="oj-flex-item oj-sm-12">     
+      <div style='text-align:right;margin:10px'>
+        <oj-button label="Create" chroming="callToAction" on-oj-action="[[$listeners.buttonAction]]"></oj-button>  
+      </div>    
+    </div>
+  </div>
+
+
+
+
+
+</oj-sp-welcome-page>
+
