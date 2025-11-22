@@ -1,0 +1,49 @@
+{
+    "items": [
+        {
+            "crewsetup_id": 368,
+            "resource_id": 300000194232310,
+            "resource_type": "EMPLOYEE",
+            "resource_number": "1",
+            "resource_name": "Mélanie Duval",
+            "resource_role": "Team Leader Service Desk",
+            "resource_location": "Paris"
+        },
+        {
+            "crewsetup_id": 368,
+            "resource_id": 300000047626100,
+            "resource_type": "EMPLOYEE",
+            "resource_number": "10",
+            "resource_name": "Mandy Steward",
+            "resource_role": "Data Steward Manager",
+            "resource_location": "Redwood City"
+        },
+        {
+            "crewsetup_id": 368,
+            "resource_id": 300000047887398,
+            "resource_type": "EMPLOYEE",
+            "resource_number": "100",
+            "resource_name": "Brian Joseph",
+            "resource_role": "Director of Payroll",
+            "resource_location": "Atlanta"
+        }
+    ],
+    "hasMore": false,
+    "limit": 100,
+    "offset": 0,
+    "count": 3,
+    "links": [
+        {
+            "rel": "self",
+            "href": "http://129.158.228.138:8080/ords/timerite/timerite/getCrewResourceDetails?crewsetup_id=368"
+        },
+        {
+            "rel": "describedby",
+            "href": "http://129.158.228.138:8080/ords/timerite/metadata-catalog/timerite/item"
+        },
+        {
+            "rel": "first",
+            "href": "http://129.158.228.138:8080/ords/timerite/timerite/getCrewResourceDetails?crewsetup_id=368"
+        }
+    ]
+}

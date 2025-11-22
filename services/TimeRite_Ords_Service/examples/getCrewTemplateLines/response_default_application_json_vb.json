@@ -1,0 +1,52 @@
+{
+    "items": [
+        {
+            "crew_template_line_id": 1,
+            "crew_template_id": 1,
+            "resource_role_id": "Project Manager",
+            "resource_count": 10,
+            "resource_name": null,
+            "creation_date": "2024-09-18T12:59:11Z",
+            "last_updated_date": "2024-09-18T12:59:11Z",
+            "last_updated_by": "sukanya",
+            "created_by": "sukanya",
+            "start_date": null,
+            "end_date": null
+        },
+        {
+            "crew_template_line_id": 2,
+            "crew_template_id": 1,
+            "resource_role_id": "Award Participant",
+            "resource_count": 5,
+            "resource_name": null,
+            "creation_date": "2024-09-18T12:59:31Z",
+            "last_updated_date": "2024-09-18T12:59:31Z",
+            "last_updated_by": "sukanya",
+            "created_by": "sukanya",
+            "start_date": null,
+            "end_date": null
+        }
+    ],
+    "hasMore": false,
+    "limit": 25,
+    "offset": 0,
+    "count": 2,
+    "links": [
+        {
+            "rel": "self",
+            "href": "http://129.158.228.138:8080/ords/timerite/timerite/CrewTemplateLines?crew_template_id=1"
+        },
+        {
+            "rel": "edit",
+            "href": "http://129.158.228.138:8080/ords/timerite/timerite/CrewTemplateLines?crew_template_id=1"
+        },
+        {
+            "rel": "describedby",
+            "href": "http://129.158.228.138:8080/ords/timerite/metadata-catalog/timerite/item"
+        },
+        {
+            "rel": "first",
+            "href": "http://129.158.228.138:8080/ords/timerite/timerite/CrewTemplateLines?crew_template_id=1"
+        }
+    ]
+}

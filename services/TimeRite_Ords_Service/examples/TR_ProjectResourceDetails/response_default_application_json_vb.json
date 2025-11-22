@@ -1,0 +1,103 @@
+{
+    "items": [
+        {
+            "project_id": 300000227241738,
+            "resource_id": 300000054964956,
+            "person_id": 300000047674147,
+            "team_member_name": "Bellas, Debbie",
+            "team_member_number": "31",
+            "project_role": "Project Participant",
+            "assignment_status_code": "PLANNING_ONLY"
+        },
+        {
+            "project_id": 300000227241738,
+            "resource_id": 300000054964914,
+            "person_id": 300000047725094,
+            "team_member_name": "Cameron, James",
+            "team_member_number": "59",
+            "project_role": "Project Participant",
+            "assignment_status_code": "PLANNING_ONLY"
+        },
+        {
+            "project_id": 300000227241738,
+            "resource_id": 300000182511468,
+            "person_id": 300000108187183,
+            "team_member_name": "Goodsell, Heather",
+            "team_member_number": "2530",
+            "project_role": "Project Participant",
+            "assignment_status_code": "PLANNING_ONLY"
+        },
+        {
+            "project_id": 300000227241738,
+            "resource_id": 300000054964932,
+            "person_id": 300000047678144,
+            "team_member_name": "Gupta, Sunil",
+            "team_member_number": "34",
+            "project_role": "Project Participant",
+            "assignment_status_code": "PLANNING_ONLY"
+        },
+        {
+            "project_id": 300000227241738,
+            "resource_id": 300000054965023,
+            "person_id": 300000047722111,
+            "team_member_name": "James, Alan",
+            "team_member_number": "57",
+            "project_role": "Project Manager",
+            "assignment_status_code": "PLANNING_ONLY"
+        },
+        {
+            "project_id": 300000227241738,
+            "resource_id": 300000182511477,
+            "person_id": 300000123743397,
+            "team_member_name": "Khan, Reshma",
+            "team_member_number": "3010",
+            "project_role": "Project Participant",
+            "assignment_status_code": "PLANNING_ONLY"
+        },
+        {
+            "project_id": 300000227241738,
+            "resource_id": 300000182511474,
+            "person_id": 300000123731371,
+            "team_member_name": "Petrov, Shasha",
+            "team_member_number": "3006",
+            "project_role": "Project Participant",
+            "assignment_status_code": "PLANNING_ONLY"
+        },
+        {
+            "project_id": 300000227241738,
+            "resource_id": 300000182511471,
+            "person_id": 300000108239431,
+            "team_member_name": "Schroeder, Joe",
+            "team_member_number": "2564",
+            "project_role": "Project Participant",
+            "assignment_status_code": "PLANNING_ONLY"
+        },
+        {
+            "project_id": 300000227241738,
+            "resource_id": 300000182511480,
+            "person_id": 300000123810207,
+            "team_member_name": "Willow, Ruby",
+            "team_member_number": "3019",
+            "project_role": "Project Participant",
+            "assignment_status_code": "PLANNING_ONLY"
+        }
+    ],
+    "hasMore": false,
+    "limit": 25,
+    "offset": 0,
+    "count": 9,
+    "links": [
+        {
+            "rel": "self",
+            "href": "http://129.158.228.138:8080/ords/timerite/timerite/TR_ProjectResourceDetails?project_id=300000227241738"
+        },
+        {
+            "rel": "describedby",
+            "href": "http://129.158.228.138:8080/ords/timerite/metadata-catalog/timerite/item"
+        },
+        {
+            "rel": "first",
+            "href": "http://129.158.228.138:8080/ords/timerite/timerite/TR_ProjectResourceDetails?project_id=300000227241738"
+        }
+    ]
+}

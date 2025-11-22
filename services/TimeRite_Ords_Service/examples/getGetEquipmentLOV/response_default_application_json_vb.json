@@ -1,0 +1,70 @@
+{
+    "items": [
+        {
+            "lkpvalue": "Mobile Donation Collection Vehicle",
+            "lkpid": 261,
+            "equipment_number": "1533AD",
+            "default_location": "California"
+        },
+        {
+            "lkpvalue": "ISUZU GIGA 20CBM Dump Truck",
+            "lkpid": 265,
+            "equipment_number": "20CBM",
+            "default_location": "Florida"
+        },
+        {
+            "lkpvalue": "Waste Management Truck",
+            "lkpid": 264,
+            "equipment_number": "AF445",
+            "default_location": "Washington, DC"
+        },
+        {
+            "lkpvalue": "Cascadia 3GH778",
+            "lkpid": 262,
+            "equipment_number": "3GH778",
+            "default_location": "New York"
+        },
+        {
+            "lkpvalue": "Hydrogen Powered Truck",
+            "lkpid": 263,
+            "equipment_number": "178FD",
+            "default_location": "Virginia"
+        },
+        {
+            "lkpvalue": "MG Heavy Vehical 10455",
+            "lkpid": 242,
+            "equipment_number": "10455",
+            "default_location": "Huston"
+        },
+        {
+            "lkpvalue": "Ford F-250 Super Duty - TKW1999",
+            "lkpid": 281,
+            "equipment_number": "1999",
+            "default_location": "Houston"
+        },
+        {
+            "lkpvalue": "Ford F-150 Crew cab 1890",
+            "lkpid": 282,
+            "equipment_number": "1890",
+            "default_location": "Houston"
+        }
+    ],
+    "hasMore": false,
+    "limit": 25,
+    "offset": 0,
+    "count": 8,
+    "links": [
+        {
+            "rel": "self",
+            "href": "http://129.158.228.138:8080/ords/timerite/timerite/getEquipmentLOV?pClass=FLEET+TRUCKS"
+        },
+        {
+            "rel": "describedby",
+            "href": "http://129.158.228.138:8080/ords/timerite/metadata-catalog/timerite/item"
+        },
+        {
+            "rel": "first",
+            "href": "http://129.158.228.138:8080/ords/timerite/timerite/getEquipmentLOV?pClass=FLEET+TRUCKS"
+        }
+    ]
+}

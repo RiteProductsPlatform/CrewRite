@@ -1,0 +1,172 @@
+{
+    "items": [
+        {
+            "crewsetup_id": 351,
+            "crew_name": "Ironman Crew 1100",
+            "crew_measure": "TIME IN OUT",
+            "crew_start_week": "Monday",
+            "crew_end_week": "Friday",
+            "customer_name": "Stark Industries",
+            "contract_number": "23456789",
+            "project_number": "900R-437PUEN",
+            "crew_day": null,
+            "in_time": null,
+            "day": null,
+            "out_time": null
+        },
+        {
+            "crewsetup_id": 353,
+            "crew_name": "Concrete Crew 1200",
+            "crew_measure": "TIME IN OUT",
+            "crew_start_week": "Monday",
+            "crew_end_week": "Friday",
+            "customer_name": "Stark Industries",
+            "contract_number": "23456789",
+            "project_number": "900R-437PUEN",
+            "crew_day": null,
+            "in_time": null,
+            "day": null,
+            "out_time": null
+        },
+        {
+            "crewsetup_id": 350,
+            "crew_name": "Construction Crew 1200",
+            "crew_measure": "TIME IN OUT",
+            "crew_start_week": "Monday",
+            "crew_end_week": "Friday",
+            "customer_name": "Stark Industries",
+            "contract_number": "23456789",
+            "project_number": "900R-437PUEN",
+            "crew_day": null,
+            "in_time": null,
+            "day": null,
+            "out_time": null
+        },
+        {
+            "crewsetup_id": 368,
+            "crew_name": "Plumbing 1100",
+            "crew_measure": "QUANTITY",
+            "crew_start_week": "Monday",
+            "crew_end_week": "Saturday",
+            "customer_name": "J B Hunt",
+            "contract_number": "3456789",
+            "project_number": null,
+            "crew_day": null,
+            "in_time": null,
+            "day": null,
+            "out_time": null
+        },
+        {
+            "crewsetup_id": 509,
+            "crew_name": "Omaha Construction Crew",
+            "crew_measure": "TIME IN OUT",
+            "crew_start_week": "Monday",
+            "crew_end_week": "Saturday",
+            "customer_name": "J B Hunt",
+            "contract_number": "C1066",
+            "project_number": "1067",
+            "crew_day": null,
+            "in_time": null,
+            "day": null,
+            "out_time": null
+        },
+        {
+            "crewsetup_id": 352,
+            "crew_name": "Concrete Crew 1100",
+            "crew_measure": "TIME IN OUT",
+            "crew_start_week": "Monday",
+            "crew_end_week": "Friday",
+            "customer_name": "Stark Industries",
+            "contract_number": "23456789",
+            "project_number": "900R-437PUEN",
+            "crew_day": null,
+            "in_time": null,
+            "day": null,
+            "out_time": null
+        },
+        {
+            "crewsetup_id": 388,
+            "crew_name": "Construction Crew 1122",
+            "crew_measure": "TIME IN OUT",
+            "crew_start_week": "Monday",
+            "crew_end_week": "Friday",
+            "customer_name": "J B Hunt",
+            "contract_number": null,
+            "project_number": null,
+            "crew_day": null,
+            "in_time": null,
+            "day": null,
+            "out_time": null
+        },
+        {
+            "crewsetup_id": 349,
+            "crew_name": "Construction Crew 1100",
+            "crew_measure": "TIME IN OUT",
+            "crew_start_week": "Monday",
+            "crew_end_week": "Friday",
+            "customer_name": "Stark Industries",
+            "contract_number": "23456789",
+            "project_number": "900R-437PUEN",
+            "crew_day": null,
+            "in_time": null,
+            "day": null,
+            "out_time": null
+        },
+        {
+            "crewsetup_id": 528,
+            "crew_name": "ROV Crew",
+            "crew_measure": "QUANTITY",
+            "crew_start_week": "Monday",
+            "crew_end_week": "Saturday",
+            "customer_name": "J B Hunt",
+            "contract_number": "C1066",
+            "project_number": "1067",
+            "crew_day": null,
+            "in_time": null,
+            "day": null,
+            "out_time": null
+        },
+        {
+            "crewsetup_id": 408,
+            "crew_name": "Ocean Crew 1122",
+            "crew_measure": "TIME IN OUT",
+            "crew_start_week": "Monday",
+            "crew_end_week": "Saturday",
+            "customer_name": "J B Hunt",
+            "contract_number": "3456789",
+            "project_number": "900R-55EJOHN",
+            "crew_day": null,
+            "in_time": null,
+            "day": null,
+            "out_time": null
+        },
+        {
+            "crewsetup_id": 409,
+            "crew_name": "Stadium Construction 1123",
+            "crew_measure": "TIME IN OUT",
+            "crew_start_week": "Monday",
+            "crew_end_week": "Saturday",
+            "customer_name": "J B Hunt",
+            "contract_number": "3456789",
+            "project_number": "900R-55EJOHN",
+            "crew_day": null,
+            "in_time": null,
+            "day": null,
+            "out_time": null
+        }
+    ],
+    "hasMore": false,
+    "limit": 0,
+    "offset": 0,
+    "count": 11,
+    "links": [
+        {
+            "rel": "self",
+            "href": "http://129.158.228.138:8080/ords/timerite/timerite/getCustomerDetails"
+        },
+        {
+            "rel": "describedby",
+            "href": "http://129.158.228.138:8080/ords/timerite/metadata-catalog/timerite/item"
+        }
+    ]
+}

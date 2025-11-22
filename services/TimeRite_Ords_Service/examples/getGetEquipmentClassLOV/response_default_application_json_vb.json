@@ -1,0 +1,40 @@
+{
+    "items": [
+        {
+            "equipment_class": "DIGGER"
+        },
+        {
+            "equipment_class": "DRILLERS"
+        },
+        {
+            "equipment_class": "ROV"
+        },
+        {
+            "equipment_class": "CONSTRUCTION"
+        },
+        {
+            "equipment_class": "EXCAVATORS"
+        },
+        {
+            "equipment_class": "DRIVERS"
+        }
+    ],
+    "hasMore": false,
+    "limit": 25,
+    "offset": 0,
+    "count": 6,
+    "links": [
+        {
+            "rel": "self",
+            "href": "http://129.158.228.138:8080/ords/timerite/timerite/getEquipmentClassLOV"
+        },
+        {
+            "rel": "describedby",
+            "href": "http://129.158.228.138:8080/ords/timerite/metadata-catalog/timerite/item"
+        },
+        {
+            "rel": "first",
+            "href": "http://129.158.228.138:8080/ords/timerite/timerite/getEquipmentClassLOV"
+        }
+    ]
+}

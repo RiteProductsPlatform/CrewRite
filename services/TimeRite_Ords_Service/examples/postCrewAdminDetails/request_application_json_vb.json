@@ -1,0 +1,18 @@
+{
+    "p_maintain_perdeim_rate_source": "HR Application",
+    "p_maintain_bonus_rate_source": "Crew Time Application",
+    "p_perdeim_element_map": "Annual Salary Japan",
+    "p_bonus_element_map": "Annual Salary China",
+    "p_otl_timetype_overtime": "HR Application",
+    "p_currency": "ARS",
+    "p_timesheet_balancing_require": true,
+   "p_payroll_lockdown": true,
+   "p_payroll_lockdown_fromdate": "10-OCT-2024",
+  "p_payroll_lockdown_todate": "30-OCT-2024",
+  "p_timesheet_entry_method": true,
+"p_element_entry_id": 14180,
+"p_element_type_id": 300000095447915,
+"p_entry_type": "E",
+"p_creator_type": "SP",
+"p_entry_sequence": 1
+}

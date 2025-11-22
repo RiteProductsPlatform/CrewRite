@@ -1,0 +1,72 @@
+{
+    "items": [
+        {
+            "crew_admin_rowid": 2,
+            "crew_setting_instance": null,
+            "maintain_perdeim_rate_source": "Crew Time Application",
+            "per_dm_rate": "50",
+            "per_dm_hours": "4",
+            "per_dm_amount": "200",
+            "per_dm_element_map": "Overtime",
+            "per_dm_element_type_id": 300000076039303,
+            "per_dm_input_value_id": 300000076039317,
+            "per_dm_input_value_name": "Hours",
+            "maintain_bonus_rate_source": null,
+            "bonus_rate": null,
+            "bonus_hours": null,
+            "bonus_amount": null,
+            "bonus_element_map": null,
+            "bonus_element_type_id": null,
+            "bonus_input_value_id": null,
+            "bonus_input_value_name": null,
+            "currency": null,
+            "otl_timetype_overtime": "Overtime - Administrative",
+            "timesheet_entry_method": null,
+            "timesheet_balancing_require": null,
+            "payroll_lockdown": null,
+            "payroll_lockdown_fromdate": null,
+            "payroll_lockdown_todate": null,
+            "effective_start_date": "2024-01-01T00:00:00Z",
+            "effective_end_date": "2024-01-31T00:00:00Z",
+            "type": null,
+            "application_url": null,
+            "user_name": null,
+            "password": null,
+            "ftp_host": null,
+            "ftp_port": null,
+            "ftp_user_name": null,
+            "ftp_password": null,
+            "attribute1": null,
+            "attribute2": null,
+            "attribute3": null,
+            "attribute4": null,
+            "attribute5": null,
+            "creation_date": null,
+            "created_by": null,
+            "last_update_date": null,
+            "last_updated_by": null
+        }
+    ],
+    "hasMore": false,
+    "limit": 25,
+    "offset": 0,
+    "count": 1,
+    "links": [
+        {
+            "rel": "self",
+            "href": "http://129.158.228.138:8080/ords/timerite/timerite/CrewAdminDetails"
+        },
+        {
+            "rel": "edit",
+            "href": "http://129.158.228.138:8080/ords/timerite/timerite/CrewAdminDetails"
+        },
+        {
+            "rel": "describedby",
+            "href": "http://129.158.228.138:8080/ords/timerite/metadata-catalog/timerite/item"
+        },
+        {
+            "rel": "first",
+            "href": "http://129.158.228.138:8080/ords/timerite/timerite/CrewAdminDetails"
+        }
+    ]
+}

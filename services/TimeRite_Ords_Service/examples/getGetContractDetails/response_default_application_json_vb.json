@@ -1,0 +1,74 @@
+{
+    "items": [
+        {
+            "customer_number": "10010",
+            "customer_name": "J B Hunt",
+            "contract_id": 300001550010346,
+            "contract_number": "C1066",
+            "week_start_day": "Monday",
+            "week_end_day": "Saturday",
+            "no_of_days": 6,
+            "ot_allowed": "true",
+            "ot_threshold_measure": "Week",
+            "ot_threshold_limit": "40",
+            "active_flag": "1",
+            "billing_frequency": "Weekly",
+            "ot_shift_name": null,
+            "time_entry_method": null,
+            "effective_start_date": "2024-07-01",
+            "effective_end_date": "2025-07-31",
+            "per_diem": "Yes",
+            "per_diem_hours": null,
+            "bonus": "Yes",
+            "safety_bonus": "Yes",
+            "per_dm_rate": "50",
+            "per_dm_hours": "4",
+            "per_dm_amount": "200",
+            "bonus_rate": "15",
+            "bonus_hours": "5",
+            "bonus_amount": "75"
+        },
+        {
+            "customer_number": "10010",
+            "customer_name": "J B Hunt",
+            "contract_id": 300000391217183,
+            "contract_number": "3456789",
+            "week_start_day": "Monday",
+            "week_end_day": "Saturday",
+            "no_of_days": 6,
+            "ot_allowed": "false",
+            "ot_threshold_measure": "Week",
+            "ot_threshold_limit": "40",
+            "active_flag": "1",
+            "billing_frequency": "Weekly",
+            "ot_shift_name": null,
+            "time_entry_method": null,
+            "effective_start_date": "2024-07-01",
+            "effective_end_date": "2025-07-31",
+            "per_diem": "Yes",
+            "per_diem_hours": null,
+            "bonus": "Yes",
+            "safety_bonus": "Yes",
+            "per_dm_rate": "50",
+            "per_dm_hours": "4",
+            "per_dm_amount": "200",
+            "bonus_rate": "15",
+            "bonus_hours": "5",
+            "bonus_amount": "75"
+        }
+    ],
+    "hasMore": false,
+    "limit": 0,
+    "offset": 0,
+    "count": 2,
+    "links": [
+        {
+            "rel": "self",
+            "href": "http://129.158.228.138:8080/ords/timerite/timerite/getContractDetails?CUSTOMER_NUMBER=10010"
+        },
+        {
+            "rel": "describedby",
+            "href": "http://129.158.228.138:8080/ords/timerite/metadata-catalog/timerite/item"
+        }
+    ]
+}

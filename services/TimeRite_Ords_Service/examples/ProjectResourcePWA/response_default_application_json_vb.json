@@ -1,0 +1,58 @@
+{
+    "items": [
+        {
+            "project_id": 300000145924179,
+            "resource_id": 300000054964980,
+            "person_id": 300000047723096,
+            "team_member_name": "Bade, Ganesh",
+            "team_member_number": "58",
+            "project_role": "Staffing Owner",
+            "assignment_status_code": "PLANNING_ONLY"
+        },
+        {
+            "project_id": 300000145924179,
+            "resource_id": 300000054964989,
+            "person_id": 300000047680162,
+            "team_member_name": "Heather, Emily",
+            "team_member_number": "36",
+            "project_role": "Team Member",
+            "assignment_status_code": "PLANNING_ONLY"
+        },
+        {
+            "project_id": 300000145924179,
+            "resource_id": 300000054965021,
+            "person_id": 300000047339511,
+            "team_member_name": "Marlin, Amy",
+            "team_member_number": "2",
+            "project_role": "Project Manager",
+            "assignment_status_code": "PLANNING_ONLY"
+        },
+        {
+            "project_id": 300000145924179,
+            "resource_id": 300000054964866,
+            "person_id": 300000047689173,
+            "team_member_name": "Sheen, Debbie",
+            "team_member_number": "43",
+            "project_role": "Team Member",
+            "assignment_status_code": "PLANNING_ONLY"
+        }
+    ],
+    "hasMore": false,
+    "limit": 25,
+    "offset": 0,
+    "count": 4,
+    "links": [
+        {
+            "rel": "self",
+            "href": "http://129.158.228.138:8080/ords/timerite/timerite/CrewTimeProjectResourcePWA?project_id=300000145924179"
+        },
+        {
+            "rel": "describedby",
+            "href": "http://129.158.228.138:8080/ords/timerite/metadata-catalog/timerite/item"
+        },
+        {
+            "rel": "first",
+            "href": "http://129.158.228.138:8080/ords/timerite/timerite/CrewTimeProjectResourcePWA?project_id=300000145924179"
+        }
+    ]
+}

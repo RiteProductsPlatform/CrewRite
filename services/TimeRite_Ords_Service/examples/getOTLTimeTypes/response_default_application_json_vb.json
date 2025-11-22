@@ -1,0 +1,73 @@
+{
+    "items": [
+        {
+            "time_type": "Professional - Straight Time"
+        },
+        {
+            "time_type": "Staff Salaries - Overtime"
+        },
+        {
+            "time_type": "Faculty Salaries - Straight Time"
+        },
+        {
+            "time_type": "Overtime - Miscellaneous"
+        },
+        {
+            "time_type": "Admin - Overtime"
+        },
+        {
+            "time_type": "Professional - Overtime"
+        },
+        {
+            "time_type": "Reg - Misc"
+        },
+        {
+            "time_type": "Staff Salaries - Straight Time"
+        },
+        {
+            "time_type": "Reg - Prof"
+        },
+        {
+            "time_type": "Admin - Straight Time"
+        },
+        {
+            "time_type": "Faculty Salaries - Overtime"
+        },
+        {
+            "time_type": "Reg - Admin"
+        },
+        {
+            "time_type": "Holiday Pay"
+        },
+        {
+            "time_type": "Holiday Pay HC"
+        },
+        {
+            "time_type": "Holiday Pay HE"
+        },
+        {
+            "time_type": "Overtime - Administrative"
+        },
+        {
+            "time_type": "Overtime - Professional"
+        }
+    ],
+    "hasMore": false,
+    "limit": 1000,
+    "offset": 0,
+    "count": 17,
+    "links": [
+        {
+            "rel": "self",
+            "href": "http://129.158.228.138:8080/ords/timerite/timerite/OTLTimeTypes"
+        },
+        {
+            "rel": "describedby",
+            "href": "http://129.158.228.138:8080/ords/timerite/metadata-catalog/timerite/item"
+        },
+        {
+            "rel": "first",
+            "href": "http://129.158.228.138:8080/ords/timerite/timerite/OTLTimeTypes"
+        }
+    ]
+}
