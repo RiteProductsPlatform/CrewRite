@@ -1,0 +1,80 @@
+{
+    "fields": [
+        {
+            "type": "number",
+            "name": "id",
+            "internal": false,
+            "key": true,
+            "oid": "f71b6f4b-b0df-4809-858f-1fa0cb177a4c",
+            "required": true,
+            "unique": true,
+            "displayLabel": "Id"
+        },
+        {
+            "type": "datetime",
+            "name": "creationDate",
+            "internal": false,
+            "oid": "879ebcaf-9fa9-4c2c-887a-5ac7b51dd531",
+            "displayLabel": "Created",
+            "historyType": "timeCreated"
+        },
+        {
+            "type": "datetime",
+            "name": "lastUpdateDate",
+            "internal": false,
+            "oid": "6f159d4e-44bb-41dd-bb34-43edf694b94b",
+            "displayLabel": "Last Updated",
+            "historyType": "timeUpdated"
+        },
+        {
+            "type": "string",
+            "name": "createdBy",
+            "internal": false,
+            "oid": "5a1a9668-9ae1-45b6-9854-a8f2e2affab5",
+            "displayLabel": "Created By",
+            "historyType": "createdBy"
+        },
+        {
+            "type": "string",
+            "name": "lastUpdatedBy",
+            "internal": false,
+            "oid": "c73abb24-48c3-4c35-b4c9-36ab4ff227b6",
+            "displayLabel": "Last Updated By",
+            "historyType": "updatedBy"
+        },
+        {
+            "type": "number",
+            "name": "versionNumber",
+            "internal": false,
+            "oid": "b6e44d46-b0c4-47a8-83c2-31af92f6c54e",
+            "displayLabel": "Version Number",
+            "historyType": "versionNumber"
+        },
+        {
+            "type": "number",
+            "name": "crewId",
+            "oid": "a1ca5503-d590-49a3-8785-c144e95ba313",
+            "displayLabel": "crewId"
+        },
+        {
+            "type": "string",
+            "name": "empName",
+            "oid": "6d5d0bf1-fc9d-4bac-a799-3ae9e6523e36",
+            "displayLabel": "empName"
+        }
+    ],
+    "name": "CrewCheckIn",
+    "oid": "f56d41fb-f108-4b1a-9993-812d5901e09a",
+    "relationships": [
+        {
+            "name": "crewIdObject",
+            "reverseRelationship": "crewCheckInCollection",
+            "targetEntity": "CrewName",
+            "type": "outgoing",
+            "exposeAccessor": true,
+            "mappingField": "crewId",
+            "deleteRule": "restrict"
+        }
+    ],
+    "displayLabel": "Crew Check In"
+}

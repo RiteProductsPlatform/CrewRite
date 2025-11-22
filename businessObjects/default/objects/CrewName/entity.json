@@ -1,0 +1,72 @@
+{
+    "fields": [
+        {
+            "type": "number",
+            "name": "id",
+            "internal": false,
+            "key": true,
+            "oid": "f28a76a7-e273-483b-ad69-932abcd77ccf",
+            "required": true,
+            "unique": true,
+            "displayLabel": "Id"
+        },
+        {
+            "type": "datetime",
+            "name": "creationDate",
+            "internal": false,
+            "oid": "51c81acd-4c7d-47a4-82b9-0fc86e0e8a5b",
+            "displayLabel": "Created",
+            "historyType": "timeCreated"
+        },
+        {
+            "type": "datetime",
+            "name": "lastUpdateDate",
+            "internal": false,
+            "oid": "d4453f79-9a4a-476f-a694-1c0558d589c6",
+            "displayLabel": "Last Updated",
+            "historyType": "timeUpdated"
+        },
+        {
+            "type": "string",
+            "name": "createdBy",
+            "internal": false,
+            "oid": "bf95551c-0237-435b-b05a-a75f6bca2032",
+            "displayLabel": "Created By",
+            "historyType": "createdBy"
+        },
+        {
+            "type": "string",
+            "name": "lastUpdatedBy",
+            "internal": false,
+            "oid": "182544e1-699b-4b66-af6f-1e7f87f51ddd",
+            "displayLabel": "Last Updated By",
+            "historyType": "updatedBy"
+        },
+        {
+            "type": "number",
+            "name": "versionNumber",
+            "internal": false,
+            "oid": "c1f9be42-a1c1-484f-873e-070ef1300f38",
+            "displayLabel": "Version Number",
+            "historyType": "versionNumber"
+        },
+        {
+            "type": "string",
+            "name": "crewName",
+            "oid": "de8310ea-1ee9-42fb-9672-fc1ac1dde101",
+            "displayLabel": "crewName"
+        }
+    ],
+    "name": "CrewName",
+    "oid": "7af948f9-8292-4394-bcab-35b393f2306d",
+    "relationships": [
+        {
+            "name": "crewCheckInCollection",
+            "reverseRelationship": "crewIdObject",
+            "targetEntity": "CrewCheckIn",
+            "type": "incoming",
+            "displayField": "id"
+        }
+    ],
+    "displayLabel": "Crew Name"
+}

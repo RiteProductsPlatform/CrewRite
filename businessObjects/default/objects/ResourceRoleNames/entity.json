@@ -1,0 +1,152 @@
+{
+    "fields": [
+        {
+            "type": "number",
+            "name": "id",
+            "internal": false,
+            "key": true,
+            "oid": "84fa5195-ffbd-4d17-94cb-0028cf5c6958",
+            "required": true,
+            "unique": true,
+            "displayLabel": "Id"
+        },
+        {
+            "type": "datetime",
+            "name": "creationDate",
+            "internal": false,
+            "oid": "e352d901-683d-40ed-8409-f40ec19c1983",
+            "displayLabel": "Created",
+            "historyType": "timeCreated"
+        },
+        {
+            "type": "datetime",
+            "name": "lastUpdateDate",
+            "internal": false,
+            "oid": "2c5d801b-a0f8-4fc8-9156-7d9b462983f0",
+            "displayLabel": "Last Updated",
+            "historyType": "timeUpdated"
+        },
+        {
+            "type": "string",
+            "name": "createdBy",
+            "internal": false,
+            "oid": "7b1ed455-96bd-4c6e-97b8-d570fce57ce0",
+            "displayLabel": "Created By",
+            "historyType": "createdBy"
+        },
+        {
+            "type": "string",
+            "name": "lastUpdatedBy",
+            "internal": false,
+            "oid": "4e21fb37-e18f-4d27-b83c-384cedc7699c",
+            "displayLabel": "Last Updated By",
+            "historyType": "updatedBy"
+        },
+        {
+            "type": "number",
+            "name": "versionNumber",
+            "internal": false,
+            "oid": "c2a6ecb1-7fa7-4f92-bb53-eddd547321e5",
+            "displayLabel": "Version Number",
+            "historyType": "versionNumber"
+        },
+        {
+            "type": "string",
+            "name": "roleName",
+            "oid": "9df03285-a034-4ebf-b3f5-6ba01bbe8012",
+            "displayLabel": "roleName"
+        }
+    ],
+    "name": "ResourceRoleNames",
+    "oid": "28292d1c-b3ca-4b84-b930-46c5824a4200",
+    "displayLabel": "Resource Role Names",
+    "security": {
+        "type": "local",
+        "acl": [
+            {
+                "roleId": "AdminRole",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "roleId": "EnduserRole",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "roleId": "approle.anonymous.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "roleId": "approle.authenticated.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            }
+        ]
+    }
+}

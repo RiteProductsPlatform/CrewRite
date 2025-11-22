@@ -1,0 +1,152 @@
+{
+    "fields": [
+        {
+            "type": "number",
+            "name": "id",
+            "internal": false,
+            "key": true,
+            "oid": "45319ec1-9e9d-4949-a0b6-45b82fd813e9",
+            "required": true,
+            "unique": true,
+            "displayLabel": "Id"
+        },
+        {
+            "type": "datetime",
+            "name": "creationDate",
+            "internal": false,
+            "oid": "7e986b6e-489f-4323-ad7e-b93b5d70da37",
+            "displayLabel": "Created",
+            "historyType": "timeCreated"
+        },
+        {
+            "type": "datetime",
+            "name": "lastUpdateDate",
+            "internal": false,
+            "oid": "8e67b5cb-7f82-4dbc-bc5f-80893eca902a",
+            "displayLabel": "Last Updated",
+            "historyType": "timeUpdated"
+        },
+        {
+            "type": "string",
+            "name": "createdBy",
+            "internal": false,
+            "oid": "82017862-8413-438a-b82f-ba141f5eea91",
+            "displayLabel": "Created By",
+            "historyType": "createdBy"
+        },
+        {
+            "type": "string",
+            "name": "lastUpdatedBy",
+            "internal": false,
+            "oid": "a2462dd4-fed0-4b3a-ac02-58f852dd8d6b",
+            "displayLabel": "Last Updated By",
+            "historyType": "updatedBy"
+        },
+        {
+            "type": "number",
+            "name": "versionNumber",
+            "internal": false,
+            "oid": "05437211-0e9b-42fd-a81b-b2388af88e80",
+            "displayLabel": "Version Number",
+            "historyType": "versionNumber"
+        },
+        {
+            "type": "string",
+            "name": "value",
+            "oid": "41bbe7dc-5641-4b61-82c1-8f1c51db7bd4",
+            "displayLabel": "value"
+        }
+    ],
+    "name": "HoursType",
+    "oid": "af50abbf-6f8a-4c55-887d-f26e2736ea28",
+    "displayLabel": "Hours Type",
+    "security": {
+        "type": "local",
+        "acl": [
+            {
+                "roleId": "AdminRole",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "roleId": "EnduserRole",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "roleId": "approle.anonymous.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "roleId": "approle.authenticated.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            }
+        ]
+    }
+}
