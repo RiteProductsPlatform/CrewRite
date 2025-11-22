@@ -1,0 +1,71 @@
+{
+  "title": "CrewRite Generate Time Cards",
+  "description": "",
+  "variables": {
+    "getGetCrewNameLOVListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "TimeRite_Ords_Service/getGetCrewNameLOV",
+        "keyAttributes": "crew_name",
+        "itemsPath": "items",
+        "responseType": "getGetCrewNameLOVResponse",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "crew_name"
+          ]
+        }
+      }
+    },
+    "mobileImage": {
+      "type": "string",
+      "defaultValue": "on"
+    },
+    "illustrationBackground": {
+      "type": "string",
+      "defaultValue": "https://static.oracle.com/cdn/fnd/gallery/2307.0.2/images/illust-welcome-banner-bg-01.png"
+    },
+    "illustrationForeground": {
+      "type": "string",
+      "defaultValue": "https://static.oracle.com/cdn/fnd/gallery/2307.0.2/images/illust-welcome-banner-fg-01.png"
+    },
+    "imageStretch": {
+      "type": "string",
+      "defaultValue": "none"
+    }
+
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getGetCrewNameLOVResponse": {
+      "endpoint": "getGetCrewNameLOV",
+      "service": "TimeRite_Ords_Service",
+      "path": "response"
+    },
+    "getGetCrewNameLOVResponse": {
+      "items": [
+        {
+          "crew_name": "string",
+          "crewsetup_id": "number"
+        }
+      ]
+    }
+  },
+  "eventListeners": {},
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-select-single": {
+        "path": "ojs/ojselectsingle"
+      },
+      "oj-sp-welcome-page": {
+        "path": "oj-sp/welcome-page/loader"
+      }
+
+    }
+  }
+}

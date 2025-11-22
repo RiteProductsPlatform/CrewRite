@@ -1,0 +1,122 @@
+<div class="oj-flex">
+  <oj-vb-fragment id="page-header" bridge="[[vbBridge]]" name="page-header">
+    <oj-vb-fragment-param name="title" value="CrewTime Schedule"></oj-vb-fragment-param>
+  </oj-vb-fragment>
+
+  <div class="oj-flex-item oj-sm-12 oj-md-12 oj-sm-margin-2x-top oj-panel">
+    <!-- <div class="oj-flex-item oj-flex oj-sm-justify-content-center" style="width:100%">
+      <span class="mainheadingclass">CrewTime Schedule</span>
+    </div> -->
+    <div class="oj-flex-item oj-sm-12">
+      <oj-validation-group id="fetchValidator" class="oj-flex-item oj-sm-12 oj-md-12">
+        <oj-form-layout columns="4" max-columns="6" label-edge="top" class="oj-sm-12 oj-md-12">
+          <oj-select-single label-hint=" Crew Name" data="[[$variables.getGetCrewNameLOVListSDP]]"
+            value="{{ $variables.selectedCrewId }}" item-text="crew_name"
+            :title='[[ $application.variables.HelpEnabled ? "Select Crew Name" : "" ]]'
+            on-value-item-changed="[[$listeners.selectValueItem]]" required="true">
+          </oj-select-single>
+          <oj-select-single label-hint="Resource" value="{{ $variables.selectedResource }}"
+            :title='[[ $application.variables.HelpEnabled ? "Select Resource" : "" ]]'
+            data="[[$variables.resourceNamebyCrewIdListSDP]]" item-text="resource_name">
+          </oj-select-single>
+          <oj-input-date label-hint="From Date" value="{{ $variables.SelectedDate }}"
+            :title='[[ $application.variables.HelpEnabled ? "Select From Date" : "" ]]'
+            converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}' required="true"></oj-input-date>
+          <div class="oj-flex-item oj-sm-margin-5x-top">
+            <oj-button label="Go" on-oj-action="[[$listeners.buttonAction]]" class="oj-button-sm"
+              chroming="callToAction">
+            </oj-button>
+            <oj-button label="Reset" class="oj-button-sm oj-sm-margin-2x-start" chroming="callToAction"
+              on-oj-action="[[$listeners.buttonAction2]]">
+            </oj-button>
+          </div>
+        </oj-form-layout>
+      </oj-validation-group>
+    </div>
+
+    <oj-bind-if test="[[ $variables.selectedMonth ]]">
+      <div class="oj-flex-item" style="width:100%">
+        <hr>
+      </div>
+      <div class="oj-flex-item oj-sm-12 oj-flex" style="width:100%">
+        <div class="oj-flex-item oj-sm-flex-initial oj-sm-margin-2x-end">
+          <span class="subheadings oj-sm-flex-initial"> Resource Schedule for the Month of <span>
+        <oj-bind-text value="[[ $variables.selectedMonth ]]"></oj-bind-text></span></span>
+        </div>
+        <div class="oj-flex-item oj-flex oj-sm-justify-content-flex-end">
+          <span class="oj-badge oj-badge-danger oj-badge-subtle" >Assigned</span>
+          <span class="oj-badge oj-badge-success oj-badge-subtle" style="margin-left:10px">Un Assigned</span>
+        </div>
+      </div>
+    </oj-bind-if>
+
+    <div class="oj-flex-item oj-sm-margin-2x-top oj-sm-12" style="width:100%">
+      <oj-bind-for-each data="[[ $variables.columns ]]">
+        <template>
+          <div class="oj-flex-item oj-sm-margin-1x-top" style="width:100%;cursor:pointer">
+            <div class="oj-flex-item oj-flex oj-sm-flex-items-initial oj-sm-align-items-center">
+              <div class="oj-flex-item oj-flex oj-sm-flex-items-initial oj-sm-align-items-center" style="width:100%">
+                <span>Name:  <span class="sideheadingcss"><oj-bind-text value="[[ $current.data.resource_name  ]]"></oj-bind-text></span></span>
+              </div>
+              <oj-form-layout columns="31" max-columns="31" class="oj-formlayout-full-width"
+                style="width:100%;margin-top:-10px">
+                <!-- <span style="font-size:12px;font-weight:400"><oj-bind-text value="[[ $current.data.resource_name  ]]"></oj-bind-text></span> -->
+                <oj-bind-for-each data="[[ $current.data.myArr ]]">
+                  <template>
+                    <oj-bind-if test="[[ $current.data.engaged === 'Y' ]]">
+                      <span class="oj-badge oj-badge-danger oj-badge-subtle oj-flex-item oj-sm-margin-3x-top"
+                      on-click="[[$listeners.badgeClick]]" :id='[[ $current.data.myid ]]'><oj-bind-text value="{{ $current.data.date }}" ></oj-bind-text></span>
+                    </oj-bind-if>
+                    <oj-bind-if test="[[ $current.data.engaged === 'N' ]]">
+                      <span class="oj-badge oj-badge-success oj-badge-subtle oj-flex-item oj-sm-margin-3x-top" :id='[[ $current.data.myid ]]'  on-click="[[$listeners.badgeClick]]"><oj-bind-text value="{{ $current.data.date }}" style="cursor:pointer"></oj-bind-text></span>
+                    </oj-bind-if>
+                  </template>
+                </oj-bind-for-each>
+              </oj-form-layout>
+            </div>
+          </div>
+        </template>
+      </oj-bind-for-each>
+    </div>
+
+
+    <div class="oj-flex-item oj-sm-12 oj-sm-margin-5x-top" style="width:100%">
+      <oj-bind-if test="[[ $variables.resourceobj.resource ]]">
+        <div class="oj-flex-item oj-flex oj-sm-flex-direction-row oj-sm-margin-5x-top oj-sm-align-items-center"
+          style="width:100%">
+          <div class="oj-flex-item oj-sm-margin-2x-end oj-sm-flex-initial">
+            <span class="subheadings oj-sm-flex-initial">Schedule Details of <span><oj-bind-text value="[[ $variables.resourceobj.resource ]]"></oj-bind-text></span>
+            on the
+            <span><oj-bind-text value="[[ $variables.resourceobj.date ]]"></oj-bind-text></span></span>
+          </div>
+          <oj-bind-if test="[[ $variables.Assign ]]">
+            <div class="oj-flex-item oj-sm-flex-initial">
+              <oj-button label="Assign Task" chroming="callToAction" class="oj-button-sm"
+                on-oj-action="[[$listeners.buttonAction3]]"></oj-button>
+            </div>
+          </oj-bind-if>
+        </div>
+      </oj-bind-if>
+    </div>
+
+    <div class="oj-flex-item oj-sm-12 oj-sm-margin-2x-top">
+      <oj-table scroll-policy="loadMoreOnScroll" style="max-height:40vh" data="[[ $variables.DetailsTableADP ]]"
+        style="width:100%" columns='[{"headerText":"Resource Number","field":"resource_number"},
+      {"headerText":"Resource Name","field":"resource_name"},
+          {"headerText":"Customer","field":"customer_name"},
+          {"headerText":"Project Number","field":"project_number"},
+          {"headerText":"Task","field":"task"},
+          {"headerText":"Pay Rate","field":"pay_rate"},
+          {"headerText":"OT Rate","field":"ot_rate"},
+          {"headerText":"Bill Rate","field":"bill_rate"},
+          {"headerText":"Effective Start Date","field":"effective_start_date","template":"dateformattor"},
+          {"headerText":"Effective End Date","field":"effective_end_date","template":"dateformattor"}]'
+        class="oj-sm-12 oj-md-12 oj-flex">
+        <template slot="dateformattor">
+          <oj-input-date value='[[typeof $current.data === "string" ? $current.data : null]]' readonly="true"
+            converter='{"type": "datetime", "options": {"pattern":"dd-MMM-yyyy"}}'></oj-input-date>
+        </template>
+      </oj-table>
+    </div>
+  </div>
+</div>

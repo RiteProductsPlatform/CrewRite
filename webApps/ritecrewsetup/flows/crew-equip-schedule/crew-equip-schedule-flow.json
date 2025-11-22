@@ -1,0 +1,8 @@
+{
+  "id": "crew-equip-schedule",
+  "description": "Flow main",
+  "defaultPage": "crew-equip-schedule-start",
+  "services": {},
+  "types": {},
+  "variables": {}
+}

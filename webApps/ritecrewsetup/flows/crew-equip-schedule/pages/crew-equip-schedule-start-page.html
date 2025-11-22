@@ -1,0 +1,34 @@
+<oj-sp-welcome-page id="oj-sp-wp1" illustration-background="[[ require.toUrl($page.variables.illustrationBackground) ]]"
+  illustration-foreground="[[ require.toUrl($page.variables.illustrationForeground) ]]"
+  display-options.image-stretch="[[ $page.variables.imageStretch ]]"
+  display-options.mobile-image="[[ $page.variables.mobileImage ]]" display-options.responsive-padding="on"
+  page-title="Crew Schedule" background-color="dark-pebble">
+  <div class="oj-flex-item" slot="search">
+    <oj-form-layout class="" max-columns="3" label-edge="top" columns="3" style="margin-left:-3vw">
+      <oj-select-single label-hint="Crew Name" data="[[$variables.getGetCrewNameLOVListSDP]]" item-text="crew_name"
+        id="crew-name" value="{{ $variables.crewSetupId }}" on-value-item-changed="[[$listeners.crewNameValueItem3]]">
+      </oj-select-single>
+      <oj-select-single label-hint="Resource Name" data="[[ $variables.getCrewResourceSDP ]]" item-text="resource_name"
+        id="resouce-name" value="{{ $variables.resourceName }}">
+      </oj-select-single>
+      <!-- <oj-select-single label-hint="Equipment Class" required="true" data="[[$variables.eqClassListSDP]]"
+                    item-text="eqClass" value="{{ $variables.selectedEquipmentClass }}"></oj-select-single> 
+      <oj-select-single label-hint="Equipment Name" value="{{ $variables.selectedEquipmentName }}"
+        data="[[ $variables.getEquipmentNamesSchedule ]]" item-text="equipment_name">
+      </oj-select-single> -->
+      <oj-button chroming="callToAction" label="Search" style="margin-top: 20px;" id="searchbtn" class="oj-button-sm"
+        on-oj-action="[[$listeners.searchbtnAction2]]"></oj-button>
+    </oj-form-layout>
+  </div>
+  <div class="oj-flex oj-sm-flex-direction-column oj-panel oj-panel-shadow-md" style="margin-top:-48px">
+
+    <div class="oj-flex-item" style="width:100%">
+      <div id="main" style="height:100vh;width:100%;"></div>
+    </div>
+  </div>
+
+
+  <div id="viewFlag" style="font-size:0px;" on-click="[[$listeners.viewFlagClick]]">
+    1
+  </div>
+</oj-sp-welcome-page>

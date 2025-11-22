@@ -1,0 +1,22 @@
+<oj-sp-welcome-page id="oj-sp-wp1" illustration-background="[[ require.toUrl($page.variables.illustrationBackground) ]]"
+  illustration-foreground="[[ require.toUrl($page.variables.illustrationForeground) ]]"
+  display-options.image-stretch="[[ $page.variables.imageStretch ]]"
+  display-options.mobile-image="[[ $page.variables.mobileImage ]]" display-options.responsive-padding="on"
+  page-title="Generate Time Cards" background-color="dark-pebble">
+  <div class="oj-flex oj-sm-flex-direction-column oj-panel oj-panel-shadow-md" style="margin-top:-48px">
+    <div class="oj-flex-item oj-flex oj-sm-flex-direction-row">
+      <div class="oj-flex-item">
+        <oj-form-layout columns="3" max-columns="3" label-edge="top" style="margin-left:-2vw">
+          <oj-select-single label-hint="Group Name"></oj-select-single>
+          <oj-select-single label-hint="Crew Name" data="[[$variables.getGetCrewNameLOVListSDP]]" item-text="crew_name"></oj-select-single>
+          <oj-select-single label-hint="Week" data="[[ $application.variables.dateRangeADP ]]" item-text="range"></oj-select-single>
+        </oj-form-layout>
+      </div>
+      <div class="oj-flex-item oj-sm-flex-initial oj-sm-align-self-center">
+        <oj-button label="Create Template" class="oj-button-sm" chroming="callToAction"></oj-button>
+      </div>
+    </div>
+
+
+  </div>
+</oj-sp-welcome-page>

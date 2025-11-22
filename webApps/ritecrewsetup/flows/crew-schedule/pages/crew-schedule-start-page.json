@@ -1,0 +1,249 @@
+{
+  "title": "CrewTime Schedule",
+  "description": "",
+  "variables": {
+    "Assign": {
+      "type": "boolean",
+      "defaultValue": false
+    },
+    "columns": {
+      "type": "object[]"
+    },
+    "DetailsTableADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "itemType": "FetchScheduleDetailsType",
+        "keyAttributes": "@index"
+      }
+    },
+    "getGetCrewNameLOVListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "TimeRite_Ords_Service/getGetCrewNameLOV",
+        "keyAttributes": "crewsetup_id",
+        "itemsPath": "items",
+        "responseType": "getGetCrewNameLOVResponse",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "crew_name"
+          ]
+        }
+      }
+    },
+    "MonthADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "itemType": "weekObj",
+        "keyAttributes": "weekid"
+      }
+    },
+    "resourceNamebyCrewIdListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "TimeRite_Ords_Service/ResourceNamebyCrewId",
+        "itemsPath": "items",
+        "responseType": "resourceNamebyCrewIdResponse2",
+        "uriParameters": {
+          "crewsetup_id": "{{ $variables.selectedCrewId ? $variables.selectedCrewId : \"\" }}"
+        },
+        "keyAttributes": "resource_number"
+      }
+    },
+    "resourceobj": {
+      "type": {
+        "crewName": "string",
+        "date": "string",
+        "fulldate": "string",
+        "id": "string",
+        "resource": "string"
+
+      }
+    },
+    "selectedbadge": {
+      "type": "string"
+    },
+    "selectedCrewId": {
+      "type": "number"
+    },
+    "SelectedDate": {
+      "type": "string"
+    },
+    "selectedMonth": {
+      "type": "string"
+    },
+    "selectedResource": {
+      "type": "string"
+    }
+
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.FetchScheduleDetailsType": {
+      "endpoint": "FetchScheduleDetails",
+      "service": "TimeRite_Ords_Service",
+      "path": "response-_-items[0]"
+    },
+    "@decorators.getGetCrewNameLOVResponse": {
+      "endpoint": "getGetCrewNameLOV",
+      "service": "TimeRite_Ords_Service",
+      "path": "response"
+    },
+    "@decorators.resourceNamebyCrewIdResponse2": {
+      "endpoint": "ResourceNamebyCrewId",
+      "service": "TimeRite_Ords_Service",
+      "path": "response"
+    },
+    "FetchScheduleDetailsType": {
+      "bill_rate": "string",
+      "customer_name": "string",
+      "effective_end_date": "string",
+      "effective_start_date": "string",
+      "ot_rate": "string",
+      "pay_rate": "string",
+      "project_number": "string",
+      "resource_name": "string",
+      "resource_number": "string",
+      "task": "string"
+
+    },
+    "getGetCrewNameLOVResponse": {
+      "items": [
+        {
+          "crew_name": "string",
+          "crewsetup_id": "number"
+        }
+      ]
+    },
+    "resourceNamebyCrewIdResponse2": {
+      "items": [
+        {
+
+          "resource_name": "string",
+          "resource_number": "string"
+        }
+      ]
+    },
+    "weekObj": {
+      "Friday": "string",
+      "Monday": "string",
+      "Saturday": "string",
+      "Sunday": "string",
+      "Thursday": "string",
+      "Tuesday": "string",
+      "Wednesday": "string"
+    }
+
+  },
+  "eventListeners": {
+    "badgeClick": {
+      "chains": [
+        {
+          "chain": "BadgeClickChain",
+          "parameters": {
+            "Current": "[[ $current.data ]]",
+            "currendIndex": "[[ \"MYID\"+$current.index ]]"
+          }
+        }
+      ]
+    },
+    "buttonAction": {
+      "chains": [
+        {
+          "chainId": "Tr_SearchBtnAction"
+        }
+      ]
+    },
+    "buttonAction2": {
+      "chains": [
+        {
+          "chainId": "TR_ResetBtnAction"
+        }
+      ]
+    },
+    "buttonAction3": {
+      "chains": [
+        {
+          "chainId": "AssignTaskClickAction"
+        }
+      ]
+    },
+    "selectValueItem": {
+      "chains": [
+        {
+          "chain": "TR_CrewValueChangeAction",
+          "parameters": {
+            "key": "{{$event.detail.value.key}}",
+            "data": "{{$event.detail.value.data}}",
+            "metadata": "{{$event.detail.value.metadata}}"
+          }
+        }
+      ]
+    },
+    "toggleDrawer": {
+      "chains": [
+        {
+          "chain": "application:toggleDrawerHandler"
+        }
+      ]
+    }
+
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-collapsible": {
+        "path": "ojs/ojcollapsible"
+      },
+      "oj-combobox-one": {
+        "path": "ojs/ojselectcombobox"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-input-date": {
+        "path": "ojs/ojdatetimepicker"
+      },
+      "oj-input-search": {
+        "path": "ojs/ojinputsearch"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-label": {
+        "path": "ojs/ojlabel"
+      },
+      "oj-list-item-layout": {
+        "path": "ojs/ojlistitemlayout"
+      },
+      "oj-list-view": {
+        "path": "ojs/ojlistview"
+      },
+      "oj-navigation-list": {
+        "path": "ojs/ojnavigationlist"
+      },
+      "oj-rating-gauge": {
+        "path": "ojs/ojgauge"
+      },
+      "oj-select-single": {
+        "path": "ojs/ojselectsingle"
+      },
+      "oj-status-meter-gauge": {
+        "path": "ojs/ojgauge"
+      },
+      "oj-table": {
+        "path": "ojs/ojtable"
+      },
+      "oj-validation-group": {
+        "path": "ojs/ojvalidationgroup"
+      }
+
+    },
+    "modules": {
+      "ojValidationDateTime": {
+        "path": "ojs/ojvalidation-datetime"
+      }
+    }
+  }
+}
